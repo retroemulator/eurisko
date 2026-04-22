@@ -1,0 +1,12 @@
+# robots.txt — Eurisko S.r.l.
+# https://euriskosrl.it/
+
+User-agent: *
+Allow: /
+
+# Pagine non da indicizzare
+Disallow: /grazie.html
+Disallow: /en/thank-you.html
+
+# Sitemap
+Sitemap: https://euriskosrl.it/sitemap.xml

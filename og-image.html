@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>OG Image generator — Eurisko</title>
+<style>
+  /*
+    Pagina di rendering per l'Open Graph image 1200×630.
+    Per generare il PNG corrispondente:
+      1. Aprire questa pagina in browser
+      2. Screenshot dell'area .og (1200×630px) — su Chrome:
+         DevTools → Cmd+Shift+P → "Capture full size screenshot"
+         oppure usare Puppeteer:
+            await page.setViewport({ width: 1200, height: 630 });
+            await page.screenshot({ path: 'og-image.png', clip: {x:0,y:0,width:1200,height:630} });
+      3. Salvare come og-image.png alla root del progetto
+    NB: di default i meta og:image puntano a og-image.svg che funziona già in molte piattaforme moderne.
+        og-image.png è un fallback opzionale per piattaforme che non supportano SVG (es. WhatsApp).
+  */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #555; padding: 20px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .og {
+    width: 1200px; height: 630px;
+    background: linear-gradient(135deg, #0A1628 0%, #15253F 100%);
+    position: relative;
+    color: #F5F1E8;
+    overflow: hidden;
+  }
+  .og::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(160,23,41,0.45) 0%, transparent 60%);
+  }
+  .globe {
+    position: absolute;
+    left: 80px; top: 50%;
+    transform: translateY(-50%);
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #C41E3A 0%, #A01729 60%, #6B0F1C 100%);
+    box-shadow: 0 0 80px rgba(196, 30, 58, 0.5);
+  }
+  .globe::before, .globe::after {
+    content: "";
+    position: absolute; inset: 0;
+    border: 1.5px solid rgba(245, 241, 232, 0.18);
+    border-radius: 50%;
+  }
+  .globe::before { transform: scaleY(0.3); }
+  .globe::after { transform: scaleX(0.3); }
+  .text {
+    position: absolute;
+    left: 470px; top: 220px;
+  }
+  .name {
+    font-size: 120px; font-weight: 600; letter-spacing: -4px;
+    line-height: 1;
+  }
+  .tagline {
+    font-size: 34px; font-weight: 400; margin-top: 16px;
+  }
+  .meta {
+    font-size: 22px; color: #B8BDC9; margin-top: 80px;
+    letter-spacing: 2px;
+  }
+  .marker {
+    position: absolute;
+    left: 470px; bottom: 70px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .marker__bar { width: 40px; height: 2px; background: #A01729; }
+  .marker__url {
+    font-size: 18px; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="og" role="img" aria-label="Eurisko — Consulenza SAP &amp; Business Process">
+  <div class="globe"></div>
+  <div class="text">
+    <div class="name">Eurisko</div>
+    <div class="tagline">Consulenza SAP &amp; Business Process</div>
+    <div class="meta">CASCINETTE D'IVREA (TO) · 2007</div>
+  </div>
+  <div class="marker">
+    <span class="marker__bar"></span>
+    <span class="marker__url">euriskosrl.it</span>
+  </div>
+</div>
+</body>
+</html>
