@@ -1244,6 +1244,163 @@ form.contact { display: grid; gap: 20px; }
 .legal .toc li { color: var(--ink); margin-bottom: 6px; }
 .legal .toc a { text-decoration: none; }
 
+/* =====================================================
+   COOKIE CONSENT BANNER (GDPR)
+   ===================================================== */
+.cookie-banner {
+  position: fixed;
+  inset: auto 16px 16px 16px;
+  z-index: 9000;
+  background: var(--bg-elevated);
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 24px 28px;
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner__title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.cookie-banner__text { margin: 0 0 18px; }
+.cookie-banner__text a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.cookie-banner__text a:hover { color: var(--accent-bright); }
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.cookie-banner__btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+  font-family: inherit;
+}
+.cookie-banner__btn--primary {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--accent);
+}
+.cookie-banner__btn--primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); }
+.cookie-banner__btn--secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line-soft);
+}
+.cookie-banner__btn--secondary:hover { border-color: var(--ink); }
+.cookie-banner__btn--ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cookie-banner__btn--ghost:hover { color: var(--ink); }
+
+.cookie-banner__panel {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-soft);
+}
+.cookie-banner__panel[hidden] { display: none; }
+.cookie-banner__category {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-faint);
+}
+.cookie-banner__category:last-child { border-bottom: none; }
+.cookie-banner__category-info { flex: 1; }
+.cookie-banner__category-name {
+  display: block;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 0.9375rem;
+  margin-bottom: 4px;
+}
+.cookie-banner__category-desc {
+  font-size: 0.8125rem;
+  color: var(--ink-mute);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Toggle switch */
+.cookie-toggle {
+  position: relative;
+  width: 42px; height: 24px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.cookie-toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 100%; height: 100%;
+  cursor: pointer;
+  margin: 0;
+}
+.cookie-toggle__track {
+  display: block;
+  width: 100%; height: 100%;
+  background: rgba(245, 241, 232, 0.15);
+  border-radius: 999px;
+  transition: background 0.2s var(--ease);
+  position: relative;
+}
+.cookie-toggle__track::after {
+  content: "";
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 18px; height: 18px;
+  background: var(--ink);
+  border-radius: 50%;
+  transition: transform 0.2s var(--ease);
+}
+.cookie-toggle input:checked + .cookie-toggle__track { background: var(--accent); }
+.cookie-toggle input:checked + .cookie-toggle__track::after { transform: translateX(18px); }
+.cookie-toggle input:disabled + .cookie-toggle__track {
+  background: rgba(160, 23, 41, 0.4);
+  cursor: not-allowed;
+}
+.cookie-toggle input:focus-visible + .cookie-toggle__track {
+  outline: 2px solid var(--accent-bright);
+  outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .cookie-banner { padding: 20px; inset: auto 8px 8px 8px; }
+  .cookie-banner__actions { flex-direction: column-reverse; }
+  .cookie-banner__btn { width: 100%; }
+}
+
+/* Settings reopener link in footer (added by JS) */
+.footer__meta .cookie-reopen {
+  background: none;
+  border: none;
+  color: rgba(245, 241, 232, 0.45);
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer__meta .cookie-reopen:hover { color: var(--accent-bright); }
+
 /* Thank-you page */
 .thanks {
   padding: 180px var(--gutter) 120px;
