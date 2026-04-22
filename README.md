@@ -17,16 +17,19 @@ eurisko/
 └── script.js            → Interazioni (nav, reveal, marquee, mobile menu)
 ```
 
-## 🎨 Sistema di design
+## 🎨 Sistema di design — DARK MODE
 
-Basato sui **colori sociali del logo Eurisko**:
+Versione dark-mode premium con accento rosso scuro corporate:
 
-- **Blu corporate** `#0A3D7D` — accent principale (dal "EURISK" del logo)
-- **Rosso cremisi** `#C41E3A` — accent secondario (dal globo del logo)
-- **Nero profondo** `#0D0D0D` — colore primario del testo
-- **Off-white caldo** `#EFEDE5` — sfondo delle pagine
-- **Font**: Bricolage Grotesque (display) + Fraunces (momenti editoriali italic)
-- **Logo reale**: integrato nel footer (versione PNG originale)
+- **Nero profondo** `#0A0A0A` — sfondo principale (non `#000` pieno, più morbido)
+- **Off-white caldo** `#F5F1E8` — testo principale
+- **Rosso corporate** `#A01729` — unico accent, richiama il globo del logo
+- **Rosso brillante** `#C41E3A` — solo per stati hover/attivi
+- **Rosso profondo** `#6B0F1C` — shadow, gradient depths
+- **Font**: Switzer (Graphik-like, stile Accenture) — unica famiglia
+- **Logo reale**: PNG originale integrato in navbar + footer (con boost brightness/saturation per contrastare bene sul nero)
+- **Mondo rosso**: usato come favicon e come elemento decorativo nell'hero
+- **Grain overlay**: texture sottilissima su tutto il body per dare profondità editoriale
 - **Responsive**: desktop, tablet, mobile
 - **Accessibilità**: markup semantico, `aria-label`, `aria-current`, focus states
 
