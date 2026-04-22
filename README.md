@@ -17,21 +17,23 @@ eurisko/
 └── script.js            → Interazioni (nav, reveal, marquee, mobile menu)
 ```
 
-## 🎨 Sistema di design — DARK MODE
+## 🎨 Sistema di design — NAVY DARK MODE
 
-Versione dark-mode premium con accento rosso scuro corporate:
+Dark mode premium con sfondo navy profondo e accento rosso corporate:
 
-- **Nero profondo** `#0A0A0A` — sfondo principale (non `#000` pieno, più morbido)
+- **Navy profondissimo** `#0A1628` — sfondo principale (richiama il blu del logo)
+- **Navy medio** `#0F1D33` — sezioni alternate
+- **Navy elevato** `#15253F` — card, hover states
 - **Off-white caldo** `#F5F1E8` — testo principale
-- **Rosso corporate** `#A01729` — unico accent, richiama il globo del logo
-- **Rosso brillante** `#C41E3A` — solo per stati hover/attivi
+- **Rosso corporate** `#A01729` — unico accent
+- **Rosso brillante** `#C41E3A` — stati hover/attivi
 - **Rosso profondo** `#6B0F1C` — shadow, gradient depths
-- **Font**: Switzer (Graphik-like, stile Accenture) — unica famiglia
-- **Logo reale**: PNG originale integrato in navbar + footer (con boost brightness/saturation per contrastare bene sul nero)
-- **Mondo rosso**: usato come favicon e come elemento decorativo nell'hero
-- **Grain overlay**: texture sottilissima su tutto il body per dare profondità editoriale
+- **Font**: Switzer (Graphik-like, stile Accenture)
+- **Logo reale**: PNG originale integrato in navbar + footer (boost brightness per contrasto ottimale su navy)
+- **Mondo rosso**: favicon e decorativo nell'hero
+- **Grain overlay**: texture sottilissima per profondità editoriale
 - **Responsive**: desktop, tablet, mobile
-- **Accessibilità**: markup semantico, `aria-label`, `aria-current`, focus states
+- **Accessibilità**: markup semantico, focus states
 
 ## 🚀 Deploy (workflow GitHub + Vercel + Formspree)
 

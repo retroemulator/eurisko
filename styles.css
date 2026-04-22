@@ -5,25 +5,25 @@
 /* ---------- Fonts: Switzer (Graphik-like, Accenture style) ---------- */
 @import url('https://api.fontshare.com/v2/css?f[]=switzer@200,300,400,500,600,700,800,900,401&display=swap');
 
-/* ---------- Design Tokens — DARK MODE ---------- */
+/* ---------- Design Tokens — NAVY DARK MODE ---------- */
 :root {
-  --bg: #0A0A0A;              /* nero profondo (non pieno, più morbido) */
-  --bg-alt: #141414;          /* sezioni alternate leggermente più chiare */
-  --bg-elevated: #1A1A1A;     /* card, hover states */
+  --bg: #0A1628;              /* navy profondissimo — base */
+  --bg-alt: #0F1D33;          /* navy un tocco più chiaro per sezioni alternate */
+  --bg-elevated: #15253F;     /* card, hover, elementi "alzati" */
   --ink: #F5F1E8;             /* bianco caldo (off-white) */
-  --ink-soft: #B8B3A8;        /* secondario */
-  --ink-mute: #7A766E;        /* terziario / metadata */
-  --line: #F5F1E8;            /* per bordi forti */
+  --ink-soft: #B8BDC9;        /* secondario con lieve freddezza per armonia col navy */
+  --ink-mute: #7A8399;        /* terziario / metadata */
+  --line: #F5F1E8;
   --line-soft: rgba(245, 241, 232, 0.12);
   --line-faint: rgba(245, 241, 232, 0.06);
 
   --accent: #A01729;          /* rosso profondo corporate */
-  --accent-bright: #C41E3A;   /* rosso più vivo, per hover e stati attivi */
-  --accent-dark: #6B0F1C;     /* rosso scuro, per shadow e profondità */
-  --warm: #A01729;            /* alias per retrocompatibilità */
+  --accent-bright: #C41E3A;   /* rosso vivo per hover e stati attivi */
+  --accent-dark: #6B0F1C;     /* rosso scuro per shadow e profondità */
+  --warm: #A01729;            /* alias */
   --warm-dark: #6B0F1C;
 
-  --blue-structural: #1F4E8C; /* blu del logo, usato solo come accento secondario minimo */
+  --blue-structural: #1F4E8C; /* blu del logo per accenti secondari */
 
   --font-display: 'Switzer', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-italic: 'Switzer', system-ui, sans-serif;
@@ -56,9 +56,9 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.035 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  mix-blend-mode: overlay;
-  opacity: 0.6;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.03 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
 }
 main, header, footer { position: relative; z-index: 2; }
 img, svg { display: block; max-width: 100%; }
@@ -124,7 +124,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(10, 10, 10, 0.82);
+  background: rgba(10, 22, 40, 0.82);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line-soft);
@@ -133,7 +133,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .nav.scrolled {
   padding-top: 14px;
   padding-bottom: 14px;
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(10, 22, 40, 0.95);
 }
 .nav__logo {
   display: inline-flex;
@@ -281,7 +281,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 
 /* ---------- Footer ---------- */
 .footer {
-  background: #050505;
+  background: #06101D;
   color: var(--ink);
   padding: clamp(60px, 8vw, 120px) 0 40px;
   margin-top: 0;
@@ -452,7 +452,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   background:
     radial-gradient(circle at 20% 30%, rgba(160, 23, 41, 0.45) 0%, transparent 55%),
     radial-gradient(circle at 85% 75%, rgba(196, 30, 58, 0.25) 0%, transparent 50%),
-    linear-gradient(135deg, #0A0A0A, #1A0A0F);
+    linear-gradient(135deg, #0A1628, #1A0A1F);
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line-soft);
@@ -601,13 +601,13 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   mix-blend-mode: overlay;
 }
 .case:nth-child(1) .case__media { background: linear-gradient(135deg, #A01729, #6B0F1C); }
-.case:nth-child(2) .case__media { background: linear-gradient(135deg, #1A1A1A, #A01729); }
-.case:nth-child(3) .case__media { background: linear-gradient(135deg, #6B0F1C, #0A0A0A); }
-.case:nth-child(4) .case__media { background: linear-gradient(135deg, #C41E3A, #1A0A0F); }
+.case:nth-child(2) .case__media { background: linear-gradient(135deg, #15253F, #A01729); }
+.case:nth-child(3) .case__media { background: linear-gradient(135deg, #6B0F1C, #0A1628); }
+.case:nth-child(4) .case__media { background: linear-gradient(135deg, #C41E3A, #0A1628); }
 .case__tag {
   position: absolute; top: 20px; left: 20px;
   padding: 6px 14px;
-  background: rgba(10, 10, 10, 0.85);
+  background: rgba(10, 22, 40, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(245, 241, 232, 0.2);
   border-radius: 999px;
