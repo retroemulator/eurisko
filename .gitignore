@@ -1,0 +1,31 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build / dependencies (defensive — il progetto è statico)
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.*
+
+# Brief interni Eurisko (non pubblicare nel repo)
+PROMPT-CLAUDE-CODE-EURISKO.md
+KEYWORD-STRATEGY-EURISKO.md
+
+# Vercel
+.vercel
