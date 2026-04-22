@@ -128,10 +128,10 @@ Vedi tabella sopra. Tutti i testi principali superano AA. Una sola coppia in ter
 
 ### Performance & A11y intersection
 
-- Loghi PNG: `logo-eurisko.png` (44KB) e `logo-eurisko-mondo.png` (165KB) sotto soglia critica. `logo-eurisko-color.png` (277KB) è asset di riserva non caricato in pagina — sopra soglia ma non impatta LCP. **Nota**: per produzione si consiglia conversione a WebP via `cwebp -q 85` (offline) e fallback `<picture>`.
+- Loghi PNG: `logo-eurisko-WR.png` (44KB) e `logo-eurisko-mondo.png` (165KB) sotto soglia critica. `logo-eurisko-color.png` (277KB) è asset di riserva non caricato in pagina — sopra soglia ma non impatta LCP. **Nota**: per produzione si consiglia conversione a WebP via `cwebp -q 85` (offline) e fallback `<picture>`.
 - `loading="lazy"` applicato ai loghi footer (below-the-fold) in tutti i 26 file HTML.
 - `width` e `height` espliciti su tutte le `<img>` per evitare CLS.
-- LCP candidate: `logo-eurisko.png` con `<link rel="preload" as="image">` su index IT/EN.
+- LCP candidate: `logo-eurisko-WR.png` con `<link rel="preload" as="image">` su index IT/EN.
 
 ---
 

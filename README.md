@@ -42,7 +42,7 @@ eurisko/
 ├── robots.txt                    → Direttive crawler
 ├── og-image.svg                  → Open Graph 1200×630 (vettoriale)
 ├── og-image.html                 → Generator HTML per og-image.png (opzionale)
-├── logo-eurisko.png              → Logo bianco su scuro
+├── logo-eurisko-WR.png              → Logo bianco su scuro
 ├── logo-eurisko-color.png        → Logo colorato (sfondi chiari)
 ├── logo-eurisko-mondo.png        → Solo globo rosso
 ├── favicon-64.png                → Favicon
@@ -176,7 +176,7 @@ sed -i 's|formspree.io/f/YOUR_FORM_ID|formspree.io/f/xabcd1234|g' contatti.html 
 - [ ] **`note-legali.html` e `en/legal-notice.html`**: inserire valori reali per **Numero REA**, **Capitale sociale**, **PEC** (attualmente placeholder `[Da compilare]`).
 - [ ] **`accessibilita.html` e `en/accessibility.html`**: inserire nome del **responsabile dell'accessibilità** interno.
 - [ ] **`og-image.svg`** è pronto. In alternativa generare `og-image.png` aprendo `og-image.html` in browser e facendo screenshot 1200×630.
-- [ ] **Loghi WebP**: per ottimizzare ulteriormente, generare versioni WebP via `cwebp -q 85 logo-eurisko.png -o logo-eurisko.webp` e wrappare nei `<picture>`.
+- [ ] **Loghi WebP**: per ottimizzare ulteriormente, generare versioni WebP via `cwebp -q 85 logo-eurisko-WR.png -o logo-eurisko.webp` e wrappare nei `<picture>`.
 - [ ] **Verifica numeri statistiche** in homepage: 20 anni / 50+ clienti Top Tier / 1500+ progetti (da confermare con management).
 
 ## 🌍 Domini
