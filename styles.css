@@ -20,8 +20,8 @@
   --accent: #A01729;          /* rosso profondo corporate (per backgrounds) */
   --accent-bright: #C41E3A;   /* rosso vivo per hover e stati attivi (per backgrounds) */
   --accent-dark: #6B0F1C;     /* rosso scuro per shadow e profondità */
-  --accent-text: #FF3A5C;     /* rosso AA-compliant per testo su navy (>4.5:1) */
-  --warm: #FF3A5C;            /* alias usato come testo: AA-compliant */
+  --accent-text: #ff1213;     /* rosso AA-compliant per testo su navy (>4.5:1) */
+  --warm: #ff1213;            /* alias usato come testo: AA-compliant */
   --warm-dark: #6B0F1C;
 
   --blue-structural: #1F4E8C; /* blu del logo per accenti secondari */
