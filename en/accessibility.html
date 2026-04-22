@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Accessibility Statement | Eurisko S.r.l.</title>
+<meta name="description" content="Accessibility statement for the euriskosrl.it site. WCAG 2.1 level AA conformance. How to report accessibility barriers.">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Accessibility Statement | Eurisko S.r.l.">
+<meta property="og:description" content="WCAG 2.1 level AA conformance. How to report accessibility barriers.">
+<meta property="og:url" content="https://euriskosrl.it/en/accessibility.html">
+<meta property="og:image" content="https://euriskosrl.it/og-image.svg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="it_IT">
+
+<link rel="canonical" href="https://euriskosrl.it/en/accessibility.html">
+<link rel="alternate" hreflang="it" href="https://euriskosrl.it/accessibilita.html">
+<link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/accessibility.html">
+<link rel="alternate" hreflang="x-default" href="https://euriskosrl.it/">
+
+<link rel="icon" type="image/png" href="../favicon-64.png">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://euriskosrl.it/en/"},
+    {"@type": "ListItem", "position": 2, "name": "Accessibility", "item": "https://euriskosrl.it/en/accessibility.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="nav" role="banner">
+  <a href="index.html" class="nav__logo" aria-label="Eurisko — go to homepage">
+    <img src="../logo-eurisko.png" alt="Eurisko S.r.l." class="nav__logo-img" width="180" height="36">
+  </a>
+  <nav class="nav__links" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="company.html">Company</a>
+    <a href="sap-consulting.html">SAP Consulting</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="careers.html">Careers</a>
+  </nav>
+  <div class="lang-switcher" aria-label="Language selector">
+    <a href="../accessibilita.html" class="lang-switcher__alt" hreflang="it" lang="it">IT</a>
+    <span class="lang-switcher__sep" aria-hidden="true">|</span>
+    <span class="lang-switcher__current" lang="en" aria-current="true">EN</span>
+  </div>
+  <a href="contact.html" class="nav__cta">Contact us <span aria-hidden="true">→</span></a>
+  <button class="nav__burger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<main id="main-content">
+
+<section class="page-hero">
+  <div class="page-hero__crumbs reveal"><span>Eurisko</span> <span aria-hidden="true">/</span> Accessibility Statement</div>
+  <h1 class="page-hero__title reveal">Accessibility <em>Statement</em></h1>
+  <p class="page-hero__lede reveal">Eurisko S.r.l. is committed to making its website accessible to people with disabilities, in line with the WCAG 2.1 international guidelines.</p>
+</section>
+
+<article class="legal">
+  <p class="legal-meta">Last updated: April 22, 2026 · First published: April 22, 2026</p>
+
+  <h2>Conformance status</h2>
+  <p>The site <strong>euriskosrl.it</strong> is designed to be <strong>partially conformant</strong> with the <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener noreferrer">WCAG 2.1 level AA</a> guidelines. Partial conformance is due to the fact that some checks with real assistive technologies (NVDA, VoiceOver, JAWS) and with users with disabilities are still being completed and will be finished progressively.</p>
+
+  <h2>Accessibility features implemented</h2>
+  <ul>
+    <li><strong>Alternative text</strong> on all informative images; explicit <code>alt=""</code> on decorative images.</li>
+    <li><strong>Full keyboard navigation</strong>: all interactive elements reachable with Tab/Shift+Tab/Enter/Esc.</li>
+    <li><strong>Skip link</strong> "Skip to main content" as the first focusable element of the page.</li>
+    <li><strong>Visible focus</strong> on all interactive elements (2px solid red accent outline, 3px offset).</li>
+    <li><strong>Strict heading hierarchy</strong>: only one H1 per page, sub-levels with no jumps.</li>
+    <li><strong>HTML5 landmarks</strong>: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> used appropriately.</li>
+    <li><strong>Labeled forms</strong>: every field has a label, errors announced via <code>aria-invalid</code> + <code>aria-describedby</code>.</li>
+    <li><strong>Language declared</strong> via the <code>lang</code> attribute on <code>&lt;html&gt;</code> and on portions of text in a different language.</li>
+    <li><strong>Color contrast</strong>: primary text with ratio ≥ 7:1 (AAA), secondary text ≥ 4.5:1 (AA).</li>
+    <li><strong>Text resize</strong> up to 200% with no loss of functionality (font sizes in <code>rem</code>/<code>em</code>).</li>
+    <li><strong>Animations</strong>: we honor the user setting <code>prefers-reduced-motion</code> by reducing or disabling decorative animations.</li>
+    <li><strong>Cookie banner</strong> accessible: <code>role="dialog"</code>, focus trap, dismiss with Esc.</li>
+    <li><strong>Acronyms</strong> expanded on first use through the <code>&lt;abbr&gt;</code> tag.</li>
+  </ul>
+
+  <h2>What we did NOT do, and why</h2>
+  <p>For full transparency, we want to flag our deliberate choices on accessibility:</p>
+  <ul>
+    <li><strong>We do not use accessibility overlay widgets</strong> (AccessiWay, UserWay, EqualWeb and similar). Multiple research and a <a href="https://overlayfactsheet.com/" target="_blank" rel="noopener noreferrer">collective statement signed by experts in the field</a> have shown that these tools often do not actually make sites accessible, can create new barriers and in no way replace accessibility implemented in the source code.</li>
+    <li>Accessibility is pursued <strong>in the source code</strong> and in design choices, not via overlay layers.</li>
+  </ul>
+
+  <h2>Known areas for improvement</h2>
+  <p>The following aspects are still being defined or improved:</p>
+  <ul>
+    <li>Further testing with real screen readers (NVDA, JAWS, VoiceOver, TalkBack) and with users with disabilities.</li>
+    <li>Full audit with automated tools (axe DevTools, WAVE, Lighthouse) after deploy in production.</li>
+    <li>Accessibility of contents added after the initial release (e.g. real portfolio images, any videos, infographics).</li>
+  </ul>
+
+  <h2>How to report issues</h2>
+  <p>If you encounter accessibility barriers while navigating our site or if you need a content in an alternative format, please contact us. We commit to reply within <strong>30 working days</strong>.</p>
+  <p>
+    Email: <a href="mailto:info@euriskosrl.it?subject=Accessibility%20issue">info@euriskosrl.it</a><br>
+    Suggested subject: "Accessibility issue — [page concerned]"<br>
+    Phone: <a href="tel:+393481565772">+39 348 156 5772</a>
+  </p>
+
+  <h2>Accessibility officer</h2>
+  <p>
+    Reference person for accessibility: <em>[To be filled in with internal contact name]</em><br>
+    Email: <a href="mailto:info@euriskosrl.it">info@euriskosrl.it</a>
+  </p>
+
+  <h2>Technologies used</h2>
+  <p>The site is built with standard web technologies:</p>
+  <ul>
+    <li>Semantic <strong>HTML5</strong></li>
+    <li>Vanilla <strong>CSS3</strong> (no framework)</li>
+    <li>Vanilla <strong>JavaScript</strong> with graceful degradation: all contents remain readable and all links work even with JavaScript disabled</li>
+  </ul>
+
+  <h2>Legal references</h2>
+  <ul>
+    <li><a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener noreferrer">Web Content Accessibility Guidelines (WCAG) 2.1</a> — World Wide Web Consortium</li>
+    <li>Italian Law 9 January 2004, no. 4 (Stanca Law)</li>
+    <li>EU Directive 2016/2102 on the accessibility of websites and mobile applications of public bodies</li>
+    <li>European Accessibility Act (EU Directive 2019/882)</li>
+  </ul>
+
+  <h2>Verification methodology</h2>
+  <p>The conformance self-assessment was performed through:</p>
+  <ul>
+    <li>Manual keyboard navigation testing</li>
+    <li>Browser zoom test at 200%</li>
+    <li>Color contrast ratio calculations (see <code>ACCESSIBILITY-REPORT.md</code> in the project repository for details)</li>
+    <li>Structural reading of the DOM in logical order</li>
+    <li>HTML/CSS validation against W3C standards</li>
+  </ul>
+  <p>The results are documented in the <code>ACCESSIBILITY-REPORT.md</code> file in the public project repository.</p>
+
+</article>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer__col">
+        <img src="../logo-eurisko.png" alt="Eurisko S.r.l." class="footer__logo-img" width="280" height="60">
+        <p class="footer__tagline">Your SAP partner. Smart, functional, dynamic, proactive, multipurpose.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="company.html">Company</a>
+        <a href="sap-consulting.html">SAP Consulting</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="careers.html">Careers</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacts</h4>
+        <a href="tel:+393481565772">+39 348 156 5772</a>
+        <a href="tel:+390125617513">+39 0125 617513</a>
+        <a href="mailto:info@euriskosrl.it">info@euriskosrl.it</a>
+        <a href="contact.html">Write to us</a>
+      </div>
+      <div class="footer__col">
+        <h4>Office</h4>
+        <p style="font-size: 0.9375rem; line-height: 1.6;">Via Burolo, 1<br>10010 Cascinette d'Ivrea (TO)<br>Italy</p>
+      </div>
+      <div class="footer__col footer__col--social">
+        <h4>Follow us</h4>
+        <ul class="footer__social-list">
+          <li>
+            <a href="https://www.linkedin.com/company/euriskosrl" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Eurisko on LinkedIn (opens in a new tab)">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.21 0 22.23 0z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__meta">
+      <span>© <span data-year>2026</span> Eurisko S.r.l. — VAT IT08407400012</span>
+      <span style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="legal-notice.html">Legal Notice</a>
+        <a href="accessibility.html" aria-current="page">Accessibility</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
