@@ -1863,53 +1863,6 @@ summary:focus-visible {
   .hero__bg-video { display: none; }
 }
 
-/* ---------- Footer wordmark (EURISKO stacked/rotated lockup — Accenture style) ---------- */
-.footer__wordmark {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(80px, 13vw, 180px);
-  line-height: 0.85;
-  letter-spacing: -0.035em;
-  margin: 0 0 clamp(40px, 6vw, 80px);
-  padding-bottom: clamp(24px, 4vw, 48px);
-  border-bottom: 1px solid rgba(245, 241, 232, 0.1);
-  display: flex;
-  align-items: stretch;
-  gap: 0;
-  height: clamp(220px, 28vw, 340px);
-  overflow: hidden;
-  user-select: none;
-}
-.footer__wordmark span {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  white-space: nowrap;
-  color: var(--ink);
-  margin-left: -0.18em;
-  transition: transform 0.6s var(--ease), color 0.5s var(--ease), opacity 0.5s var(--ease);
-  will-change: transform;
-}
-.footer__wordmark span:nth-child(1) { margin-left: 0; opacity: 1; }
-.footer__wordmark span:nth-child(2) { opacity: 0.75; color: var(--warm); }
-.footer__wordmark span:nth-child(3) { opacity: 0.5; }
-.footer__wordmark span:nth-child(4) { opacity: 0.35; }
-.footer__wordmark span:nth-child(5) { opacity: 0.22; color: var(--warm); }
-.footer__wordmark span:nth-child(6) { opacity: 0.14; }
-.footer__wordmark span:nth-child(7) { opacity: 0.08; }
-.footer__wordmark:hover span,
-.footer__wordmark:focus-within span { opacity: 1; color: var(--ink); }
-.footer__wordmark:hover span:nth-child(2),
-.footer__wordmark:hover span:nth-child(5) { color: var(--warm); }
-.footer__wordmark:hover span:nth-child(odd) { transform: rotate(180deg) translateY(-14px); }
-.footer__wordmark:hover span:nth-child(even) { transform: rotate(180deg) translateY(14px); }
-@media (max-width: 820px) {
-  .footer__wordmark { font-size: clamp(60px, 16vw, 110px); height: clamp(180px, 34vw, 240px); }
-  .footer__wordmark span:nth-child(n+6) { display: none; }
-}
-@media (max-width: 520px) {
-  .footer__wordmark span:nth-child(n+4) { display: none; }
-}
-
 /* ---------- Our Values grid ---------- */
 .ourvalues {
   display: grid;
