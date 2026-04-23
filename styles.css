@@ -573,7 +573,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   font-family: var(--font-italic); font-style: italic; font-size: 0.9375rem;
 }
 .hero__visual-tag {
-  position: absolute; top: 24px; right: 28px;
+  position: absolute; bottom: 52px; left: 28px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase;
 }
