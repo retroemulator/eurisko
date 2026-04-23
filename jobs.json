@@ -1,0 +1,32 @@
+[
+  {
+    "id": "fico",
+    "title": { "it": "SAP Functional Analyst (FI/CO)", "en": "SAP Functional Analyst (FI/CO)" },
+    "location": { "it": "Torino / Ibrido", "en": "Turin / Hybrid" },
+    "type": { "it": "Full-time · Mid-Senior", "en": "Full-time · Mid-Senior" }
+  },
+  {
+    "id": "mmsd",
+    "title": { "it": "SAP Functional Analyst (MM/SD)", "en": "SAP Functional Analyst (MM/SD)" },
+    "location": { "it": "Torino / Ibrido", "en": "Turin / Hybrid" },
+    "type": { "it": "Full-time · Mid-Senior", "en": "Full-time · Mid-Senior" }
+  },
+  {
+    "id": "abap",
+    "title": { "it": "ABAP Developer", "en": "ABAP Developer" },
+    "location": { "it": "Torino / Ibrido", "en": "Turin / Hybrid" },
+    "type": { "it": "Full-time · Junior / Mid", "en": "Full-time · Junior / Mid" }
+  },
+  {
+    "id": "bpe",
+    "title": { "it": "Business Process Expert", "en": "Business Process Expert" },
+    "location": { "it": "Torino / On-site", "en": "Turin / On-site" },
+    "type": { "it": "Full-time · Senior", "en": "Full-time · Senior" }
+  },
+  {
+    "id": "spontaneous",
+    "title": { "it": "Candidatura spontanea", "en": "Spontaneous application" },
+    "location": { "it": "Ovunque tu sia", "en": "Wherever you are" },
+    "type": { "it": "Inviaci il tuo CV", "en": "Send us your CV" }
+  }
+]

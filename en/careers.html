@@ -118,38 +118,7 @@
       </div>
     </div>
 
-    <div class="reveal">
-      <a href="#apply" class="job" data-role="fico">
-        <div class="job__role">SAP Functional Analyst (FI/CO)</div>
-        <div class="job__meta">Turin / Hybrid</div>
-        <div class="job__meta">Full-time · Mid-Senior</div>
-        <span class="job__arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="#apply" class="job" data-role="mmsd">
-        <div class="job__role">SAP Functional Analyst (MM/SD)</div>
-        <div class="job__meta">Turin / Hybrid</div>
-        <div class="job__meta">Full-time · Mid-Senior</div>
-        <span class="job__arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="#apply" class="job" data-role="abap">
-        <div class="job__role">ABAP Developer</div>
-        <div class="job__meta">Turin / Hybrid</div>
-        <div class="job__meta">Full-time · Junior / Mid</div>
-        <span class="job__arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="#apply" class="job" data-role="bpe">
-        <div class="job__role">Business Process Expert</div>
-        <div class="job__meta">Turin / On-site</div>
-        <div class="job__meta">Full-time · Senior</div>
-        <span class="job__arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="#apply" class="job" data-role="spontaneous">
-        <div class="job__role">Spontaneous application</div>
-        <div class="job__meta">Wherever you are</div>
-        <div class="job__meta">Send us your CV</div>
-        <span class="job__arrow" aria-hidden="true">→</span>
-      </a>
-    </div>
+    <div class="reveal" id="jobs-list" data-jobs-src="../jobs.json" data-anchor="#apply"></div>
   </div>
 </section>
 
@@ -203,11 +172,6 @@
             <label for="c-role">Position <span aria-hidden="true">*</span><span class="visually-hidden">required</span></label>
             <select id="c-role" name="position" required aria-required="true">
               <option value="">Select...</option>
-              <option value="fico">SAP Functional Analyst (FI/CO)</option>
-              <option value="mmsd">SAP Functional Analyst (MM/SD)</option>
-              <option value="abap">ABAP Developer</option>
-              <option value="bpe">Business Process Expert</option>
-              <option value="spontaneous">Spontaneous application</option>
             </select>
           </div>
         </div>
@@ -264,16 +228,6 @@
   </div>
 </section>
 
-<script>
-  // Preselect position when clicking a job card
-  document.querySelectorAll('.job[data-role]').forEach(function(card){
-    card.addEventListener('click', function(){
-      var role = card.getAttribute('data-role');
-      var sel = document.getElementById('c-role');
-      if (sel) { sel.value = role; }
-    });
-  });
-</script>
 
 </main>
 
@@ -331,5 +285,6 @@
 </footer>
 
 <script src="../script.min.js"></script>
+<script src="../jobs.js" defer></script>
 </body>
 </html>
