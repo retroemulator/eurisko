@@ -1349,35 +1349,35 @@ form.contact { display: grid; gap: 20px; }
    ===================================================== */
 .cookie-banner {
   position: fixed;
-  inset: auto 16px 16px 16px;
+  inset: auto 0 0 0;
   z-index: 9000;
-  background: var(--bg-elevated);
-  border: 1px solid var(--line-soft);
-  border-radius: 8px;
-  padding: 24px 28px;
-  max-width: 720px;
-  margin: 0 auto;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  background: #ffffff;
+  color: #3a4050;
+  border-top: 1px solid rgba(10, 22, 40, 0.08);
+  padding: 24px var(--gutter);
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.15);
   font-size: 0.9375rem;
-  color: var(--ink-soft);
   line-height: 1.5;
 }
 .cookie-banner[hidden] { display: none; }
 .cookie-banner__title {
   font-size: 1.125rem;
   font-weight: 500;
-  color: var(--ink);
-  margin: 0 0 10px;
+  color: var(--bg);
+  margin: 0 auto 10px;
+  max-width: var(--container);
   letter-spacing: -0.01em;
 }
-.cookie-banner__text { margin: 0 0 18px; }
-.cookie-banner__text a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.cookie-banner__text { max-width: var(--container); margin: 0 auto 18px; }
+.cookie-banner__text a { color: var(--bg); text-decoration: underline; text-underline-offset: 3px; }
 .cookie-banner__text a:hover { color: var(--accent-text); }
 .cookie-banner__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-end;
+  max-width: var(--container);
+  margin: 0 auto;
 }
 .cookie-banner__btn {
   padding: 10px 18px;
@@ -1391,29 +1391,30 @@ form.contact { display: grid; gap: 20px; }
 }
 .cookie-banner__btn--primary {
   background: var(--accent);
-  color: var(--ink);
-  border-color: var(--accent-text);
+  color: #ffffff;
+  border-color: var(--accent);
 }
-.cookie-banner__btn--primary:hover { background: var(--accent-bright); border-color: var(--accent-text); }
+.cookie-banner__btn--primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); }
 .cookie-banner__btn--secondary {
   background: transparent;
-  color: var(--ink);
-  border-color: var(--line-soft);
+  color: var(--bg);
+  border-color: rgba(10, 22, 40, 0.22);
 }
-.cookie-banner__btn--secondary:hover { border-color: var(--ink); }
+.cookie-banner__btn--secondary:hover { border-color: var(--bg); }
 .cookie-banner__btn--ghost {
   background: transparent;
-  color: var(--ink-soft);
+  color: #3a4050;
   border-color: transparent;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.cookie-banner__btn--ghost:hover { color: var(--ink); }
+.cookie-banner__btn--ghost:hover { color: var(--bg); }
 
 .cookie-banner__panel {
-  margin-top: 20px;
+  margin: 20px auto 0;
   padding-top: 20px;
-  border-top: 1px solid var(--line-soft);
+  border-top: 1px solid rgba(10, 22, 40, 0.1);
+  max-width: var(--container);
 }
 .cookie-banner__panel[hidden] { display: none; }
 .cookie-banner__category {
@@ -1422,20 +1423,20 @@ form.contact { display: grid; gap: 20px; }
   gap: 16px;
   align-items: flex-start;
   padding: 12px 0;
-  border-bottom: 1px solid var(--line-faint);
+  border-bottom: 1px solid rgba(10, 22, 40, 0.06);
 }
 .cookie-banner__category:last-child { border-bottom: none; }
 .cookie-banner__category-info { flex: 1; }
 .cookie-banner__category-name {
   display: block;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--bg);
   font-size: 0.9375rem;
   margin-bottom: 4px;
 }
 .cookie-banner__category-desc {
   font-size: 0.8125rem;
-  color: var(--ink-mute);
+  color: #6a7080;
   line-height: 1.45;
   margin: 0;
 }
@@ -1457,7 +1458,7 @@ form.contact { display: grid; gap: 20px; }
 .cookie-toggle__track {
   display: block;
   width: 100%; height: 100%;
-  background: rgba(245, 241, 232, 0.15);
+  background: rgba(10, 22, 40, 0.2);
   border-radius: 999px;
   transition: background 0.2s var(--ease);
   position: relative;
@@ -1467,8 +1468,9 @@ form.contact { display: grid; gap: 20px; }
   position: absolute;
   top: 3px; left: 3px;
   width: 18px; height: 18px;
-  background: var(--ink);
+  background: #ffffff;
   border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s var(--ease);
 }
 .cookie-toggle input:checked + .cookie-toggle__track { background: var(--accent); }
@@ -1483,7 +1485,7 @@ form.contact { display: grid; gap: 20px; }
 }
 
 @media (max-width: 620px) {
-  .cookie-banner { padding: 20px; inset: auto 8px 8px 8px; }
+  .cookie-banner { padding: 20px var(--gutter); }
   .cookie-banner__actions { flex-direction: column-reverse; }
   .cookie-banner__btn { width: 100%; }
 }
