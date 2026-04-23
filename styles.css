@@ -494,7 +494,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 }
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: 60px;
   align-items: center;
 }
