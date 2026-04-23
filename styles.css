@@ -541,9 +541,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 }
 .hero__floating-logo {
   position: absolute;
-  top: 55%;
+  bottom: 160px;
   right: 4%;
-  transform: translateY(-50%);
   width: clamp(110px, 14vw, 200px);
   height: auto;
   z-index: 2;
