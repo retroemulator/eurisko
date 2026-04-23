@@ -485,8 +485,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 90vh;
-  padding: 140px var(--gutter) 80px;
+  min-height: 70vh;
+  padding: 140px var(--gutter) 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
