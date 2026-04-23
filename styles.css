@@ -539,21 +539,6 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   font-style: italic;
   font-size: 0.9375rem;
 }
-.hero__cta-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-}
-.hero__cta-logo {
-  width: clamp(90px, 10vw, 140px);
-  height: auto;
-  filter: drop-shadow(0 10px 24px rgba(196, 30, 58, 0.4));
-  animation: float 8s ease-in-out infinite;
-}
-@media (max-width: 820px) {
-  .hero__cta-logo { display: none; }
-}
 .hero__row {
   display: flex;
   justify-content: space-between;
@@ -1620,7 +1605,6 @@ summary:focus-visible {
   .reveal { opacity: 1; transform: none; }
   .marquee__track { animation: none; }
   .hero__visual-globe { animation: none; }
-  .hero__cta-logo { animation: none; }
   .hero__bg-video { display: none; }
 }
 
