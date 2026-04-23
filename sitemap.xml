@@ -112,6 +112,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/accessibility.html"/>
   </url>
 
+  <url>
+    <loc>https://euriskosrl.it/termini-di-utilizzo.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/termini-di-utilizzo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/terms-of-use.html"/>
+  </url>
+
+  <url>
+    <loc>https://euriskosrl.it/mappa-del-sito.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/mappa-del-sito.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/site-map.html"/>
+  </url>
+
   <!-- ENGLISH -->
   <url>
     <loc>https://euriskosrl.it/en/</loc>
@@ -196,6 +214,20 @@
     <loc>https://euriskosrl.it/en/accessibility.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://euriskosrl.it/en/terms-of-use.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://euriskosrl.it/en/site-map.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
 
