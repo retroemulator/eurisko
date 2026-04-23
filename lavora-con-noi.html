@@ -121,31 +121,31 @@
     </div>
 
     <div class="reveal">
-      <a href="contatti.html?ruolo=fico" class="job">
+      <a href="#candidati" class="job" data-role="fico">
         <div class="job__role">SAP Functional Analyst (FI/CO)</div>
         <div class="job__meta">Torino / Ibrido</div>
         <div class="job__meta">Full-time · Mid-Senior</div>
         <span class="job__arrow" aria-hidden="true">→</span>
       </a>
-      <a href="contatti.html?ruolo=mmsd" class="job">
+      <a href="#candidati" class="job" data-role="mmsd">
         <div class="job__role">SAP Functional Analyst (MM/SD)</div>
         <div class="job__meta">Torino / Ibrido</div>
         <div class="job__meta">Full-time · Mid-Senior</div>
         <span class="job__arrow" aria-hidden="true">→</span>
       </a>
-      <a href="contatti.html?ruolo=abap" class="job">
+      <a href="#candidati" class="job" data-role="abap">
         <div class="job__role"><span lang="en">ABAP</span> Developer</div>
         <div class="job__meta">Torino / Ibrido</div>
         <div class="job__meta">Full-time · Junior / Mid</div>
         <span class="job__arrow" aria-hidden="true">→</span>
       </a>
-      <a href="contatti.html?ruolo=bpe" class="job">
+      <a href="#candidati" class="job" data-role="bpe">
         <div class="job__role">Business Process Expert</div>
         <div class="job__meta">Torino / On-site</div>
         <div class="job__meta">Full-time · Senior</div>
         <span class="job__arrow" aria-hidden="true">→</span>
       </a>
-      <a href="contatti.html?ruolo=spontanea" class="job">
+      <a href="#candidati" class="job" data-role="spontanea">
         <div class="job__role">Candidatura spontanea</div>
         <div class="job__meta">Ovunque tu sia</div>
         <div class="job__meta">Inviaci il tuo CV</div>
@@ -171,17 +171,113 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-block">
-  <div class="cta-block__glow" aria-hidden="true"></div>
-  <div class="cta-block__inner reveal">
-    <span class="eyebrow" style="color: rgba(239,237,229,0.6);">Candidati ora</span>
-    <h2 class="cta-block__title" style="margin-top: 24px;">
-      Invia il tuo <em>CV.</em>
-    </h2>
-    <a href="contatti.html?ruolo=carriera" class="btn cta-block__btn">Inizia da qui <span class="btn__arrow" aria-hidden="true">→</span></a>
+<!-- FORM CANDIDATURA -->
+<section class="section" id="candidati">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <span class="eyebrow">Candidati ora</span>
+        <h2 class="h1" style="margin-top: 16px;">Invia il tuo <em class="serif-italic">CV.</em></h2>
+      </div>
+      <p class="lede">Compila il form e allega il tuo CV. Ti ricontatteremo entro 5 giorni lavorativi.</p>
+    </div>
+
+    <div class="reveal">
+      <form class="contact" action="https://formspree.io/f/YOUR_CAREERS_FORM_ID" method="POST" enctype="multipart/form-data" novalidate aria-describedby="careers-form-status">
+
+        <div class="field-row">
+          <div class="field">
+            <label for="c-name">Nome e cognome <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+            <input type="text" id="c-name" name="nome" required autocomplete="name" minlength="2" aria-required="true">
+            <p class="field-error" id="c-name-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="c-email">Email <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+            <input type="email" id="c-email" name="email" required autocomplete="email" aria-required="true">
+            <p class="field-error" id="c-email-error" hidden></p>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="c-phone">Telefono</label>
+            <input type="tel" id="c-phone" name="telefono" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="c-role">Posizione <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+            <select id="c-role" name="posizione" required aria-required="true">
+              <option value="">Seleziona...</option>
+              <option value="fico">SAP Functional Analyst (FI/CO)</option>
+              <option value="mmsd">SAP Functional Analyst (MM/SD)</option>
+              <option value="abap">ABAP Developer</option>
+              <option value="bpe">Business Process Expert</option>
+              <option value="spontanea">Candidatura spontanea</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="c-linkedin">Profilo LinkedIn</label>
+            <input type="url" id="c-linkedin" name="linkedin" placeholder="https://linkedin.com/in/..." autocomplete="url">
+          </div>
+          <div class="field">
+            <label for="c-experience">Anni di esperienza SAP</label>
+            <select id="c-experience" name="esperienza">
+              <option value="">Seleziona...</option>
+              <option value="0-2">0–2 anni</option>
+              <option value="2-5">2–5 anni</option>
+              <option value="5-10">5–10 anni</option>
+              <option value="10+">10+ anni</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="c-cv">Curriculum Vitae (PDF, DOC, DOCX · max 5&nbsp;MB) <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+          <input type="file" id="c-cv" name="cv" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-required="true">
+          <p class="field-error" id="c-cv-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="c-cover">Lettera di presentazione</label>
+          <textarea id="c-cover" name="lettera" placeholder="Perché vuoi unirti a Eurisko? Raccontaci qualcosa di te, delle tue competenze SAP e dei progetti che ti hanno formato."></textarea>
+        </div>
+
+        <div class="field field--checkbox">
+          <input type="checkbox" id="c-privacy" name="privacy_consent" required value="yes" aria-required="true">
+          <label for="c-privacy">
+            Ho letto la <a href="privacy.html">Privacy Policy</a> e acconsento al trattamento dei dati personali per finalità di selezione del personale ai sensi del <abbr title="Regolamento UE 2016/679 — Regolamento Generale sulla Protezione dei Dati">GDPR</abbr>. <span aria-hidden="true">*</span>
+          </label>
+        </div>
+
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_next" value="https://euriskosrl.it/grazie.html">
+        <input type="hidden" name="_subject" value="Nuova candidatura — Lavora con noi">
+        <input type="hidden" name="_language" value="it">
+
+        <p class="form-status" id="careers-form-status" role="status" aria-live="polite"></p>
+
+        <div class="submit-row">
+          <button type="submit" class="btn">Invia candidatura <span class="btn__arrow" aria-hidden="true">→</span></button>
+          <p class="consent">I campi con <span aria-hidden="true">*</span> sono obbligatori. Ti ricontatteremo entro 5 giorni lavorativi.</p>
+        </div>
+
+      </form>
+    </div>
   </div>
 </section>
+
+<script>
+  // Preseleziona la posizione quando si clicca su una card ruolo
+  document.querySelectorAll('.job[data-role]').forEach(function(card){
+    card.addEventListener('click', function(){
+      var role = card.getAttribute('data-role');
+      var sel = document.getElementById('c-role');
+      if (sel) { sel.value = role; }
+    });
+  });
+</script>
 
 </main>
 
