@@ -664,12 +664,22 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   position: relative;
   overflow: hidden;
 }
+.case__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 .case__media::after {
   content: "";
   position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.15 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
-  mix-blend-mode: overlay;
+  background: linear-gradient(180deg, rgba(10,22,40,0.45) 0%, rgba(10,22,40,0.15) 45%, rgba(10,22,40,0.55) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
+.case__tag { z-index: 2; }
 .case:nth-child(1) .case__media { background: linear-gradient(135deg, #A01729, #6B0F1C); }
 .case:nth-child(2) .case__media { background: linear-gradient(135deg, #15253F, #A01729); }
 .case:nth-child(3) .case__media { background: linear-gradient(135deg, #6B0F1C, #0A1628); }
