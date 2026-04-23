@@ -533,10 +533,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 /* Hero visual (abstract graphic block) */
 .hero__visual {
   margin-top: 48px;
-  align-self: center;
   width: 100%;
-  max-width: 640px;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 1;
   border-radius: 4px;
   background:
     radial-gradient(circle at 20% 30%, rgba(160, 23, 41, 0.45) 0%, transparent 55%),
