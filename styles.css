@@ -483,14 +483,12 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
    HOME — Hero
    ===================================================== */
 .hero {
-  padding: 150px var(--gutter) 80px;
+  padding: 120px var(--gutter) 80px;
   max-width: var(--container);
   margin: 0 auto;
   position: relative;
-  min-height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 }
 .hero__grid {
   display: grid;
