@@ -34,6 +34,19 @@
     });
   }
 
+  // -------- 2b. Nav dropdown: toggle come accordion dentro il burger mobile --------
+  document.querySelectorAll('.nav__dropdown-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      if (nav && nav.classList.contains('open')) {
+        e.preventDefault();
+        const dd = trigger.closest('.nav__dropdown');
+        if (!dd) return;
+        const isOpen = dd.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', String(isOpen));
+      }
+    });
+  });
+
   // -------- 3. Scroll-reveal (rispetta prefers-reduced-motion) --------
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealEls = document.querySelectorAll('.reveal');
