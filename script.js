@@ -417,9 +417,9 @@
   function injectCookieReopenLink() {
     const metaContainer = document.querySelector('.footer__meta');
     if (!metaContainer) return;
-    // The footer meta has the legal links container as second child; append button there.
-    const linksContainer = metaContainer.querySelector('span:last-child');
-    if (!linksContainer) return;
+    // The footer meta has the legal links container as last direct child; append button there.
+    const linksContainer = metaContainer.lastElementChild;
+    if (!linksContainer || linksContainer.tagName !== 'SPAN') return;
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'cookie-reopen';

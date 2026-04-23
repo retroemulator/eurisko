@@ -477,16 +477,57 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   font-family: var(--font-italic);
   font-style: italic;
   font-weight: 400;
-  font-size: 1.125rem;
-  color: rgba(245, 241, 232, 0.65);
-  max-width: 28ch;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin: 12px 0 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.footer__tagline-line {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: rgba(245, 241, 232, 0.1);
+  transition: color 0.5s var(--ease), transform 0.6s var(--ease);
+  margin-left: -3px;
+  will-change: transform;
+}
+.footer__tagline-line:nth-child(2) {
+  color: rgba(245, 241, 232, 0.85);
+  font-size: 1rem;
+  margin-left: 0;
+}
+.footer__tagline-line:nth-child(3) { color: rgba(245, 241, 232, 0.35); }
+.footer__tagline-line:nth-child(4) { color: rgba(245, 241, 232, 0.18); }
+.footer__tagline-line:nth-child(5) { color: rgba(245, 241, 232, 0.08); }
+.footer__tagline:hover .footer__tagline-line { color: rgba(245, 241, 232, 0.75); }
+.footer__tagline:hover .footer__tagline-line:nth-child(2) { color: var(--warm); }
+.footer__tagline:hover .footer__tagline-line:nth-child(3) { transform: rotate(180deg) translateY(-6px); }
+.footer__tagline:hover .footer__tagline-line:nth-child(4) { transform: rotate(180deg) translateY(-12px); }
+.footer__tagline:hover .footer__tagline-line:nth-child(5) { transform: rotate(180deg) translateY(-18px); }
+@media (max-width: 820px) {
+  .footer__tagline { flex-direction: column; gap: 4px; }
+  .footer__tagline-line {
+    writing-mode: horizontal-tb;
+    transform: none;
+    white-space: normal;
+    font-size: 1rem;
+    margin-left: 0;
+    color: rgba(245, 241, 232, 0.65);
+    max-width: 32ch;
+  }
+  .footer__tagline-line:nth-child(n+3) { display: none; }
 }
 .footer__meta {
   padding-top: 32px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 32px;
   font-size: 0.8125rem;
   color: rgba(245, 241, 232, 0.45);
 }
