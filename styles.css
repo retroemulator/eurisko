@@ -532,7 +532,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 
 /* Hero visual (abstract graphic block) */
 .hero__visual {
-  margin-top: 48px;
+  margin: 48px auto 0;
+  max-width: 640px;
   aspect-ratio: 16 / 9;
   border-radius: 4px;
   background:
