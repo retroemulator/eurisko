@@ -97,6 +97,12 @@ abbr[title] { text-decoration: none; border-bottom: none; cursor: help; }
   font-style: italic;
   font-weight: 500;
   color: var(--warm);
+  background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: emShimmer 9s ease-in-out infinite;
 }
 
 /* ---------- Typography scale ---------- */
@@ -611,8 +617,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
-  padding-bottom: 0.32em;
-  margin-bottom: -0.32em;
+  padding: 0 0.12em 0.32em 0.02em;
+  margin: 0 -0.12em -0.32em -0.02em;
   line-height: inherit;
 }
 .word__inner {
@@ -1784,11 +1790,12 @@ form.contact { display: grid; gap: 20px; }
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
-/* Quando l'em contiene word__inner (hero title splittati), il transform del word
-   rompe il background-clip:text dell'em — rendiamo il gradient direttamente
-   sul word__inner per preservarne la visibilità */
+/* Quando il container italic rosso contiene word__inner (titoli splittati), il
+   transform del word rompe il background-clip:text del parent — rendiamo il
+   gradient direttamente sul word__inner per preservarne la visibilità */
 .hero__title em .word__inner,
-.page-hero__title em .word__inner {
+.page-hero__title em .word__inner,
+.serif-italic .word__inner {
   background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
   background-size: 300% 100%;
   background-clip: text;
@@ -1800,8 +1807,10 @@ form.contact { display: grid; gap: 20px; }
   .hero__title em,
   .about-hero__title em,
   .page-hero__title em,
+  .serif-italic,
   .hero__title em .word__inner,
-  .page-hero__title em .word__inner { animation: none; }
+  .page-hero__title em .word__inner,
+  .serif-italic .word__inner { animation: none; }
 }
 .page-hero__lede { margin-top: 32px; max-width: 54ch; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; color: var(--ink-soft); }
 .page-hero__crumbs { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 28px; display: flex; gap: 12px; }
