@@ -1190,6 +1190,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   display: inline-block;
   transform-style: preserve-3d;
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  min-inline-size: 0.9em;
+  text-align: center;
 }
 .eurisko-wordmark span::before,
 .eurisko-wordmark span::after {
