@@ -1310,6 +1310,11 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   min-inline-size: 0.45em;
   text-align: center;
 }
+/* Solo la span che ospita M/W (lettere genuinamente larghe in Oswald Bold)
+   viene allargata. Tutte le altre restano 0.45em come la homepage. La I in
+   posizione 4 (data-alt='A') non viene toccata → EURISKO a riposo invariato */
+.eurisko-wordmark span[data-alt="M"],
+.eurisko-wordmark span[data-alt="W"] { min-inline-size: 0.72em; }
 .eurisko-wordmark span::before,
 .eurisko-wordmark span::after {
   position: absolute;
