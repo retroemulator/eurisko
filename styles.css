@@ -1310,18 +1310,14 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   min-inline-size: 0.45em;
   text-align: center;
 }
-/* Per-lettera alt widening SEMPRE attivo (stesso principio del min-inline-size
-   0.45em applicato sempre in homepage). A riposo solo le span con data-alt
-   larghi hanno il box già dimensionato per il char hover, su hover non cambia
-   nulla → zero reflow del flex .quote-layout, il quote a sx non si sposta più */
-.eurisko-wordmark span[data-alt="D"],
-.eurisko-wordmark span[data-alt="N"],
-.eurisko-wordmark span[data-alt="A"],
-.eurisko-wordmark span[data-alt="G"],
-.eurisko-wordmark span[data-alt="O"],
-.eurisko-wordmark span[data-alt="Q"] { min-inline-size: 0.65em; }
+/* Per-lettera alt widening SEMPRE attivo — solo per le lettere SUPER larghe
+   di Oswald Bold (M, W) che altrimenti straborderebbero molto dal box di base.
+   Le altre (D, N, A, O, C, G, Q) sono abbastanza strette da stare nel box
+   naturale della loro span senza widening → EURISKO a riposo sull'azienda
+   coincide con la homepage per 6 span su 7, solo la S (posizione 5, che
+   ospita M su hover) ha il box leggermente più largo */
 .eurisko-wordmark span[data-alt="M"],
-.eurisko-wordmark span[data-alt="W"] { min-inline-size: 0.9em; }
+.eurisko-wordmark span[data-alt="W"] { min-inline-size: 0.85em; }
 .eurisko-wordmark span::before,
 .eurisko-wordmark span::after {
   position: absolute;
