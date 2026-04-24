@@ -1209,7 +1209,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .eurisko-wordmark:hover span,
 .eurisko-wordmark:focus-within span {
   transform: rotateX(180deg);
-  min-inline-size: 0.9em;
+  min-inline-size: 0.45em;
 }
 .eurisko-wordmark span:nth-child(1) { transition-delay: 0ms; }
 .eurisko-wordmark span:nth-child(2) { transition-delay: 45ms; }
