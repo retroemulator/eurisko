@@ -181,6 +181,37 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .nav__links a:hover::after,
 .nav__links a[aria-current="page"]::after { transform: scaleX(1); }
 
+/* WOW: nav link char-slide hover — testo scorre in alto, duplicato rosso sale da sotto */
+.nav__link-text {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.25em;
+  margin-bottom: -0.25em;
+  line-height: 1;
+}
+.nav__link-text__inner {
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(.6, .05, .1, .95);
+}
+.nav__link-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--accent-text);
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(.6, .05, .1, .95);
+  white-space: nowrap;
+}
+.nav__links a:hover .nav__link-text__inner { transform: translateY(-110%); }
+.nav__links a:hover .nav__link-text::after { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .nav__link-text__inner,
+  .nav__link-text::after { transition: none; }
+}
+
 /* Nav dropdown (Soluzioni > Settori) */
 .nav__dropdown { position: relative; display: inline-flex; }
 .nav__dropdown-trigger { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }

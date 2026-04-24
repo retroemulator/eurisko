@@ -47,6 +47,34 @@
     });
   });
 
+  // -------- 2b2. WOW: nav link char-slide hover wrap --------
+  // Avvolge il testo di ogni link principale in span.nav__link-text[data-text]
+  // > span.nav__link-text__inner così il ::after può duplicare il testo in rosso
+  // e far scorrere l'originale in alto al hover. Gestisce anche i trigger con
+  // chevron (mantiene la freccia dopo il wrap).
+  document.querySelectorAll('.nav__links > a, .nav__links > .nav__dropdown > a.nav__dropdown-trigger').forEach((a) => {
+    if (a.dataset.slideDone) return;
+    const firstText = Array.from(a.childNodes).find((n) => n.nodeType === 3 && n.nodeValue.trim());
+    if (!firstText) return;
+    const trimmed = firstText.nodeValue.trim();
+    if (!trimmed) return;
+    const wrap = document.createElement('span');
+    wrap.className = 'nav__link-text';
+    wrap.setAttribute('data-text', trimmed);
+    const inner = document.createElement('span');
+    inner.className = 'nav__link-text__inner';
+    inner.textContent = trimmed;
+    wrap.appendChild(inner);
+    const parent = firstText.parentNode;
+    parent.insertBefore(wrap, firstText);
+    // Se c'era uno spazio finale (prima del chevron), preservalo
+    if (/\s+$/.test(firstText.nodeValue)) {
+      parent.insertBefore(document.createTextNode(' '), firstText);
+    }
+    parent.removeChild(firstText);
+    a.dataset.slideDone = '1';
+  });
+
   // -------- 2c. Split hero titles in parole per word mask-reveal WOW --------
   // Esegue PRIMA dell'IntersectionObserver così le parole sono già avvolte
   // quando parte la transizione .is-in.
