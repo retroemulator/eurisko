@@ -1189,7 +1189,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   position: relative;
   display: inline-block;
   transform-style: preserve-3d;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), min-inline-size 0.3s var(--ease);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  min-inline-size: 0.45em;
   text-align: center;
 }
 .eurisko-wordmark span::before,
@@ -1207,10 +1208,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   transform: rotateX(180deg) translateZ(.5em);
 }
 .eurisko-wordmark:hover span,
-.eurisko-wordmark:focus-within span {
-  transform: rotateX(180deg);
-  min-inline-size: 0.45em;
-}
+.eurisko-wordmark:focus-within span { transform: rotateX(180deg); }
 .eurisko-wordmark span:nth-child(1) { transition-delay: 0ms; }
 .eurisko-wordmark span:nth-child(2) { transition-delay: 45ms; }
 .eurisko-wordmark span:nth-child(3) { transition-delay: 90ms; }
