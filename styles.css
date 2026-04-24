@@ -1238,6 +1238,20 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   transition: background 0.3s var(--ease);
 }
 .cap:hover { background: var(--bg-elevated); }
+a.cap { color: var(--ink); text-decoration: none; position: relative; }
+a.cap::after {
+  content: "→";
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  font-size: 1.25rem;
+  color: var(--accent-text);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s var(--ease), transform 0.3s var(--ease);
+}
+a.cap:hover::after,
+a.cap:focus-visible::after { opacity: 1; transform: translateX(0); }
 .cap__name {
   font-size: clamp(20px, 1.8vw, 26px);
   font-weight: 500;
