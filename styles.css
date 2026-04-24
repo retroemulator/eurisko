@@ -1090,15 +1090,22 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   width: 100%;
 }
 .error-page__code {
-  font-family: var(--font-italic);
-  font-style: italic;
-  font-weight: 500;
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--warm);
   font-size: clamp(120px, 22vw, 280px);
   line-height: 0.9;
-  letter-spacing: -0.05em;
   margin-bottom: 24px;
   text-shadow: 0 10px 60px rgba(196, 30, 58, 0.25);
+  background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: emShimmer 9s ease-in-out infinite;
 }
 .error-page__title {
   font-size: clamp(32px, 5vw, 72px);
@@ -1109,9 +1116,18 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   margin: 0 auto 24px;
 }
 .error-page__title em {
-  font-family: var(--font-italic);
-  font-style: italic;
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--warm);
+  background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: emShimmer 9s ease-in-out infinite;
 }
 .error-page__lede {
   font-size: clamp(17px, 1.4vw, 20px);
@@ -1228,8 +1244,18 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   margin-bottom: 40px;
 }
 .quote__text em {
-  font-style: italic;
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--warm);
+  background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: emShimmer 9s ease-in-out infinite;
 }
 .quote__who {
   display: flex;
@@ -1472,8 +1498,19 @@ a.cap:focus-visible::after { opacity: 1; transform: translateX(0); }
   display: flex; flex-direction: column; gap: 18px;
 }
 .value__label {
-  font-family: var(--font-italic); font-style: italic; font-weight: 500;
-  font-size: 1.375rem; color: var(--warm);
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1.375rem;
+  color: var(--warm);
+  background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: emShimmer 9s ease-in-out infinite;
 }
 .value__text {
   font-size: clamp(18px, 1.6vw, 22px);
@@ -1798,6 +1835,10 @@ form.contact { display: grid; gap: 20px; }
   .page-hero__title em,
   .cta-block__title em,
   .thanks h1 em,
+  .quote__text em,
+  .error-page__code,
+  .error-page__title em,
+  .value__label,
   .serif-italic,
   .hero__title em .word__inner,
   .page-hero__title em .word__inner,
