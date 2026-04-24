@@ -78,7 +78,7 @@
   // -------- 2c. Split hero titles in parole per word mask-reveal WOW --------
   // Esegue PRIMA dell'IntersectionObserver così le parole sono già avvolte
   // quando parte la transizione .is-in.
-  document.querySelectorAll('.hero__title.reveal, .page-hero__title.reveal').forEach((el) => {
+  document.querySelectorAll('.hero__title.reveal, .page-hero__title.reveal, .section-header h2:not(.visually-hidden), .cta-block__title').forEach((el) => {
     if (el.dataset.splitDone) return;
     const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
     const textNodes = [];

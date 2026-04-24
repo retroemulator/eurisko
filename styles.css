@@ -618,7 +618,9 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   transition: transform 1.1s cubic-bezier(.19, 1, .22, 1);
   will-change: transform;
 }
-.split-reveal.is-in .word__inner { transform: translateY(0); }
+.split-reveal.is-in .word__inner,
+.reveal.is-in .word__inner,
+.is-in .word__inner { transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) {
   .word__inner { transform: none; transition: none; }
 }
