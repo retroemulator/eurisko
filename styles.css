@@ -1086,7 +1086,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   max-width: 420px;
 }
 .quote__avatar {
-  width: 56px; height: 56px; border-radius: 50%;
+  width: 88px; height: 88px; border-radius: 50%;
   background: url(logo-eurisko-mondo.png) center/contain no-repeat;
   flex-shrink: 0;
   box-shadow: 0 2px 24px rgba(160, 23, 41, 0.4);
