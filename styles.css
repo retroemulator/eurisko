@@ -3,7 +3,7 @@
    ===================================================== */
 
 /* ---------- Fonts: Switzer (Graphik-like, Accenture style) ---------- */
-@import url('https://api.fontshare.com/v2/css?f[]=switzer@200,300,400,500,600,700,800,900,401&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@200,300,400,500,600,700,800,900,401&f[]=space-grotesk@800&display=swap');
 
 /* ---------- Design Tokens — NAVY DARK MODE ---------- */
 :root {
@@ -1091,6 +1091,65 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 }
 .quote__name { font-weight: 500; font-size: 0.9375rem; }
 .quote__role { font-size: 0.8125rem; color: var(--ink-soft); }
+
+/* ---------- Quote + EuriskoWordmark layout ---------- */
+.quote-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(32px, 5vw, 80px);
+}
+.quote-layout .quote { flex: 1 1 auto; min-width: 0; padding-right: 0; }
+
+/* ---------- EuriskoWordmark — componente verticale con flip 3D ---------- */
+.eurisko-wordmark {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  perspective: 600px;
+  font-family: 'Space Grotesk', 'Switzer', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #F5F1E8;
+  font-size: clamp(40px, 4vw, 64px);
+  line-height: 1;
+  flex-shrink: 0;
+  user-select: none;
+  padding: 12px 0;
+}
+.eurisko-wordmark span {
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.eurisko-wordmark span::after {
+  content: attr(data-char);
+  position: absolute;
+  inset: 0;
+  color: #C41E3A;
+  transform: rotateX(-90deg) translateZ(.5em);
+  pointer-events: none;
+}
+.eurisko-wordmark:hover span,
+.eurisko-wordmark:focus-within span { transform: rotateX(90deg); }
+.eurisko-wordmark span:nth-child(1) { transition-delay: 0ms; }
+.eurisko-wordmark span:nth-child(2) { transition-delay: 45ms; }
+.eurisko-wordmark span:nth-child(3) { transition-delay: 90ms; }
+.eurisko-wordmark span:nth-child(4) { transition-delay: 135ms; }
+.eurisko-wordmark span:nth-child(5) { transition-delay: 180ms; }
+.eurisko-wordmark span:nth-child(6) { transition-delay: 225ms; }
+.eurisko-wordmark span:nth-child(7) { transition-delay: 270ms; }
+@media (max-width: 820px) {
+  .quote-layout { flex-direction: column; align-items: flex-start; gap: 40px; }
+  .eurisko-wordmark { font-size: 40px; align-self: center; }
+}
+@media (max-width: 520px) {
+  .eurisko-wordmark { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eurisko-wordmark span { transition: none; }
+}
 
 /* =====================================================
    HOME — Capabilities grid
