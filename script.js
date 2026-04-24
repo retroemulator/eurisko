@@ -47,6 +47,41 @@
     });
   });
 
+  // -------- 2c. Split hero titles in parole per word mask-reveal WOW --------
+  // Esegue PRIMA dell'IntersectionObserver così le parole sono già avvolte
+  // quando parte la transizione .is-in.
+  document.querySelectorAll('.hero__title.reveal, .page-hero__title.reveal').forEach((el) => {
+    if (el.dataset.splitDone) return;
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    let tn;
+    while ((tn = walker.nextNode())) textNodes.push(tn);
+    let wordIndex = 0;
+    textNodes.forEach((node) => {
+      if (!node.nodeValue.trim()) return;
+      const frag = document.createDocumentFragment();
+      node.nodeValue.split(/(\s+)/).forEach((part) => {
+        if (part === '') return;
+        if (/^\s+$/.test(part)) {
+          frag.appendChild(document.createTextNode(part));
+        } else {
+          const outer = document.createElement('span');
+          outer.className = 'word';
+          const inner = document.createElement('span');
+          inner.className = 'word__inner';
+          inner.textContent = part;
+          inner.style.transitionDelay = (wordIndex * 70) + 'ms';
+          wordIndex += 1;
+          outer.appendChild(inner);
+          frag.appendChild(outer);
+        }
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+    el.dataset.splitDone = '1';
+    el.classList.add('split-reveal');
+  });
+
   // -------- 3. Scroll-reveal (rispetta prefers-reduced-motion) --------
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealEls = document.querySelectorAll('.reveal');

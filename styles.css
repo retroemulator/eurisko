@@ -571,6 +571,27 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
 .reveal.is-in { opacity: 1; transform: translateY(0); }
 
+/* ---------- WOW: word mask-reveal per hero titles ---------- */
+.reveal.split-reveal { opacity: 1; transform: none; }
+.word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.18em;
+  margin-bottom: -0.18em;
+  line-height: inherit;
+}
+.word__inner {
+  display: inline-block;
+  transform: translateY(108%);
+  transition: transform 1.1s cubic-bezier(.19, 1, .22, 1);
+  will-change: transform;
+}
+.split-reveal.is-in .word__inner { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .word__inner { transform: none; transition: none; }
+}
+
 /* ---------- Responsive nav ---------- */
 @media (max-width: 900px) {
   .nav__links, .nav__cta, .nav__lock { display: none; }
