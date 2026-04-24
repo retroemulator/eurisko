@@ -611,8 +611,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
-  padding-bottom: 0.18em;
-  margin-bottom: -0.18em;
+  padding-bottom: 0.32em;
+  margin-bottom: -0.32em;
   line-height: inherit;
 }
 .word__inner {
