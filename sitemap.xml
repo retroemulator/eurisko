@@ -24,12 +24,31 @@
 
   <url>
     <loc>https://euriskosrl.it/consulenza.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/consulenza.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/sap-consulting.html"/>
   </url>
+
+  <!-- MODULI SAP -->
+  <url><loc>https://euriskosrl.it/moduli/finance.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/finance.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/finance.html"/></url>
+  <url><loc>https://euriskosrl.it/moduli/controlling.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/controlling.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/controlling.html"/></url>
+  <url><loc>https://euriskosrl.it/moduli/material-management.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/material-management.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/material-management.html"/></url>
+  <url><loc>https://euriskosrl.it/moduli/sales-distribution.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/sales-distribution.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/sales-distribution.html"/></url>
+  <url><loc>https://euriskosrl.it/moduli/production-planning.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/production-planning.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/production-planning.html"/></url>
+  <url><loc>https://euriskosrl.it/moduli/warehouse-management.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/warehouse-management.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/warehouse-management.html"/></url>
+  <url><loc>https://euriskosrl.it/moduli/plant-maintenance.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/plant-maintenance.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/plant-maintenance.html"/></url>
+  <url><loc>https://euriskosrl.it/moduli/hr-hcm.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/hr-hcm.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/hr-hcm.html"/></url>
+
+  <url><loc>https://euriskosrl.it/en/modules/finance.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/controlling.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/material-management.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/sales-distribution.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/production-planning.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/warehouse-management.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/plant-maintenance.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/hr-hcm.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <url>
     <loc>https://euriskosrl.it/soluzioni.html</loc>

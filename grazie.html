@@ -29,12 +29,27 @@
   <nav class="nav__links" aria-label="Navigazione principale">
     <a href="index.html">Home</a>
     <a href="azienda.html">Azienda</a>
-    <a href="consulenza.html">Consulenza SAP</a>
     <div class="nav__dropdown">
-      <a href="soluzioni.html" class="nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">Soluzioni <span class="nav__dropdown-chevron" aria-hidden="true">▾</span></a>
-      <div class="nav__dropdown-panel" role="menu" aria-label="Settori di mercato">
-        <span class="nav__dropdown-eyebrow">Settori</span>
-        <ul class="nav__dropdown-list">
+      <a href="#" class="nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">Cosa facciamo <span class="nav__dropdown-chevron" aria-hidden="true">▾</span></a>
+      <div class="nav__dropdown-panel nav__dropdown-panel--mega" role="menu" aria-label="Cosa facciamo">
+        <div class="nav__dropdown-col">
+          <span class="nav__dropdown-eyebrow">Consulenza SAP</span>
+          <a href="consulenza.html" class="nav__dropdown-overview">Tutti i servizi →</a>
+          <ul class="nav__dropdown-list">
+          <li><a href="moduli/finance.html" role="menuitem">Finance (FI)</a></li>
+          <li><a href="moduli/controlling.html" role="menuitem">Controlling (CO)</a></li>
+          <li><a href="moduli/material-management.html" role="menuitem">Material Management (MM)</a></li>
+          <li><a href="moduli/sales-distribution.html" role="menuitem">Sales & Distribution (SD)</a></li>
+          <li><a href="moduli/production-planning.html" role="menuitem">Production Planning (PP)</a></li>
+          <li><a href="moduli/warehouse-management.html" role="menuitem">Warehouse Management (WM / EWM)</a></li>
+          <li><a href="moduli/plant-maintenance.html" role="menuitem">Plant Maintenance (PM)</a></li>
+          <li><a href="moduli/hr-hcm.html" role="menuitem">HR / HCM</a></li>
+          </ul>
+        </div>
+        <div class="nav__dropdown-col">
+          <span class="nav__dropdown-eyebrow">Settori di mercato</span>
+          <a href="soluzioni.html" class="nav__dropdown-overview">Tutti i settori →</a>
+          <ul class="nav__dropdown-list">
           <li><a href="settori/automotive.html" role="menuitem">Automotive</a></li>
           <li><a href="settori/aerospazio-difesa.html" role="menuitem">Aerospazio e Difesa</a></li>
           <li><a href="settori/chimica.html" role="menuitem">Chimica</a></li>
@@ -44,7 +59,8 @@
           <li><a href="settori/retail.html" role="menuitem">Retail</a></li>
           <li><a href="settori/travel.html" role="menuitem">Travel</a></li>
           <li><a href="settori/utilities.html" role="menuitem">Utilities</a></li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
     <a href="portfolio.html">Portfolio</a>
