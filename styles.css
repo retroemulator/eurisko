@@ -1310,9 +1310,10 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   min-inline-size: 0.45em;
   text-align: center;
 }
-/* Variante --wide: per parole hover con lettere larghe (M, W, A) — box 0.9em
-   per accomodare M di DYNAMIC senza far strabordare le lettere adiacenti */
-.eurisko-wordmark--wide span { min-inline-size: 0.9em; }
+/* Variante --wide: a riposo resta compatta come la homepage (0.45em ereditato).
+   Solo su hover espande a 0.9em per accomodare lettere larghe (M di DYNAMIC) */
+.eurisko-wordmark--wide:hover span,
+.eurisko-wordmark--wide:focus-within span { min-inline-size: 0.9em; }
 .eurisko-wordmark span::before,
 .eurisko-wordmark span::after {
   position: absolute;
