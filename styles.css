@@ -1170,9 +1170,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   padding: 0;
 }
 
-/* ---------- EuriskoWordmark — verticale bottom→top con flip 3D + reveal "YOUR PARTNER" ---------- */
+/* ---------- EuriskoWordmark — verticale bottom→top con flip 3D ---------- */
 .eurisko-wordmark {
-  position: relative;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   perspective: 600px;
@@ -1192,34 +1191,22 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   transform-style: preserve-3d;
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.eurisko-wordmark span::before {
-  content: attr(data-char);
+.eurisko-wordmark span::before,
+.eurisko-wordmark span::after {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
-  color: #F5F1E8;
 }
-.eurisko-wordmark__alt {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.5em;
-  font-weight: 700;
-  letter-spacing: 2px;
+.eurisko-wordmark span::before { content: attr(data-char); color: #F5F1E8; }
+.eurisko-wordmark span::after {
+  content: attr(data-alt);
   color: #C41E3A;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.4s ease 0.25s;
-  pointer-events: none;
+  transform: rotateX(180deg) translateZ(.5em);
 }
 .eurisko-wordmark:hover span,
 .eurisko-wordmark:focus-within span { transform: rotateX(180deg); }
-.eurisko-wordmark:hover .eurisko-wordmark__alt,
-.eurisko-wordmark:focus-within .eurisko-wordmark__alt { opacity: 1; }
 .eurisko-wordmark span:nth-child(1) { transition-delay: 0ms; }
 .eurisko-wordmark span:nth-child(2) { transition-delay: 45ms; }
 .eurisko-wordmark span:nth-child(3) { transition-delay: 90ms; }
