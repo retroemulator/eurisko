@@ -4,7 +4,7 @@
 
 /* ---------- Fonts: Switzer (Graphik-like, Accenture style) + Space Grotesk + Oswald (wordmark) ---------- */
 @import url('https://api.fontshare.com/v2/css?f[]=switzer@200,300,400,500,600,700,800,900,401&f[]=space-grotesk@800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
 /* ---------- Design Tokens — NAVY DARK MODE ---------- */
 :root {
@@ -93,9 +93,11 @@ abbr[title] { text-decoration: none; border-bottom: none; cursor: help; }
   background: var(--warm);
 }
 .serif-italic {
-  font-family: var(--font-italic);
-  font-style: italic;
-  font-weight: 500;
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--warm);
   background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
   background-size: 300% 100%;
@@ -818,9 +820,11 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   max-width: 13ch;
 }
 .hero__title em {
-  font-family: var(--font-italic);
-  font-style: italic;
-  font-weight: 500;
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--warm);
   background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
   background-size: 300% 100%;
@@ -1404,7 +1408,18 @@ a.cap:focus-visible::after { opacity: 1; transform: translateX(0); }
   margin-bottom: 40px;
 }
 .cta-block__title em {
-  font-family: var(--font-italic); font-style: italic; font-weight: 500; color: var(--warm);
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--warm);
+  background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: emShimmer 9s ease-in-out infinite;
 }
 .cta-block__btn {
   background: var(--ink);
@@ -1437,9 +1452,11 @@ a.cap:focus-visible::after { opacity: 1; transform: translateX(0); }
   margin-bottom: 40px;
 }
 .about-hero__title em {
-  font-family: var(--font-italic);
-  font-style: italic;
-  font-weight: 500;
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--warm);
   background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
   background-size: 300% 100%;
@@ -1743,9 +1760,11 @@ form.contact { display: grid; gap: 20px; }
   max-width: 16ch;
 }
 .page-hero__title em {
-  font-family: var(--font-italic);
-  font-style: italic;
-  font-weight: 500;
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--warm);
   background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
   background-size: 300% 100%;
@@ -1764,6 +1783,7 @@ form.contact { display: grid; gap: 20px; }
    gradient direttamente sul word__inner per preservarne la visibilità */
 .hero__title em .word__inner,
 .page-hero__title em .word__inner,
+.cta-block__title em .word__inner,
 .serif-italic .word__inner {
   background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
   background-size: 300% 100%;
@@ -1776,9 +1796,12 @@ form.contact { display: grid; gap: 20px; }
   .hero__title em,
   .about-hero__title em,
   .page-hero__title em,
+  .cta-block__title em,
+  .thanks h1 em,
   .serif-italic,
   .hero__title em .word__inner,
   .page-hero__title em .word__inner,
+  .cta-block__title em .word__inner,
   .serif-italic .word__inner { animation: none; }
 }
 .page-hero__lede { margin-top: 32px; max-width: 54ch; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; color: var(--ink-soft); }
@@ -2081,7 +2104,20 @@ form.contact { display: grid; gap: 20px; }
   letter-spacing: -0.03em;
   line-height: 1.05;
 }
-.thanks h1 em { font-family: var(--font-italic); font-style: italic; color: var(--warm); }
+.thanks h1 em {
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--warm);
+  background-image: linear-gradient(100deg, #8E1323 0%, #C41E3A 22%, #FF4D66 50%, #C41E3A 78%, #8E1323 100%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: emShimmer 9s ease-in-out infinite;
+}
 .thanks p {
   font-size: 1.125rem;
   color: var(--ink-soft);
