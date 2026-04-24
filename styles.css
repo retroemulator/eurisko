@@ -191,7 +191,18 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 
 /* Nav dropdown (Soluzioni > Settori) */
 .nav__dropdown { position: relative; display: inline-flex; }
-.nav__dropdown-trigger { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.nav__dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+  z-index: 121;
+  padding-bottom: 18px;
+  margin-bottom: -18px;
+}
+/* Rimette l'underline scaleX al livello del testo invece che in fondo al padding */
+.nav__dropdown-trigger::after { bottom: 18px !important; }
 .nav__dropdown-chevron {
   display: inline-block;
   font-size: 0.7em;
@@ -203,7 +214,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .nav__dropdown.open .nav__dropdown-chevron { transform: rotate(180deg); }
 .nav__dropdown-panel {
   position: absolute;
-  top: calc(100% + 18px);
+  top: 100%;
   left: 0;
   min-width: 320px;
   background: var(--bg-elevated);
