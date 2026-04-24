@@ -129,6 +129,48 @@
     revealEls.forEach((el) => el.classList.add('is-in'));
   }
 
+  // -------- 3b. WOW: stat count-up animato on scroll --------
+  const statNums = document.querySelectorAll('.stat__num');
+  if (statNums.length) {
+    // Parse numero + suffisso (+, %, etc.) e azzera il display iniziale
+    statNums.forEach((el) => {
+      if (el.dataset.countPrepared) return;
+      const raw = el.textContent.trim();
+      const m = raw.match(/^(\d+)(.*)$/);
+      if (!m) return;
+      el.dataset.target = m[1];
+      el.dataset.suffix = m[2] || '';
+      el.dataset.countPrepared = '1';
+      if (!prefersReducedMotion) {
+        el.textContent = '0' + (m[2] || '');
+      }
+    });
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+      const statObs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const el = e.target;
+          if (el.dataset.counted) return;
+          el.dataset.counted = '1';
+          const target = parseInt(el.dataset.target, 10);
+          const suffix = el.dataset.suffix || '';
+          const duration = 1800;
+          const startTs = performance.now();
+          const tick = (now) => {
+            const t = Math.min(1, (now - startTs) / duration);
+            const val = Math.round(target * easeOutCubic(t));
+            el.textContent = val + suffix;
+            if (t < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          statObs.unobserve(el);
+        });
+      }, { threshold: 0.4 });
+      statNums.forEach((el) => statObs.observe(el));
+    }
+  }
+
   // -------- 4. Marquee: duplicate track for seamless loop --------
   document.querySelectorAll('.marquee__track').forEach((track) => {
     track.innerHTML += track.innerHTML;
