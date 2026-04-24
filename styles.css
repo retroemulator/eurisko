@@ -574,11 +574,13 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 /* ---------- Responsive nav ---------- */
 @media (max-width: 900px) {
   .nav__links, .nav__cta, .nav__lock { display: none; }
+  .nav__links { margin-left: 0; margin-right: 0; }
   .nav__burger {
     display: inline-flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
+    margin-left: auto;
   }
   .nav__burger span {
     width: 26px; height: 2px; background: var(--ink); transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
@@ -593,16 +595,16 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
     background: var(--bg);
     flex-direction: column;
     gap: 0;
-    padding: 32px var(--gutter) 220px;
+    padding: 20px var(--gutter) 160px;
     border-top: 1px solid var(--line-soft);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
   }
   .nav.open .nav__links a {
-    font-size: 1.75rem;
+    font-size: 1.0625rem;
     font-weight: 500;
-    padding: 18px 0;
+    padding: 14px 0;
     border-bottom: 1px solid var(--line-soft);
   }
   .nav.open .nav__dropdown { display: block; width: 100%; }
@@ -635,8 +637,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   .nav.open .nav__dropdown-col { padding-left: 12px; border-left: 1px solid var(--line-faint); }
   .nav.open .nav__dropdown-overview { font-size: 0.875rem; }
   .nav.open .nav__dropdown-list a {
-    font-size: 1.125rem;
-    padding: 10px 0;
+    font-size: 0.9375rem;
+    padding: 8px 0;
     border-bottom: none;
   }
   .nav.open .nav__dropdown-eyebrow { padding-top: 8px; }
@@ -645,30 +647,35 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
     position: fixed;
     left: var(--gutter);
     right: var(--gutter);
-    bottom: 148px;
-    padding: 20px 0 0;
+    bottom: 108px;
+    padding: 14px 0 0;
     margin: 0;
     width: auto;
     border-top: 1px solid var(--line-soft);
     background: var(--bg);
     z-index: 101;
     justify-content: flex-start;
+    font-size: 0.875rem;
   }
   .nav.open .nav__cta {
     display: inline-flex;
     position: fixed;
     left: var(--gutter);
-    bottom: 80px;
+    bottom: 56px;
     margin: 0;
     z-index: 101;
+    font-size: 0.875rem;
+    padding: 10px 18px;
   }
   .nav.open .nav__lock {
     display: inline-flex;
     position: fixed;
     left: var(--gutter);
-    bottom: 20px;
+    bottom: 14px;
     margin: 0;
     z-index: 101;
+    width: 34px;
+    height: 34px;
   }
   .lang-switcher { display: none; }
 }
