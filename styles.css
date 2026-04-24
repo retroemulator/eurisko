@@ -1193,15 +1193,15 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 }
 .eurisko-wordmark span::before,
 .eurisko-wordmark span::after {
-  content: attr(data-char);
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
 }
-.eurisko-wordmark span::before { color: #F5F1E8; }
+.eurisko-wordmark span::before { content: attr(data-char); color: #F5F1E8; }
 .eurisko-wordmark span::after {
+  content: attr(data-alt);
   color: #C41E3A;
   transform: rotateX(180deg) translateZ(.5em);
 }
