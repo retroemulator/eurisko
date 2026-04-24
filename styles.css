@@ -407,9 +407,12 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   border-radius: 999px;
   font-size: 0.9375rem;
   font-weight: 500;
-  transition: transform 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
+  --mx: 0px;
+  --my: 0px;
+  transform: translate(var(--mx), var(--my));
+  transition: transform 0.35s cubic-bezier(.2, .7, .2, 1), background 0.3s var(--ease), color 0.3s var(--ease);
 }
-.btn:hover { background: var(--accent); color: var(--ink); transform: translateY(-2px); }
+.btn:hover { background: var(--accent); color: var(--ink); transform: translate(var(--mx), calc(var(--my) - 2px)); }
 .btn--ghost {
   background: transparent;
   color: var(--ink);

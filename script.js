@@ -171,6 +171,24 @@
     }
   }
 
+  // -------- 3c. WOW: magnetic CTA buttons (solo dispositivi con pointer fine) --------
+  if (!prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const strength = 0.28;
+    document.querySelectorAll('.btn').forEach((btn) => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const dx = (e.clientX - (rect.left + rect.width / 2)) * strength;
+        const dy = (e.clientY - (rect.top + rect.height / 2)) * strength;
+        btn.style.setProperty('--mx', dx.toFixed(2) + 'px');
+        btn.style.setProperty('--my', dy.toFixed(2) + 'px');
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.setProperty('--mx', '0px');
+        btn.style.setProperty('--my', '0px');
+      });
+    });
+  }
+
   // -------- 4. Marquee: duplicate track for seamless loop --------
   document.querySelectorAll('.marquee__track').forEach((track) => {
     track.innerHTML += track.innerHTML;
