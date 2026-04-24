@@ -199,7 +199,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   top: 100%;
   left: 0;
   right: 0;
-  height: 36px;
+  height: 55px;
   z-index: 119;
 }
 .nav__dropdown-trigger {
@@ -221,7 +221,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .nav__dropdown.open .nav__dropdown-chevron { transform: rotate(180deg); }
 .nav__dropdown-panel {
   position: absolute;
-  top: calc(100% + 32px);
+  top: calc(100% + 50px);
   left: 0;
   min-width: 320px;
   background: var(--bg-elevated);
