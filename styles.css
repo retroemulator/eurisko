@@ -1089,7 +1089,6 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   width: 88px; height: 88px; border-radius: 50%;
   background: url(logo-eurisko-mondo.png) center/contain no-repeat;
   flex-shrink: 0;
-  box-shadow: 0 2px 24px rgba(160, 23, 41, 0.4);
 }
 .quote__name { font-weight: 500; font-size: 0.9375rem; }
 .quote__role { font-size: 0.8125rem; color: var(--ink-soft); }
