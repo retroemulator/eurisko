@@ -279,7 +279,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   padding: 28px 32px;
 }
 .nav__dropdown-col { display: flex; flex-direction: column; }
-.nav__dropdown-col .nav__dropdown-eyebrow { color: var(--accent-text); }
+.nav__dropdown-col .nav__dropdown-eyebrow { color: var(--ink-soft); }
 .nav__dropdown-col .nav__dropdown-list { gap: 6px; }
 .nav__dropdown-col .nav__dropdown-list a { font-size: 0.875rem; }
 .nav__dropdown-overview {
