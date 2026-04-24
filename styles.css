@@ -1310,10 +1310,17 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   min-inline-size: 0.45em;
   text-align: center;
 }
-/* Variante --wide: a riposo resta compatta come la homepage (0.45em ereditato).
-   Solo su hover espande a 0.9em per accomodare lettere larghe (M di DYNAMIC) */
-.eurisko-wordmark--wide:hover span,
-.eurisko-wordmark--wide:focus-within span { min-inline-size: 0.9em; }
+/* Per-lettera alt widening: espande SOLO le singole span il cui data-alt contiene
+   lettere più larghe del box di base, così EURISKO a riposo resta compatto e su
+   hover le lettere alt larghe (M di DYNAMIC) hanno spazio — no layout shift */
+.eurisko-wordmark span[data-alt="D"],
+.eurisko-wordmark span[data-alt="N"],
+.eurisko-wordmark span[data-alt="A"],
+.eurisko-wordmark span[data-alt="G"],
+.eurisko-wordmark span[data-alt="O"],
+.eurisko-wordmark span[data-alt="Q"] { min-inline-size: 0.65em; }
+.eurisko-wordmark span[data-alt="M"],
+.eurisko-wordmark span[data-alt="W"] { min-inline-size: 0.9em; }
 .eurisko-wordmark span::before,
 .eurisko-wordmark span::after {
   position: absolute;
