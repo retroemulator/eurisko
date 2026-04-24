@@ -2,9 +2,9 @@
    EURISKO S.R.L. — Design System
    ===================================================== */
 
-/* ---------- Fonts: Switzer (Graphik-like, Accenture style) + Space Grotesk + Khand (wordmark) ---------- */
+/* ---------- Fonts: Switzer (Graphik-like, Accenture style) + Space Grotesk + Oswald (wordmark) ---------- */
 @import url('https://api.fontshare.com/v2/css?f[]=switzer@200,300,400,500,600,700,800,900,401&f[]=space-grotesk@800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Khand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
 /* ---------- Design Tokens — NAVY DARK MODE ---------- */
 :root {
@@ -1113,7 +1113,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   perspective: 600px;
-  font-family: 'Khand', 'Space Grotesk', 'Switzer', sans-serif;
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
