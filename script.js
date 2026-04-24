@@ -437,7 +437,7 @@
 
   // -------- 9. Hero video — slow down playback to ~70% --------
   document.querySelectorAll('.hero__bg-video').forEach((v) => {
-    const setRate = () => { v.playbackRate = 0.7; };
+    const setRate = () => { v.playbackRate = 0.45; };
     if (v.readyState >= 1) setRate();
     else v.addEventListener('loadedmetadata', setRate);
   });
