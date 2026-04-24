@@ -1310,17 +1310,26 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   min-inline-size: 0.45em;
   text-align: center;
 }
-/* Per-lettera alt widening: espande SOLO le singole span il cui data-alt contiene
-   lettere più larghe del box di base, così EURISKO a riposo resta compatto e su
-   hover le lettere alt larghe (M di DYNAMIC) hanno spazio — no layout shift */
-.eurisko-wordmark span[data-alt="D"],
-.eurisko-wordmark span[data-alt="N"],
-.eurisko-wordmark span[data-alt="A"],
-.eurisko-wordmark span[data-alt="G"],
-.eurisko-wordmark span[data-alt="O"],
-.eurisko-wordmark span[data-alt="Q"] { min-inline-size: 0.65em; }
-.eurisko-wordmark span[data-alt="M"],
-.eurisko-wordmark span[data-alt="W"] { min-inline-size: 0.9em; }
+/* Per-lettera alt widening SOLO su hover — a riposo EURISKO resta compatto come
+   homepage (0.45em ereditato), su hover espandono solo i singoli span che
+   ospitano lettere alt larghe (M di DYNAMIC, A, D, N, ecc.). Growth totale
+   ~0.7em max, non causa wrap della C. Nessun impatto sulla homepage */
+.eurisko-wordmark:hover span[data-alt="D"],
+.eurisko-wordmark:hover span[data-alt="N"],
+.eurisko-wordmark:hover span[data-alt="A"],
+.eurisko-wordmark:hover span[data-alt="G"],
+.eurisko-wordmark:hover span[data-alt="O"],
+.eurisko-wordmark:hover span[data-alt="Q"],
+.eurisko-wordmark:focus-within span[data-alt="D"],
+.eurisko-wordmark:focus-within span[data-alt="N"],
+.eurisko-wordmark:focus-within span[data-alt="A"],
+.eurisko-wordmark:focus-within span[data-alt="G"],
+.eurisko-wordmark:focus-within span[data-alt="O"],
+.eurisko-wordmark:focus-within span[data-alt="Q"] { min-inline-size: 0.65em; }
+.eurisko-wordmark:hover span[data-alt="M"],
+.eurisko-wordmark:hover span[data-alt="W"],
+.eurisko-wordmark:focus-within span[data-alt="M"],
+.eurisko-wordmark:focus-within span[data-alt="W"] { min-inline-size: 0.9em; }
 .eurisko-wordmark span::before,
 .eurisko-wordmark span::after {
   position: absolute;
