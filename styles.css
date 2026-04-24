@@ -124,7 +124,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   z-index: 100;
   padding: 22px var(--gutter);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   background: rgba(10, 22, 40, 0.82);
   backdrop-filter: blur(18px);
@@ -132,6 +132,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   border-bottom: 1px solid var(--line-soft);
   transition: padding 0.3s var(--ease), background 0.3s var(--ease);
 }
+.nav__links { margin-left: auto; margin-right: auto; }
 .nav.scrolled {
   padding-top: 14px;
   padding-bottom: 14px;
