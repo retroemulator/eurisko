@@ -1641,6 +1641,12 @@ a.cap:focus-visible::after { opacity: 1; transform: translateX(0); }
   transition: color 0.3s var(--ease);
 }
 @media (max-width: 820px) { .logos-grid { grid-template-columns: repeat(2, 1fr); } }
+/* Swap nome esteso/abbreviato in logo-cell tra desktop e mobile */
+.logo-cell__short { display: none; }
+@media (max-width: 820px) {
+  .logo-cell__full { display: none; }
+  .logo-cell__short { display: inline; }
+}
 
 /* =====================================================
    CONTATTI — Form
