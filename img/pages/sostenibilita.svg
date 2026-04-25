@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Sostenibilità">
+  <path d="M40 14 c -16 0 -24 14 -22 28 c 1 8 6 16 14 22 c 0 -18 4 -36 8 -50 z"/>
+  <path d="M40 14 c 16 0 24 14 22 28 c -1 8 -6 16 -14 22 c 0 -18 -4 -36 -8 -50 z"/>
+  <line x1="40" y1="64" x2="40" y2="40"/>
+</svg>

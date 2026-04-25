@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Cosa facciamo">
+  <rect x="14" y="14" width="52" height="52" rx="3"/>
+  <polyline points="20,26 24,30 30,22"/>
+  <line x1="36" y1="26" x2="58" y2="26"/>
+  <polyline points="20,40 24,44 30,36"/>
+  <line x1="36" y1="40" x2="58" y2="40"/>
+  <polyline points="20,54 24,58 30,50"/>
+  <line x1="36" y1="54" x2="50" y2="54"/>
+</svg>

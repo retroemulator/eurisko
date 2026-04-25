@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Material Management">
+  <rect x="12" y="42" width="20" height="20"/>
+  <line x1="22" y1="42" x2="22" y2="62"/>
+  <rect x="32" y="42" width="20" height="20"/>
+  <line x1="42" y1="42" x2="42" y2="62"/>
+  <rect x="52" y="42" width="16" height="20"/>
+  <rect x="22" y="22" width="20" height="20"/>
+  <line x1="32" y1="22" x2="32" y2="42"/>
+  <rect x="42" y="22" width="20" height="20"/>
+  <line x1="52" y1="22" x2="52" y2="42"/>
+</svg>

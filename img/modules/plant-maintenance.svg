@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Plant Maintenance">
+  <circle cx="50" cy="30" r="10"/>
+  <circle cx="50" cy="30" r="3"/>
+  <line x1="50" y1="14" x2="50" y2="20"/>
+  <line x1="50" y1="40" x2="50" y2="46"/>
+  <line x1="34" y1="30" x2="40" y2="30"/>
+  <line x1="60" y1="30" x2="66" y2="30"/>
+  <line x1="38" y1="18" x2="42" y2="22"/>
+  <line x1="58" y1="38" x2="62" y2="42"/>
+  <path d="M14 60 L 36 38 L 42 44 L 20 66 Z"/>
+</svg>
