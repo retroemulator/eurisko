@@ -161,6 +161,155 @@
     });
   }
 
+  // -------- 3d. Site-wide search (overlay full-screen + live filtering) --------
+  const searchTrigger = document.querySelector('.nav__search');
+  if (searchTrigger) {
+    const isEN = (document.documentElement.lang || 'it').toLowerCase().startsWith('en');
+    const t = isEN
+      ? { placeholder: 'Search the Eurisko site…', hint: 'Press', empty: 'No results for' }
+      : { placeholder: 'Cerca nel sito Eurisko…', hint: 'Premi', empty: 'Nessun risultato per' };
+
+    let searchIndex = null;
+    let renderTimer = null;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'site-search';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = ''
+      + '<div class="site-search__backdrop" aria-hidden="true"></div>'
+      + '<div class="site-search__panel" role="dialog" aria-modal="true" aria-label="Search">'
+      +   '<button class="site-search__close" aria-label="' + (isEN ? 'Close search' : 'Chiudi ricerca') + '">&times;</button>'
+      +   '<div class="site-search__input-wrap">'
+      +     '<svg class="site-search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>'
+      +     '<input type="search" class="site-search__input" placeholder="' + t.placeholder + '" autocomplete="off" spellcheck="false" />'
+      +   '</div>'
+      +   '<div class="site-search__hint">' + t.hint + ' <kbd>ESC</kbd> ' + (isEN ? 'to close' : 'per chiudere') + ' · <kbd>Ctrl</kbd>+<kbd>K</kbd> ' + (isEN ? 'to open' : 'per aprire') + '</div>'
+      +   '<div class="site-search__results" role="list" aria-live="polite"></div>'
+      + '</div>';
+    document.body.appendChild(overlay);
+
+    const inputEl = overlay.querySelector('.site-search__input');
+    const resultsEl = overlay.querySelector('.site-search__results');
+    const closeBtn = overlay.querySelector('.site-search__close');
+    const backdrop = overlay.querySelector('.site-search__backdrop');
+
+    const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const highlight = (text, tokens) => {
+      let out = escapeHtml(text);
+      tokens.forEach((tok) => {
+        const re = new RegExp('(' + escapeRegex(tok) + ')', 'gi');
+        out = out.replace(re, '<mark>$1</mark>');
+      });
+      return out;
+    };
+    const snippet = (text, tokens, max) => {
+      if (!text) return '';
+      if (text.length <= max) return highlight(text, tokens);
+      const lower = text.toLowerCase();
+      let pos = -1;
+      tokens.forEach((tok) => {
+        const i = lower.indexOf(tok);
+        if (i >= 0 && (pos === -1 || i < pos)) pos = i;
+      });
+      if (pos === -1) return highlight(text.slice(0, max) + '…', tokens);
+      const start = Math.max(0, pos - 40);
+      const end = Math.min(text.length, start + max);
+      return (start > 0 ? '…' : '') + highlight(text.slice(start, end), tokens) + (end < text.length ? '…' : '');
+    };
+
+    const ensureIndex = async () => {
+      if (searchIndex) return searchIndex;
+      try {
+        const res = await fetch('/search-index.json', { cache: 'force-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        searchIndex = await res.json();
+      } catch (err) {
+        console.error('search index fetch failed', err);
+        searchIndex = [];
+      }
+      return searchIndex;
+    };
+
+    const render = (query) => {
+      const q = (query || '').toLowerCase().trim();
+      if (!q) { resultsEl.innerHTML = ''; return; }
+      const tokens = q.split(/\s+/).filter((tok) => tok.length > 1);
+      if (!tokens.length || !searchIndex) { resultsEl.innerHTML = ''; return; }
+
+      const langPref = isEN ? 'en' : 'it';
+      const scored = [];
+      searchIndex.forEach((entry) => {
+        const titleLow = (entry.title || '').toLowerCase();
+        const descLow = (entry.description || '').toLowerCase();
+        const contentLow = (entry.content || '').toLowerCase();
+        let score = 0;
+        let allMatch = true;
+        for (let i = 0; i < tokens.length; i += 1) {
+          const tok = tokens[i];
+          let hits = 0;
+          if (titleLow.includes(tok)) { score += 10; hits += 10; }
+          if (descLow.includes(tok)) { score += 4; hits += 4; }
+          if (contentLow.includes(tok)) { score += 1; hits += 1; }
+          if (!hits) { allMatch = false; break; }
+        }
+        if (allMatch && score > 0) {
+          if ((entry.lang || 'it').toLowerCase().startsWith(langPref)) score *= 2;
+          scored.push({ entry: entry, score: score });
+        }
+      });
+      scored.sort((a, b) => b.score - a.score);
+      const top = scored.slice(0, 12);
+
+      if (!top.length) {
+        resultsEl.innerHTML = '<div class="site-search__empty">' + t.empty + ' "' + escapeHtml(query) + '"</div>';
+        return;
+      }
+      resultsEl.innerHTML = top.map(function (item, i) {
+        const e = item.entry;
+        const desc = snippet(e.description, tokens, 160);
+        return ''
+          + '<a class="site-search__result" href="' + e.url + '" style="animation-delay:' + (i * 30) + 'ms">'
+          +   '<span class="site-search__result-title">' + highlight(e.title, tokens) + '</span>'
+          +   (desc ? '<span class="site-search__result-desc">' + desc + '</span>' : '')
+          +   '<span class="site-search__result-arrow" aria-hidden="true">&rarr;</span>'
+          + '</a>';
+      }).join('');
+    };
+
+    const open = () => {
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      ensureIndex().then(() => { /* index pronto */ });
+      setTimeout(() => inputEl.focus(), 80);
+    };
+    const close = () => {
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      inputEl.value = '';
+      resultsEl.innerHTML = '';
+    };
+
+    searchTrigger.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    backdrop.addEventListener('click', close);
+
+    inputEl.addEventListener('input', () => {
+      clearTimeout(renderTimer);
+      renderTimer = setTimeout(() => render(inputEl.value), 80);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+      if ((e.key === 'k' || e.key === 'K') && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        if (overlay.classList.contains('open')) close(); else open();
+      }
+    });
+  }
+
   // -------- 4. Marquee: duplicate track for seamless loop --------
   document.querySelectorAll('.marquee__track').forEach((track) => {
     track.innerHTML += track.innerHTML;
