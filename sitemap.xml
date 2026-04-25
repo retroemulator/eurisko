@@ -79,6 +79,22 @@
   </url>
 
   <url>
+    <loc>https://euriskosrl.it/ams.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/ams.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/ams.html"/>
+  </url>
+
+  <url>
+    <loc>https://euriskosrl.it/en/ams.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://euriskosrl.it/portfolio.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
