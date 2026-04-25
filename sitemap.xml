@@ -22,14 +22,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/company.html"/>
   </url>
 
-  <url>
-    <loc>https://euriskosrl.it/chi-siamo.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/chi-siamo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/about-us.html"/>
-  </url>
 
   <url>
     <loc>https://euriskosrl.it/cosa-facciamo.html</loc>

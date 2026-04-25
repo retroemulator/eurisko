@@ -300,11 +300,11 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   background: var(--warm);
 }
 
-/* Mega-menu a 3 colonne (Cosa facciamo: Consulenza SAP / Settori / Portfolio) */
+/* Mega-menu a 2 colonne (Cosa facciamo: Consulenza SAP / Settori di mercato) */
 .nav__dropdown-panel--mega {
-  min-width: 880px;
+  min-width: 620px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 36px;
   padding: 28px 32px;
 }
