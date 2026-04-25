@@ -52,6 +52,21 @@
     <priority>0.4</priority>
   </url>
 
+  <url>
+    <loc>https://euriskosrl.it/glossario-sap.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/glossario-sap.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/sap-glossary.html"/>
+  </url>
+  <url>
+    <loc>https://euriskosrl.it/en/sap-glossary.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 
   <url>
     <loc>https://euriskosrl.it/cosa-facciamo.html</loc>
