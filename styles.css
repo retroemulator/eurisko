@@ -634,6 +634,9 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   /* Tasto cerca: spostato a destra, accanto all'hamburger */
   .nav__search { margin-left: auto; margin-right: 8px; }
   .nav.open .nav__search { display: none; }
+  /* Disabilita il "bridge invisibile" del dropdown desktop: su mobile copriva
+     i link successivi (La nostra visione) intercettandone i click */
+  .nav__dropdown::before { display: none; }
   .nav__burger {
     display: inline-flex;
     flex-direction: column;
