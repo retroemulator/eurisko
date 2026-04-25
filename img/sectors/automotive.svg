@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Automotive">
+  <path d="M12 50l4-12c1-3 4-5 7-5h34c3 0 6 2 7 5l4 12v8h-6"/>
+  <path d="M18 58h-6v-8"/>
+  <line x1="12" y1="50" x2="68" y2="50"/>
+  <circle cx="24" cy="58" r="5"/>
+  <circle cx="56" cy="58" r="5"/>
+  <line x1="22" y1="40" x2="58" y2="40"/>
+</svg>
