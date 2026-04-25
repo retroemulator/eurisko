@@ -22,6 +22,21 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/company.html"/>
   </url>
 
+  <url>
+    <loc>https://euriskosrl.it/inclusion-diversity.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/inclusion-diversity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/inclusion-diversity.html"/>
+  </url>
+  <url>
+    <loc>https://euriskosrl.it/en/inclusion-diversity.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 
   <url>
     <loc>https://euriskosrl.it/cosa-facciamo.html</loc>
