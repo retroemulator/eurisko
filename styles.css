@@ -1615,11 +1615,11 @@ a.cap:focus-visible::after { opacity: 1; transform: translateX(0); }
   display: flex; align-items: center; justify-content: center;
   border-right: 1px solid var(--line-soft);
   border-bottom: 1px solid var(--line-soft);
-  font-family: var(--font-display);
-  font-weight: 500;
+  font-family: 'Oswald', 'Space Grotesk', 'Switzer', sans-serif;
+  font-weight: 700;
   font-size: clamp(16px, 1.4vw, 22px);
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
   padding: 20px;
   text-align: center;
   color: var(--ink-soft);
