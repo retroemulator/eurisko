@@ -1739,6 +1739,9 @@ form.contact { display: grid; gap: 20px; }
 }
 .field--checkbox label a:hover { color: var(--accent-text); }
 
+/* reCAPTCHA wrapper */
+.field--captcha { margin-top: 8px; min-height: 78px; }
+
 /* Field error messages (validazione lato client) */
 .field-error {
   font-size: 0.8125rem;

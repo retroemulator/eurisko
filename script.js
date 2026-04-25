@@ -421,6 +421,15 @@
         if (firstInvalid) firstInvalid.focus();
         return;
       }
+      // reCAPTCHA v2: verifica che l'utente abbia spuntato 'non sono un robot'
+      if (typeof grecaptcha !== 'undefined' && contactForm.querySelector('.g-recaptcha')) {
+        const token = grecaptcha.getResponse();
+        if (!token) {
+          e.preventDefault();
+          setStatus(isEN ? 'Please confirm you are not a robot.' : 'Conferma di non essere un robot.', 'error');
+          return;
+        }
+      }
       setStatus(t.sending, '');
     });
   }

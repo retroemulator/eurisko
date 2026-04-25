@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Contatti Eurisko | Società di consulenza SAP in Italia</title>
-<meta name="description" content="Contatta Eurisko per un progetto SAP, una consulenza strategica o una partnership. Risposta entro 24 ore lavorative. Sede: Cascinette d'Ivrea (TO).">
+<meta name="description" content="Contatta Eurisko per un progetto SAP, una consulenza strategica o una partnership. Sede legale: Cascinette d'Ivrea (TO).">
 <meta name="keywords" content="contatti Eurisko, consulenza SAP contatti, info@euriskosrl.it, sede Eurisko Ivrea, contatto consulente SAP">
 <meta name="author" content="Eurisko S.r.l.">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Contatti Eurisko | Società di consulenza SAP in Italia">
-<meta property="og:description" content="Contattaci per un progetto SAP. Risposta entro 24 ore lavorative.">
+<meta property="og:description" content="Contattaci per un progetto SAP, una consulenza strategica o una partnership.">
 <meta property="og:url" content="https://euriskosrl.it/contatti.html">
 <meta property="og:image" content="https://euriskosrl.it/og-image.svg">
 <meta property="og:locale" content="it_IT">
@@ -21,7 +21,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contatti Eurisko | Società di consulenza SAP in Italia">
-<meta name="twitter:description" content="Contattaci per un progetto SAP. Risposta entro 24 ore lavorative.">
+<meta name="twitter:description" content="Contattaci per un progetto SAP, una consulenza strategica o una partnership.">
 <meta name="twitter:image" content="https://euriskosrl.it/og-image.svg">
 
 <link rel="canonical" href="https://euriskosrl.it/contatti.html">
@@ -33,6 +33,7 @@
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link rel="stylesheet" href="styles.min.css">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script type="application/ld+json">
 {
@@ -128,7 +129,7 @@
 <section class="page-hero">
   <div class="page-hero__crumbs reveal"><span>Eurisko</span> <span aria-hidden="true">/</span> Contatti</div>
   <h1 class="page-hero__title reveal">Parliamo del tuo <em>progetto.</em></h1>
-  <p class="page-hero__lede reveal">Compila il modulo o contattaci direttamente. Ti risponderemo entro 24 ore lavorative con un primo feedback e — se utile — una proposta di call.</p>
+  <p class="page-hero__lede reveal">Compila il modulo o contattaci direttamente. Ti risponderemo con un primo feedback e — se utile — una proposta di call.</p>
 </section>
 
 <!-- CONTACT FORM + INFO -->
@@ -180,7 +181,7 @@
               <p class="field-error" id="name-error" hidden></p>
             </div>
             <div class="field">
-              <label for="email">Email <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+              <label for="email">Indirizzo email <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
               <input type="email" id="email" name="email" required autocomplete="email" aria-required="true">
               <p class="field-error" id="email-error" hidden></p>
             </div>
@@ -188,25 +189,23 @@
 
           <div class="field-row">
             <div class="field">
-              <label for="company">La nostra visione</label>
-              <input type="text" id="company" name="azienda" autocomplete="organization">
+              <label for="phone">Numero di telefono</label>
+              <input type="tel" id="phone" name="telefono" autocomplete="tel" inputmode="tel">
             </div>
             <div class="field">
-              <label for="topic">Motivo del contatto</label>
-              <select id="topic" name="motivo">
-                <option value="">Seleziona...</option>
-                <option value="consulenza">Consulenza SAP</option>
-                <option value="progetto">Nuovo progetto</option>
-                <option value="s4hana">Migrazione S/4HANA</option>
-                <option value="partnership">Partnership</option>
-                <option value="carriera">Candidatura</option>
-                <option value="altro">Altro</option>
-              </select>
+              <label for="company">Azienda/Organizzazione <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+              <input type="text" id="company" name="azienda" required autocomplete="organization" minlength="2" aria-required="true">
+              <p class="field-error" id="company-error" hidden></p>
             </div>
           </div>
 
           <div class="field">
-            <label for="message">Messaggio <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+            <label for="role">Il tuo ruolo / La tua funzione</label>
+            <input type="text" id="role" name="ruolo" autocomplete="organization-title">
+          </div>
+
+          <div class="field">
+            <label for="message">Come possiamo aiutarti? <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
             <textarea id="message" name="messaggio" required minlength="10" placeholder="Raccontaci brevemente la tua esigenza, il contesto aziendale e le tempistiche." aria-required="true"></textarea>
             <p class="field-error" id="message-error" hidden></p>
           </div>
@@ -217,6 +216,11 @@
             <label for="privacy-consent">
               Ho letto la <a href="privacy.html">Privacy Policy</a> e acconsento al trattamento dei dati personali ai sensi del <abbr title="Regolamento UE 2016/679 — Regolamento Generale sulla Protezione dei Dati">GDPR</abbr>. <span aria-hidden="true">*</span>
             </label>
+          </div>
+
+          <!-- reCAPTCHA v2 'Non sono un robot' (sostituire data-sitekey con la chiave reale) -->
+          <div class="field field--captcha">
+            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY" data-theme="dark"></div>
           </div>
 
           <!-- Anti-spam Formspree honeypot -->
@@ -233,7 +237,7 @@
             <button type="submit" class="btn">
               Invia messaggio <span class="btn__arrow" aria-hidden="true">→</span>
             </button>
-            <p class="consent">I campi contrassegnati con <span aria-hidden="true">*</span> sono obbligatori. Risponderemo entro 24 ore lavorative.</p>
+            <p class="consent">I campi contrassegnati con <span aria-hidden="true">*</span> sono obbligatori.</p>
           </div>
 
         </form>
@@ -282,7 +286,7 @@
         <a href="contatti.html">Scrivici</a>
       </div>
       <div class="footer__col">
-        <h4>Sede</h4>
+        <h4>Sede legale</h4>
         <p style="font-size: 0.9375rem; line-height: 1.6;">Via Burolo, 1<br>10010 Cascinette d'Ivrea (TO)<br>Italia</p>
       </div>
       <div class="footer__col footer__col--social">
