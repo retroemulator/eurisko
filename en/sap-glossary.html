@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SAP Glossary | Eurisko — ECC, S/4HANA, ABAP, IDOC and 80+ key terms</title>
-<meta name="description" content="Comprehensive SAP glossary: 80+ definitions — ECC, S/4HANA, ABAP, IDOC, BAPI, BAdI, Fiori, BTP, EWM, MRP, OTC, P2P, Greenfield, Brownfield and all key terms in the SAP world.">
-<meta name="keywords" content="SAP glossary, SAP terms, what is ABAP, what is S/4HANA, SAP ECC, SAP IDOC, SAP BAPI, SAP BAdI, SAP Fiori, SAP BTP, MRP, OTC, P2P, SAP definitions">
+<title>SAP Glossary | Eurisko — ECC, S/4HANA, ABAP, IDOC, AP/AR and 110+ key terms</title>
+<meta name="description" content="Comprehensive SAP glossary: 110+ definitions — ECC, S/4HANA, ABAP, IDOC, BAPI, Fiori, BTP, EWM, AP, AR, GL, MRP, OTC, P2P, Goods Receipt, 3-way match and all key terms in Finance, Logistics and Supply Chain in SAP.">
+<meta name="keywords" content="SAP glossary, SAP terms, what is ABAP, what is S/4HANA, SAP ECC, SAP IDOC, SAP BAPI, SAP AP AR, SAP GL, dunning, DSO DPO, MRP, ATP CTP, BOM, MTO MTS, S&OP, GR IR, 3-way match SAP">
 <meta name="author" content="Eurisko S.r.l.">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="SAP Glossary | Eurisko — 80+ key terms explained">
-<meta property="og:description" content="ECC, S/4HANA, ABAP, IDOC, BAPI, BAdI, Fiori, BTP, EWM, MRP, OTC, P2P and other SAP acronyms, explained simply.">
+<meta property="og:title" content="SAP Glossary | Eurisko — 110+ key terms explained">
+<meta property="og:description" content="ECC, S/4HANA, ABAP, IDOC, BAPI, Fiori, AP, AR, GL, MRP, OTC, P2P, BOM, S&OP, 3-way match and all key terms in the SAP world.">
 <meta property="og:url" content="https://euriskosrl.it/en/sap-glossary.html">
 <meta property="og:image" content="https://euriskosrl.it/og-image.svg">
 <meta property="og:locale" content="en_US">
@@ -21,7 +21,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SAP Glossary | Eurisko">
-<meta name="twitter:description" content="80+ SAP terms explained: ECC, S/4HANA, ABAP, IDOC, BAPI, Fiori and others.">
+<meta name="twitter:description" content="110+ SAP terms explained: AP/AR, GL, MRP, BOM, S&OP, 3-way match, OTC, P2P and more.">
 <meta name="twitter:image" content="https://euriskosrl.it/og-image.svg">
 
 <link rel="canonical" href="https://euriskosrl.it/en/sap-glossary.html">
@@ -49,7 +49,7 @@
   "@context": "https://schema.org",
   "@type": "DefinedTermSet",
   "name": "SAP Glossary — Eurisko",
-  "description": "Glossary of key SAP terms, acronyms and technologies, curated by Eurisko consultants.",
+  "description": "Glossary of key SAP terms, acronyms and technologies, curated by Eurisko consultants. Covers technology, functional modules, integration, migration, Finance, Logistics, Supply Chain, AP and AR flows.",
   "inLanguage": "en"
 }
 </script>
@@ -116,7 +116,7 @@
 <section class="page-hero">
   <div class="page-hero__crumbs reveal"><span>Eurisko</span> <span aria-hidden="true">/</span> SAP Glossary</div>
   <h1 class="page-hero__title reveal">SAP <em>Glossary.</em></h1>
-  <p class="page-hero__lede reveal">Over 80 terms, acronyms and technologies from the SAP world, explained without fluff. From the pillars (ECC, S/4HANA, ABAP) to integrations (IDOC, BAPI, CPI), from functional modules to migration approaches, from end-to-end processes (OTC, P2P) to development conventions (BAdI, User Exit, Z-tables). Curated by Eurisko consultants for people just starting out with SAP — and for anyone who wants to clear up doubts.</p>
+  <p class="page-hero__lede reveal">Over 110 terms, acronyms and technologies from the SAP world, explained without fluff. Technology pillars (ECC, S/4HANA, ABAP), integrations (IDOC, BAPI, CPI), functional modules, migration, end-to-end processes (OTC, P2P), <strong>Finance</strong> (GL, AP, AR, dunning, closing, DSO/DPO), <strong>Logistics</strong> (Goods Receipt/Issue, Picking, Putaway, Storage Bin), <strong>Supply Chain</strong> (MRP, BOM, S&amp;OP, MTO/MTS, Safety Stock) and development conventions (BAdI, User Exit, Z-tables). Curated by Eurisko consultants.</p>
 </section>
 
 <section class="container" style="padding-bottom: 40px;">
@@ -154,11 +154,23 @@
     <dt id="abap" style="font-weight: 600; margin-top: 24px;">ABAP</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Advanced Business Application Programming.</strong> SAP's proprietary programming language, used for customizations, custom developments and internal integrations. The historical foundation of most SAP software.</dd>
 
+    <dt id="aging" style="font-weight: 600; margin-top: 24px;">Aging (AP/AR Aging)</dt>
+    <dd style="margin: 8px 0 0 0;">Open-item bucketing by overdue range (0–30, 31–60, 61–90, 90+ days), for vendors (AP) or customers (AR). Standard reports: S_ALR_87012173 (customers) and S_ALR_87012085 (vendors).</dd>
+
     <dt id="alv" style="font-weight: 600; margin-top: 24px;">ALV</dt>
     <dd style="margin: 8px 0 0 0;"><strong>ABAP List Viewer.</strong> Standard SAP tool for displaying interactive tabular reports (sorting, filtering, Excel export) without having to build a UI from scratch.</dd>
 
+    <dt id="ap" style="font-weight: 600; margin-top: 24px;">AP — Accounts Payable</dt>
+    <dd style="margin: 8px 0 0 0;">Vendor accounting, handled in SAP under the FI-AP sub-module: vendor master, vendor invoice posting, reconciliation against PO and GR (3-way match), payments, open-item management.</dd>
+
+    <dt id="ar" style="font-weight: 600; margin-top: 24px;">AR — Accounts Receivable</dt>
+    <dd style="margin: 8px 0 0 0;">Customer accounting, handled in SAP under the FI-AR sub-module: customer master, customer invoice posting, cash application, dunning, open items and credit management.</dd>
+
     <dt id="ariba" style="font-weight: 600; margin-top: 24px;">Ariba</dt>
     <dd style="margin: 8px 0 0 0;">SAP's cloud platform for <em>procurement</em>: supplier management, sourcing, contracts, purchase orders, e-invoicing. Often integrated with SAP S/4HANA.</dd>
+
+    <dt id="asset-accounting" style="font-weight: 600; margin-top: 24px;">Asset Accounting (FI-AA)</dt>
+    <dd style="margin: 8px 0 0 0;">FI sub-module for fixed assets: asset master, automated depreciation, retirements, parallel statutory and tax valuations, integration with MM (asset purchase) and PM (maintenance).</dd>
 
     <dt id="atp" style="font-weight: 600; margin-top: 24px;">ATP</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Available to Promise.</strong> SAP capability that checks in real time the ability to promise customer deliveries, considering on-hand stock, incoming orders, reservations and planned production.</dd>
@@ -172,8 +184,14 @@
     <dt id="bapi" style="font-weight: 600; margin-top: 24px;">BAPI</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Business Application Programming Interface.</strong> Standard SAP API that exposes business functionality (create an order, post a goods movement, etc.) in a controlled way for integration with other systems.</dd>
 
+    <dt id="batch" style="font-weight: 600; margin-top: 24px;">Batch (production lot)</dt>
+    <dd style="margin: 8px 0 0 0;">Sub-identification of a material with specific characteristics (expiry date, vendor lot, production run) under the same material code. Critical in pharma, food and chemicals for traceability and product recall.</dd>
+
     <dt id="blueprint" style="font-weight: 600; margin-top: 24px;">Blueprint</dt>
     <dd style="margin: 8px 0 0 0;">Design document describing how the to-be processes will be implemented in the target SAP system. Output of the analysis phase, input to the build phase.</dd>
+
+    <dt id="bom" style="font-weight: 600; margin-top: 24px;">BOM — Bill of Materials</dt>
+    <dd style="margin: 8px 0 0 0;">Structured list of components needed to produce a finished good, with quantities and hierarchy. The heart of MRP, product costing and engineering in SAP. Multi-level for complex products.</dd>
 
     <dt id="bpc" style="font-weight: 600; margin-top: 24px;">BPC</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Business Planning and Consolidation.</strong> SAP solution for financial planning, budgeting, forecasting and group consolidation. Typically integrated with CO and BW/4HANA.</dd>
@@ -190,8 +208,14 @@
 
   <h2 id="C" class="h1 reveal" style="margin-top: 80px;">C</h2>
   <dl class="reveal">
+    <dt id="cash-application" style="font-weight: 600; margin-top: 24px;">Cash Application</dt>
+    <dd style="margin: 8px 0 0 0;">Process of automatically matching incoming bank receipts to AR open items. In S/4HANA enhanced by SAP Cash Application (machine learning) to reduce manual effort on complex matches.</dd>
+
     <dt id="cds" style="font-weight: 600; margin-top: 24px;">CDS Views</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Core Data Services.</strong> SAP technology to define semantic data views directly in the HANA database. Foundation of Fiori, embedded analytics and modern S/4HANA applications.</dd>
+
+    <dt id="closing" style="font-weight: 600; margin-top: 24px;">Closing (Period-End / Year-End)</dt>
+    <dd style="margin: 8px 0 0 0;">Monthly, quarterly or yearly closing: stock valuation, depreciation, accruals, GL reconciliation, period closing in MM and FI. Supported by the Financial Closing Cockpit (transaction CLOCO).</dd>
 
     <dt id="co" style="font-weight: 600; margin-top: 24px;">CO</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Controlling.</strong> SAP module for management accounting: cost centers, profit centers, internal orders, product cost calculation, profitability analysis.</dd>
@@ -199,11 +223,20 @@
     <dt id="co-pa" style="font-weight: 600; margin-top: 24px;">CO-PA</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Profitability Analysis.</strong> Sub-module of CO to analyze margins by business dimension: customer, product, geography, sales channel.</dd>
 
+    <dt id="cost-center" style="font-weight: 600; margin-top: 24px;">Cost Center</dt>
+    <dd style="margin: 8px 0 0 0;">CO organizational unit that collects costs of an internal area (a department, a team, a site). Foundation for indirect cost reporting and for allocations to products and orders.</dd>
+
     <dt id="cpi" style="font-weight: 600; margin-top: 24px;">CPI</dt>
     <dd style="margin: 8px 0 0 0;"><strong>SAP Cloud Platform Integration</strong> (now part of Integration Suite on BTP). Cloud tool to orchestrate integrations between SAP and external systems. The modern successor to on-premise PI/PO.</dd>
 
+    <dt id="credit-management" style="font-weight: 600; margin-top: 24px;">Credit Management</dt>
+    <dd style="margin: 8px 0 0 0;">Customer credit risk handling: assigning a credit limit, automatic order block when exceeded, internal or external scores. In S/4HANA it's SAP Credit Management (FIN-FSCM-CR).</dd>
+
     <dt id="crm" style="font-weight: 600; margin-top: 24px;">CRM</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Customer Relationship Management.</strong> Legacy SAP system (now largely replaced by SAP CX / Sales Cloud / Service Cloud) for managing sales, marketing and customer service.</dd>
+
+    <dt id="ctp" style="font-weight: 600; margin-top: 24px;">CTP</dt>
+    <dd style="margin: 8px 0 0 0;"><strong>Capable to Promise.</strong> Extension of ATP that, beyond stock availability, also considers production capacity: a delivery can be promised only if the plant can actually produce in time.</dd>
 
     <dt id="customizing" style="font-weight: 600; margin-top: 24px;">Customizing</dt>
     <dd style="margin: 8px 0 0 0;">Standard SAP configuration through the IMG parameter tables, without writing code. Not to be confused with custom ABAP development.</dd>
@@ -216,6 +249,18 @@
 
     <dt id="ddic" style="font-weight: 600; margin-top: 24px;">DDIC</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Data Dictionary.</strong> Central repository of SAP data objects: tables, views, structures, data types. Single source-of-truth for ABAP development and database schema generation.</dd>
+
+    <dt id="demand-planning" style="font-weight: 600; margin-top: 24px;">Demand Planning</dt>
+    <dd style="margin: 8px 0 0 0;">Process of forecasting future demand, the basis for production and procurement planning. In SAP covered by APO Demand Planning (legacy) or IBP for Demand (modern cloud).</dd>
+
+    <dt id="dpo" style="font-weight: 600; margin-top: 24px;">DPO — Days Payable Outstanding</dt>
+    <dd style="margin: 8px 0 0 0;">Treasury indicator: average days between vendor invoice receipt and payment. Higher DPO = better working capital on the AP side; lower DPO = faster payments. To be balanced with contractual terms.</dd>
+
+    <dt id="dso" style="font-weight: 600; margin-top: 24px;">DSO — Days Sales Outstanding</dt>
+    <dd style="margin: 8px 0 0 0;">Key OTC indicator: average days between issuing a customer invoice and collecting cash. Lower DSO = faster collections, more efficient working capital. Typical CFO and OTC KPI.</dd>
+
+    <dt id="dunning" style="font-weight: 600; margin-top: 24px;">Dunning</dt>
+    <dd style="margin: 8px 0 0 0;">Automated process to remind customers of overdue items. SAP generates dunning letters at escalating levels (1, 2, 3) based on the configured dunning procedure. Standard transaction: F150.</dd>
   </dl>
 
   <h2 id="E" class="h1 reveal" style="margin-top: 80px;">E</h2>
@@ -239,7 +284,7 @@
   <h2 id="F" class="h1 reveal" style="margin-top: 80px;">F</h2>
   <dl class="reveal">
     <dt id="fi" style="font-weight: 600; margin-top: 24px;">FI</dt>
-    <dd style="margin: 8px 0 0 0;"><strong>Financial Accounting.</strong> SAP module for general ledger: accounts receivable, accounts payable, asset accounting, banking, balance sheet and statutory/fiscal compliance.</dd>
+    <dd style="margin: 8px 0 0 0;"><strong>Financial Accounting.</strong> SAP module for general ledger: accounts receivable (FI-AR), accounts payable (FI-AP), asset accounting (FI-AA), banking, balance sheet and statutory/fiscal compliance.</dd>
 
     <dt id="fi-ca" style="font-weight: 600; margin-top: 24px;">FI-CA</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Contract Accounting.</strong> Extension of FI for accounts receivable on mass volumes: utilities, telco, public services. Handles millions of customers and recurring billing.</dd>
@@ -253,8 +298,20 @@
 
   <h2 id="G" class="h1 reveal" style="margin-top: 80px;">G</h2>
   <dl class="reveal">
+    <dt id="gi" style="font-weight: 600; margin-top: 24px;">GI — Goods Issue</dt>
+    <dd style="margin: 8px 0 0 0;">SAP posting for the physical issue of material from the warehouse (customer shipment, production consumption, scrap). Generates an automatic accounting document (movement type 601, 261, 551 etc.).</dd>
+
+    <dt id="gl" style="font-weight: 600; margin-top: 24px;">GL — General Ledger</dt>
+    <dd style="margin: 8px 0 0 0;">General ledger or "main book". Heart of FI: contains all economic and balance sheet postings and account balances. In S/4HANA it's the <em>Universal Journal</em> (table ACDOCA), unifying FI and CO into a single source of truth.</dd>
+
     <dt id="go-live" style="font-weight: 600; margin-top: 24px;">Go-live</dt>
     <dd style="margin: 8px 0 0 0;">The moment when the new SAP system goes into production and users start using it for real operations. Typically preceded by a freeze period and followed by hypercare.</dd>
+
+    <dt id="gr" style="font-weight: 600; margin-top: 24px;">GR — Goods Receipt</dt>
+    <dd style="margin: 8px 0 0 0;">SAP posting of physical material receipt (from vendor, from production, from customer return). Updates stock and creates the partial accounting document that will close out via GR/IR.</dd>
+
+    <dt id="gr-ir" style="font-weight: 600; margin-top: 24px;">GR/IR — Goods Receipt / Invoice Receipt account</dt>
+    <dd style="margin: 8px 0 0 0;">Suspense account balancing the value between goods receipt (GR) and invoice receipt (IR). If the vendor has delivered but not yet invoiced, GR/IR is in debit; if invoiced without delivering, in credit. To be reconciled at close.</dd>
 
     <dt id="grc" style="font-weight: 600; margin-top: 24px;">GRC</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Governance, Risk, Compliance.</strong> SAP suite to manage roles and authorizations, segregation of duties, audit, internal controls and regulatory compliance.</dd>
@@ -267,6 +324,9 @@
   <dl class="reveal">
     <dt id="hana" style="font-weight: 600; margin-top: 24px;">HANA</dt>
     <dd style="margin: 8px 0 0 0;">SAP's in-memory database, foundation of S/4HANA. Combines transactional and analytical processing in the same system, with much higher performance than traditional databases.</dd>
+
+    <dt id="handling-unit" style="font-weight: 600; margin-top: 24px;">Handling Unit (HU)</dt>
+    <dd style="margin: 8px 0 0 0;">Physical handling unit: pallet, carton, container with a unique identifier. Allows to move and track groups of materials together. Central in EWM and shipping.</dd>
 
     <dt id="hcm" style="font-weight: 600; margin-top: 24px;">HCM</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Human Capital Management.</strong> SAP module for HR, payroll and personnel management on-premise. The cloud version is SuccessFactors.</dd>
@@ -286,6 +346,9 @@
     <dt id="idoc" style="font-weight: 600; margin-top: 24px;">IDOC</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Intermediate Document.</strong> Standard SAP format for exchanging structured data between systems (e.g. orders, invoices, master data). Typically routed via PI/PO or CPI.</dd>
 
+    <dt id="inbound-delivery" style="font-weight: 600; margin-top: 24px;">Inbound Delivery</dt>
+    <dd style="margin: 8px 0 0 0;">Expected goods receipt document: the vendor has confirmed shipment, SAP creates the inbound delivery that drives warehouse activities (putaway, quality control, GR).</dd>
+
     <dt id="is-u" style="font-weight: 600; margin-top: 24px;">IS-U</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Industry Solution Utilities.</strong> SAP vertical solution for utilities (electricity, gas, water): customer master, supply contracts, device management, mass billing.</dd>
   </dl>
@@ -293,7 +356,7 @@
   <h2 id="K" class="h1 reveal" style="margin-top: 80px;">K</h2>
   <dl class="reveal">
     <dt id="kpi" style="font-weight: 600; margin-top: 24px;">KPI</dt>
-    <dd style="margin: 8px 0 0 0;"><strong>Key Performance Indicator.</strong> Measurable indicator used both to monitor SAP projects (budget adherence, go-live timing, hit rate) and business processes (DSO, OTIF, fill-rate, OEE).</dd>
+    <dd style="margin: 8px 0 0 0;"><strong>Key Performance Indicator.</strong> Measurable metric used both to monitor SAP projects (budget adherence, go-live timing, hit rate) and business processes (DSO, OTIF, fill-rate, OEE).</dd>
   </dl>
 
   <h2 id="L" class="h1 reveal" style="margin-top: 80px;">L</h2>
@@ -301,12 +364,18 @@
     <dt id="le" style="font-weight: 600; margin-top: 24px;">LE</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Logistics Execution.</strong> SAP area covering execution-level logistics: shipping, transportation, goods receipt, delivery management. Builds on MM, SD, WM/EWM.</dd>
 
+    <dt id="liv" style="font-weight: 600; margin-top: 24px;">LIV — Logistics Invoice Verification</dt>
+    <dd style="margin: 8px 0 0 0;">SAP process (transaction MIRO) to verify a vendor invoice against PO and GR — the famous 3-way match. If matched, the invoice posts in FI-AP; if not, it's blocked until clarified.</dd>
+
     <dt id="lsmw" style="font-weight: 600; margin-top: 24px;">LSMW</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Legacy System Migration Workbench.</strong> Historical SAP tool for loading master data from legacy files. In S/4HANA projects it is progressively replaced by LTMC and Migration Cockpit.</dd>
   </dl>
 
   <h2 id="M" class="h1 reveal" style="margin-top: 80px;">M</h2>
   <dl class="reveal">
+    <dt id="material-master" style="font-weight: 600; margin-top: 24px;">Material Master</dt>
+    <dd style="margin: 8px 0 0 0;">SAP record holding all information about a material (descriptions, units of measure, classifications, MRP data, accounting data). Organized in views by functional area (Basic, MRP, Sales, Purchasing, Costing, Storage).</dd>
+
     <dt id="mdg" style="font-weight: 600; margin-top: 24px;">MDG</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Master Data Governance.</strong> SAP solution to centrally manage master data (customers, vendors, materials, financial) with approval workflows and data quality rules.</dd>
 
@@ -318,6 +387,9 @@
 
     <dt id="mrp" style="font-weight: 600; margin-top: 24px;">MRP</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Material Requirements Planning.</strong> SAP algorithm that computes material requirements based on demand, stock and lead time. Generates planned purchase and production orders.</dd>
+
+    <dt id="mto-mts" style="font-weight: 600; margin-top: 24px;">MTO / MTS</dt>
+    <dd style="margin: 8px 0 0 0;"><strong>Make-to-Order / Make-to-Stock.</strong> Two opposite production strategies: MTO produces only after customer order (configured, made-to-spec); MTS produces to stock based on forecast (commodity, high-volume). Configured in SAP via strategy group.</dd>
   </dl>
 
   <h2 id="N" class="h1 reveal" style="margin-top: 80px;">N</h2>
@@ -327,6 +399,9 @@
 
     <dt id="oss-notes" style="font-weight: 600; margin-top: 24px;">OSS Notes / SAP Notes</dt>
     <dd style="margin: 8px 0 0 0;">Official SAP publications describing bugs, fixes, recommendations and patch instructions. Distributed through the SAP support portal.</dd>
+
+    <dt id="nwc" style="font-weight: 600; margin-top: 24px;">NWC — Net Working Capital</dt>
+    <dd style="margin: 8px 0 0 0;">Net working capital: trade receivables + inventory − trade payables. Key indicator of operating liquidity. Reducing DSO, optimizing inventory and managing DPO releases cash: an SAP transformation typically impacts all three levers.</dd>
   </dl>
 
   <h2 id="O" class="h1 reveal" style="margin-top: 80px;">O</h2>
@@ -337,8 +412,14 @@
     <dt id="olap" style="font-weight: 600; margin-top: 24px;">OLAP</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Online Analytical Processing.</strong> Technology for multi-dimensional analytical queries. In SAP it's the domain of BW, BW/4HANA and SAC.</dd>
 
+    <dt id="open-items" style="font-weight: 600; margin-top: 24px;">Open Items</dt>
+    <dd style="margin: 8px 0 0 0;">AP/AR postings not yet cleared: unpaid invoices, uncollected invoices, unreconciled down-payments. Open-item management is the heart of daily work in FI-AP/AR (transactions FBL1N, FBL5N).</dd>
+
     <dt id="otc" style="font-weight: 600; margin-top: 24px;">OTC</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Order to Cash.</strong> End-to-end process from order receipt to cash collection. Spans SD, FI, credit management, billing and collection. Typical KPI for order-to-cash efficiency.</dd>
+
+    <dt id="outbound-delivery" style="font-weight: 600; margin-top: 24px;">Outbound Delivery</dt>
+    <dd style="margin: 8px 0 0 0;">Goods issue document originating from the sales order: drives warehouse activities (picking, packing, GI) and becomes the basis for billing. Typical transactions: VL01N (create), VL02N (change).</dd>
   </dl>
 
   <h2 id="P" class="h1 reveal" style="margin-top: 80px;">P</h2>
@@ -346,7 +427,16 @@
     <dt id="p2p" style="font-weight: 600; margin-top: 24px;">P2P</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Procure to Pay.</strong> End-to-end process from purchase request to vendor payment. Spans MM, FI and Ariba for sourcing. Typical KPI for procure-to-pay efficiency.</dd>
 
-    <dt id="pi-po" style="font-weight: 600; margin-top: 24px;">PI / PO</dt>
+    <dt id="payment-run" style="font-weight: 600; margin-top: 24px;">Payment Run</dt>
+    <dd style="margin: 8px 0 0 0;">Automated execution of vendor payments (transaction F110): SAP selects open items based on payment terms, generates a proposal, and after approval produces the bank file (SEPA, MT940) and accounting postings.</dd>
+
+    <dt id="payment-terms" style="font-weight: 600; margin-top: 24px;">Payment Terms</dt>
+    <dd style="margin: 8px 0 0 0;">SAP code defining commercial due dates and discounts (e.g. "net 30", "2/10 net 30"). Drives the due date in AP/AR open items and enables cash discount in the payment run.</dd>
+
+    <dt id="picking" style="font-weight: 600; margin-top: 24px;">Picking</dt>
+    <dd style="margin: 8px 0 0 0;">Physical retrieval of goods from the warehouse to fulfill an order. SAP generates picking orders specifying item, quantity and storage bin. In EWM driven by advanced rules (wave picking, batch picking, zone picking).</dd>
+
+    <dt id="pi-po" style="font-weight: 600; margin-top: 24px;">PI / PO (middleware)</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Process Integration / Process Orchestration.</strong> On-premise SAP middleware to integrate systems (legacy, MES, CRM, etc.) with SAP. Successor: SAP CPI / Integration Suite.</dd>
 
     <dt id="plant" style="font-weight: 600; margin-top: 24px;">Plant</dt>
@@ -355,8 +445,17 @@
     <dt id="pm" style="font-weight: 600; margin-top: 24px;">PM</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Plant Maintenance.</strong> SAP module for plant and equipment maintenance: asset master, preventive maintenance plans, work orders, field service management.</dd>
 
+    <dt id="po" style="font-weight: 600; margin-top: 24px;">PO — Purchase Order</dt>
+    <dd style="margin: 8px 0 0 0;">SAP procurement document (transaction ME21N): vendor details, items, quantities, prices, delivery terms. The reference for GR (goods receipt), LIV (invoice verification) and AP accounting. Heart of P2P.</dd>
+
     <dt id="pp" style="font-weight: 600; margin-top: 24px;">PP</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Production Planning.</strong> SAP module for production planning and execution: bills of material, routings, MRP, production orders.</dd>
+
+    <dt id="profit-center" style="font-weight: 600; margin-top: 24px;">Profit Center</dt>
+    <dd style="margin: 8px 0 0 0;">CO organizational unit collecting both revenues and costs, producing a segmented operating result (by business unit, by product line, by geography). Foundation for internal margin reporting.</dd>
+
+    <dt id="putaway" style="font-weight: 600; margin-top: 24px;">Putaway</dt>
+    <dd style="margin: 8px 0 0 0;">Physical placement of received goods into warehouse locations. SAP proposes the optimal location based on rules (storage type, capacity, rotation). Inverse of picking.</dd>
   </dl>
 
   <h2 id="Q" class="h1 reveal" style="margin-top: 80px;">Q</h2>
@@ -370,6 +469,12 @@
     <dt id="r3" style="font-weight: 600; margin-top: 24px;">R/3</dt>
     <dd style="margin: 8px 0 0 0;">Historical generation of SAP ERP, direct ancestor of ECC. The "R" stands for Real-time, "3" for the three-tier architecture (presentation/application/database). Hugely deployed in the 1990s and 2000s.</dd>
 
+    <dt id="reconciliation" style="font-weight: 600; margin-top: 24px;">Reconciliation</dt>
+    <dd style="margin: 8px 0 0 0;">Comparison between two data sources that should match: GL vs sub-ledgers (FI-AP/AR/AA), books vs bank, physical inventory vs SAP stock, GR/IR account etc. A typical period-end activity.</dd>
+
+    <dt id="reorder-point" style="font-weight: 600; margin-top: 24px;">Reorder Point (ROP)</dt>
+    <dd style="margin: 8px 0 0 0;">Stock level below which SAP automatically generates a purchase or production order proposal. Computed as average consumption during lead time + safety stock.</dd>
+
     <dt id="rfc" style="font-weight: 600; margin-top: 24px;">RFC</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Remote Function Call.</strong> SAP protocol to invoke ABAP functions from an external system or another SAP system. Foundation of many internal integrations.</dd>
 
@@ -381,15 +486,24 @@
 
     <dt id="rollout" style="font-weight: 600; margin-top: 24px;">Rollout</dt>
     <dd style="margin: 8px 0 0 0;">Extension of an SAP template to a new country, business unit or legal entity, after an initial template go-live. Typical in multi-country projects and multinational groups.</dd>
+
+    <dt id="routing" style="font-weight: 600; margin-top: 24px;">Routing</dt>
+    <dd style="margin: 8px 0 0 0;">Sequence of operations with times and work centers needed to produce an item. Together with the BOM it's the basis for product cost standards (product costing) and for capacity planning.</dd>
   </dl>
 
   <h2 id="S" class="h1 reveal" style="margin-top: 80px;">S</h2>
   <dl class="reveal">
+    <dt id="sandop" style="font-weight: 600; margin-top: 24px;">S&amp;OP — Sales &amp; Operations Planning</dt>
+    <dd style="margin: 8px 0 0 0;">Monthly managerial process aligning sales plan, production plan, inventory and finance. In SAP covered by IBP for Sales &amp; Operations (cloud) or APO S&amp;OP (legacy).</dd>
+
     <dt id="s4hana" style="font-weight: 600; margin-top: 24px;">S/4HANA</dt>
     <dd style="margin: 8px 0 0 0;">The current generation of SAP ERP, based on the HANA in-memory database. Available in on-premise, private cloud (RISE) and public cloud editions. Successor to ECC.</dd>
 
     <dt id="sac" style="font-weight: 600; margin-top: 24px;">SAC</dt>
     <dd style="margin: 8px 0 0 0;"><strong>SAP Analytics Cloud.</strong> Cloud solution for business intelligence, planning and predictive analytics. Progressively replacing tools like BusinessObjects and Lumira.</dd>
+
+    <dt id="safety-stock" style="font-weight: 600; margin-top: 24px;">Safety Stock</dt>
+    <dd style="margin: 8px 0 0 0;">Buffer stock kept above forecast demand to absorb demand or lead-time variability. Configured on the material master (MRP view) and considered by MRP when computing reorders.</dd>
 
     <dt id="sap-gui" style="font-weight: 600; margin-top: 24px;">SAP GUI</dt>
     <dd style="margin: 8px 0 0 0;"><strong>SAP Graphical User Interface.</strong> SAP's "classic" desktop interface (Windows, Java, web). Historically the primary interface; progressively replaced by Fiori on end-user processes.</dd>
@@ -409,6 +523,15 @@
     <dt id="solman" style="font-weight: 600; margin-top: 24px;">Solution Manager</dt>
     <dd style="margin: 8px 0 0 0;"><strong>SolMan.</strong> SAP platform to manage the entire lifecycle of an SAP system: change management, monitoring, test management, documentation, OSS notes application.</dd>
 
+    <dt id="storage-bin" style="font-weight: 600; margin-top: 24px;">Storage Bin</dt>
+    <dd style="margin: 8px 0 0 0;">Most granular physical warehouse location: the shelf, the pallet space, the cell. Identified by a unique code (e.g. <code>01-A-03-04</code>). In WM/EWM it's where putaway and picking happen.</dd>
+
+    <dt id="storage-location" style="font-weight: 600; margin-top: 24px;">Storage Location</dt>
+    <dd style="margin: 8px 0 0 0;">Organizational sub-division of a Plant for basic warehouse handling in MM (4 characters). Distinct from Storage Bin (physical level in WM/EWM): the storage location is "logical", the bin is "physical".</dd>
+
+    <dt id="storage-type" style="font-weight: 600; margin-top: 24px;">Storage Type</dt>
+    <dd style="margin: 8px 0 0 0;">In WM/EWM, grouping of storage bins with homogeneous characteristics (high-bay rack, fast-pick area, refrigerated zone, quarantine block). Drives putaway and picking strategies.</dd>
+
     <dt id="successfactors" style="font-weight: 600; margin-top: 24px;">SuccessFactors</dt>
     <dd style="margin: 8px 0 0 0;">SAP cloud suite for modern HR: recruiting, performance, learning, compensation, employee experience. Cloud successor to on-premise SAP HCM.</dd>
   </dl>
@@ -416,17 +539,26 @@
   <h2 id="T" class="h1 reveal" style="margin-top: 80px;">T</h2>
   <dl class="reveal">
     <dt id="t-code" style="font-weight: 600; margin-top: 24px;">T-code</dt>
-    <dd style="margin: 8px 0 0 0;"><strong>Transaction Code.</strong> Alphanumeric code identifying an SAP transaction (e.g. <code>VA01</code> = create sales order, <code>FB60</code> = post vendor invoice).</dd>
+    <dd style="margin: 8px 0 0 0;"><strong>Transaction Code.</strong> Alphanumeric code identifying an SAP transaction (e.g. <code>VA01</code> = create sales order, <code>FB60</code> = post vendor invoice, <code>MIRO</code> = LIV).</dd>
+
+    <dt id="three-way-match" style="font-weight: 600; margin-top: 24px;">Three-way Match (3-Way Match)</dt>
+    <dd style="margin: 8px 0 0 0;">Automated reconciliation across three documents to authorize payment: <strong>PO</strong> (purchase order), <strong>GR</strong> (goods receipt) and <strong>IR</strong> (vendor invoice). If all three match in quantity and price, the invoice is approved; if not, it's blocked. Heart of P2P control.</dd>
 
     <dt id="tm" style="font-weight: 600; margin-top: 24px;">TM</dt>
     <dd style="margin: 8px 0 0 0;"><strong>SAP Transportation Management.</strong> Solution for planning, execution and management of transportation: load optimization, freight cost, carrier integration. Modern version of the old LE-TRA.</dd>
 
     <dt id="transport-request" style="font-weight: 600; margin-top: 24px;">Transport Request</dt>
     <dd style="margin: 8px 0 0 0;">Package collecting customizing or development changes. It is "transported" from the development environment to test and then production, ensuring consistency across SAP environments.</dd>
+
+    <dt id="trial-balance" style="font-weight: 600; margin-top: 24px;">Trial Balance</dt>
+    <dd style="margin: 8px 0 0 0;">Report of all GL accounts with their balance at a given date, grouped by nature. A standard close-cycle tool: if the trial balance doesn't balance (debit ≠ credit), there's an inconsistency to investigate before close.</dd>
   </dl>
 
   <h2 id="U" class="h1 reveal" style="margin-top: 80px;">U</h2>
   <dl class="reveal">
+    <dt id="uat" style="font-weight: 600; margin-top: 24px;">UAT</dt>
+    <dd style="margin: 8px 0 0 0;"><strong>User Acceptance Test.</strong> Test phase where the client's end users verify that the system meets business requirements. Typically the last gate before go-live.</dd>
+
     <dt id="ui5" style="font-weight: 600; margin-top: 24px;">UI5 / SAPUI5</dt>
     <dd style="margin: 8px 0 0 0;">SAP's JavaScript framework for building responsive web apps (Fiori is built on UI5). The SAP equivalent of React or Angular.</dd>
 
@@ -438,12 +570,24 @@
   <dl class="reveal">
     <dt id="variant-configuration" style="font-weight: 600; margin-top: 24px;">Variant Configuration (VC)</dt>
     <dd style="margin: 8px 0 0 0;">SAP module for handling configurable products (e.g. an industrial machine with N optional variants): defines rules, constraints and automatic BOM generation at sales-order time.</dd>
+
+    <dt id="vat" style="font-weight: 600; margin-top: 24px;">VAT</dt>
+    <dd style="margin: 8px 0 0 0;"><strong>Value Added Tax.</strong> In SAP managed via tax codes (FTXP), automatic determination via tax procedure (TAXIT in Italy), periodic VAT reporting and electronic filing (Esterometro / e-invoice via SDI for the Italian market).</dd>
+
+    <dt id="vendor-master" style="font-weight: 600; margin-top: 24px;">Vendor Master</dt>
+    <dd style="margin: 8px 0 0 0;">Vendor master record in SAP: general data (address, VAT ID), purchasing (terms, info records), accounting (reconciliation account, payment terms, withholding tax). In S/4HANA unified into the Business Partner (BP).</dd>
   </dl>
 
   <h2 id="W" class="h1 reveal" style="margin-top: 80px;">W</h2>
   <dl class="reveal">
+    <dt id="wave" style="font-weight: 600; margin-top: 24px;">Wave (Wave Picking)</dt>
+    <dd style="margin: 8px 0 0 0;">Grouping of multiple outbound deliveries into a single picking "wave", optimized by route or by delivery vehicle. Typical EWM feature to optimize warehouse efficiency.</dd>
+
     <dt id="wbs" style="font-weight: 600; margin-top: 24px;">WBS</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Work Breakdown Structure.</strong> Hierarchical decomposition of a project into elements (WBS Elements). In SAP it is the heart of module PS (Project System) for project management.</dd>
+
+    <dt id="withholding-tax" style="font-weight: 600; margin-top: 24px;">Withholding Tax</dt>
+    <dd style="margin: 8px 0 0 0;">Tax withheld by the customer at payment time and remitted directly to the tax authority. In SAP managed via withholding tax codes on the vendor master, automatic computation in the invoice, annual reporting (CU in Italy).</dd>
 
     <dt id="wm" style="font-weight: 600; margin-top: 24px;">WM</dt>
     <dd style="margin: 8px 0 0 0;"><strong>Warehouse Management.</strong> SAP's "classic" warehouse module. For more advanced needs it has been superseded by EWM.</dd>
