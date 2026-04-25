@@ -1547,6 +1547,10 @@ a.cap:focus-visible::after { opacity: 1; transform: translateX(0); }
   letter-spacing: -0.01em;
 }
 @media (max-width: 820px) { .values { grid-template-columns: 1fr; } }
+/* Variante a 4 colonne per pagine con 4 valori (es. Lavora con noi).
+   Su tablet/mobile diventa 2x2 per evitare overflow orizzontale */
+.values--4cols { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1100px) { .values--4cols { grid-template-columns: repeat(2, 1fr); } }
 
 /* Team teaser */
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
