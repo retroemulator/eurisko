@@ -37,6 +37,21 @@
     <priority>0.4</priority>
   </url>
 
+  <url>
+    <loc>https://euriskosrl.it/sostenibilita.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/sostenibilita.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/sustainability.html"/>
+  </url>
+  <url>
+    <loc>https://euriskosrl.it/en/sustainability.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 
   <url>
     <loc>https://euriskosrl.it/cosa-facciamo.html</loc>
