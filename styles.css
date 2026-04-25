@@ -631,12 +631,14 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 @media (max-width: 900px) {
   .nav__links, .nav__cta, .nav__lock { display: none; }
   .nav__links { margin-left: 0; margin-right: 0; }
+  /* Tasto cerca: spostato a destra, accanto all'hamburger */
+  .nav__search { margin-left: auto; margin-right: 8px; }
+  .nav.open .nav__search { display: none; }
   .nav__burger {
     display: inline-flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
-    margin-left: auto;
     position: relative;
     z-index: 102;
   }
