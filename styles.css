@@ -622,6 +622,10 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
     text-overflow: clip;
   }
 }
+.footer-tagline-bottom .break-mobile { display: none; }
+@media (max-width: 720px) {
+  .footer-tagline-bottom .break-mobile { display: inline; }
+}
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
