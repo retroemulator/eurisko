@@ -565,14 +565,13 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 /* ---------- Footer particles wordmark (WOW: ~400 puntini interattivi) ---------- */
 .footer-particles {
   width: 100%;
-  padding: clamp(80px, 12vw, 160px) var(--gutter) clamp(20px, 3vw, 40px);
+  padding: clamp(80px, 12vw, 160px) 0 clamp(20px, 3vw, 40px);
   text-align: center;
   user-select: none;
 }
 .footer-particles__inner {
   position: relative;
-  max-width: var(--container);
-  margin: 0 auto;
+  width: 100%;
   height: clamp(120px, 22vw, 280px);
   display: flex;
   align-items: center;
@@ -611,7 +610,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   color: rgba(245, 241, 232, 0.6);
   text-align: center;
   margin: 0 auto clamp(50px, 6vw, 90px);
-  padding: 0 var(--gutter);
+  padding: 0;
   line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
