@@ -259,8 +259,9 @@
           p.vy += (p.by - p.y) * 0.04;
           p.vx *= 0.82;
           p.vy *= 0.82;
-          p.x += p.vx;
-          p.y += p.vy;
+          // Speed factor 0.75 = animazione 25% più lenta del default
+          p.x += p.vx * 0.75;
+          p.y += p.vy * 0.75;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fill();
