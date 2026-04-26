@@ -212,10 +212,10 @@
         // Font size: tries to fill width, capped by height
         const fontSize = Math.min(cssW / 5.2, cssH * 0.92);
         octx.font = '700 ' + fontSize.toFixed(0) + "px 'Switzer', system-ui, -apple-system, sans-serif";
-        octx.textAlign = 'center';
+        octx.textAlign = 'left';
         octx.textBaseline = 'middle';
         octx.fillStyle = '#fff';
-        octx.fillText('EURISKO', off.width / 2, off.height / 2);
+        octx.fillText('EURISKO', 0, off.height / 2);
 
         const data = octx.getImageData(0, 0, off.width, off.height).data;
         particles = [];

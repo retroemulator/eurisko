@@ -566,7 +566,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .footer-particles {
   width: 100%;
   padding: clamp(80px, 12vw, 160px) 0 clamp(20px, 3vw, 40px);
-  text-align: center;
+  text-align: left;
   user-select: none;
 }
 .footer-particles__inner {
@@ -575,7 +575,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   height: clamp(120px, 22vw, 280px);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .footer-particles__canvas,
 .footer-particles__text {
@@ -587,7 +587,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .footer-particles__text {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-family: var(--font-display, 'Switzer', sans-serif);
   font-size: clamp(72px, 18vw, 240px);
   font-weight: 700;
@@ -608,8 +608,8 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   font-weight: 400;
   font-size: clamp(15px, 1.4vw, 22px);
   color: rgba(245, 241, 232, 0.6);
-  text-align: center;
-  margin: 0 auto clamp(50px, 6vw, 90px);
+  text-align: left;
+  margin: 0 0 clamp(50px, 6vw, 90px) 0;
   padding: 0;
   line-height: 1.4;
   white-space: nowrap;
