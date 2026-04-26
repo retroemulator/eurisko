@@ -598,7 +598,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .footer-particles__canvas { display: none; }
 .footer-particles.is-active .footer-particles__canvas { display: block; }
 .footer-particles.is-active .footer-particles__text { display: none; }
-@media (prefers-reduced-motion: reduce) {
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
   .footer-particles__canvas { display: none !important; }
   .footer-particles__text { display: flex !important; }
 }

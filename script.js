@@ -175,24 +175,22 @@
     }
   }
 
-  // -------- 3c-bis. WOW: footer particles wordmark (mouse + touch) --------
-  // ~400 puntini bianchi compongono "EURISKO". Reagiscono a mouse (desktop) e
-  // touch/drag (mobile): si allontanano dal puntatore con repulsione magnetica
-  // e tornano elastici alla forma. Animazione in pausa quando il footer è
-  // fuori viewport (risparmio batteria mobile). Solo prefers-reduced-motion
-  // mostra il fallback testo statico (gestito via CSS).
+  // -------- 3c-bis. WOW: footer particles wordmark --------
+  // ~400 puntini bianchi compongono "EURISKO". Al passaggio del cursore i puntini
+  // vicini si allontanano (repulsione magnetica) e tornano elastici alla forma.
+  // Solo desktop con (hover: hover) and (pointer: fine). Su mobile/touch e
+  // prefers-reduced-motion mostra il fallback testo statico (gestito via CSS).
   const fp = document.querySelector('.footer-particles');
-  if (fp && !prefersReducedMotion) {
+  if (fp && !prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const canvas = fp.querySelector('.footer-particles__canvas');
     const inner = fp.querySelector('.footer-particles__inner');
     if (canvas && canvas.getContext && inner) {
       const ctx = canvas.getContext('2d');
       let particles = [];
-      let pointerX = -10000, pointerY = -10000;
+      let mouseX = -10000, mouseY = -10000;
       let dpr = Math.min(window.devicePixelRatio || 1, 2);
       let raf = 0;
       let started = false;
-      let inView = false;
       let cssW = 0, cssH = 0;
 
       const setup = () => {
@@ -206,10 +204,12 @@
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.scale(dpr, dpr);
 
+        // Off-screen render of "EURISKO" to sample
         const off = document.createElement('canvas');
         off.width = Math.max(2, Math.round(cssW));
         off.height = Math.max(2, Math.round(cssH));
         const octx = off.getContext('2d');
+        // Font size: tries to fill width, capped by height
         const fontSize = Math.min(cssW / 5.2, cssH * 0.92);
         octx.font = '700 ' + fontSize.toFixed(0) + "px 'Switzer', system-ui, -apple-system, sans-serif";
         octx.textAlign = 'left';
@@ -219,8 +219,7 @@
 
         const data = octx.getImageData(0, 0, off.width, off.height).data;
         particles = [];
-        // Step più ampio su mobile (cssW piccolo) per ridurre numero particelle e CPU
-        const step = cssW > 900 ? 5 : (cssW > 600 ? 6 : 8);
+        const step = cssW > 900 ? 5 : 6;
         for (let y = 0; y < off.height; y += step) {
           for (let x = 0; x < off.width; x += step) {
             const idx = (y * off.width + x) * 4 + 3;
@@ -239,22 +238,20 @@
         }
       };
 
-      // Repulse radius scala con la dimensione canvas (mobile più piccolo)
-      const getRepulseRadius = () => cssW > 900 ? 90 : (cssW > 600 ? 70 : 55);
+      const REPULSE_RADIUS = 90;
+      const R2 = REPULSE_RADIUS * REPULSE_RADIUS;
 
       const draw = () => {
-        const r = getRepulseRadius();
-        const r2 = r * r;
         ctx.clearRect(0, 0, cssW, cssH);
         ctx.fillStyle = 'rgba(245, 241, 232, 0.95)';
         for (let i = 0; i < particles.length; i++) {
           const p = particles[i];
-          const dx = p.x - pointerX;
-          const dy = p.y - pointerY;
+          const dx = p.x - mouseX;
+          const dy = p.y - mouseY;
           const d2 = dx * dx + dy * dy;
-          if (d2 < r2) {
+          if (d2 < R2) {
             const dist = Math.sqrt(d2) || 1;
-            const force = (r - dist) / dist;
+            const force = (REPULSE_RADIUS - dist) / dist;
             p.vx += dx * force * 0.04;
             p.vy += dy * force * 0.04;
           }
@@ -268,11 +265,7 @@
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fill();
         }
-        if (inView) {
-          raf = requestAnimationFrame(draw);
-        } else {
-          raf = 0;
-        }
+        raf = requestAnimationFrame(draw);
       };
 
       const start = () => {
@@ -280,64 +273,38 @@
         started = true;
         fp.classList.add('is-active');
         setup();
-        if (inView && !raf) raf = requestAnimationFrame(draw);
+        draw();
       };
 
       const initWhenReady = () => {
         if ('IntersectionObserver' in window) {
           const obs = new IntersectionObserver((entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                inView = true;
-                if (!started) {
-                  start();
-                } else if (!raf) {
-                  raf = requestAnimationFrame(draw);
-                }
-              } else {
-                inView = false;
-                // raf si fermerà al prossimo frame (vedi draw)
-              }
-            });
-          }, { threshold: 0 });
+            if (entries.some((e) => e.isIntersecting)) {
+              start();
+              obs.disconnect();
+            }
+          }, { threshold: 0.05 });
           obs.observe(fp);
         } else {
-          inView = true;
           start();
         }
       };
+      // Aspetta i font (Switzer) per misurare correttamente la larghezza testo
       if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(initWhenReady, initWhenReady);
       } else {
         initWhenReady();
       }
 
-      // Mouse (desktop)
       fp.addEventListener('mousemove', (e) => {
         const rect = canvas.getBoundingClientRect();
-        pointerX = e.clientX - rect.left;
-        pointerY = e.clientY - rect.top;
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
       });
       fp.addEventListener('mouseleave', () => {
-        pointerX = -10000;
-        pointerY = -10000;
+        mouseX = -10000;
+        mouseY = -10000;
       });
-      // Touch (mobile/tablet)
-      const updateTouchPos = (e) => {
-        if (!e.touches || !e.touches[0]) return;
-        const rect = canvas.getBoundingClientRect();
-        pointerX = e.touches[0].clientX - rect.left;
-        pointerY = e.touches[0].clientY - rect.top;
-      };
-      fp.addEventListener('touchstart', updateTouchPos, { passive: true });
-      fp.addEventListener('touchmove', updateTouchPos, { passive: true });
-      const releaseTouch = () => {
-        // Lascia decadere la repulsione naturalmente: sposta il puntatore lontano
-        pointerX = -10000;
-        pointerY = -10000;
-      };
-      fp.addEventListener('touchend', releaseTouch, { passive: true });
-      fp.addEventListener('touchcancel', releaseTouch, { passive: true });
 
       let resizeT = 0;
       window.addEventListener('resize', () => {
