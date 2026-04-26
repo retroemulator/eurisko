@@ -6,15 +6,47 @@
 (function () {
   'use strict';
 
-  // -------- 1. Navbar scroll state --------
+  // -------- 1. Navbar — scroll-aware shape-shifting (WOW) --------
+  // States:
+  //   .scrolled   → after 24px: stronger backdrop & smaller padding
+  //   .floating   → after 100px (desktop): contracts to centered pill
+  //   .hidden     → on scroll-down past 200px: slides out of viewport
+  // Re-shows on scroll-up. Never hides while burger menu is open or any
+  // descendant is focused (keyboard nav).
   const nav = document.querySelector('.nav');
   if (nav) {
-    const onScroll = () => {
-      if (window.scrollY > 24) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
+    let lastY = window.scrollY;
+    let ticking = false;
+    const SHRINK = 24;
+    const FLOAT = 100;
+    const HIDE_AFTER = 200;
+    const DELTA = 6;
+
+    const update = () => {
+      const y = window.scrollY;
+      const dy = y - lastY;
+      // Always update the easy ones
+      nav.classList.toggle('scrolled', y > SHRINK);
+      nav.classList.toggle('floating', y > FLOAT);
+      // Hide/show only on meaningful direction change
+      if (Math.abs(dy) > DELTA) {
+        if (dy > 0 && y > HIDE_AFTER && !nav.classList.contains('open')) {
+          nav.classList.add('hidden');
+        } else if (dy < 0) {
+          nav.classList.remove('hidden');
+        }
+      }
+      lastY = y;
+      ticking = false;
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+    update();
   }
 
   // -------- 2. Mobile burger --------
@@ -140,6 +172,61 @@
         });
       }, { threshold: 0.4 });
       statNums.forEach((el) => statObs.observe(el));
+    }
+  }
+
+  // -------- 3c-bis. WOW: footer cinematic wordmark (scale + rise + parallax) --------
+  // Scroll-driven: as the footer enters the viewport, the EURISKO wordmark grows
+  // from 0.62× to 1.0×, opacity 0.35→1, and rises 40px. Optional desktop-only
+  // parallax (max ±10px) on mouse move. Honors prefers-reduced-motion.
+  const fc = document.querySelector('.footer-cinematic');
+  if (fc && !prefersReducedMotion) {
+    let scrollAttached = false;
+    const updateProgress = () => {
+      const rect = fc.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      // 0 when fc top is below viewport, 1 when fc top has scrolled ~60% past view top
+      const start = vh;
+      const end = vh * 0.4;
+      const raw = (start - rect.top) / (start - end);
+      const p = Math.max(0, Math.min(1, raw));
+      fc.style.setProperty('--mark-progress', p.toFixed(3));
+    };
+    if ('IntersectionObserver' in window) {
+      const fcObs = new IntersectionObserver((entries) => {
+        const visible = entries.some((e) => e.isIntersecting);
+        if (visible && !scrollAttached) {
+          window.addEventListener('scroll', updateProgress, { passive: true });
+          window.addEventListener('resize', updateProgress, { passive: true });
+          scrollAttached = true;
+        }
+        updateProgress();
+      }, { threshold: [0, 0.05, 0.2, 0.5] });
+      fcObs.observe(fc);
+    } else {
+      // Fallback: just attach (no perf concern for one element)
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    }
+    // Mouse parallax — desktop only, max ±10px x / ±5px y
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      let parallaxRaf = 0;
+      let pendingX = 0, pendingY = 0;
+      document.addEventListener('mousemove', (e) => {
+        const rect = fc.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        const cx = window.innerWidth / 2;
+        const cy = window.innerHeight / 2;
+        pendingX = ((e.clientX - cx) / cx) * 10;
+        pendingY = ((e.clientY - cy) / cy) * 5;
+        if (!parallaxRaf) {
+          parallaxRaf = requestAnimationFrame(() => {
+            fc.style.setProperty('--mark-x', pendingX.toFixed(1) + 'px');
+            fc.style.setProperty('--mark-y', pendingY.toFixed(1) + 'px');
+            parallaxRaf = 0;
+          });
+        }
+      }, { passive: true });
     }
   }
 
