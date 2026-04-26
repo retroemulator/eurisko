@@ -1236,6 +1236,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   padding: 6px 14px;
   background: rgba(10, 22, 40, 0.85);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(245, 241, 232, 0.2);
   border-radius: 999px;
   font-size: 0.75rem;
@@ -2546,6 +2547,7 @@ summary:focus-visible {
   flex: 1;
   background: transparent;
   border: none;
+  border-bottom: 1px solid transparent;
   outline: none;
   color: var(--ink);
   font-family: var(--font-display);
@@ -2554,6 +2556,10 @@ summary:focus-visible {
   letter-spacing: -0.02em;
   line-height: 1.1;
   padding: 8px 0;
+  transition: border-color 0.2s var(--ease);
+}
+.site-search__input:focus-visible {
+  border-bottom-color: var(--accent-text);
 }
 .site-search__input::placeholder { color: var(--ink-mute); font-weight: 400; }
 .site-search__hint {
