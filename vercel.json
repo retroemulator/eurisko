@@ -21,15 +21,16 @@
       ]
     },
     {
-      "source": "/(.*)\\.(?:css|js|html|json|xml|txt)",
+      "source": "/(.*)\\.(?:css|js)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=600, stale-while-revalidate=86400, must-revalidate" }
       ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
     }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/en(/.*)?", "status": 404, "dest": "/en/404.html" },
-    { "src": "/.*", "status": 404, "dest": "/404.html" }
   ]
 }
