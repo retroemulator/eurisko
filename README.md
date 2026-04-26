@@ -2,6 +2,8 @@
 
 Sito statico multi-sezione per **Eurisko S.r.l.**, società di consulenza SAP italiana con sede a Cascinette d'Ivrea (TO). Bilingue italiano/inglese, GDPR-compliant, WCAG 2.1 AA, zero framework, zero build step.
 
+Deploy: Vercel (configurazione in `vercel.json` con security headers, cleanUrls, cache strategy granulare per tipo di asset).
+
 ## 📁 Struttura del progetto
 
 ```
