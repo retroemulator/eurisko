@@ -450,6 +450,21 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   .section-header { grid-template-columns: 1fr; gap: 24px; }
 }
 
+/* ---------- Centralized spacing patterns (was repeated inline 600+ times) ---------- */
+.eyebrow + .h1 { margin-top: 16px; }
+.cta-block__title { margin-top: 24px; }
+.gloss-content { padding-block: 40px 80px; }
+.gloss-content > h2.h1 { margin-top: 80px; }
+.gloss-content > h2.h1:first-of-type { margin-top: 60px; }
+.gloss-content dt { font-weight: 600; margin-top: 24px; }
+.gloss-content dd { margin: 8px 0 0 0; }
+
+/* Stats row that sits directly under page-hero needs breathing room */
+.page-hero + .container .stats,
+.page-hero + section.container .stats {
+  margin-top: clamp(40px, 5vw, 80px);
+}
+
 /* ---------- Marquee ---------- */
 .marquee {
   overflow: hidden;
