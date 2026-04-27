@@ -1,13 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Industriale">
-  <rect x="10" y="54" width="46" height="12" rx="6"/>
-  <circle cx="18" cy="60" r="2.5"/>
-  <circle cx="30" cy="60" r="2.5"/>
-  <circle cx="42" cy="60" r="2.5"/>
-  <circle cx="50" cy="60" r="2.5"/>
-  <path d="M18 54 V 40 H 36 V 54"/>
-  <line x1="22" y1="46" x2="32" y2="46"/>
-  <line x1="32" y1="42" x2="58" y2="22"/>
-  <line x1="36" y1="42" x2="62" y2="22"/>
-  <line x1="60" y1="22" x2="68" y2="38"/>
-  <path d="M64 36 L 72 38 L 68 48 L 60 44 Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Industriale">
+  <defs>
+    <linearGradient id="ind-yellow-top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD659"/>
+      <stop offset="1" stop-color="#F5C518"/>
+    </linearGradient>
+    <linearGradient id="ind-yellow-side" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E5A823"/>
+      <stop offset="1" stop-color="#B88317"/>
+    </linearGradient>
+    <linearGradient id="ind-yellow-front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A87813"/>
+      <stop offset="1" stop-color="#7A5810"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="100" cy="184" rx="80" ry="6" fill="#000" fill-opacity="0.4"/>
+
+  <path d="M 76 107 L 154 152 L 124 169.5 L 46 124.5 Z" fill="#2A3142"/>
+  <path d="M 76 119 L 154 164 L 154 152 L 76 107 Z" fill="#1A1F2E"/>
+  <path d="M 154 164 L 124 181.5 L 124 169.5 L 154 152 Z" fill="#0F1320"/>
+
+  <g stroke="#0A0F1A" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M 88 114 L 88 125"/>
+    <path d="M 100 121 L 100 132"/>
+    <path d="M 112 128 L 112 139"/>
+    <path d="M 124 135 L 124 146"/>
+    <path d="M 136 142 L 136 153"/>
+    <path d="M 148 149 L 148 160"/>
+  </g>
+
+  <g transform="matrix(0.866 0.5 0 -1 81 113)">
+    <circle r="7" fill="#0A0F1A"/>
+    <circle r="3.5" fill="#4A5568"/>
+    <circle r="1.2" fill="#1A202C"/>
+  </g>
+  <g transform="matrix(0.866 0.5 0 -1 149 152)">
+    <circle r="7" fill="#0A0F1A"/>
+    <circle r="3.5" fill="#4A5568"/>
+    <circle r="1.2" fill="#1A202C"/>
+  </g>
+
+  <path d="M 98 84 L 132 105 L 102 122 L 67 102 Z" fill="url(#ind-yellow-top)"/>
+  <path d="M 98 119 L 132 140 L 132 105 L 98 84 Z" fill="url(#ind-yellow-side)"/>
+  <path d="M 132 140 L 102 157 L 102 122 L 132 105 Z" fill="url(#ind-yellow-front)"/>
+
+  <path d="M 105 95 L 124 107 L 124 117 L 105 105 Z" fill="#0F1D33"/>
+  <path d="M 105 95 L 124 107" stroke="#000" stroke-width="0.8" fill="none" opacity="0.4"/>
+
+  <path d="M 129 130 L 135 124 L 159 145 L 153 151 Z" fill="url(#ind-yellow-side)" stroke="#7A5810" stroke-width="0.8"/>
+  <path d="M 153 146 L 159 150 L 142 173 L 136 169 Z" fill="url(#ind-yellow-front)" stroke="#7A5810" stroke-width="0.8"/>
+
+  <path d="M 138 132 L 156 147" stroke="#4A5568" stroke-width="2" fill="none"/>
+
+  <circle cx="156" cy="148" r="3.5" fill="#1A1F2E" stroke="#FFD659" stroke-width="1"/>
+  <circle cx="132" cy="127" r="3.5" fill="#1A1F2E" stroke="#FFD659" stroke-width="1"/>
+
+  <path d="M 130 168 L 148 168 L 152 178 L 128 178 Z" fill="#4A5568"/>
+  <path d="M 130 168 L 148 168 L 145 165 L 133 165 Z" fill="#6B7280"/>
+
+  <g stroke="#1A1F2E" stroke-width="1.5" fill="none">
+    <path d="M 132 178 L 132 181"/>
+    <path d="M 137 178 L 137 181"/>
+    <path d="M 142 178 L 142 181"/>
+    <path d="M 147 178 L 147 181"/>
+  </g>
+
+  <circle cx="139" cy="171" r="2.5" fill="#1A1F2E" stroke="#FFD659" stroke-width="0.8"/>
 </svg>
