@@ -19,8 +19,9 @@
     let ticking = false;
     const SHRINK = 24;
     const FLOAT = 100;
-    const HIDE_AFTER = 200;
     const DELTA = 6;
+    // HIDE_AFTER è dinamico: una viewport intera prima che il nav si nasconda
+    const getHideAfter = () => window.innerHeight || document.documentElement.clientHeight || 800;
 
     const update = () => {
       const y = window.scrollY;
@@ -30,7 +31,7 @@
       nav.classList.toggle('floating', y > FLOAT);
       // Hide/show only on meaningful direction change
       if (Math.abs(dy) > DELTA) {
-        if (dy > 0 && y > HIDE_AFTER && !nav.classList.contains('open')) {
+        if (dy > 0 && y > getHideAfter() && !nav.classList.contains('open')) {
           nav.classList.add('hidden');
         } else if (dy < 0) {
           nav.classList.remove('hidden');
