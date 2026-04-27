@@ -899,6 +899,13 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
     align-items: center;
     width: 100%;
   }
+  /* Mobile: chevron come tap-target separato per toggle accordion */
+  .nav.open .nav__dropdown-chevron {
+    padding: 12px 8px 12px 20px;
+    margin: -14px -8px -14px 0;
+    font-size: 0.875rem;
+    line-height: 1;
+  }
   .nav.open .nav__dropdown-panel {
     position: static;
     opacity: 1;

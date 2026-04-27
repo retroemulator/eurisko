@@ -80,15 +80,25 @@
     });
   }
 
-  // -------- 2b. Nav dropdown: toggle come accordion dentro il burger mobile --------
+  // -------- 2b. Nav dropdown: accordion mobile + navigazione --------
+  // Click sul chevron: toggle accordion (mai naviga).
+  // Click sul testo del link con accordion chiuso: apre l'accordion.
+  // Click sul testo con accordion gia aperto: naviga al link (default).
   document.querySelectorAll('.nav__dropdown-trigger').forEach((trigger) => {
     trigger.addEventListener('click', (e) => {
-      if (nav && nav.classList.contains('open')) {
+      if (!nav || !nav.classList.contains('open')) return;
+      const dd = trigger.closest('.nav__dropdown');
+      if (!dd) return;
+      const isChevron = e.target.classList && e.target.classList.contains('nav__dropdown-chevron');
+      const isAccordionOpen = dd.classList.contains('open');
+      if (isChevron) {
         e.preventDefault();
-        const dd = trigger.closest('.nav__dropdown');
-        if (!dd) return;
-        const isOpen = dd.classList.toggle('open');
-        trigger.setAttribute('aria-expanded', String(isOpen));
+        dd.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', String(!isAccordionOpen));
+      } else if (!isAccordionOpen) {
+        e.preventDefault();
+        dd.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
       }
     });
   });
