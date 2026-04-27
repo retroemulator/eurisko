@@ -883,13 +883,20 @@
     else v.addEventListener('loadedmetadata', setRate);
   });
 
-  // -------- 10. Page-hero video — slow down 25%, pause off-screen, prefers-reduced-motion --------
+  // -------- 10. Page-hero video — slow down 25%, smooth loop, pause off-screen, prefers-reduced-motion --------
   const phVideos = document.querySelectorAll('.page-hero__video');
   if (phVideos.length) {
     phVideos.forEach((v) => {
       const setRate = () => { v.playbackRate = 0.75; };
       if (v.readyState >= 1) setRate();
       else v.addEventListener('loadedmetadata', setRate);
+      // Anticipo il rewind manualmente prima del browser-native loop point
+      // per evitare lo scatto pause-seek-play causato dal loop nativo con playbackRate != 1
+      v.addEventListener('timeupdate', () => {
+        if (v.duration && v.currentTime >= v.duration - 0.1) {
+          v.currentTime = 0;
+        }
+      });
     });
     if (prefersReducedMotion) {
       phVideos.forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
