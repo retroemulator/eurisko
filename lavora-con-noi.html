@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@200,300,400,500,600,700,800,900,401&f[]=space-grotesk@800&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap">
-<link rel="stylesheet" href="styles.min.css?v=25">
+<link rel="stylesheet" href="styles.min.css?v=26">
 
 <script type="application/ld+json">
 {
@@ -346,9 +346,22 @@
 
         <div class="field-row">
           <div class="field">
-            <label for="c-name">Nome e cognome <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
-            <input type="text" id="c-name" name="nome" required autocomplete="name" minlength="2" aria-required="true">
-            <p class="field-error" id="c-name-error" hidden></p>
+            <label for="c-firstname">Nome <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+            <input type="text" id="c-firstname" name="nome" required autocomplete="given-name" minlength="2" aria-required="true">
+            <p class="field-error" id="c-firstname-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="c-lastname">Cognome <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+            <input type="text" id="c-lastname" name="cognome" required autocomplete="family-name" minlength="2" aria-required="true">
+            <p class="field-error" id="c-lastname-error" hidden></p>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="c-city">Città <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+            <input type="text" id="c-city" name="citta" required autocomplete="address-level2" aria-required="true">
+            <p class="field-error" id="c-city-error" hidden></p>
           </div>
           <div class="field">
             <label for="c-email">Email <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
@@ -359,43 +372,128 @@
 
         <div class="field-row">
           <div class="field">
-            <label for="c-phone">Telefono</label>
-            <input type="tel" id="c-phone" name="telefono" autocomplete="tel">
+            <label for="c-prefix">Prefisso internazionale <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+            <select id="c-prefix" name="prefisso" required aria-required="true" autocomplete="tel-country-code">
+              <option value="">Seleziona...</option>
+              <option value="+39" selected>+39 Italia</option>
+              <option value="+1">+1 Stati Uniti / Canada</option>
+              <option value="+7">+7 Russia / Kazakistan</option>
+              <option value="+20">+20 Egitto</option>
+              <option value="+27">+27 Sudafrica</option>
+              <option value="+30">+30 Grecia</option>
+              <option value="+31">+31 Paesi Bassi</option>
+              <option value="+32">+32 Belgio</option>
+              <option value="+33">+33 Francia</option>
+              <option value="+34">+34 Spagna</option>
+              <option value="+36">+36 Ungheria</option>
+              <option value="+40">+40 Romania</option>
+              <option value="+41">+41 Svizzera</option>
+              <option value="+43">+43 Austria</option>
+              <option value="+44">+44 Regno Unito</option>
+              <option value="+45">+45 Danimarca</option>
+              <option value="+46">+46 Svezia</option>
+              <option value="+47">+47 Norvegia</option>
+              <option value="+48">+48 Polonia</option>
+              <option value="+49">+49 Germania</option>
+              <option value="+52">+52 Messico</option>
+              <option value="+54">+54 Argentina</option>
+              <option value="+55">+55 Brasile</option>
+              <option value="+61">+61 Australia</option>
+              <option value="+64">+64 Nuova Zelanda</option>
+              <option value="+65">+65 Singapore</option>
+              <option value="+81">+81 Giappone</option>
+              <option value="+82">+82 Corea del Sud</option>
+              <option value="+86">+86 Cina</option>
+              <option value="+90">+90 Turchia</option>
+              <option value="+91">+91 India</option>
+              <option value="+212">+212 Marocco</option>
+              <option value="+216">+216 Tunisia</option>
+              <option value="+351">+351 Portogallo</option>
+              <option value="+352">+352 Lussemburgo</option>
+              <option value="+353">+353 Irlanda</option>
+              <option value="+354">+354 Islanda</option>
+              <option value="+355">+355 Albania</option>
+              <option value="+356">+356 Malta</option>
+              <option value="+357">+357 Cipro</option>
+              <option value="+358">+358 Finlandia</option>
+              <option value="+359">+359 Bulgaria</option>
+              <option value="+370">+370 Lituania</option>
+              <option value="+371">+371 Lettonia</option>
+              <option value="+372">+372 Estonia</option>
+              <option value="+377">+377 Monaco</option>
+              <option value="+378">+378 San Marino</option>
+              <option value="+380">+380 Ucraina</option>
+              <option value="+381">+381 Serbia</option>
+              <option value="+382">+382 Montenegro</option>
+              <option value="+385">+385 Croazia</option>
+              <option value="+386">+386 Slovenia</option>
+              <option value="+387">+387 Bosnia ed Erzegovina</option>
+              <option value="+389">+389 Macedonia del Nord</option>
+              <option value="+420">+420 Repubblica Ceca</option>
+              <option value="+421">+421 Slovacchia</option>
+              <option value="+423">+423 Liechtenstein</option>
+              <option value="+961">+961 Libano</option>
+              <option value="+962">+962 Giordania</option>
+              <option value="+966">+966 Arabia Saudita</option>
+              <option value="+971">+971 Emirati Arabi Uniti</option>
+              <option value="+972">+972 Israele</option>
+            </select>
           </div>
           <div class="field">
-            <label for="c-role">Posizione <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
-            <select id="c-role" name="posizione" required aria-required="true">
-              <option value="">Seleziona...</option>
-            </select>
+            <label for="c-phone">Telefono <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+            <input type="tel" id="c-phone" name="telefono" required autocomplete="tel-national" aria-required="true">
+            <p class="field-error" id="c-phone-error" hidden></p>
           </div>
         </div>
 
         <div class="field-row">
           <div class="field">
+            <label for="c-role">Posizione</label>
+            <select id="c-role" name="posizione">
+              <option value="">Seleziona...</option>
+            </select>
+          </div>
+          <div class="field">
             <label for="c-linkedin">Profilo LinkedIn</label>
             <input type="url" id="c-linkedin" name="linkedin" placeholder="https://linkedin.com/in/..." autocomplete="url">
           </div>
-          <div class="field">
-            <label for="c-experience">Anni di esperienza SAP</label>
-            <select id="c-experience" name="esperienza">
-              <option value="">Seleziona...</option>
-              <option value="0-2">0–2 anni</option>
-              <option value="2-5">2–5 anni</option>
-              <option value="5-10">5–10 anni</option>
-              <option value="10+">10+ anni</option>
-            </select>
-          </div>
+        </div>
+
+        <div class="field">
+          <label for="c-experience">Anni di esperienza SAP <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+          <select id="c-experience" name="esperienza" required aria-required="true">
+            <option value="">Seleziona...</option>
+            <option value="0-2">0–2 anni</option>
+            <option value="2-5">2–5 anni</option>
+            <option value="5-10">5–10 anni</option>
+            <option value="10+">10+ anni</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="c-work-permit">Permesso di lavoro <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+          <p class="field-help">Tutte le persone assunte alle dipendenze di Eurisko devono essere in possesso di regolare permesso di lavoro in corso di validità che consenta loro di lavorare nei Paesi in cui svolgono attività per conto dell'Azienda. Sei autorizzato/a a lavorare nel Paese in cui dovrai svolgere il lavoro?</p>
+          <select id="c-work-permit" name="permesso_lavoro" required aria-required="true">
+            <option value="">Seleziona...</option>
+            <option value="si">Sì</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="c-protected">Categorie Protette <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+          <p class="field-help">Ai sensi degli articoli 1 e 3 della Legge n. 68/99, sei iscritto/a alle liste delle categorie protette?</p>
+          <select id="c-protected" name="categorie_protette" required aria-required="true">
+            <option value="">Seleziona...</option>
+            <option value="si">Sì</option>
+            <option value="no">No</option>
+          </select>
         </div>
 
         <div class="field">
           <label for="c-cv">Curriculum Vitae (PDF, DOC, DOCX · max 5&nbsp;MB) <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
           <input type="file" id="c-cv" name="cv" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-required="true">
           <p class="field-error" id="c-cv-error" hidden></p>
-        </div>
-
-        <div class="field">
-          <label for="c-cover">Lettera di presentazione</label>
-          <textarea id="c-cover" name="lettera" placeholder="Perché vuoi unirti a Eurisko? Raccontaci qualcosa di te, delle tue competenze SAP e dei progetti che ti hanno formato."></textarea>
         </div>
 
         <div class="field field--checkbox">

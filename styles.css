@@ -1971,6 +1971,7 @@ form.contact { display: grid; gap: 20px; }
 .field select option { background: var(--bg-alt); color: var(--ink); }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 @media (max-width: 620px) { .field-row { grid-template-columns: 1fr; } }
+.field-help { font-size: 0.875rem; line-height: 1.5; color: var(--ink-soft); margin: 0 0 4px 0; max-width: 78ch; }
 .submit-row { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; gap: 20px; flex-wrap: wrap; }
 .consent { font-size: 0.8125rem; color: var(--ink-soft); max-width: 42ch; line-height: 1.5; }
 
