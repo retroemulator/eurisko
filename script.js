@@ -883,6 +883,43 @@
     else v.addEventListener('loadedmetadata', setRate);
   });
 
+  // -------- 11. Page-hero media — cinematic reveal + 3D tilt parallax al mouse --------
+  const phWraps = document.querySelectorAll('.page-hero__media-wrap--reveal');
+  if (phWraps.length) {
+    if (prefersReducedMotion) {
+      phWraps.forEach((w) => w.classList.add('is-revealed'));
+    } else {
+      if ('IntersectionObserver' in window) {
+        const revealObs = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-revealed');
+              revealObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        phWraps.forEach((w) => revealObs.observe(w));
+      } else {
+        phWraps.forEach((w) => w.classList.add('is-revealed'));
+      }
+      phWraps.forEach((w) => {
+        const media = w.querySelector('.page-hero__media');
+        if (!media) return;
+        w.addEventListener('mousemove', (e) => {
+          const rect = w.getBoundingClientRect();
+          const px = (e.clientX - rect.left) / rect.width - 0.5;
+          const py = (e.clientY - rect.top) / rect.height - 0.5;
+          media.style.setProperty('--tilt-x', (px * 8).toFixed(2) + 'deg');
+          media.style.setProperty('--tilt-y', (-py * 8).toFixed(2) + 'deg');
+        });
+        w.addEventListener('mouseleave', () => {
+          media.style.setProperty('--tilt-x', '0deg');
+          media.style.setProperty('--tilt-y', '0deg');
+        });
+      });
+    }
+  }
+
   // -------- 10. Page-hero video — slow down 25%, smooth loop, pause off-screen, prefers-reduced-motion --------
   const phVideos = document.querySelectorAll('.page-hero__video');
   if (phVideos.length) {
