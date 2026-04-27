@@ -2165,6 +2165,45 @@ form.contact { display: grid; gap: 20px; }
 .page-hero__crumbs { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 28px; display: flex; gap: 12px; }
 .page-hero__crumbs span { color: var(--ink); }
 
+/* Hero con media affiancato (layout 2-col desktop, stack mobile) */
+.page-hero--media {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+.page-hero--media .page-hero__content { min-width: 0; }
+.page-hero--media .page-hero__title { max-width: none; }
+.page-hero--media .page-hero__lede { max-width: 48ch; }
+.page-hero__media-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.page-hero__media {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 50px rgba(196, 30, 58, 0.18));
+  animation: heroFloat 9s ease-in-out infinite;
+}
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@media (max-width: 900px) {
+  .page-hero--media {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .page-hero__media { max-width: 360px; margin: 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__media { animation: none; }
+}
+
 /* =====================================================
    CAREERS
    ===================================================== */
