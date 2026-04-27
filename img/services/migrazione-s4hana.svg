@@ -1,10 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Migrazione S/4HANA">
-  <ellipse cx="20" cy="22" rx="10" ry="4"/>
-  <path d="M10 22v18c0 2 4 4 10 4s10-2 10-4V22"/>
-  <path d="M10 32c0 2 4 4 10 4s10-2 10-4"/>
-  <ellipse cx="60" cy="22" rx="10" ry="4"/>
-  <path d="M50 22v18c0 2 4 4 10 4s10-2 10-4V22"/>
-  <path d="M50 32c0 2 4 4 10 4s10-2 10-4"/>
-  <line x1="32" y1="56" x2="54" y2="56"/>
-  <polyline points="48,50 54,56 48,62"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Migrazione S/4HANA">
+  <ellipse cx="20" cy="22" rx="10" ry="4" stroke-width="1.5"/>
+  <path d="M10 22v18c0 2 4 4 10 4s10-2 10-4V22" stroke-width="1.5"/>
+  <path d="M10 32c0 2 4 4 10 4s10-2 10-4" stroke-width="1"/>
+  <ellipse cx="60" cy="22" rx="10" ry="4" stroke-width="1.5"/>
+  <path d="M50 22v18c0 2 4 4 10 4s10-2 10-4V22" stroke-width="1.5"/>
+  <path d="M50 32c0 2 4 4 10 4s10-2 10-4" stroke-width="1"/>
+  <g stroke-width="0.7" opacity="0.5">
+    <line x1="14" y1="28" x2="26" y2="40"/>
+    <line x1="26" y1="28" x2="14" y2="40"/>
+  </g>
+  <g stroke-width="0.8" opacity="0.85">
+    <path d="M58 28 L 58 32 M 56 30 L 60 30"/>
+    <path d="M64 36 L 64 38 M 63 37 L 65 37"/>
+  </g>
+  <line x1="32" y1="54" x2="48" y2="54" stroke-width="1.5"/>
+  <polyline points="44,50 50,54 44,58" stroke-width="1.5"/>
+  <line x1="34" y1="62" x2="46" y2="62" stroke-width="0.8" opacity="0.6"/>
+  <polyline points="43,59 47,62 43,65" stroke-width="0.8" opacity="0.6"/>
+  <g stroke-width="0.6" opacity="0.5">
+    <line x1="14" y1="50" x2="26" y2="50"/>
+    <line x1="54" y1="50" x2="66" y2="50"/>
+  </g>
 </svg>

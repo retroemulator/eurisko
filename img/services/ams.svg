@@ -1,4 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Application Management Services">
-  <path d="M40 12 L62 22 v18 c0 14 -10 24 -22 30 -12 -6 -22 -16 -22 -30 V22 z"/>
-  <path d="M30 40 l8 8 l14 -14"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Application Management Services">
+  <path d="M40 12 L62 22 v18 c0 14 -10 24 -22 30 -12 -6 -22 -16 -22 -30 V22 z" stroke-width="1.5"/>
+  <path d="M30 40 l8 8 l14 -14" stroke-width="2"/>
+  <path d="M40 18 L57 26 v14 c0 10 -8 18 -17 22 -9 -4 -17 -12 -17 -22 V26 z" stroke-width="0.7" opacity="0.5"/>
+  <rect x="37" y="22" width="6" height="4" rx="0.5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M38.5 22 L 38.5 20.5 Q 40 19.5 41.5 20.5 L 41.5 22" stroke-width="0.6" opacity="0.7"/>
+  <g stroke-width="0.8" opacity="0.6">
+    <path d="M16 14 L 18 14 L 18 16"/>
+    <path d="M64 14 L 62 14 L 62 16"/>
+    <path d="M40 70 L 38 68 M 40 70 L 42 68"/>
+  </g>
+  <g fill="#B8BDC9" stroke="none" opacity="0.6">
+    <circle cx="14" cy="42" r="0.6"/>
+    <circle cx="66" cy="42" r="0.6"/>
+  </g>
 </svg>

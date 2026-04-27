@@ -1,11 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Plant Maintenance">
-  <circle cx="50" cy="30" r="10"/>
-  <circle cx="50" cy="30" r="3"/>
-  <line x1="50" y1="14" x2="50" y2="20"/>
-  <line x1="50" y1="40" x2="50" y2="46"/>
-  <line x1="34" y1="30" x2="40" y2="30"/>
-  <line x1="60" y1="30" x2="66" y2="30"/>
-  <line x1="38" y1="18" x2="42" y2="22"/>
-  <line x1="58" y1="38" x2="62" y2="42"/>
-  <path d="M14 60 L 36 38 L 42 44 L 20 66 Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Plant Maintenance">
+  <circle cx="50" cy="30" r="10" stroke-width="1.5"/>
+  <circle cx="50" cy="30" r="3" stroke-width="1.5"/>
+  <line x1="50" y1="14" x2="50" y2="20" stroke-width="1.5"/>
+  <line x1="50" y1="40" x2="50" y2="46" stroke-width="1.5"/>
+  <line x1="34" y1="30" x2="40" y2="30" stroke-width="1.5"/>
+  <line x1="60" y1="30" x2="66" y2="30" stroke-width="1.5"/>
+  <line x1="38" y1="18" x2="42" y2="22" stroke-width="1.5"/>
+  <line x1="58" y1="38" x2="62" y2="42" stroke-width="1.5"/>
+  <line x1="38" y1="42" x2="42" y2="38" stroke-width="1"/>
+  <line x1="58" y1="22" x2="62" y2="18" stroke-width="1"/>
+  <path d="M14 60 L 36 38 L 42 44 L 20 66 Z" stroke-width="1.5"/>
+  <circle cx="50" cy="30" r="0.8" fill="#B8BDC9" stroke="none"/>
+  <g stroke-width="0.8" opacity="0.7">
+    <path d="M40 50 L 42 48 M 41 49 L 41 51"/>
+    <path d="M30 60 L 32 58"/>
+  </g>
+  <g fill="#B8BDC9" stroke="none" opacity="0.6">
+    <circle cx="44" cy="46" r="0.7"/>
+    <circle cx="32" cy="56" r="0.6"/>
+    <circle cx="22" cy="50" r="0.5"/>
+  </g>
+  <g stroke-width="0.7" opacity="0.55">
+    <circle cx="20" cy="20" r="2"/>
+    <line x1="22" y1="22" x2="26" y2="26"/>
+  </g>
 </svg>

@@ -1,9 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Cosa facciamo">
-  <rect x="14" y="14" width="52" height="52" rx="3"/>
-  <polyline points="20,26 24,30 30,22"/>
-  <line x1="36" y1="26" x2="58" y2="26"/>
-  <polyline points="20,40 24,44 30,36"/>
-  <line x1="36" y1="40" x2="58" y2="40"/>
-  <polyline points="20,54 24,58 30,50"/>
-  <line x1="36" y1="54" x2="50" y2="54"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Cosa facciamo">
+  <rect x="14" y="14" width="52" height="52" rx="3" stroke-width="1.5"/>
+  <line x1="14" y1="20" x2="66" y2="20" stroke-width="0.7" opacity="0.6"/>
+  <polyline points="20,26 24,30 30,22" stroke-width="1.5"/>
+  <line x1="36" y1="26" x2="58" y2="26" stroke-width="1"/>
+  <polyline points="20,40 24,44 30,36" stroke-width="1.5"/>
+  <line x1="36" y1="40" x2="58" y2="40" stroke-width="1"/>
+  <polyline points="20,54 24,58 30,50" stroke-width="1.5"/>
+  <line x1="36" y1="54" x2="50" y2="54" stroke-width="1"/>
+  <g stroke-width="0.5" opacity="0.5">
+    <line x1="36" y1="29" x2="50" y2="29"/>
+    <line x1="36" y1="43" x2="48" y2="43"/>
+  </g>
+  <g fill="#B8BDC9" stroke="none" opacity="0.7">
+    <circle cx="62" cy="40" r="0.7"/>
+    <circle cx="62" cy="26" r="0.7"/>
+    <circle cx="62" cy="54" r="0.7"/>
+  </g>
+  <g stroke-width="0.7" opacity="0.65">
+    <path d="M58 16 L 62 16 L 62 18 L 58 18 Z"/>
+    <path d="M62 17 L 64 17"/>
+  </g>
+  <g stroke-width="0.7" opacity="0.6">
+    <path d="M70 70 L 70 73 M 68 71.5 L 72 71.5"/>
+  </g>
 </svg>
