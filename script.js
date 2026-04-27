@@ -893,7 +893,7 @@
       // Anticipo il rewind manualmente prima del browser-native loop point
       // per evitare lo scatto pause-seek-play causato dal loop nativo con playbackRate != 1
       v.addEventListener('timeupdate', () => {
-        if (v.duration && v.currentTime >= v.duration - 0.2) {
+        if (v.duration && v.currentTime >= v.duration - 0.3) {
           v.currentTime = 0;
         }
       });
