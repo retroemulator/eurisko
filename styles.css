@@ -2193,6 +2193,7 @@ form.contact { display: grid; gap: 20px; }
 video.page-hero__media {
   filter: url(#removeBlack) drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 50px rgba(196, 30, 58, 0.18));
   background: transparent;
+  animation: none;
 }
 @keyframes heroFloat {
   0%, 100% { transform: translateY(0); }
