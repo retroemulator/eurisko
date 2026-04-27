@@ -2200,7 +2200,7 @@ video.page-hero__media {
   perspective: 1200px;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.7s ease-out, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 1.2s ease-out, transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .page-hero__media-wrap--reveal.is-revealed {
   opacity: 1;
@@ -2209,20 +2209,20 @@ video.page-hero__media {
 .page-hero__media-wrap--reveal::after {
   content: "";
   position: absolute;
-  inset: -10%;
+  inset: -15%;
   border-radius: 24px;
-  background: radial-gradient(circle at center, rgba(196, 30, 58, 0.45) 0%, transparent 60%);
+  background: radial-gradient(circle at center, rgba(196, 30, 58, 0.75) 0%, transparent 60%);
   opacity: 0;
   pointer-events: none;
   z-index: -1;
-  filter: blur(28px);
+  filter: blur(42px);
 }
 .page-hero__media-wrap--reveal.is-revealed::after {
-  animation: mediaGlowBurst 1.6s ease-out 0.25s;
+  animation: mediaGlowBurst 2.2s ease-out 0.4s;
 }
 @keyframes mediaGlowBurst {
-  0%   { opacity: 0; transform: scale(0.7); }
-  40%  { opacity: 1; transform: scale(1.1); }
+  0%   { opacity: 0; transform: scale(0.6); }
+  40%  { opacity: 1; transform: scale(1.2); }
   100% { opacity: 0; transform: scale(1); }
 }
 .page-hero__media-wrap--reveal .page-hero__media {
