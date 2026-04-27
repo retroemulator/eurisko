@@ -2191,10 +2191,7 @@ form.contact { display: grid; gap: 20px; }
   animation: heroFloat 9s ease-in-out infinite;
 }
 video.page-hero__media {
-  mix-blend-mode: lighten;
-  border-radius: 0;
-  filter: none;
-  animation: none;
+  filter: url(#removeBlack) drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 50px rgba(196, 30, 58, 0.18));
   background: transparent;
 }
 @keyframes heroFloat {
