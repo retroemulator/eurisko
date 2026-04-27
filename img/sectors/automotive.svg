@@ -1,51 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Automotive">
-  <defs>
-    <linearGradient id="auto-top" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#D02545"/>
-      <stop offset="1" stop-color="#A01729"/>
-    </linearGradient>
-    <linearGradient id="auto-side" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#A01729"/>
-      <stop offset="1" stop-color="#7A0F1F"/>
-    </linearGradient>
-    <linearGradient id="auto-front" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#6B0F1C"/>
-      <stop offset="1" stop-color="#4A0A14"/>
-    </linearGradient>
-    <linearGradient id="auto-glass" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#3D5C8C"/>
-      <stop offset="1" stop-color="#15253F"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Automotive">
+  <path d="M 10 58 L 10 51 Q 10 49 12 49 L 24 41 Q 26 39 30 39 L 50 39 Q 54 39 56 41 L 68 49 Q 70 49 70 51 L 70 58 Z" stroke-width="1.5"/>
 
-  <ellipse cx="100" cy="172" rx="68" ry="6" fill="#000" fill-opacity="0.4"/>
+  <line x1="12" y1="49" x2="68" y2="49" stroke-width="1"/>
+  <line x1="40" y1="39" x2="40" y2="49" stroke-width="1"/>
+  <line x1="44" y1="49" x2="44" y2="56" stroke-width="1"/>
+  <line x1="46" y1="52" x2="50" y2="52" stroke-width="1"/>
 
-  <path d="M 83 82 L 152 122 L 117 142 L 48 102 Z" fill="url(#auto-top)"/>
-  <path d="M 83 100 L 152 140 L 152 122 L 83 82 Z" fill="url(#auto-side)"/>
-  <path d="M 152 140 L 117 160 L 117 142 L 152 122 Z" fill="url(#auto-front)"/>
+  <path d="M 53 41 L 55 40 L 55 42 L 53 43 Z" stroke-width="1"/>
 
-  <path d="M 91 72 L 143 102 L 109 122 L 57 92 Z" fill="#5C7299"/>
-  <path d="M 91 87 L 143 117 L 143 102 L 91 72 Z" fill="url(#auto-glass)"/>
-  <path d="M 143 117 L 109 137 L 109 122 L 143 102 Z" fill="#0A1628"/>
+  <line x1="56" y1="44" x2="66" y2="48" stroke-width="0.8" opacity="0.7"/>
 
-  <path d="M 91 87 L 143 117" stroke="#0A1628" stroke-width="1.2" fill="none" opacity="0.7"/>
-  <path d="M 117 142 L 152 122" stroke="rgba(15,29,51,0.45)" stroke-width="1" fill="none"/>
-
-  <g transform="matrix(0.866 0.5 0 -1 135 124)">
-    <circle r="9" fill="#0A1628"/>
-    <circle r="5" fill="#3D4B66"/>
-    <circle r="2.5" fill="#B8BDC9"/>
-  </g>
-  <g transform="matrix(0.866 0.5 0 -1 96 102)">
-    <circle r="9" fill="#0A1628"/>
-    <circle r="5" fill="#3D4B66"/>
-    <circle r="2.5" fill="#B8BDC9"/>
+  <g stroke-width="0.7" opacity="0.5">
+    <line x1="58" y1="46" x2="61" y2="44"/>
+    <line x1="60" y1="48" x2="63" y2="46"/>
+    <line x1="62" y1="49" x2="65" y2="47"/>
   </g>
 
-  <circle cx="146" cy="132" r="3" fill="#F5F1E8"/>
-  <circle cx="146" cy="132" r="1.4" fill="#fff"/>
+  <circle cx="66" cy="51" r="1.5" stroke-width="1.5"/>
+  <line x1="11" y1="51" x2="14" y2="51" stroke-width="1.5"/>
 
-  <circle cx="86" cy="92" r="2.4" fill="#ff1213"/>
+  <circle cx="56" cy="58" r="6" stroke-width="2"/>
+  <circle cx="56" cy="58" r="2.5" stroke-width="1"/>
+  <line x1="56" y1="52" x2="56" y2="64" stroke-width="0.8"/>
+  <line x1="50" y1="58" x2="62" y2="58" stroke-width="0.8"/>
 
-  <path d="M 48 102 L 117 142" stroke="rgba(245,241,232,0.18)" stroke-width="1.2" fill="none"/>
+  <circle cx="24" cy="58" r="6" stroke-width="2"/>
+  <circle cx="24" cy="58" r="2.5" stroke-width="1"/>
+  <line x1="24" y1="52" x2="24" y2="64" stroke-width="0.8"/>
+  <line x1="18" y1="58" x2="30" y2="58" stroke-width="0.8"/>
+
+  <g stroke-width="1" stroke-linecap="round" opacity="0.7">
+    <line x1="2" y1="45" x2="7" y2="45" stroke-dasharray="2 1.5"/>
+    <line x1="3" y1="50" x2="8" y2="50" stroke-dasharray="2 1.5"/>
+    <line x1="2" y1="55" x2="7" y2="55" stroke-dasharray="2 1.5"/>
+  </g>
 </svg>
