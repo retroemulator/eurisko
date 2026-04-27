@@ -778,6 +778,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   align-items: center;
   gap: 6px;
   color: var(--accent-text);
+  font-weight: 700;
 }
 .footer__meta a.footer__meta-reserved:hover { color: var(--ink); }
 .footer__meta-reserved::before {
