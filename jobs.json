@@ -6,22 +6,10 @@
     "type": { "it": "Full-time · Mid-Senior", "en": "Full-time · Mid-Senior" }
   },
   {
-    "id": "mmsd",
-    "title": { "it": "SAP Functional Analyst (MM/SD)", "en": "SAP Functional Analyst (MM/SD)" },
+    "id": "fico-junior",
+    "title": { "it": "SAP Functional Analyst (FI/CO) (Junior/Neolaureato)", "en": "SAP Functional Analyst (FI/CO) (Junior/Graduate)" },
     "location": { "it": "Torino / Ibrido", "en": "Turin / Hybrid" },
-    "type": { "it": "Full-time · Mid-Senior", "en": "Full-time · Mid-Senior" }
-  },
-  {
-    "id": "abap",
-    "title": { "it": "ABAP Developer", "en": "ABAP Developer" },
-    "location": { "it": "Torino / Ibrido", "en": "Turin / Hybrid" },
-    "type": { "it": "Full-time · Junior / Mid", "en": "Full-time · Junior / Mid" }
-  },
-  {
-    "id": "bpe",
-    "title": { "it": "Business Process Expert", "en": "Business Process Expert" },
-    "location": { "it": "Torino / On-site", "en": "Turin / On-site" },
-    "type": { "it": "Full-time · Senior", "en": "Full-time · Senior" }
+    "type": { "it": "Full-time · Junior / Neolaureato", "en": "Full-time · Junior / Graduate" }
   },
   {
     "id": "spontaneous",
