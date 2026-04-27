@@ -371,7 +371,7 @@
       +     '<svg class="site-search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>'
       +     '<input type="search" class="site-search__input" placeholder="' + t.placeholder + '" autocomplete="off" spellcheck="false" />'
       +   '</div>'
-      +   '<div class="site-search__hint">' + t.hint + ' <kbd>ESC</kbd> ' + (isEN ? 'to close' : 'per chiudere') + ' · <kbd>Ctrl</kbd>+<kbd>K</kbd> ' + (isEN ? 'to open' : 'per aprire') + '</div>'
+      +   '<div class="site-search__hint">' + t.hint + ' <kbd>ESC</kbd> ' + (isEN ? 'to close' : 'per chiudere') + ' · <kbd>Ctrl</kbd>+<kbd>' + (isEN ? 'Click' : 'Clic') + '</kbd> ' + (isEN ? 'to open in new tab' : 'per aprire in nuova scheda') + '</div>'
       +   '<div class="site-search__results" role="list" aria-live="polite"></div>'
       + '</div>';
     document.body.appendChild(overlay);
