@@ -127,6 +127,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 
 /* ---------- Navbar ---------- */
 .nav {
+  --nav-opacity: 1;
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
@@ -142,6 +143,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   border-bottom-color: var(--line-soft);
   margin-inline: auto;
   max-width: 100%;
+  opacity: var(--nav-opacity);
   transition:
     padding 0.4s var(--ease),
     background 0.35s var(--ease),
@@ -152,9 +154,14 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
     border-radius 0.45s var(--ease),
     border-color 0.35s var(--ease),
     box-shadow 0.45s var(--ease),
-    margin-top 0.45s var(--ease);
-  will-change: transform, max-width, padding;
+    margin-top 0.45s var(--ease),
+    opacity 0.25s var(--ease);
+  will-change: transform, max-width, padding, opacity;
 }
+/* Focus-within: anche se l'opacity è bassa per scroll-down, la tab keyboard
+   riporta il nav a opacity 1 per non perdere l'utente */
+.nav:focus-within { opacity: 1 !important; }
+.nav.open { opacity: 1 !important; }
 .nav__links { margin-left: auto; margin-right: auto; }
 .nav.scrolled {
   background: rgba(10, 22, 40, 0.92);
@@ -186,15 +193,10 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   }
   .nav.scrolled.floating .nav__dropdown-panel { top: 64px; }
 }
-/* Hide on scroll-down — never when burger menu is open or any descendant is focused */
-.nav.hidden:not(.open):not(:focus-within) {
-  transform: translateY(-115%);
-}
 /* Reduced motion: keep states cosmetic only, no spring/transform */
 @media (prefers-reduced-motion: reduce) {
-  .nav { transition: background 0.2s linear; }
+  .nav { transition: background 0.2s linear, opacity 0.2s linear; }
   .nav.floating { max-width: 100% !important; margin-top: 0 !important; border-radius: 0 !important; }
-  .nav.hidden { transform: none !important; }
 }
 .nav__logo {
   display: inline-flex;

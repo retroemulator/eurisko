@@ -17,26 +17,39 @@
   if (nav) {
     let lastY = window.scrollY;
     let ticking = false;
+    let direction = 'down';
     const SHRINK = 24;
     const FLOAT = 100;
     const DELTA = 6;
-    // HIDE_AFTER è dinamico: una viewport intera prima che il nav si nasconda
+    // Soglia di hide dinamica: una viewport intera (= opacity raggiunge 0)
     const getHideAfter = () => window.innerHeight || document.documentElement.clientHeight || 800;
 
     const update = () => {
       const y = window.scrollY;
       const dy = y - lastY;
-      // Always update the easy ones
+      const hideAfter = getHideAfter();
+
       nav.classList.toggle('scrolled', y > SHRINK);
       nav.classList.toggle('floating', y > FLOAT);
-      // Hide/show only on meaningful direction change
+
+      // Track scroll direction (con DELTA threshold per ignorare micro-scroll)
       if (Math.abs(dy) > DELTA) {
-        if (dy > 0 && y > getHideAfter() && !nav.classList.contains('open')) {
-          nav.classList.add('hidden');
-        } else if (dy < 0) {
-          nav.classList.remove('hidden');
-        }
+        if (dy > 0) direction = 'down';
+        else if (dy < 0) direction = 'up';
       }
+
+      // Calcolo opacity progressiva.
+      // - Scroll-down dopo FLOAT (100px): opacity decade linearmente da 1 a 0
+      //   raggiungendo 0 alla soglia hideAfter (= viewport height).
+      // - Scroll-up: opacity istantanea a 1 (snap-back).
+      // - Burger menu aperto: sempre opacity 1.
+      let opacity = 1;
+      if (direction === 'down' && y > FLOAT && !nav.classList.contains('open')) {
+        const prog = Math.min(1, Math.max(0, (y - FLOAT) / (hideAfter - FLOAT)));
+        opacity = 1 - prog;
+      }
+      nav.style.setProperty('--nav-opacity', opacity.toFixed(3));
+
       lastY = y;
       ticking = false;
     };
