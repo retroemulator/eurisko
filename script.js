@@ -219,7 +219,8 @@
 
         const data = octx.getImageData(0, 0, off.width, off.height).data;
         particles = [];
-        const step = cssW > 900 ? 5 : 6;
+        // Step più piccolo = stelline più dense. Desktop 3 (~3x densità), tablet 4
+        const step = cssW > 900 ? 3 : (cssW > 600 ? 4 : 6);
         for (let y = 0; y < off.height; y += step) {
           for (let x = 0; x < off.width; x += step) {
             const idx = (y * off.width + x) * 4 + 3;
@@ -231,7 +232,8 @@
                 y: y + (Math.random() - 0.5) * 200,
                 vx: 0,
                 vy: 0,
-                size: 1.1 + Math.random() * 0.7
+                // Size leggermente più piccola così le stelline non si fondono
+                size: 0.9 + Math.random() * 0.6
               });
             }
           }
