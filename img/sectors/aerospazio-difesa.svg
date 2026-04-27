@@ -1,9 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Aerospazio e difesa">
-  <path d="M40 12c-6 8-10 18-10 30v18h20V42c0-12-4-22-10-30z"/>
-  <path d="M30 50l-8 14h8"/>
-  <path d="M50 50l8 14h-8"/>
-  <circle cx="40" cy="32" r="3"/>
-  <line x1="34" y1="68" x2="34" y2="72"/>
-  <line x1="40" y1="68" x2="40" y2="74"/>
-  <line x1="46" y1="68" x2="46" y2="72"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#B8BDC9" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Aerospazio e difesa">
+  <path d="M40 12c-6 8-10 18-10 30v18h20V42c0-12-4-22-10-30z" stroke-width="1.5"/>
+  <path d="M30 50l-8 14h8" stroke-width="1.5"/>
+  <path d="M50 50l8 14h-8" stroke-width="1.5"/>
+  <circle cx="40" cy="30" r="3" stroke-width="1.5"/>
+  <path d="M38.5 28.5 Q 39.5 28.5 40.5 29" stroke-width="0.7" opacity="0.8"/>
+  <g stroke-width="0.8" opacity="0.55">
+    <line x1="32" y1="44" x2="48" y2="44"/>
+    <line x1="31" y1="52" x2="49" y2="52"/>
+  </g>
+  <line x1="40" y1="42" x2="40" y2="58" stroke-width="0.6" opacity="0.5"/>
+  <line x1="34" y1="68" x2="34" y2="72" stroke-width="1.5"/>
+  <line x1="40" y1="68" x2="40" y2="74" stroke-width="1.5"/>
+  <line x1="46" y1="68" x2="46" y2="72" stroke-width="1.5"/>
+  <g stroke-width="1" opacity="0.85">
+    <path d="M14 22 L 14 26 M 12 24 L 16 24"/>
+    <path d="M66 36 L 66 40 M 64 38 L 68 38"/>
+    <path d="M18 56 L 18 58 M 17 57 L 19 57"/>
+  </g>
+  <g fill="#B8BDC9" stroke="none" opacity="0.6">
+    <circle cx="22" cy="14" r="0.7"/>
+    <circle cx="62" cy="20" r="0.6"/>
+    <circle cx="60" cy="56" r="0.5"/>
+  </g>
+  <g stroke-width="0.8" opacity="0.4">
+    <path d="M28 76 Q 32 78 36 76"/>
+    <path d="M44 76 Q 48 78 52 76"/>
+  </g>
 </svg>
