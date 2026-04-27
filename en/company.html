@@ -106,6 +106,12 @@
   <button class="nav__burger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="removeBlack" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  1 1 1 0 0"/>
+  </filter>
+</svg>
+
 <main id="main-content">
 
 <section class="page-hero page-hero--media">
