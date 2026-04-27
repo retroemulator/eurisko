@@ -2193,6 +2193,9 @@ form.contact { display: grid; gap: 20px; }
 video.page-hero__media {
   mix-blend-mode: lighten;
   border-radius: 0;
+  filter: none;
+  animation: none;
+  background: transparent;
 }
 @keyframes heroFloat {
   0%, 100% { transform: translateY(0); }
