@@ -883,21 +883,4 @@
     else v.addEventListener('loadedmetadata', setRate);
   });
 
-  // -------- 10. Page-hero video — pause off-screen, respect prefers-reduced-motion --------
-  const phVideos = document.querySelectorAll('.page-hero__video');
-  if (phVideos.length) {
-    if (prefersReducedMotion) {
-      phVideos.forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
-    } else if ('IntersectionObserver' in window) {
-      const phObs = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          const v = e.target;
-          if (e.isIntersecting) v.play().catch(() => {});
-          else v.pause();
-        });
-      }, { threshold: 0.1 });
-      phVideos.forEach((v) => phObs.observe(v));
-    }
-  }
-
 })();
