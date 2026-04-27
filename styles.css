@@ -37,7 +37,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: var(--font-display);
   background: var(--bg);
@@ -2244,6 +2244,19 @@ video.page-hero__media {
     gap: 32px;
   }
   .page-hero__media { max-width: 360px; margin: 0 auto; }
+  /* Mobile: il modifier --reveal non deve causare overflow ne' tilt 3D inutile (no mouse su touch) */
+  .page-hero__media-wrap--reveal {
+    perspective: none;
+    transform-style: flat;
+  }
+  .page-hero__media-wrap--reveal::after {
+    inset: -8%;
+    filter: blur(30px);
+  }
+  .page-hero__media-wrap--reveal .page-hero__media,
+  .page-hero__media-wrap--reveal.is-hovered::after {
+    transform: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .page-hero__media-wrap--reveal,
