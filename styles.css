@@ -1829,6 +1829,13 @@ a.cap:focus-visible::after { opacity: 1; transform: translateX(0); }
   transition: background 0.3s var(--ease), color 0.3s var(--ease);
 }
 .logo-cell:hover { background: var(--accent); color: var(--ink); }
+/* Cella inerte (es. "ALTRI+"): nessun hover, cursor default, tono scolorito */
+.logo-cell--inert,
+.logo-cell--inert:hover {
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: default;
+}
 .logo-cell a {
   color: inherit;
   text-decoration: none;
