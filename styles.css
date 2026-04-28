@@ -1633,11 +1633,14 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
-  font-size: clamp(112px, 11vw, 176px);
+  font-size: clamp(96px, 9vw, 168px);
   line-height: 1;
   color: transparent;
   flex-shrink: 0;
   user-select: none;
+  /* Respiro dal bordo destro del container — utile soprattutto su viewport
+     <=1440px dove il container occupa quasi tutto il viewport */
+  margin-inline-end: clamp(8px, 1.5vw, 28px);
 }
 .eurisko-wordmark span {
   position: relative;
