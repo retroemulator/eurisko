@@ -986,7 +986,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   inset: 0;
   width: 100%;
   height: 100%;
-  filter: brightness(0.64);
+  filter: brightness(0.576);
   object-fit: cover;
   z-index: 0;
 }
