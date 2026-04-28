@@ -986,6 +986,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   inset: 0;
   width: 100%;
   height: 100%;
+  filter: brightness(0.8);
   object-fit: cover;
   z-index: 0;
 }
@@ -2234,6 +2235,7 @@ form.contact { display: grid; gap: 20px; }
   .serif-italic .word__inner { animation: none; }
 }
 .page-hero__lede { margin-top: 32px; max-width: 54ch; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; color: var(--ink-soft); }
+.page-hero__cta { margin-top: 36px; }
 .page-hero__crumbs { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 28px; display: flex; gap: 12px; }
 .page-hero__crumbs span { color: var(--ink); }
 

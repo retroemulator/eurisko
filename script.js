@@ -886,9 +886,9 @@
   }
   injectCookieReopenLink();
 
-  // -------- 9. Hero video — slow down playback to ~70% --------
+  // -------- 9. Hero video — slow down playback (~52% iniziale poi ridotto del 25%) --------
   document.querySelectorAll('.hero__bg-video').forEach((v) => {
-    const setRate = () => { v.playbackRate = 0.52; };
+    const setRate = () => { v.playbackRate = 0.39; };
     if (v.readyState >= 1) setRate();
     else v.addEventListener('loadedmetadata', setRate);
   });
