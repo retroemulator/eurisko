@@ -1269,7 +1269,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   transition: background 0.3s var(--ease);
 }
 .sector-card:hover { background: var(--bg-elevated); }
-.sector-card:hover .sector-card__arrow { transform: translate(6px, -6px); color: var(--accent-text); }
+.sector-card:hover .sector-card__icon { transform: translate(4px, -4px) scale(1.05); opacity: 1; }
 .sector-card:hover .sector-card__name { color: var(--accent-text); }
 .sector-card__label {
   font-family: var(--font-italic);
@@ -1286,12 +1286,14 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   line-height: 1.1;
   transition: color 0.3s var(--ease);
 }
-.sector-card__arrow {
+.sector-card__icon {
   position: absolute;
-  top: 32px;
-  right: 32px;
-  font-size: 1.25rem;
-  transition: transform 0.3s var(--ease), color 0.3s var(--ease);
+  top: 28px;
+  right: 28px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.85;
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 @media (max-width: 900px) {
   .sectors-grid { grid-template-columns: repeat(2, 1fr); }
