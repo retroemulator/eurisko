@@ -1000,6 +1000,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 
 /* Hero scroll-down indicator: linea con goccia che scorre + chevron pulsante */
 .hero__scroll {
+  --hero-scroll-opacity: 1;
   position: absolute;
   bottom: 32px;
   left: 50%;
@@ -1011,8 +1012,11 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   z-index: 3;
   color: rgba(245, 241, 232, 0.78);
   text-decoration: none;
-  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+  opacity: var(--hero-scroll-opacity);
+  transition: opacity 0.4s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
 }
+.hero__scroll[style*="--hero-scroll-opacity: 0"],
+.hero__scroll[style*="--hero-scroll-opacity:0"] { pointer-events: none; }
 .hero__scroll:hover {
   color: var(--accent-text);
   transform: translateX(-50%) translateY(-2px);

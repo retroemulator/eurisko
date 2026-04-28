@@ -14,6 +14,7 @@
   // Re-shows on scroll-up. Never hides while burger menu is open or any
   // descendant is focused (keyboard nav).
   const nav = document.querySelector('.nav');
+  const heroScroll = document.querySelector('.hero__scroll');
   if (nav) {
     let lastY = window.scrollY;
     let ticking = false;
@@ -49,6 +50,17 @@
         opacity = 1 - prog;
       }
       nav.style.setProperty('--nav-opacity', opacity.toFixed(3));
+
+      // Hero scroll-down indicator: identico comportamento del nav (fade su scroll-down
+      // dopo FLOAT=100px raggiungendo 0 alla viewport height, snap-back istantaneo su scroll-up).
+      if (heroScroll) {
+        let hsOpacity = 1;
+        if (direction === 'down' && y > FLOAT) {
+          const prog = Math.min(1, Math.max(0, (y - FLOAT) / (hideAfter - FLOAT)));
+          hsOpacity = 1 - prog;
+        }
+        heroScroll.style.setProperty('--hero-scroll-opacity', hsOpacity.toFixed(3));
+      }
 
       lastY = y;
       ticking = false;
