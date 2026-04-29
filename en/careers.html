@@ -37,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@200,300,400,500,600,700,800,900,401&f[]=space-grotesk@800&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap">
-<link rel="stylesheet" href="../styles.min.css?v=40">
+<link rel="stylesheet" href="../styles.min.css?v=41">
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script type="application/ld+json">
@@ -115,6 +115,12 @@
   <button class="nav__burger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="removeBlack" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  1 1 1 0 0"/>
+  </filter>
+</svg>
+
 <main id="main-content">
 
 <section class="page-hero page-hero--media">
@@ -127,7 +133,7 @@
     </div>
   </div>
   <div class="page-hero__media-wrap page-hero__media-wrap--reveal">
-    <img class="page-hero__media" src="../img/lavora-con-noi-eurisko.jpg" alt="Editorial abstract composition representing the professional journey at Eurisko: a path opening toward new opportunities" width="928" height="1232" loading="eager" fetchpriority="high">
+    <img class="page-hero__media page-hero__media--cutout" src="../img/lavora-con-noi-eurisko.jpg" alt="Editorial abstract composition representing the professional journey at Eurisko: a path opening toward new opportunities" width="928" height="1232" loading="eager" fetchpriority="high">
   </div>
 </section>
 
