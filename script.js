@@ -193,6 +193,8 @@
           const el = e.target;
           if (el.dataset.counted) return;
           el.dataset.counted = '1';
+          // Skip elementi senza target numerico (es. 'Tutte', 'All') per evitare NaN
+          if (!el.dataset.target) return;
           const target = parseInt(el.dataset.target, 10);
           const suffix = el.dataset.suffix || '';
           const duration = 1800;
