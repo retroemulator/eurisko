@@ -783,6 +783,31 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   font-weight: 700;
 }
 .footer__meta a.footer__meta-reserved:hover { color: var(--ink); }
+.footer__ai {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(245, 241, 232, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 0.8125rem;
+  color: rgba(245, 241, 232, 0.55);
+}
+.footer__ai-link {
+  color: var(--accent-text);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.footer__ai-link:hover { opacity: 0.75; }
+.footer__ai-link .footer__ai-arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--ease);
+}
+.footer__ai-link:hover .footer__ai-arrow { transform: translateX(3px); }
 .footer__meta-reserved::before {
   content: "";
   width: 12px;
