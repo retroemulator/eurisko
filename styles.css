@@ -2874,8 +2874,8 @@ summary:focus-visible {
   border-right: 1px solid var(--line-soft);
   border-bottom: 1px solid var(--line-soft);
   min-height: 200px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
   gap: 12px;
   transition: background 0.3s var(--ease);
 }
@@ -2885,7 +2885,6 @@ summary:focus-visible {
   font-size: 0.8125rem;
   letter-spacing: 0.14em;
   color: var(--warm);
-  margin-bottom: auto;
 }
 .ourvalues__title {
   font-family: var(--font-display);
