@@ -106,6 +106,12 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/cosa-facciamo.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/what-we-do.html"/>
   </url>
+  <url>
+    <loc>https://euriskosrl.it/en/what-we-do.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <url>
     <loc>https://euriskosrl.it/consulenza.html</loc>
