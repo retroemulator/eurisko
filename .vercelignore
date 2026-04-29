@@ -1,0 +1,17 @@
+# File esclusi dal deploy Vercel ma mantenuti su GitHub.
+# Servono come documentazione/note di progetto, non vanno serviti in produzione.
+
+# Documentazione e prompt interni
+*.md
+
+# Editor / IDE artifacts
+.vscode/
+.idea/
+
+# Files OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Source dell'og-image (utility, non da pubblicare)
+og-image.html
