@@ -946,6 +946,41 @@
     }
   }
 
+  // -------- 12. Case study cards — video on hover (desktop), first frame static (mobile) --------
+  const caseVideos = document.querySelectorAll('.case--has-video .case__video');
+  if (caseVideos.length) {
+    const isHoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    caseVideos.forEach((v) => {
+      // Pre-carico il primo frame: mostra il poster naturale del video
+      v.pause();
+      try { v.currentTime = 0.05; } catch (_) {}
+      if (prefersReducedMotion || !isHoverCapable) return;
+      const card = v.closest('.case');
+      if (!card) return;
+      let playPromise = null;
+      const enter = () => {
+        try { v.currentTime = 0; } catch (_) {}
+        playPromise = v.play();
+        if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(() => {});
+      };
+      const leave = () => {
+        const reset = () => {
+          v.pause();
+          try { v.currentTime = 0; } catch (_) {}
+        };
+        if (playPromise && typeof playPromise.then === 'function') {
+          playPromise.then(reset, reset);
+        } else {
+          reset();
+        }
+      };
+      card.addEventListener('mouseenter', enter);
+      card.addEventListener('mouseleave', leave);
+      card.addEventListener('focusin', enter);
+      card.addEventListener('focusout', leave);
+    });
+  }
+
   // -------- 10. Page-hero video — slow down 25%, smooth loop, pause off-screen, prefers-reduced-motion --------
   const phVideos = document.querySelectorAll('.page-hero__video');
   if (phVideos.length) {
