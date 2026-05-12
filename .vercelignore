@@ -15,3 +15,7 @@ desktop.ini
 
 # Source dell'og-image (utility, non da pubblicare)
 og-image.html
+
+# Build scripts (non pubblici)
+generate_en_code_of_ethics.py
+codice_pages_tmp.txt
