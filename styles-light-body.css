@@ -275,6 +275,116 @@ body.light-body .sectors-teaser__item img {
 }
 
 /* =====================================================
+   SECTORS MAGAZINE GRID — magazine editorial 4x2
+   Sostituisce .sectors-teaser pill su cosa-facciamo.html.
+   Layout: griglia con bordi interni, numero+icona+nome+freccia.
+   Hover: tint slate + scale icon + arrow slide-in.
+   ===================================================== */
+body.light-body .sectors-magazine {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line-dark-soft);
+  border-left: 1px solid var(--line-dark-soft);
+  margin-top: 32px;
+  background: #FFFFFF;
+}
+body.light-body .sectors-magazine__item {
+  border-right: 1px solid var(--line-dark-soft);
+  border-bottom: 1px solid var(--line-dark-soft);
+  padding: 44px 32px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  color: var(--ink-dark);
+  background: transparent;
+  text-decoration: none;
+  transition: background 0.4s var(--ease), padding 0.4s var(--ease);
+  overflow: hidden;
+}
+body.light-body .sectors-magazine__num {
+  font-family: 'Oswald', 'Switzer', sans-serif;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  letter-spacing: 0.22em;
+  color: var(--accent-on-light);
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+body.light-body .sectors-magazine__icon {
+  width: 56px;
+  height: 56px;
+  margin-top: auto;
+  margin-bottom: 4px;
+  opacity: 0.85;
+  transition: transform 0.5s var(--ease), opacity 0.4s var(--ease);
+}
+body.light-body .sectors-magazine__name {
+  font-size: clamp(20px, 1.85vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink-dark);
+  margin: 0;
+  max-width: 14ch;
+}
+body.light-body .sectors-magazine__arrow {
+  position: absolute;
+  right: 28px;
+  bottom: 36px;
+  font-size: 1.5rem;
+  color: var(--accent-on-light);
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.35s var(--ease), transform 0.45s var(--ease);
+  pointer-events: none;
+}
+body.light-body .sectors-magazine__item:hover {
+  background: var(--paper-band);
+}
+body.light-body .sectors-magazine__item:hover .sectors-magazine__icon {
+  transform: scale(1.12) translateY(-4px);
+  opacity: 1;
+}
+body.light-body .sectors-magazine__item:hover .sectors-magazine__arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+body.light-body .sectors-magazine__item:focus-visible {
+  outline: 2px solid var(--ink-dark);
+  outline-offset: -2px;
+}
+@media (max-width: 1100px) {
+  body.light-body .sectors-magazine { grid-template-columns: repeat(2, 1fr); }
+  body.light-body .sectors-magazine__item { min-height: 220px; padding: 36px 28px; }
+}
+@media (max-width: 600px) {
+  body.light-body .sectors-magazine { grid-template-columns: 1fr; }
+  body.light-body .sectors-magazine__item { min-height: 180px; padding: 32px 24px; }
+}
+
+/* =====================================================
+   CAPS MODULI — polish per piu personalita
+   Padding piu generoso, name typography piu grande, hover slate.
+   ===================================================== */
+body.light-body .cap {
+  padding: 48px 32px;
+  min-height: 200px;
+}
+body.light-body .cap__name {
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 500;
+  letter-spacing: -0.022em;
+}
+body.light-body a.cap::after {
+  font-size: 1.5rem;
+  bottom: 28px;
+  right: 28px;
+}
+
+/* =====================================================
    PILLARS — 3 card S/4HANA
    ===================================================== */
 body.light-body .pillars {
