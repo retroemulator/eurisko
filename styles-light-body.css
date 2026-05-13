@@ -1,0 +1,243 @@
+/* =====================================================
+   LIGHT-BODY EXPERIMENT — POC redesign Accenture-style
+   Branch: redesign-light-body
+   Scope:  body.light-body (only on pages with that class)
+   Strategy: dark hero (full-bleed) + light body + dark CTA + dark footer
+   ===================================================== */
+
+body.light-body {
+  --paper: #FAFAF7;                       /* warm cream — body bg */
+  --paper-alt: #F2EFE8;                   /* alternate band */
+  --paper-elevated: #FFFFFF;              /* card bg on cream */
+  --ink-dark: #0A1628;                    /* primary text (== --bg) */
+  --ink-dark-soft: #3F4A5F;               /* secondary text */
+  --ink-dark-mute: #6B7280;               /* tertiary / metadata */
+  --line-dark-soft: rgba(10, 22, 40, 0.14);
+  --line-dark-faint: rgba(10, 22, 40, 0.07);
+  --accent-on-light: #A01729;             /* red on cream — AA compliant */
+  --accent-on-light-bright: #C41E3A;
+
+  background: var(--paper);
+  color: var(--ink-dark);
+}
+
+/* =====================================================
+   HERO — restiamo DARK ma con effetto full-bleed.
+   .page-hero ha max-width: 1440px e margin auto, quindi va
+   "rotto" verso i bordi viewport per dare il fondo navy edge-to-edge.
+   ===================================================== */
+body.light-body .page-hero {
+  background: var(--bg);
+  color: var(--ink);
+  max-width: none;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: max(var(--gutter), calc(50vw - var(--container)/2 + var(--gutter)));
+  padding-right: max(var(--gutter), calc(50vw - var(--container)/2 + var(--gutter)));
+  /* preserva il padding verticale originale */
+  padding-top: 170px;
+  padding-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sottile glow rosso in hero per dare profondita' e legare visivamente
+   col CTA finale (stesso linguaggio cromatico) */
+body.light-body .page-hero::after {
+  content: "";
+  position: absolute;
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, rgba(196, 30, 58, 0.18) 0%, transparent 60%);
+  top: -300px; right: -300px;
+  pointer-events: none;
+  filter: blur(70px);
+  z-index: 0;
+}
+body.light-body .page-hero > * { position: relative; z-index: 1; }
+
+/* Crumb/title/lede dentro hero restano sui token dark originali — gia' coerenti */
+
+/* =====================================================
+   SEZIONI BODY — fondo cream, testo navy
+   ===================================================== */
+body.light-body .section {
+  background: var(--paper);
+  color: var(--ink-dark);
+}
+
+/* Section header: eyebrow + h1 + lede leggibili su cream */
+body.light-body .section .eyebrow {
+  color: var(--accent-on-light);
+}
+body.light-body .section .eyebrow::before {
+  background: var(--accent-on-light);
+}
+body.light-body .section .h1,
+body.light-body .section h2 {
+  color: var(--ink-dark);
+}
+body.light-body .section .lede {
+  color: var(--ink-dark-soft);
+}
+
+/* em italic gradient rimane invariato (gradient red su qualsiasi bg funziona) */
+
+/* =====================================================
+   SERVICE ROWS (Consulenza SAP)
+   ===================================================== */
+body.light-body .service-row {
+  border-top-color: var(--line-dark-soft);
+}
+body.light-body .service-row:last-child {
+  border-bottom-color: var(--line-dark-soft);
+}
+body.light-body .service-row__num {
+  color: var(--accent-on-light);
+}
+body.light-body .service-row__title {
+  color: var(--ink-dark);
+}
+body.light-body .service-row__body p {
+  color: var(--ink-dark-soft);
+}
+body.light-body .tag {
+  border-color: var(--line-dark-soft);
+  color: var(--ink-dark-soft);
+}
+body.light-body .tag:hover {
+  border-color: var(--accent-on-light);
+  color: var(--accent-on-light);
+}
+
+/* abbr: rimuovi underline ereditato e armonizza */
+body.light-body abbr[title] {
+  text-decoration-color: var(--line-dark-soft);
+}
+
+/* =====================================================
+   CAPS — Moduli SAP (griglia 5 col)
+   ===================================================== */
+body.light-body .caps {
+  border-top-color: var(--line-dark-soft);
+}
+body.light-body .cap {
+  border-right-color: var(--line-dark-soft);
+  border-bottom-color: var(--line-dark-soft);
+}
+body.light-body a.cap {
+  color: var(--ink-dark);
+}
+body.light-body .cap:hover {
+  background: var(--paper-elevated);
+}
+body.light-body a.cap::after {
+  color: var(--accent-on-light);
+}
+body.light-body .cap__desc {
+  color: var(--ink-dark-soft);
+}
+body.light-body .cap:nth-child(odd) .cap__dot {
+  background: var(--accent-on-light);
+}
+body.light-body .cap:nth-child(even) .cap__dot {
+  background: var(--ink-dark-mute);
+}
+
+/* =====================================================
+   SECTORS TEASER — chip orizzontali
+   ===================================================== */
+body.light-body .sectors-teaser__item {
+  background: var(--paper-elevated);
+  border-color: var(--line-dark-soft);
+  color: var(--ink-dark);
+}
+body.light-body .sectors-teaser__item:hover {
+  background: #FFFFFF;
+  border-color: var(--accent-on-light);
+  color: var(--accent-on-light);
+}
+/* Le icone settori sono SVG con stroke navy: su sfondo cream funzionano gia'
+   bene, ma assicuriamoci che l'opacita' di default non le sbiadisca. */
+body.light-body .sectors-teaser__item img {
+  opacity: 1;
+}
+
+/* =====================================================
+   PILLARS — 3 card S/4HANA
+   ===================================================== */
+body.light-body .pillars {
+  background: var(--line-dark-soft);            /* gap-color tra le card */
+  border-top-color: var(--line-dark-soft);
+  border-bottom-color: var(--line-dark-soft);
+}
+body.light-body .pillar {
+  background: var(--paper-elevated);            /* card bianca */
+  color: var(--ink-dark);
+}
+body.light-body .pillar:hover {
+  background: var(--paper-alt);
+  color: var(--ink-dark);
+  border-top-color: var(--accent-on-light);
+}
+body.light-body .pillar__num {
+  color: var(--accent-on-light);
+}
+body.light-body .pillar:hover .pillar__num {
+  color: var(--accent-on-light-bright);
+}
+body.light-body .pillar__title {
+  color: var(--ink-dark);
+}
+body.light-body .pillar__desc {
+  color: var(--ink-dark-soft);
+}
+
+/* =====================================================
+   LINK ARROW (call-to-action testuali con freccia)
+   ===================================================== */
+body.light-body .link-arrow {
+  color: var(--ink-dark);
+  border-bottom-color: var(--line-dark-soft);
+}
+body.light-body .link-arrow:hover {
+  color: var(--accent-on-light);
+  border-bottom-color: var(--accent-on-light);
+}
+
+/* =====================================================
+   BTN — bottoni primari in sezioni body
+   In dark mode: bg ink (cream) su body dark.
+   In light mode: bg navy su body cream → invertire.
+   ===================================================== */
+body.light-body .section .btn {
+  background: var(--ink-dark);
+  color: var(--paper);
+  border-color: var(--ink-dark);
+}
+body.light-body .section .btn:hover {
+  background: var(--accent-on-light);
+  color: var(--paper);
+  border-color: var(--accent-on-light);
+}
+
+/* =====================================================
+   CTA BLOCK + FOOTER + NAV restano dark — nessuna modifica.
+   Marquee resta dark — nessuna modifica.
+   ===================================================== */
+
+/* =====================================================
+   ACCESSIBILITY — focus visible su sfondi chiari
+   I focus ring di default sono pensati per dark bg, su cream
+   possono perdere contrasto. Rinforziamo con outline navy.
+   ===================================================== */
+body.light-body .section a:focus-visible,
+body.light-body .section button:focus-visible,
+body.light-body .section .btn:focus-visible {
+  outline: 2px solid var(--ink-dark);
+  outline-offset: 3px;
+}
+
+/* =====================================================
+   REVEAL animations: invariate (transform + opacity, agnostiche al colore)
+   ===================================================== */
