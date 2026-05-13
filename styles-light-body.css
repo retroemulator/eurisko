@@ -12,10 +12,12 @@ body.light-body {
   --ink-dark: #0A1628;                    /* primary text (== --bg, navy hero) */
   --ink-dark-soft: #0A1628;               /* secondary text — STESSO navy: gerarchia via font-size, non via colore */
   --ink-dark-mute: #4A5568;               /* tertiary / metadata only */
-  --line-dark-soft: rgba(10, 22, 40, 0.14);
-  --line-dark-faint: rgba(10, 22, 40, 0.07);
+  --line-dark-soft: rgba(10, 22, 40, 0.22);  /* line visibile su cream */
+  --line-dark-faint: rgba(10, 22, 40, 0.10);
   --accent-on-light: #A01729;             /* red on cream — AA compliant */
   --accent-on-light-bright: #C41E3A;
+  --card-shadow: 0 1px 2px rgba(10,22,40,0.06), 0 6px 20px rgba(10,22,40,0.08);
+  --card-shadow-hover: 0 4px 12px rgba(10,22,40,0.10), 0 16px 40px rgba(10,22,40,0.14);
 
   background: var(--paper);
   color: var(--ink-dark);
@@ -131,19 +133,23 @@ body.light-body abbr[title] {
 
 /* =====================================================
    CAPS — Moduli SAP (griglia 5 col)
+   Fill bianco + border perimetrale + shadow per staccare da cream
    ===================================================== */
 body.light-body .caps {
-  border-top-color: var(--line-dark-soft);
+  background: #FFFFFF;
+  border: 1px solid var(--line-dark-soft);
+  border-top: 1px solid var(--line-dark-soft);
+  box-shadow: var(--card-shadow);
 }
 body.light-body .cap {
-  border-right-color: var(--line-dark-soft);
-  border-bottom-color: var(--line-dark-soft);
+  border-right-color: var(--line-dark-faint);
+  border-bottom-color: var(--line-dark-faint);
 }
 body.light-body a.cap {
   color: var(--ink-dark);
 }
 body.light-body .cap:hover {
-  background: var(--paper-elevated);
+  background: rgba(10, 22, 40, 0.035);  /* tint navy molto leggero su white */
 }
 body.light-body a.cap::after {
   color: var(--accent-on-light);
@@ -162,14 +168,17 @@ body.light-body .cap:nth-child(even) .cap__dot {
    SECTORS TEASER — chip orizzontali
    ===================================================== */
 body.light-body .sectors-teaser__item {
-  background: var(--paper-elevated);
+  background: #FFFFFF;
   border-color: var(--line-dark-soft);
   color: var(--ink-dark);
+  box-shadow: 0 1px 2px rgba(10,22,40,0.05);
 }
 body.light-body .sectors-teaser__item:hover {
   background: #FFFFFF;
   border-color: var(--accent-on-light);
   color: var(--accent-on-light);
+  box-shadow: 0 2px 8px rgba(10,22,40,0.12);
+  transform: translateY(-1px);
 }
 /* Le icone settori sono SVG con stroke navy: su sfondo cream funzionano gia'
    bene, ma assicuriamoci che l'opacita' di default non le sbiadisca. */
@@ -181,18 +190,24 @@ body.light-body .sectors-teaser__item img {
    PILLARS — 3 card S/4HANA
    ===================================================== */
 body.light-body .pillars {
-  background: var(--line-dark-soft);            /* gap-color tra le card */
-  border-top-color: var(--line-dark-soft);
-  border-bottom-color: var(--line-dark-soft);
+  background: transparent;                       /* niente gap-color: gestisco col gap reale */
+  gap: 16px;                                     /* gap fisico tra le card al posto del 1px linea */
+  border-top: none;
+  border-bottom: none;
+  padding-block: 8px;
 }
 body.light-body .pillar {
-  background: var(--paper-elevated);            /* card bianca */
+  background: #FFFFFF;                           /* card bianca pulita */
   color: var(--ink-dark);
+  box-shadow: var(--card-shadow);
+  transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.4s var(--ease);
 }
 body.light-body .pillar:hover {
-  background: var(--paper-alt);
+  background: #FFFFFF;
   color: var(--ink-dark);
-  border-top-color: var(--accent-on-light);
+  border-top-color: transparent;                 /* annullo border-top accent (era per dark) */
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-4px);
 }
 body.light-body .pillar__num {
   color: var(--accent-on-light);
@@ -212,7 +227,7 @@ body.light-body .pillar__desc {
    ===================================================== */
 body.light-body .link-arrow {
   color: var(--ink-dark);
-  border-bottom-color: var(--line-dark-soft);
+  border-bottom-color: rgba(10, 22, 40, 0.35);   /* underline visibile su cream */
 }
 body.light-body .link-arrow:hover {
   color: var(--accent-on-light);
