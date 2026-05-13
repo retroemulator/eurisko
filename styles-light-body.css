@@ -164,31 +164,11 @@ body.light-body main > section.section:nth-of-type(5) .link-arrow:hover {
 }
 
 /* =====================================================
-   SECTION 6 — AMS con red wash radiale al fondo (close ancorato)
-   Sottile glow rosso che cresce dal bordo inferiore → eco visivo
-   del CTA dark che segue.
+   SECTION 6 — AMS resta bianco puro.
+   Taglio netto verso il CTA gradient: il CTA ha gia gradient
+   navy->crimson + glow radiale, aggiungere bridge cromatico
+   ruberebbe scena al "punch" finale. Silenzio bianco prima del CTA.
    ===================================================== */
-body.light-body main > section.section:nth-of-type(6) {
-  position: relative;
-  overflow: hidden;
-}
-body.light-body main > section.section:nth-of-type(6)::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -200px;
-  width: 1200px;
-  height: 600px;
-  transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, rgba(196, 30, 58, 0.30) 0%, rgba(196, 30, 58, 0.14) 35%, transparent 65%);
-  filter: blur(40px);
-  pointer-events: none;
-  z-index: 0;
-}
-body.light-body main > section.section:nth-of-type(6) > * {
-  position: relative;
-  z-index: 1;
-}
 
 /* Section header: eyebrow + h1 + lede leggibili su cream */
 body.light-body .section .eyebrow {
