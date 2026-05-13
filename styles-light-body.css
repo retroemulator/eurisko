@@ -71,10 +71,14 @@ body.light-body .page-hero__media {
    "scalino bianco" quando l'8% sotto la hero (originale 92vh)
    mostrava bg dark del resto del sito ma su light-body diventa
    bianco visibile sotto la hero dark.
+   color: var(--ink) cream esplicito: il titolo .hero__title non ha
+   color: dichiarato, eredita da body. Su light-body body color e' navy
+   -> il titolo navy su hero dark video = invisibile. Forzo cream.
    ===================================================== */
 body.light-body .hero {
   min-height: 100vh;
   min-height: 100dvh;
+  color: var(--ink);
 }
 
 /* Scroll cue al fondo della hero: piccola freccia animata che indica "scorri sotto"
