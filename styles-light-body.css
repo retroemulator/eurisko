@@ -100,12 +100,15 @@ body.light-body .case {
 }
 
 /* =====================================================
-   EURISKO VERTICAL WORDMARK — span::before ha color #F5F1E8 cream
-   inline nella regola originale (non token, hardcoded).
-   Su light-body su bg bianco e' invisibile. Forzo navy.
-   .span::after resta crimson (gia funziona su bianco).
+   EURISKO VERTICAL WORDMARK — inversione cromatica su light:
+   base ROSSA crimson (era cream invisibile su bianco, poi navy dopo
+   primo fix), hover NAVY (era crimson sul dark, ora swap).
+   Logica: su light la base attira piu' del navy, hover navy reveal piu' calmo.
    ===================================================== */
 body.light-body .eurisko-wordmark span::before {
+  color: var(--accent-on-light-bright);
+}
+body.light-body .eurisko-wordmark span::after {
   color: var(--ink-dark);
 }
 
