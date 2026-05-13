@@ -6,10 +6,10 @@
    ===================================================== */
 
 body.light-body {
-  --paper: #FAFAF7;                       /* warm cream — body bg base */
-  --paper-band: #EFE9D7;                  /* tono warmer per sezioni alternate (visibile su cream) */
-  --paper-alt: #F2EFE8;                   /* sub-shade per hover */
-  --paper-elevated: #FFFFFF;              /* card bg */
+  --paper: #FFFFFF;                       /* bianco puro — body bg base */
+  --paper-band: #EEF2F7;                  /* cool slate per sezioni alternate (zero giallo) */
+  --paper-alt: #F7F9FB;                   /* sub-tone hover */
+  --paper-elevated: #FFFFFF;              /* card bg (pure white) */
   --ink-dark: #0A1628;                    /* primary text (== --bg, navy hero) */
   --ink-dark-soft: #0A1628;               /* secondary text — STESSO navy: gerarchia via font-size, non via colore */
   --ink-dark-mute: #4A5568;               /* tertiary / metadata only */
