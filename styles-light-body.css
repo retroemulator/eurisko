@@ -7,7 +7,7 @@
 
 body.light-body {
   --paper: #FFFFFF;                       /* bianco puro — body bg base */
-  --paper-band: #EEF2F7;                  /* cool slate per sezioni alternate (zero giallo) */
+  --paper-band: #E5DDC4;                  /* tan saturo per band (contrasto evidente) */
   --paper-alt: #F7F9FB;                   /* sub-tone hover */
   --paper-elevated: #FFFFFF;              /* card bg (pure white) */
   --ink-dark: #0A1628;                    /* primary text (== --bg, navy hero) */
@@ -90,19 +90,104 @@ body.light-body .section {
   background: var(--paper);
   color: var(--ink-dark);
 }
-/* Alternanza: 2da e 4ta sezione body (Moduli + S/4HANA) → band warmer.
-   nth-of-type conta sui <section> figli di <main>:
-     1: page-hero
-     2: Consulenza .section          → cream (no override)
-     3: Moduli .section              → BAND
-     4: Settori .section             → cream
-     5: S/4HANA .section             → BAND
-     6: AMS .section                 → cream
-     7: cta-block .section           → dark (proprio bg)
+/* Mappa sezioni <section> figli di <main>:
+     1: page-hero               → dark (full-bleed)
+     2: Consulenza .section     → white
+     3: Moduli .section         → BAND tan
+     4: Settori .section        → white
+     5: S/4HANA .section        → DARK NAVY full-bleed (drama: pitch 2027)
+     6: AMS .section            → white + red wash radiale al fondo (close ancorato)
+     7: cta-block .section      → dark (proprio bg)
 */
-body.light-body main > section.section:nth-of-type(3),
-body.light-body main > section.section:nth-of-type(5) {
+body.light-body main > section.section:nth-of-type(3) {
   background: var(--paper-band);
+}
+
+/* =====================================================
+   SECTION 5 — S/4HANA full dark navy band (drama editoriale)
+   Pillars tornano in dark mode SOLO dentro questa sezione
+   ===================================================== */
+body.light-body main > section.section:nth-of-type(5) {
+  background: var(--bg);
+  color: var(--ink);
+}
+body.light-body main > section.section:nth-of-type(5) .eyebrow {
+  color: var(--ink-soft);
+}
+body.light-body main > section.section:nth-of-type(5) .eyebrow::before {
+  background: var(--accent-text);
+}
+body.light-body main > section.section:nth-of-type(5) .h1,
+body.light-body main > section.section:nth-of-type(5) h2 {
+  color: var(--ink);
+}
+body.light-body main > section.section:nth-of-type(5) .lede {
+  color: var(--ink-soft);
+}
+/* Pillars revert al dark mode originale per questa sezione */
+body.light-body main > section.section:nth-of-type(5) .pillars {
+  background: var(--line-faint);
+  gap: 1px;
+  padding-block: 0;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+body.light-body main > section.section:nth-of-type(5) .pillar {
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: none;
+  transform: none;
+}
+body.light-body main > section.section:nth-of-type(5) .pillar:hover {
+  background: var(--bg-elevated);
+  color: var(--ink);
+  box-shadow: none;
+  transform: none;
+  border-top: 1px solid var(--accent);
+}
+body.light-body main > section.section:nth-of-type(5) .pillar__num {
+  color: var(--accent-text);
+}
+body.light-body main > section.section:nth-of-type(5) .pillar__title {
+  color: var(--ink);
+}
+body.light-body main > section.section:nth-of-type(5) .pillar__desc {
+  color: var(--ink-soft);
+}
+body.light-body main > section.section:nth-of-type(5) .link-arrow {
+  color: var(--ink);
+  border-bottom-color: var(--line-soft);
+}
+body.light-body main > section.section:nth-of-type(5) .link-arrow:hover {
+  color: var(--accent-text);
+  border-bottom-color: var(--accent-text);
+}
+
+/* =====================================================
+   SECTION 6 — AMS con red wash radiale al fondo (close ancorato)
+   Sottile glow rosso che cresce dal bordo inferiore → eco visivo
+   del CTA dark che segue.
+   ===================================================== */
+body.light-body main > section.section:nth-of-type(6) {
+  position: relative;
+  overflow: hidden;
+}
+body.light-body main > section.section:nth-of-type(6)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -200px;
+  width: 1200px;
+  height: 600px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(196, 30, 58, 0.14) 0%, rgba(196, 30, 58, 0.06) 35%, transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+body.light-body main > section.section:nth-of-type(6) > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Section header: eyebrow + h1 + lede leggibili su cream */
