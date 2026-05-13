@@ -22,6 +22,20 @@ body.light-body {
 }
 
 /* =====================================================
+   NAV — resta dark trasparente, MA i suoi link ereditano
+   il color: navy del body. Forziamoli cream esplicitamente
+   altrimenti diventano navy-su-navy (invisibili).
+   ===================================================== */
+body.light-body .nav,
+body.light-body .nav a,
+body.light-body .nav__dropdown-trigger,
+body.light-body .lang-switcher__current,
+body.light-body .lang-switcher__alt,
+body.light-body .lang-switcher__sep {
+  color: var(--ink);
+}
+
+/* =====================================================
    HERO — restiamo DARK ma con effetto full-bleed.
    .page-hero ha max-width: 1440px e margin auto, quindi va
    "rotto" verso i bordi viewport per dare il fondo navy edge-to-edge.
