@@ -111,6 +111,41 @@ body.light-body .quote__role {
   color: var(--ink-dark-mute);
 }
 
+/* =====================================================
+   AZIENDA — .value boxes (VISIONE / OBIETTIVO / METODO)
+   .value ha bg var --bg navy esplicito, .value__text eredita color
+   da body = navy su navy invisibile. Forzo cream sul parent.
+   ===================================================== */
+body.light-body .value {
+  color: var(--ink);
+}
+
+/* =====================================================
+   AZIENDA — .member boxes (Senior SAP Consultant / BPE / ABAP Dev)
+   .member ha bg var --bg-alt navy esplicito, .member__name eredita
+   color da body = navy invisibile. Forzo cream sul parent.
+   .member__role usa var --ink-soft #B8BDC9 light grey gia leggibile su navy.
+   ===================================================== */
+body.light-body .member {
+  color: var(--ink);
+}
+
+/* =====================================================
+   AZIENDA — .ourvalues__text (Quattro promesse descrizioni)
+   Card bg trasparente (eredita dal body bianco), .ourvalues__text usa
+   var --ink-soft #B8BDC9 light grey pensato per dark, su bianco si perde.
+   Sposto a navy mute leggibile.
+   ===================================================== */
+body.light-body .ourvalues__text {
+  color: var(--ink-dark-mute);
+}
+
+/* =====================================================
+   SCROLL CUE — strappato il colore var --ink-soft (light grey),
+   troppo timido sul navy del page-hero. Bumpato a var --ink cream,
+   spessore 2px, altezza 56px, opacita min 0.4 (sempre visibile).
+   ===================================================== */
+
 /* Scroll cue al fondo della hero: piccola freccia animata che indica "scorri sotto"
    Eredita lo stile minimal di McKinsey/Bain ("Scorri il testo" / chevron) */
 body.light-body .page-hero::before {
@@ -118,17 +153,17 @@ body.light-body .page-hero::before {
   position: absolute;
   left: 50%;
   bottom: 32px;
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent 0%, var(--ink-soft) 50%, transparent 100%);
+  width: 2px;
+  height: 56px;
+  background: linear-gradient(to bottom, transparent 0%, var(--ink) 50%, transparent 100%);
   transform: translateX(-50%);
   animation: heroScrollCue 2.4s ease-in-out infinite;
   z-index: 2;
   pointer-events: none;
 }
 @keyframes heroScrollCue {
-  0%, 100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
-  50%      { opacity: 0.9; transform: translateX(-50%) translateY(0); }
+  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(-10px); }
+  50%      { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 @media (prefers-reduced-motion: reduce) {
   body.light-body .page-hero::before { animation: none; opacity: 0.5; }
