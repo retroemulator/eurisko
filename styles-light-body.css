@@ -141,6 +141,54 @@ body.light-body .ourvalues__text {
 }
 
 /* =====================================================
+   PORTFOLIO — .logo-cell (clienti + partner) box navy con hover rosso
+   Originale: transparent bg + var --ink-soft text (per dark body).
+   Su light body si perde. Trasformo in box navy con cream text e hover
+   rosso (replica della logica dark mode "BIOTEST highlight").
+   ===================================================== */
+body.light-body .logo-cell {
+  background: var(--bg);
+  color: var(--ink);
+  border-right-color: var(--line-soft);
+  border-bottom-color: var(--line-soft);
+}
+body.light-body .logos-grid {
+  border-top-color: var(--line-soft);
+  border-left-color: var(--line-soft);
+}
+body.light-body .logo-cell:hover {
+  background: var(--accent);
+  color: var(--ink);
+}
+body.light-body .logo-cell a {
+  color: inherit;
+}
+/* Cella inerte "ALTRI+": navy box ma testo grey/muto, no hover */
+body.light-body .logo-cell--inert,
+body.light-body .logo-cell--inert:hover {
+  background: var(--bg);
+  color: var(--ink-soft);
+  cursor: default;
+}
+
+/* =====================================================
+   STATS (lavora-con-noi + portfolio + altri) — .stat__label
+   sotto i numeri usa var --ink-soft light grey, su bianco si perde.
+   .stat__num inherita da body navy -> visibile su bianco, ok.
+   ===================================================== */
+body.light-body .stat__label {
+  color: var(--ink-dark-mute);
+}
+
+/* =====================================================
+   LAVORA CON NOI — .approach-step (iter selezione "Come funziona")
+   .approach-step__desc usa probabilmente --ink-soft, su bianco si perde.
+   ===================================================== */
+body.light-body .approach-step__desc {
+  color: var(--ink-dark-mute);
+}
+
+/* =====================================================
    SCROLL CUE — strappato il colore var --ink-soft (light grey),
    troppo timido sul navy del page-hero. Bumpato a var --ink cream,
    spessore 2px, altezza 56px, opacita min 0.4 (sempre visibile).
