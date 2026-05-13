@@ -52,11 +52,41 @@ body.light-body .page-hero {
   margin-right: calc(50% - 50vw);
   padding-left: max(var(--gutter), calc(50vw - var(--container)/2 + var(--gutter)));
   padding-right: max(var(--gutter), calc(50vw - var(--container)/2 + var(--gutter)));
-  /* preserva il padding verticale originale */
-  padding-top: 170px;
-  padding-bottom: 60px;
+  /* McKinsey/Bain-style: hero full viewport, sezione sotto NON peeka */
+  min-height: 100vh;
+  min-height: 100dvh;                          /* mobile-safe (dynamic viewport) */
+  padding-top: 120px;                          /* spazio per nav fixed ~80px + breathing */
+  padding-bottom: 80px;
   position: relative;
   overflow: hidden;
+}
+
+/* Immagine hero piu dominante per riempire il 100vh — bumped da 540 a 620px max */
+body.light-body .page-hero__media {
+  max-width: 620px;
+}
+
+/* Scroll cue al fondo della hero: piccola freccia animata che indica "scorri sotto"
+   Eredita lo stile minimal di McKinsey/Bain ("Scorri il testo" / chevron) */
+body.light-body .page-hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent 0%, var(--ink-soft) 50%, transparent 100%);
+  transform: translateX(-50%);
+  animation: heroScrollCue 2.4s ease-in-out infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+@keyframes heroScrollCue {
+  0%, 100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  50%      { opacity: 0.9; transform: translateX(-50%) translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.light-body .page-hero::before { animation: none; opacity: 0.5; }
 }
 
 /* Sottile glow rosso in hero per dare profondita' e legare visivamente
