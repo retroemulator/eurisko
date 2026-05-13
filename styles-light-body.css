@@ -66,6 +66,17 @@ body.light-body .page-hero__media {
   max-width: 620px;
 }
 
+/* =====================================================
+   HOME .hero (index.html) — anch'essa 100vh full per evitare
+   "scalino bianco" quando l'8% sotto la hero (originale 92vh)
+   mostrava bg dark del resto del sito ma su light-body diventa
+   bianco visibile sotto la hero dark.
+   ===================================================== */
+body.light-body .hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 /* Scroll cue al fondo della hero: piccola freccia animata che indica "scorri sotto"
    Eredita lo stile minimal di McKinsey/Bain ("Scorri il testo" / chevron) */
 body.light-body .page-hero::before {
