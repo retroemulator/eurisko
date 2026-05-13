@@ -9,9 +9,9 @@ body.light-body {
   --paper: #FAFAF7;                       /* warm cream — body bg */
   --paper-alt: #F2EFE8;                   /* alternate band */
   --paper-elevated: #FFFFFF;              /* card bg on cream */
-  --ink-dark: #0A1628;                    /* primary text (== --bg) */
-  --ink-dark-soft: #3F4A5F;               /* secondary text */
-  --ink-dark-mute: #6B7280;               /* tertiary / metadata */
+  --ink-dark: #0A1628;                    /* primary text (== --bg, navy hero) */
+  --ink-dark-soft: #0A1628;               /* secondary text — STESSO navy: gerarchia via font-size, non via colore */
+  --ink-dark-mute: #4A5568;               /* tertiary / metadata only */
   --line-dark-soft: rgba(10, 22, 40, 0.14);
   --line-dark-faint: rgba(10, 22, 40, 0.07);
   --accent-on-light: #A01729;             /* red on cream — AA compliant */
