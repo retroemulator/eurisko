@@ -75,6 +75,25 @@ body.light-body .page-hero > * { position: relative; z-index: 1; }
 
 /* Crumb/title/lede dentro hero restano sui token dark originali — gia' coerenti */
 
+/* HERO TYPOGRAPHY BOOST — title piu manifesto, crumbs piu tracked */
+body.light-body .page-hero__crumbs {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  margin-bottom: 36px;
+}
+body.light-body .page-hero__title {
+  font-size: clamp(48px, 7.5vw, 128px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+body.light-body .page-hero__lede {
+  font-size: clamp(18px, 1.75vw, 24px);
+  line-height: 1.4;
+  margin-top: 36px;
+  max-width: 52ch;
+}
+
 /* =====================================================
    SEZIONI BODY — alternanza ritmica cream / band warmer
    Layout cosa-facciamo:
@@ -197,7 +216,37 @@ body.light-body .service-row:last-child {
   border-bottom-color: var(--line-dark-soft);
 }
 body.light-body .service-row__num {
+  font-family: inherit;
+  font-style: normal;
+  font-size: inherit;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+/* Numero gigante editoriale */
+body.light-body .service-row__num-digit {
+  font-family: 'Oswald', 'Switzer', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(64px, 9vw, 140px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
   color: var(--accent-on-light);
+  display: block;
+}
+/* Label categoria sotto: piccolo eyebrow uppercase navy */
+body.light-body .service-row__num-label {
+  font-family: 'Switzer', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-dark);
+  margin-top: 4px;
 }
 body.light-body .service-row__title {
   color: var(--ink-dark);
