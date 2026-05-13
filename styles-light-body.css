@@ -81,6 +81,36 @@ body.light-body .hero {
   color: var(--ink);
 }
 
+/* =====================================================
+   CASE CARDS (home — Armonizzazione processi SAP / Manufacturing / ecc.)
+   .case ha bg dark navy (var --bg-alt) esplicito → resta dark.
+   .case__title NON ha color esplicito → eredita da body.
+   Su light-body body color = navy → titolo navy su card navy = invisibile.
+   Forzo color cream sulla .case, i child inherit cream.
+   ===================================================== */
+body.light-body .case {
+  color: var(--ink);
+}
+
+/* =====================================================
+   EURISKO VERTICAL WORDMARK — span::before ha color #F5F1E8 cream
+   inline nella regola originale (non token, hardcoded).
+   Su light-body su bg bianco e' invisibile. Forzo navy.
+   .span::after resta crimson (gia funziona su bianco).
+   ===================================================== */
+body.light-body .eurisko-wordmark span::before {
+  color: var(--ink-dark);
+}
+
+/* =====================================================
+   QUOTE ATTRIBUTION — .quote__role usa var --ink-soft (#B8BDC9
+   light grey, pensato per dark). Su bianco si perde.
+   Sposto a navy mute (#4A5568) come metadata leggibile su light.
+   ===================================================== */
+body.light-body .quote__role {
+  color: var(--ink-dark-mute);
+}
+
 /* Scroll cue al fondo della hero: piccola freccia animata che indica "scorri sotto"
    Eredita lo stile minimal di McKinsey/Bain ("Scorri il testo" / chevron) */
 body.light-body .page-hero::before {
