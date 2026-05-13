@@ -129,7 +129,7 @@ body.light-body .section {
      6: AMS .section            → white + red wash radiale al fondo (close ancorato)
      7: cta-block .section      → dark (proprio bg)
 */
-body.light-body main > section.section:nth-of-type(3) {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(3) {
   background: var(--paper-band);
 }
 
@@ -137,58 +137,58 @@ body.light-body main > section.section:nth-of-type(3) {
    SECTION 5 — S/4HANA full dark navy band (drama editoriale)
    Pillars tornano in dark mode SOLO dentro questa sezione
    ===================================================== */
-body.light-body main > section.section:nth-of-type(5) {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) {
   background: var(--bg);
   color: var(--ink);
 }
-body.light-body main > section.section:nth-of-type(5) .eyebrow {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .eyebrow {
   color: var(--ink-soft);
 }
-body.light-body main > section.section:nth-of-type(5) .eyebrow::before {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .eyebrow::before {
   background: var(--accent-text);
 }
-body.light-body main > section.section:nth-of-type(5) .h1,
-body.light-body main > section.section:nth-of-type(5) h2 {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .h1,
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) h2 {
   color: var(--ink);
 }
-body.light-body main > section.section:nth-of-type(5) .lede {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .lede {
   color: var(--ink-soft);
 }
 /* Pillars revert al dark mode originale per questa sezione */
-body.light-body main > section.section:nth-of-type(5) .pillars {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .pillars {
   background: var(--line-faint);
   gap: 1px;
   padding-block: 0;
   border-top: 1px solid var(--line-soft);
   border-bottom: 1px solid var(--line-soft);
 }
-body.light-body main > section.section:nth-of-type(5) .pillar {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .pillar {
   background: var(--bg);
   color: var(--ink);
   box-shadow: none;
   transform: none;
 }
-body.light-body main > section.section:nth-of-type(5) .pillar:hover {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .pillar:hover {
   background: var(--bg-elevated);
   color: var(--ink);
   box-shadow: none;
   transform: none;
   border-top: 1px solid var(--accent);
 }
-body.light-body main > section.section:nth-of-type(5) .pillar__num {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .pillar__num {
   color: var(--accent-text);
 }
-body.light-body main > section.section:nth-of-type(5) .pillar__title {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .pillar__title {
   color: var(--ink);
 }
-body.light-body main > section.section:nth-of-type(5) .pillar__desc {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .pillar__desc {
   color: var(--ink-soft);
 }
-body.light-body main > section.section:nth-of-type(5) .link-arrow {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .link-arrow {
   color: var(--ink);
   border-bottom-color: var(--line-soft);
 }
-body.light-body main > section.section:nth-of-type(5) .link-arrow:hover {
+body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .link-arrow:hover {
   color: var(--accent-text);
   border-bottom-color: var(--accent-text);
 }
