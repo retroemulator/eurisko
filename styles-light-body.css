@@ -52,13 +52,20 @@ body.light-body .page-hero {
   margin-right: calc(50% - 50vw);
   padding-left: max(var(--gutter), calc(50vw - var(--container)/2 + var(--gutter)));
   padding-right: max(var(--gutter), calc(50vw - var(--container)/2 + var(--gutter)));
-  /* McKinsey/Bain-style: hero full viewport, sezione sotto NON peeka */
-  min-height: 100vh;
-  min-height: 100dvh;                          /* mobile-safe (dynamic viewport) */
-  padding-top: 120px;                          /* spazio per nav fixed ~80px + breathing */
-  padding-bottom: 80px;
+  padding-top: 170px;
+  padding-bottom: 60px;
   position: relative;
   overflow: hidden;
+}
+
+/* 100vh full-bleed SOLO per hero con media (cosa-facciamo, azienda, portfolio,
+   lavora-con-noi). La contatti usa plain .page-hero (singola colonna icona+testo)
+   e non serve drama 100vh — torna ad altezza naturale. */
+body.light-body .page-hero--media {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: 120px;
+  padding-bottom: 80px;
 }
 
 /* Immagine hero piu dominante per riempire il 100vh — bumped da 540 a 620px max */
@@ -610,6 +617,40 @@ body.light-body .section .btn:hover {
    CTA BLOCK + FOOTER + NAV restano dark — nessuna modifica.
    Marquee resta dark — nessuna modifica.
    ===================================================== */
+
+/* =====================================================
+   FORM FIELDS (contatti + lavora-con-noi)
+   .field input/select/textarea hanno bg var --bg-alt dark esplicito,
+   ma testo eredita da body = navy invisibile su dark.
+   Forzo cream sui field e child input. Label/help erano --ink-soft
+   light grey, su bianco invisibili → navy-mute leggibile.
+   ===================================================== */
+body.light-body .field label {
+  color: var(--ink-dark);
+}
+body.light-body .field input,
+body.light-body .field textarea,
+body.light-body .field select {
+  color: var(--ink);
+  border-color: rgba(245, 241, 232, 0.25);
+}
+body.light-body .field input::placeholder,
+body.light-body .field textarea::placeholder {
+  color: var(--ink-soft);
+}
+body.light-body .field-help {
+  color: var(--ink-dark-mute);
+}
+body.light-body .field--checkbox label {
+  color: var(--ink-dark);
+}
+
+/* "I campi contrassegnati con * sono obbligatori" e simili
+   probabilmente form-status / required-hint con --ink-soft */
+body.light-body .form-required-hint,
+body.light-body .form-status {
+  color: var(--ink-dark-mute);
+}
 
 /* =====================================================
    ACCESSIBILITY — focus visible su sfondi chiari
