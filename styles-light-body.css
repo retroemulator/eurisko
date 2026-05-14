@@ -182,12 +182,37 @@ body.light-body .value {
 
 /* =====================================================
    AZIENDA — .member boxes (Senior SAP Consultant / BPE / ABAP Dev)
-   .member ha bg var --bg-alt navy esplicito, .member__name eredita
-   color da body = navy invisibile. Forzo cream sul parent.
-   .member__role usa var --ink-soft #B8BDC9 light grey gia leggibile su navy.
+   Cream text + tipografia editoriale ingrandita: nome da 24 a 26-36px
+   clamp, role rosso accent piu' presente, padding 40x36 e min-height 320
+   per piu' respiro, hover lift translateY(-4) per movimento.
    ===================================================== */
 body.light-body .member {
   color: var(--ink);
+  padding: 40px 36px;
+  min-height: 320px;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+body.light-body .member:hover {
+  transform: translateY(-4px);
+}
+body.light-body .member__role {
+  font-size: 0.875rem;
+  color: var(--accent-text);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+body.light-body .member__name {
+  font-size: clamp(26px, 2.4vw, 36px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+body.light-body .member .eyebrow {
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
 }
 
 /* =====================================================
