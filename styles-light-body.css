@@ -679,6 +679,78 @@ body.light-body .form-status {
 }
 
 /* =====================================================
+   COOKIE BANNER — Floating glass card stile macOS / Notion.
+   Originale: banner full-width bianco al fondo viewport.
+   Override: card 440px max bottom-right, backdrop-blur frosted,
+   bordo sottile, shadow morbida, slide-in entrance.
+   Mobile (<=600px): card full-width con margine 16px.
+   ===================================================== */
+body.light-body .cookie-banner {
+  position: fixed;
+  inset: auto 24px 24px auto;
+  width: min(440px, calc(100vw - 48px));
+  background: rgba(255, 255, 255, 0.78);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  color: var(--ink-dark);
+  border: 1px solid rgba(10, 22, 40, 0.10);
+  border-top: 1px solid rgba(10, 22, 40, 0.10);
+  border-radius: 16px;
+  padding: 22px 26px;
+  box-shadow:
+    0 12px 48px rgba(10, 22, 40, 0.22),
+    0 4px 16px rgba(10, 22, 40, 0.10);
+  animation: cookieSlideIn 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body.light-body .cookie-banner__title,
+body.light-body .cookie-banner__text,
+body.light-body .cookie-banner__actions {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+body.light-body .cookie-banner__title {
+  margin-bottom: 8px;
+  color: var(--ink-dark);
+}
+body.light-body .cookie-banner__text {
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+  color: var(--ink-dark-mute);
+}
+body.light-body .cookie-banner__text a {
+  color: var(--ink-dark);
+  text-decoration-color: rgba(10, 22, 40, 0.35);
+}
+body.light-body .cookie-banner__text a:hover {
+  color: var(--accent-on-light-bright);
+  text-decoration-color: var(--accent-on-light-bright);
+}
+body.light-body .cookie-banner__actions {
+  gap: 8px;
+  justify-content: flex-end;
+}
+@keyframes cookieSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (max-width: 600px) {
+  body.light-body .cookie-banner {
+    inset: auto 16px 16px 16px;
+    width: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.light-body .cookie-banner { animation: none; }
+}
+
+/* =====================================================
    ACCESSIBILITY — focus visible su sfondi chiari
    I focus ring di default sono pensati per dark bg, su cream
    possono perdere contrasto. Rinforziamo con outline navy.
