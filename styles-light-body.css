@@ -74,6 +74,23 @@ body.light-body .page-hero__media {
 }
 
 /* =====================================================
+   CONTATTI — .page-hero__icon (envelope SVG)
+   Originale: position absolute top:170 right:gutter (top-right).
+   I miei override page-hero full-bleed + padding asimmetrico
+   facevano che l'icona si sovrapponesse al titolo a sinistra.
+   Soluzione: la metto inline (position static) sopra crumbs+titolo,
+   layout editoriale pulito a colonna unica.
+   ===================================================== */
+body.light-body .page-hero__icon {
+  position: static;
+  width: 64px;
+  height: 64px;
+  margin: 0 0 32px;
+  opacity: 0.85;
+  display: block;
+}
+
+/* =====================================================
    HOME .hero (index.html) — anch'essa 100vh full per evitare
    "scalino bianco" quando l'8% sotto la hero (originale 92vh)
    mostrava bg dark del resto del sito ma su light-body diventa
