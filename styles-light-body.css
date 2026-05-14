@@ -307,7 +307,7 @@ body.light-body .page-hero::after {
   filter: blur(70px);
   z-index: 0;
 }
-body.light-body .page-hero > * { position: relative; z-index: 1; }
+body.light-body .page-hero > *:not(.page-hero__icon) { position: relative; z-index: 1; }
 
 /* Crumb/title/lede dentro hero restano sui token dark originali — gia' coerenti */
 
