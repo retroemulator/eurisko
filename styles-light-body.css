@@ -163,12 +163,18 @@ body.light-body .quote__role {
 
 /* =====================================================
    BODY DESCRIPTIVE TEXTS — gli altri paragrafi tipo
-   .commitment__text (azienda D&I/Sostenibilita/Etica)
-   ricevono lo stesso tono navy-mute #4A5568 per coerenza
-   visiva con quote__role e gerarchia (lede / body p / descriptions).
+   .commitment__text (azienda D&I/Sostenibilita/Etica) e
+   tutti i .lede in tutte le pagine (anche dentro .section--tight,
+   .container, ecc che il selettore .section .lede non catturava)
+   ricevono lo stesso tono navy-mute #4A5568.
    ===================================================== */
-body.light-body .commitment__text {
+body.light-body .commitment__text,
+body.light-body .lede {
   color: var(--ink-dark-mute);
+}
+/* Eccezione: .page-hero__lede dentro hero dark resta cream-soft */
+body.light-body .page-hero .lede {
+  color: var(--ink-soft);
 }
 
 /* =====================================================
