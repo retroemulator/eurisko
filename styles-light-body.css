@@ -202,6 +202,7 @@ body.light-body .member__name {
   line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--ink);
+  max-width: 14ch;
 }
 body.light-body .member .eyebrow {
   font-size: 0.875rem;
