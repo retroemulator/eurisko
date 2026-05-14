@@ -406,11 +406,14 @@ body.light-body--cosa-facciamo main > section.section:nth-of-type(5) .link-arrow
    ruberebbe scena al "punch" finale. Silenzio bianco prima del CTA.
    ===================================================== */
 
-/* Section header: eyebrow + h1 + lede leggibili su cream */
-body.light-body .section .eyebrow {
+/* Section header: eyebrow rosso uniforme su TUTTE le pagine
+   (allargato da .section .eyebrow a tutto .eyebrow per catturare
+   anche .section--tight (portfolio), .hero (home) e qualunque altro
+   contesto. Coerenza cromatica garantita.) */
+body.light-body .eyebrow {
   color: var(--accent-on-light);
 }
-body.light-body .section .eyebrow::before {
+body.light-body .eyebrow::before {
   background: var(--accent-on-light);
 }
 body.light-body .section .h1,
