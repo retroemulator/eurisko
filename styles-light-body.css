@@ -686,20 +686,20 @@ body.light-body .form-status {
    Mobile (<=600px): card full-width con margine 16px.
    ===================================================== */
 body.light-body .cookie-banner {
-  position: fixed;
-  inset: auto 24px 24px auto;
-  width: min(440px, calc(100vw - 48px));
+  position: fixed !important;
+  inset: auto 24px 24px auto !important;
+  width: min(440px, calc(100vw - 48px)) !important;
+  max-width: none !important;
   background: rgba(255, 255, 255, 0.78);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
   color: var(--ink-dark);
-  border: 1px solid rgba(10, 22, 40, 0.10);
-  border-top: 1px solid rgba(10, 22, 40, 0.10);
-  border-radius: 16px;
-  padding: 22px 26px;
+  border: 1px solid rgba(10, 22, 40, 0.10) !important;
+  border-radius: 16px !important;
+  padding: 22px 26px !important;
   box-shadow:
     0 12px 48px rgba(10, 22, 40, 0.22),
-    0 4px 16px rgba(10, 22, 40, 0.10);
+    0 4px 16px rgba(10, 22, 40, 0.10) !important;
   animation: cookieSlideIn 0.55s cubic-bezier(0.16, 1, 0.3, 1);
 }
 body.light-body .cookie-banner__title,
