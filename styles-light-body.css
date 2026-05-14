@@ -91,6 +91,7 @@ body.light-body .hero {
   min-height: 100dvh;
   color: var(--ink);
   position: relative;
+  justify-content: center;
 }
 
 /* Scroll cue minimal sulla home .hero (uguale a quello di .page-hero--media).
