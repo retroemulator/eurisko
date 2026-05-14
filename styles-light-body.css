@@ -82,12 +82,14 @@ body.light-body .page-hero__media {
    layout editoriale pulito a colonna unica.
    ===================================================== */
 body.light-body .page-hero__icon {
-  position: static;
-  width: 64px;
-  height: 64px;
-  margin: 0 0 32px;
-  opacity: 0.85;
-  display: block;
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 0 32px !important;
+  opacity: 0.85 !important;
+  display: block !important;
 }
 
 /* =====================================================
@@ -741,6 +743,16 @@ body.light-body .field-help {
 }
 body.light-body .field--checkbox label {
   color: var(--ink-dark);
+}
+body.light-body .field--checkbox label a {
+  color: var(--ink-dark) !important;
+  text-decoration: underline;
+  text-decoration-color: rgba(10, 22, 40, 0.35);
+  text-underline-offset: 3px;
+}
+body.light-body .field--checkbox label a:hover {
+  color: var(--accent-on-light-bright) !important;
+  text-decoration-color: var(--accent-on-light-bright);
 }
 body.light-body .form-required-hint,
 body.light-body .form-status {
