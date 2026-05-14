@@ -163,6 +163,20 @@ body.light-body .lede {
 body.light-body .page-hero .lede {
   color: var(--ink-soft);
 }
+/* Eccezione: .hero (home) e .page-hero hanno bg dark navy → eyebrow text
+   serve bright red ff1213 (deep red A01729 si scurisce troppo), lede serve
+   cream-soft (navy-mute invisibile su navy). */
+body.light-body .hero .eyebrow,
+body.light-body .page-hero .eyebrow {
+  color: var(--accent-text);
+}
+body.light-body .hero .eyebrow::before,
+body.light-body .page-hero .eyebrow::before {
+  background: var(--accent-text);
+}
+body.light-body .hero .lede {
+  color: var(--ink-soft);
+}
 
 /* =====================================================
    AZIENDA — .value boxes (VISIONE / OBIETTIVO / METODO)
