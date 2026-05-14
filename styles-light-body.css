@@ -276,12 +276,15 @@ body.light-body .ourvalues__text {
 body.light-body .logo-cell {
   background: var(--bg);
   color: var(--ink);
-  border-right-color: var(--line-soft);
-  border-bottom-color: var(--line-soft);
+  border-right: none;
+  border-bottom: none;
 }
+/* Box separati con gap invece di griglia continua con bordi: ogni cella
+   diventa un blocco indipendente, niente piu' "mappazzone" visivo. */
 body.light-body .logos-grid {
-  border-top-color: var(--line-soft);
-  border-left-color: var(--line-soft);
+  border-top: none;
+  border-left: none;
+  gap: 12px;
 }
 body.light-body .logo-cell:hover {
   background: var(--accent);
