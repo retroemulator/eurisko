@@ -178,6 +178,17 @@ body.light-body .hero .lede {
   color: var(--ink-soft);
 }
 
+/* Page-hero crumbs (EURISKO / COSA FACCIAMO etc): aggiunto dash rosso
+   accent come prefix per coerenza visiva con gli eyebrow. .page-hero__crumbs
+   ha display: flex gap: 12px, il ::before diventa primo flex item. */
+body.light-body .page-hero__crumbs::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--accent-text);
+  align-self: center;
+}
+
 /* =====================================================
    AZIENDA — .value boxes (VISIONE / OBIETTIVO / METODO)
    .value ha bg var --bg navy esplicito, .value__text eredita color
