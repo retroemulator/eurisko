@@ -11,7 +11,7 @@ body.light-body {
   --paper-alt: #F7F9FB;                   /* sub-tone hover */
   --paper-elevated: #FFFFFF;              /* card bg (pure white) */
   --ink-dark: #0A1628;                    /* primary text (== --bg, navy hero) */
-  --ink-dark-soft: #0A1628;               /* secondary text — STESSO navy: gerarchia via font-size, non via colore */
+  --ink-dark-soft: #4A5568;               /* secondary text — navy-mute per gerarchia visiva (lede, body p, descriptions) */
   --ink-dark-mute: #4A5568;               /* tertiary / metadata only */
   --line-dark-soft: rgba(10, 22, 40, 0.22);  /* line visibile su cream */
   --line-dark-faint: rgba(10, 22, 40, 0.10);
@@ -141,6 +141,16 @@ body.light-body .eurisko-wordmark span::after {
    Sposto a navy mute (#4A5568) come metadata leggibile su light.
    ===================================================== */
 body.light-body .quote__role {
+  color: var(--ink-dark-mute);
+}
+
+/* =====================================================
+   BODY DESCRIPTIVE TEXTS — gli altri paragrafi tipo
+   .commitment__text (azienda D&I/Sostenibilita/Etica)
+   ricevono lo stesso tono navy-mute #4A5568 per coerenza
+   visiva con quote__role e gerarchia (lede / body p / descriptions).
+   ===================================================== */
+body.light-body .commitment__text {
   color: var(--ink-dark-mute);
 }
 
