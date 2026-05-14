@@ -249,6 +249,24 @@ body.light-body .logo-cell--inert:hover {
   cursor: default;
 }
 
+/* Partner (logos-grid con aria-label specifico) — inversione cromatica
+   rispetto ai clienti: bg rosso accent di base, hover navy.
+   Distinguibili visivamente dai clienti senza modifiche strutturali. */
+body.light-body [aria-label="Partner di consulenza Eurisko"] .logo-cell {
+  background: var(--accent);
+  color: var(--ink);
+}
+body.light-body [aria-label="Partner di consulenza Eurisko"] .logo-cell:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
+body.light-body [aria-label="Partner di consulenza Eurisko"] .logo-cell--inert,
+body.light-body [aria-label="Partner di consulenza Eurisko"] .logo-cell--inert:hover {
+  background: var(--accent);
+  color: var(--ink-soft);
+  cursor: default;
+}
+
 /* =====================================================
    STATS (lavora-con-noi + portfolio + altri) — .stat__label
    sotto i numeri usa var --ink-soft light grey, su bianco si perde.
