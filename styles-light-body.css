@@ -73,24 +73,9 @@ body.light-body .page-hero__media {
   max-width: 620px;
 }
 
-/* =====================================================
-   CONTATTI — .page-hero__icon (envelope SVG)
-   Originale: position absolute top:170 right:gutter (top-right).
-   I miei override page-hero full-bleed + padding asimmetrico
-   facevano che l'icona si sovrapponesse al titolo a sinistra.
-   Soluzione: la metto inline (position static) sopra crumbs+titolo,
-   layout editoriale pulito a colonna unica.
-   ===================================================== */
-body.light-body .page-hero__icon {
-  position: static !important;
-  top: auto !important;
-  right: auto !important;
-  width: 64px !important;
-  height: 64px !important;
-  margin: 0 0 32px !important;
-  opacity: 0.85 !important;
-  display: block !important;
-}
+/* CONTATTI — .page-hero__icon: nessun override.
+   Posizionamento absolute top-right originale preservato.
+   (Scope POC: solo colori, no struttura/layout) */
 
 /* =====================================================
    HOME .hero (index.html) — anch'essa 100vh full per evitare
