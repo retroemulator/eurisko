@@ -200,6 +200,35 @@ body.light-body .value {
 }
 
 /* =====================================================
+   LAVORA CON NOI — .values--4cols (Perche Eurisko box ambiente di lavoro)
+   Allineato a caps Moduli SAP / azienda team boxes: slate band + container
+   bianco unificato + celle .value transparent con bordi interni. Modifier
+   --4cols specifico distingue da .values azienda VISIONE/OBIETTIVO/METODO
+   che restano dark.
+   ===================================================== */
+body.light-body section:has(.values--4cols) {
+  background: var(--paper-band);
+}
+body.light-body .values--4cols {
+  background: #FFFFFF;
+  border: 1px solid var(--line-dark-soft);
+  box-shadow: var(--card-shadow);
+}
+body.light-body .values--4cols .value {
+  background: transparent !important;
+  color: var(--ink-dark) !important;
+  border-right: 1px solid var(--line-dark-faint);
+  border-bottom: 1px solid var(--line-dark-faint);
+  transition: background 0.3s var(--ease);
+}
+body.light-body .values--4cols .value:hover {
+  background: rgba(10, 22, 40, 0.035) !important;
+}
+body.light-body .values--4cols .value__text {
+  color: var(--ink-dark-mute) !important;
+}
+
+/* =====================================================
    AZIENDA — Il team section: slate band + team-grid white container
    unificato come i caps Moduli SAP di cosa-facciamo. Member cells
    con bordi interni navy-faint, no individual shadow.
@@ -828,6 +857,7 @@ body.light-body .job__role {
 }
 body.light-body .job__meta {
   color: var(--ink-dark-mute);
+  font-size: 1rem;
 }
 body.light-body .job__arrow {
   color: var(--ink-dark);
