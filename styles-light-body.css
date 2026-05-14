@@ -371,6 +371,22 @@ body.light-body .section {
 body.light-body--cosa-facciamo main > section.section:nth-of-type(3) {
   background: var(--paper-band);
 }
+/* Sezione 3 Moduli SAP: caps container TRASPARENTE per fare in modo che
+   la slate band trapassi dietro le celle (continuità cromatica), senza
+   piu' il "blocco bianco" che spezzava il flow visivo. Bordi cella un
+   filo piu' visibili (0.22 alpha) per leggerli sulla slate. */
+body.light-body--cosa-facciamo main > section.section:nth-of-type(3) .caps {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+body.light-body--cosa-facciamo main > section.section:nth-of-type(3) .cap {
+  border-right-color: rgba(10, 22, 40, 0.22);
+  border-bottom-color: rgba(10, 22, 40, 0.22);
+}
+body.light-body--cosa-facciamo main > section.section:nth-of-type(3) .cap:hover {
+  background: rgba(10, 22, 40, 0.06);
+}
 
 /* =====================================================
    SECTION 5 — S/4HANA full dark navy band (drama editoriale)
