@@ -703,24 +703,38 @@ body.light-body .section .btn:hover {
    ===================================================== */
 
 /* =====================================================
-   FORM FIELDS (contatti + lavora-con-noi)
-   .field input/select/textarea hanno bg var --bg-alt dark esplicito,
-   ma testo eredita da body = navy invisibile su dark.
-   Forzo cream sui field e child input. Label/help erano --ink-soft
-   light grey, su bianco invisibili → navy-mute leggibile.
+   FORM FIELDS (contatti + lavora-con-noi) — light style
+   Ribaltati da dark (bg var --bg-alt navy + cream text) a light:
+   bg bianco con bordo navy alpha visibile, testo navy dark, placeholder
+   navy-mute. Coerente col resto della pagina (no piu' blocchi neri pesanti
+   in mezzo a contenuto light). Focus border crimson accent.
    ===================================================== */
 body.light-body .field label {
   color: var(--ink-dark);
+  font-weight: 500;
 }
 body.light-body .field input,
 body.light-body .field textarea,
 body.light-body .field select {
-  color: var(--ink);
-  border-color: rgba(245, 241, 232, 0.25);
+  background: #FFFFFF !important;
+  color: var(--ink-dark) !important;
+  border: 1px solid rgba(10, 22, 40, 0.20) !important;
+  border-radius: 6px;
+}
+body.light-body .field input:focus,
+body.light-body .field textarea:focus,
+body.light-body .field select:focus {
+  border-color: var(--accent-on-light-bright) !important;
+  outline: none;
 }
 body.light-body .field input::placeholder,
 body.light-body .field textarea::placeholder {
-  color: var(--ink-soft);
+  color: var(--ink-dark-mute);
+  opacity: 1;
+}
+body.light-body .field select option {
+  background: #FFFFFF;
+  color: var(--ink-dark);
 }
 body.light-body .field-help {
   color: var(--ink-dark-mute);
@@ -728,12 +742,25 @@ body.light-body .field-help {
 body.light-body .field--checkbox label {
   color: var(--ink-dark);
 }
-
-/* "I campi contrassegnati con * sono obbligatori" e simili
-   probabilmente form-status / required-hint con --ink-soft */
 body.light-body .form-required-hint,
 body.light-body .form-status {
   color: var(--ink-dark-mute);
+}
+
+/* =====================================================
+   LAVORA CON NOI — Posizioni aperte cards (.job da jobs.js)
+   .job__meta (Torino / Ibrido, Full-time · Mid-Senior, ecc) erano
+   --ink-soft light grey invisibili su bianco. Allineo a navy-mute
+   come tutti gli altri body descriptive texts.
+   ===================================================== */
+body.light-body .job__role {
+  color: var(--ink-dark);
+}
+body.light-body .job__meta {
+  color: var(--ink-dark-mute);
+}
+body.light-body .job__arrow {
+  color: var(--ink-dark);
 }
 
 /* =====================================================
