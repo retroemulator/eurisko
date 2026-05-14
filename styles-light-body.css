@@ -206,6 +206,10 @@ body.light-body .member__name {
 body.light-body .member .eyebrow {
   font-size: 0.875rem;
   letter-spacing: 0.18em;
+  color: var(--accent-text);
+}
+body.light-body .member .eyebrow::before {
+  background: var(--accent-text);
 }
 
 /* =====================================================
