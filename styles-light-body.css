@@ -723,6 +723,20 @@ body.light-body a.cap::after {
 }
 
 /* =====================================================
+   CAPS — banda slate dietro la sezione (come cosa-facciamo).
+   Le .caps sono card bianche: su sfondo bianco "spariscono",
+   su banda slate staccano e diventano leggibili come blocchi.
+   Applico la banda a tutte le sezioni con .caps: home "Otto aree",
+   consulenza/cosa-facciamo "Moduli SAP" + equivalenti EN.
+   ESCLUSE le caps id=benefit (lavora-con-noi) e id=benefits
+   (en/careers): sono gia adiacenti alla banda values--4cols,
+   bandarle creerebbe due fasce slate attaccate.
+   ===================================================== */
+body.light-body section:has(.caps):not(#benefit):not(#benefits) {
+  background: var(--paper-band);
+}
+
+/* =====================================================
    PILLARS — 3 card S/4HANA
    ===================================================== */
 body.light-body .pillars {
