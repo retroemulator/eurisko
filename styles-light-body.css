@@ -1031,6 +1031,13 @@ body.light-body .sector-card__name {
 body.light-body .sector-card:hover .sector-card__name {
   color: var(--accent-on-light);
 }
+/* Icona SVG settore (stroke #B8BDC9 grigio chiaro, nata per hero scure):
+   su card slate si perde. La scurisco con filtro (~navy-mute) solo in
+   light-body, senza toccare i file SVG che servono chiari nelle hero
+   scure delle pagine settori. */
+body.light-body .sector-card__icon {
+  filter: brightness(0.4);
+}
 /* Griglia settori responsive: 4 col desktop -> 2 col tablet -> 1 col mobile.
    Stessi breakpoint della sectors-magazine per coerenza. Specificita
    body.light-body batte le media query base (900/560). */
