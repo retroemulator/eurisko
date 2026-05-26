@@ -1015,11 +1015,11 @@ body.light-body .sectors-grid {
   border-bottom-color: var(--line-dark-soft);
 }
 body.light-body .sector-card {
-  background: #FFFFFF;
+  background: var(--paper-band);
   color: var(--ink-dark);
 }
 body.light-body .sector-card:hover {
-  background: rgba(10, 22, 40, 0.035);
+  background: #FFFFFF;
 }
 body.light-body .sector-card__label {
   color: var(--accent-on-light);
