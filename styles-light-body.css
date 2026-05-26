@@ -1013,12 +1013,14 @@ body.light-body img.error-page__media--cutout {
   border-radius: 14px;
 }
 
-/* Contatti — intestazioni info-block (indirizzo/telefono/email) erano
-   --ink-soft grigio chiaro, sbiadite su bianco. Portate a navy. */
+/* Contatti — intestazioni info-block (indirizzo/telefono/email) sono
+   eyebrow-style (.75rem maiuscolo, identiche a .eyebrow): navy si
+   confondeva col contenuto sotto. A rosso accent come ogni eyebrow su
+   fondo chiaro (coerenza gerarchia visiva). */
 body.light-body .info-block h2,
 body.light-body .info-block h3,
 body.light-body .info-block h4 {
-  color: var(--ink-dark);
+  color: var(--accent-on-light);
 }
 
 /* --- Grazie — paragrafo grigio su bianco. Icona resta badge rosso. --- */
@@ -1125,7 +1127,7 @@ body.light-body .legal .toc li {
    gruppo sono --warm e i link --ink cream -> invisibili su chiaro. Forzo
    navy + hover accent. --- */
 body.light-body .sitemap__group h2 {
-  color: var(--ink-dark);
+  color: var(--accent-on-light);   /* eyebrow rosso (era --warm rosso nel dark, non navy) */
 }
 body.light-body .sitemap__group a {
   color: var(--ink-dark);
