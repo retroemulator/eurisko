@@ -1170,3 +1170,51 @@ body.light-body .footer__col .pec-static {
 body.light-body--compact main > section.section + section.section:not(:has(.caps)):not(:has(.values--4cols)):not(:has(.team-grid)) {
   padding-top: 0;
 }
+
+/* =====================================================
+   CODICE ETICO (codice-etico / code-of-ethics) — pagina legale
+   estesa: bottone download + callout (COME FARE / ESEMPI / ...) +
+   numerazione dei sei comportamenti. Classi usate solo qui.
+   ===================================================== */
+body.light-body .legal__actions {
+  margin: 4px 0 36px;
+}
+body.light-body .legal__download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 24px;
+  background: var(--ink-dark);
+  color: var(--paper);
+  border: 1px solid var(--ink-dark);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease;
+}
+body.light-body .legal__download:hover {
+  background: var(--accent-on-light);
+  border-color: var(--accent-on-light);
+}
+body.light-body .legal__callout {
+  background: var(--line-dark-faint);
+  border-left: 3px solid var(--accent-on-light);
+  border-radius: 0 10px 10px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+body.light-body .legal__callout .eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent-on-light);
+}
+body.light-body .legal__callout > :last-child {
+  margin-bottom: 0;
+}
+body.light-body .legal__num {
+  display: inline-block;
+  min-width: 1.8em;
+  color: var(--accent-on-light);
+  font-variant-numeric: tabular-nums;
+}

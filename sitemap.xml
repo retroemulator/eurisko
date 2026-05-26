@@ -68,6 +68,21 @@
   </url>
 
   <url>
+    <loc>https://euriskosrl.it/codice-etico</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/codice-etico"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/code-of-ethics"/>
+  </url>
+  <url>
+    <loc>https://euriskosrl.it/en/code-of-ethics</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
     <loc>https://euriskosrl.it/glossario-sap</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
