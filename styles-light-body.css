@@ -1136,6 +1136,16 @@ body.light-body .sitemap__group a:hover {
   color: var(--accent-on-light);
 }
 
+/* --- Testo "normale" rimasto --ink-soft (grigio per dark) su sezioni
+   chiare -> sbiadito. .portfolio-disclaimer (portfolio + settori/industries)
+   e .consent (testo consenso form contatti/lavora-con-noi + EN) a navy-mute.
+   Audit stili --ink-soft: tutti gli altri sono su fondo scuro (case cards,
+   nav dropdown, hero, overlay ricerca) -> corretti. --- */
+body.light-body .portfolio-disclaimer,
+body.light-body .consent {
+  color: var(--ink-dark-mute);
+}
+
 /* =====================================================
    SPACING — pagine "analoghe a Finance" (moduli, settori, servizi,
    contenuto, legali, glossari, 404, grazie, mappa): classe
