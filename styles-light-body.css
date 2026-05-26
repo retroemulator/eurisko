@@ -1146,6 +1146,15 @@ body.light-body .consent {
   color: var(--ink-dark-mute);
 }
 
+/* PEC: mai un link mailto (richiesta utente) -> reso <span class="pec-static">.
+   Nel footer lo allineo agli altri item della colonna (block, stessa size e
+   spaziatura) ma statico, senza hover. Eredita il cream del footer scuro. */
+body.light-body .footer__col .pec-static {
+  display: block;
+  padding: 6px 0;
+  font-size: 0.9375rem;
+}
+
 /* =====================================================
    SPACING — pagine "analoghe a Finance" (moduli, settori, servizi,
    contenuto, legali, glossari, 404, grazie, mappa): classe
