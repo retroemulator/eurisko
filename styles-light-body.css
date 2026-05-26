@@ -789,12 +789,16 @@ body.light-body .link-arrow:hover {
    In dark mode: bg ink (cream) su body dark.
    In light mode: bg navy su body cream → invertire.
    ===================================================== */
-body.light-body .section .btn {
+body.light-body .section .btn,
+body.light-body .error-page .btn,
+body.light-body .thanks .btn {
   background: var(--ink-dark);
   color: var(--paper);
   border-color: var(--ink-dark);
 }
-body.light-body .section .btn:hover {
+body.light-body .section .btn:hover,
+body.light-body .error-page .btn:hover,
+body.light-body .thanks .btn:hover {
   background: var(--accent-on-light);
   color: var(--paper);
   border-color: var(--accent-on-light);
