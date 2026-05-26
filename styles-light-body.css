@@ -1113,3 +1113,17 @@ body.light-body .sitemap__group a {
 body.light-body .sitemap__group a:hover {
   color: var(--accent-on-light);
 }
+
+/* =====================================================
+   TEST SPACING — solo Finance via classe .light-body--compact.
+   Dimezza il vuoto tra sezioni chiare consecutive azzerando il
+   padding-top di una .section che ne segue un'altra: lo stacco
+   diventa il solo padding-bottom della precedente, non la somma.
+   La prima .section dopo l'hero scuro NON e' colpita (il suo
+   predecessore e' .page-hero, non .section) -> stacco col dark
+   preservato. Se approvato: generalizzare a body.light-body con
+   esclusione delle sezioni con banda (caps/values/team/cosa-facciamo).
+   ===================================================== */
+body.light-body--compact main > section.section + section.section {
+  padding-top: 0;
+}
