@@ -902,9 +902,9 @@
 
   // -------- 9. Hero video — slow down playback + loop fluido --------
   // Sorgente 1280x720 @30fps: a 0.32x si vedevano ~9.6 fps reali (scatti).
-  // 0.75x => ~22.5 fps reali = fluido, mantenendo un'aria cinematografica.
+  // File ora 60fps (frame interpolati): a 0.4x = ~24 fps reali = fluido e lento.
   document.querySelectorAll('.hero__bg-video').forEach((v) => {
-    const setRate = () => { v.playbackRate = 0.75; };
+    const setRate = () => { v.playbackRate = 0.4; };
     if (v.readyState >= 1) setRate();
     else v.addEventListener('loadedmetadata', setRate);
     // Rewind manuale prima del loop nativo: evita lo scatto pause-seek-play
