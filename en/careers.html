@@ -525,6 +525,13 @@
         </div>
 
         <div class="field">
+          <label for="c-presentation">Your introduction <span aria-hidden="true">*</span><span class="visually-hidden">required</span></label>
+          <p class="field-help">Tell us briefly who you are, your skills and why you'd like to join Eurisko.</p>
+          <textarea id="c-presentation" name="presentation" rows="6" required aria-required="true"></textarea>
+          <p class="field-error" id="c-presentation-error" hidden></p>
+        </div>
+
+        <div class="field">
           <label for="c-cv">Curriculum Vitae (PDF, DOC, DOCX · max 5&nbsp;MB) <span aria-hidden="true">*</span><span class="visually-hidden">required</span></label>
           <input type="file" id="c-cv" name="cv" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-required="true">
           <p class="field-error" id="c-cv-error" hidden></p>
