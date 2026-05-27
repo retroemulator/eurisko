@@ -14,7 +14,7 @@
             await page.setViewport({ width: 1200, height: 630 });
             await page.screenshot({ path: 'og-image.png', clip: {x:0,y:0,width:1200,height:630} });
       3. Salvare come og-image.png alla root del progetto
-    NB: di default i meta og:image puntano a og-image.svg che funziona già in molte piattaforme moderne.
+    NB: di default i meta og:image puntano a og-image.png che funziona già in molte piattaforme moderne.
         og-image.png è un fallback opzionale per piattaforme che non supportano SVG (es. WhatsApp).
   */
   * { box-sizing: border-box; margin: 0; padding: 0; }
