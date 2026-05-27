@@ -373,7 +373,7 @@ body.light-body .approach-step__desc {
 
 /* Scroll cue al fondo della hero: piccola freccia animata che indica "scorri sotto"
    Eredita lo stile minimal di McKinsey/Bain ("Scorri il testo" / chevron) */
-body.light-body .page-hero::before {
+body.light-body:not(.light-body--compact) .page-hero--media::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -391,7 +391,7 @@ body.light-body .page-hero::before {
   50%      { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  body.light-body .page-hero::before { animation: none; opacity: 0.5; }
+  body.light-body:not(.light-body--compact) .page-hero--media::before { animation: none; opacity: 0.5; }
 }
 
 /* Sottile glow rosso in hero per dare profondita' e legare visivamente
