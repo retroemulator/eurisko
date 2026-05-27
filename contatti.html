@@ -187,8 +187,8 @@
 
       <!-- RIGHT: form -->
       <div>
-        <!-- Form Formspree: redirect a grazie.html dopo l'invio via _next. -->
-        <form class="contact" action="https://formspree.io/f/xqewjkdn" method="POST" novalidate aria-describedby="form-status">
+        <!-- Form FormSubmit: redirect a grazie.html dopo l'invio via _next. -->
+        <form class="contact" action="https://formsubmit.co/info@euriskosrl.it" method="POST" novalidate aria-describedby="form-status">
 
           <div class="field-row">
             <div class="field">
@@ -239,13 +239,13 @@
             <div class="g-recaptcha" data-sitekey="6LdQ6cksAAAAAF55_f9AfExlyq-tbWdI979oWMy4" data-theme="dark"></div>
           </div>
 
-          <!-- Anti-spam Formspree honeypot -->
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <!-- Anti-spam FormSubmit honeypot -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <!-- Redirect dopo invio a grazie.html -->
           <input type="hidden" name="_next" value="https://euriskosrl.it/grazie">
           <input type="hidden" name="_subject" value="Nuovo contatto dal sito Eurisko">
-          <input type="hidden" name="_language" value="it">
+          <input type="hidden" name="_captcha" value="false">
 
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
 
