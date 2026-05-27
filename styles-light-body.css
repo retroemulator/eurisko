@@ -1226,3 +1226,23 @@ body.light-body .nav {
 body.light-body .site-search__input:focus-visible {
   outline: none;
 }
+
+/* =====================================================
+   PAGE-HERO MEDIA GLOW — l'alone rosso attorno all'immagine/video
+   dell'hero sfumava su tutti i lati, top incluso (verso l'header).
+   Lo spostiamo verso il basso (offset Y) cosi resta su sinistra,
+   destra e sotto/attorno al media, senza fumare verso l'alto. Il
+   drop-shadow nero (profondita) resta invariato. L'alone radiale del
+   reveal/hover viene ancorato al bordo superiore del media (inset top 0)
+   e spostato in basso. url(#removeBlack) preservato sui video.
+   ===================================================== */
+body.light-body .page-hero__media {
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45)) drop-shadow(0 28px 44px rgba(196, 30, 58, 0.18));
+}
+body.light-body video.page-hero__media {
+  filter: url(#removeBlack) drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45)) drop-shadow(0 28px 44px rgba(196, 30, 58, 0.18));
+}
+body.light-body .page-hero__media-wrap--reveal::after {
+  inset: 0 -25% -28% -25%;
+  background: radial-gradient(circle at 50% 72%, rgba(255, 77, 102, 0.95) 0%, rgba(196, 30, 58, 0.7) 32%, transparent 72%);
+}
