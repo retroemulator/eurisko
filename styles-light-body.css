@@ -917,6 +917,41 @@ body.light-body .job__meta {
 }
 body.light-body .job__arrow {
   color: var(--ink-dark);
+  transition: transform 0.3s var(--ease), color 0.3s var(--ease);
+}
+/* Evidenziazione lista posizioni: divisori navy visibili (erano --line-soft
+   quasi invisibili su bianco) + riga interattiva tipo bacheca: hover con
+   sfondo slate, barra accent a sinistra, ruolo e freccia in rosso. */
+body.light-body .job {
+  border-top-color: var(--line-dark-soft);
+  padding-inline: 18px;
+  border-radius: 8px;
+  position: relative;
+}
+body.light-body .job:last-child {
+  border-bottom-color: var(--line-dark-soft);
+}
+body.light-body .job::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--accent-on-light);
+  transform: scaleY(0);
+  transition: transform 0.3s var(--ease);
+}
+body.light-body .job:hover {
+  background: var(--paper-band);
+  padding-left: 26px;
+}
+body.light-body .job:hover::before { transform: scaleY(1); }
+body.light-body .job:hover .job__role { color: var(--accent-on-light); }
+body.light-body .job:hover .job__arrow {
+  color: var(--accent-on-light);
+  transform: translateX(4px);
 }
 
 /* =====================================================
