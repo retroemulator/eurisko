@@ -1197,3 +1197,20 @@ body.light-body .legal__num {
   color: var(--accent-on-light);
   font-variant-numeric: tabular-nums;
 }
+
+/* =====================================================
+   NAV — nessuna linea divisoria header/hero. Header e hero sono
+   entrambi navy: togliendo il border-bottom si fondono in un unico
+   blocco scuro in cima. Su desktop, sotto scroll, il nav diventa una
+   pill flottante con bordo+ombra propri (regola base intatta). Su
+   mobile sotto scroll aggiungo solo un'ombra morbida per staccarlo
+   dal body chiaro sottostante.
+   ===================================================== */
+body.light-body .nav {
+  border-bottom-color: transparent;
+}
+@media (max-width: 767px) {
+  body.light-body .nav.scrolled {
+    box-shadow: 0 8px 24px -10px rgba(10, 22, 40, 0.35);
+  }
+}
