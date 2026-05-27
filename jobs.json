@@ -1,13 +1,13 @@
 [
   {
     "id": "fico",
-    "title": { "it": "SAP Functional Analyst (FI/CO)", "en": "SAP Functional Analyst (FI/CO)" },
+    "title": { "it": "SAP Functional Analyst", "en": "SAP Functional Analyst" },
     "location": { "it": "Torino / Ibrido", "en": "Turin / Hybrid" },
     "type": { "it": "Full-time · Mid-Senior", "en": "Full-time · Mid-Senior" }
   },
   {
     "id": "fico-junior",
-    "title": { "it": "SAP Functional Analyst (FI/CO) (Junior/Neolaureato)", "en": "SAP Functional Analyst (FI/CO) (Junior/Graduate)" },
+    "title": { "it": "SAP Functional Analyst (Junior/Neolaureato)", "en": "SAP Functional Analyst (Junior/Graduate)" },
     "location": { "it": "Torino / Ibrido", "en": "Turin / Hybrid" },
     "type": { "it": "Full-time · Junior / Neolaureato", "en": "Full-time · Junior / Graduate" }
   },
