@@ -881,6 +881,28 @@ body.light-body .field select option {
   background: #FFFFFF;
   color: var(--ink-dark);
 }
+/* Checkbox consenso privacy: la regola .field input {background:#fff!important}
+   sopra colpiva anche il checkbox, lasciandolo bianco anche da spuntato (con
+   spunta cream invisibile). Override dedicato: box bianco con bordo navy
+   visibile; da spuntato rosso con spunta bianca. */
+body.light-body .field--checkbox input[type="checkbox"] {
+  background: #FFFFFF !important;
+  border: 1.5px solid var(--ink-dark-soft) !important;
+  border-radius: 4px;
+}
+body.light-body .field--checkbox input[type="checkbox"]:hover {
+  border-color: var(--ink-dark) !important;
+}
+body.light-body .field--checkbox input[type="checkbox"]:checked {
+  background: var(--accent-on-light) !important;
+  border-color: var(--accent-on-light) !important;
+}
+body.light-body .field--checkbox input[type="checkbox"]:checked::after {
+  border-color: #FFFFFF;
+}
+body.light-body .field--checkbox label {
+  color: var(--ink-dark-soft);
+}
 body.light-body .field-help {
   color: var(--ink-dark-mute);
 }
