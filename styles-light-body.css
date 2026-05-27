@@ -413,6 +413,7 @@ body.light-body .page-hero > *:not(.page-hero__icon) { position: relative; z-ind
 
 /* Menu header: font piu grande (era 0.875rem/14px) per migliore leggibilita/presenza */
 body.light-body .nav__links { font-size: 1rem; }
+body.light-body .nav__links a, body.light-body .nav__dropdown-trigger { white-space: nowrap; }
 
 /* =====================================================
    HAMBURGER (<=1024px) — icona distintiva, non tre linee anonime:
@@ -431,7 +432,7 @@ body.light-body .nav__burger span:nth-child(2) {
 }
 body.light-body .nav__burger:hover span:nth-child(2) { width: 26px; }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   /* CHIUSO: burger a sinistra, logo centrato, search a destra */
   body.light-body .nav:not(.open) .nav__burger { order: -1; }
   body.light-body .nav:not(.open) .nav__logo {
