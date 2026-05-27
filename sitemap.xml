@@ -14,84 +14,99 @@
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/azienda.html</loc>
+    <loc>https://euriskosrl.it/azienda</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/azienda.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/company.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/azienda"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/company"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/inclusion-diversity.html</loc>
+    <loc>https://euriskosrl.it/inclusion-diversity</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/inclusion-diversity.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/inclusion-diversity.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/inclusion-diversity"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/inclusion-diversity"/>
   </url>
   <url>
-    <loc>https://euriskosrl.it/en/inclusion-diversity.html</loc>
+    <loc>https://euriskosrl.it/en/inclusion-diversity</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/sostenibilita.html</loc>
+    <loc>https://euriskosrl.it/sostenibilita</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/sostenibilita.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/sustainability.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/sostenibilita"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/sustainability"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/ai-culture.html</loc>
+    <loc>https://euriskosrl.it/ai-culture</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/ai-culture.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/ai-culture.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/ai-culture"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/ai-culture"/>
   </url>
   <url>
-    <loc>https://euriskosrl.it/en/ai-culture.html</loc>
+    <loc>https://euriskosrl.it/en/ai-culture</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://euriskosrl.it/en/sustainability.html</loc>
+    <loc>https://euriskosrl.it/en/sustainability</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/glossario-sap.html</loc>
+    <loc>https://euriskosrl.it/codice-etico</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/codice-etico"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/code-of-ethics"/>
+  </url>
+  <url>
+    <loc>https://euriskosrl.it/en/code-of-ethics</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://euriskosrl.it/glossario-sap</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/glossario-sap.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/sap-glossary.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/glossario-sap"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/sap-glossary"/>
   </url>
   <url>
-    <loc>https://euriskosrl.it/en/sap-glossary.html</loc>
+    <loc>https://euriskosrl.it/en/sap-glossary</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/glossario-progetto.html</loc>
+    <loc>https://euriskosrl.it/glossario-progetto</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/glossario-progetto.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/project-glossary.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/glossario-progetto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/project-glossary"/>
   </url>
   <url>
-    <loc>https://euriskosrl.it/en/project-glossary.html</loc>
+    <loc>https://euriskosrl.it/en/project-glossary</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -99,171 +114,174 @@
 
 
   <url>
-    <loc>https://euriskosrl.it/cosa-facciamo.html</loc>
+    <loc>https://euriskosrl.it/cosa-facciamo</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/cosa-facciamo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/what-we-do.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/cosa-facciamo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/what-we-do"/>
   </url>
   <url>
-    <loc>https://euriskosrl.it/en/what-we-do.html</loc>
+    <loc>https://euriskosrl.it/en/what-we-do</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/consulenza.html</loc>
+    <loc>https://euriskosrl.it/consulenza</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/consulenza.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/sap-consulting.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/consulenza"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/sap-consulting"/>
   </url>
 
   <!-- MODULI SAP -->
-  <url><loc>https://euriskosrl.it/moduli/finance.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/finance.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/finance.html"/></url>
-  <url><loc>https://euriskosrl.it/moduli/controlling.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/controlling.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/controlling.html"/></url>
-  <url><loc>https://euriskosrl.it/moduli/material-management.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/material-management.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/material-management.html"/></url>
-  <url><loc>https://euriskosrl.it/moduli/sales-distribution.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/sales-distribution.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/sales-distribution.html"/></url>
-  <url><loc>https://euriskosrl.it/moduli/fscm.html</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/fscm.html"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/fscm.html"/></url>
+  <url><loc>https://euriskosrl.it/moduli/finance</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/finance"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/finance"/></url>
+  <url><loc>https://euriskosrl.it/moduli/controlling</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/controlling"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/controlling"/></url>
+  <url><loc>https://euriskosrl.it/moduli/material-management</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/material-management"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/material-management"/></url>
+  <url><loc>https://euriskosrl.it/moduli/sales-distribution</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/sales-distribution"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/sales-distribution"/></url>
+  <url><loc>https://euriskosrl.it/moduli/fscm</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/moduli/fscm"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/modules/fscm"/></url>
 
-  <url><loc>https://euriskosrl.it/en/modules/finance.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://euriskosrl.it/en/modules/controlling.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://euriskosrl.it/en/modules/material-management.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://euriskosrl.it/en/modules/sales-distribution.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://euriskosrl.it/en/modules/fscm.html</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/finance</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/controlling</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/material-management</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/sales-distribution</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/modules/fscm</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
-  <!-- SETTORI / INDUSTRIES (sample) -->
-  <url>
-    <loc>https://euriskosrl.it/settori/public-sector.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/settori/public-sector.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/industries/public-sector.html"/>
-  </url>
-  <url>
-    <loc>https://euriskosrl.it/en/industries/public-sector.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- SETTORI / INDUSTRIES -->
+  <url><loc>https://euriskosrl.it/settori/aerospazio-difesa</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/settori/aerospazio-difesa"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/industries/aerospace-defense"/></url>
+  <url><loc>https://euriskosrl.it/settori/automotive</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/settori/automotive"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/industries/automotive"/></url>
+  <url><loc>https://euriskosrl.it/settori/chimica</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/settori/chimica"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/industries/chemicals"/></url>
+  <url><loc>https://euriskosrl.it/settori/communications-media</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/settori/communications-media"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/industries/communications-media"/></url>
+  <url><loc>https://euriskosrl.it/settori/food-and-beverage</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/settori/food-and-beverage"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/industries/food-and-beverage"/></url>
+  <url><loc>https://euriskosrl.it/settori/industriale</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/settori/industriale"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/industries/industrial"/></url>
+  <url><loc>https://euriskosrl.it/settori/public-sector</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/settori/public-sector"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/industries/public-sector"/></url>
+  <url><loc>https://euriskosrl.it/settori/travel</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/settori/travel"/><xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/industries/travel"/></url>
+
+  <url><loc>https://euriskosrl.it/en/industries/aerospace-defense</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/industries/automotive</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/industries/chemicals</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/industries/communications-media</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/industries/food-and-beverage</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/industries/industrial</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/industries/public-sector</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://euriskosrl.it/en/industries/travel</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <url>
-    <loc>https://euriskosrl.it/soluzioni.html</loc>
+    <loc>https://euriskosrl.it/soluzioni</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/soluzioni.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/solutions.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/soluzioni"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/solutions"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/migrazione-s4hana.html</loc>
+    <loc>https://euriskosrl.it/migrazione-s4hana</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/migrazione-s4hana.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/s4hana-migration.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/migrazione-s4hana"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/s4hana-migration"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/ams.html</loc>
+    <loc>https://euriskosrl.it/ams</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/ams.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/ams.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/ams"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/ams"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/ams.html</loc>
+    <loc>https://euriskosrl.it/en/ams</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/portfolio.html</loc>
+    <loc>https://euriskosrl.it/portfolio</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/portfolio.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/portfolio"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/lavora-con-noi.html</loc>
+    <loc>https://euriskosrl.it/lavora-con-noi</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/lavora-con-noi.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/careers.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/lavora-con-noi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/careers"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/contatti.html</loc>
+    <loc>https://euriskosrl.it/contatti</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/contatti.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/contatti"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/contact"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/privacy.html</loc>
+    <loc>https://euriskosrl.it/privacy</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/privacy"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/cookie-policy.html</loc>
+    <loc>https://euriskosrl.it/cookie-policy</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/cookie-policy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/cookie-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/cookie-policy"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/note-legali.html</loc>
+    <loc>https://euriskosrl.it/note-legali</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/note-legali.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/note-legali"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/legal-notice"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/accessibilita.html</loc>
+    <loc>https://euriskosrl.it/accessibilita</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/accessibilita.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/accessibilita"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/accessibility"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/termini-di-utilizzo.html</loc>
+    <loc>https://euriskosrl.it/termini-di-utilizzo</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/termini-di-utilizzo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/terms-of-use.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/termini-di-utilizzo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/terms-of-use"/>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/mappa-del-sito.html</loc>
+    <loc>https://euriskosrl.it/mappa-del-sito</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/mappa-del-sito.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/site-map.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://euriskosrl.it/mappa-del-sito"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://euriskosrl.it/en/site-map"/>
   </url>
 
   <!-- ENGLISH -->
@@ -277,91 +295,91 @@
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/company.html</loc>
+    <loc>https://euriskosrl.it/en/company</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/sap-consulting.html</loc>
+    <loc>https://euriskosrl.it/en/sap-consulting</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/solutions.html</loc>
+    <loc>https://euriskosrl.it/en/solutions</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/s4hana-migration.html</loc>
+    <loc>https://euriskosrl.it/en/s4hana-migration</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/portfolio.html</loc>
+    <loc>https://euriskosrl.it/en/portfolio</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/careers.html</loc>
+    <loc>https://euriskosrl.it/en/careers</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/contact.html</loc>
+    <loc>https://euriskosrl.it/en/contact</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/privacy.html</loc>
+    <loc>https://euriskosrl.it/en/privacy</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/cookie-policy.html</loc>
+    <loc>https://euriskosrl.it/en/cookie-policy</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/legal-notice.html</loc>
+    <loc>https://euriskosrl.it/en/legal-notice</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/accessibility.html</loc>
+    <loc>https://euriskosrl.it/en/accessibility</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/terms-of-use.html</loc>
+    <loc>https://euriskosrl.it/en/terms-of-use</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
-    <loc>https://euriskosrl.it/en/site-map.html</loc>
+    <loc>https://euriskosrl.it/en/site-map</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>

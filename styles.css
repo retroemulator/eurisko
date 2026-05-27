@@ -3270,3 +3270,17 @@ summary:focus-visible {
   }
 }
 
+
+
+/* Codice Etico (codice-etico / en/code-of-ethics) — callout COME FARE/ESEMPI
+   + numerazione comportamenti, tema scuro. */
+.legal__callout {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--accent-text);
+  border-radius: 0 10px 10px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.legal__callout .eyebrow { display: block; margin-bottom: 10px; color: var(--accent-text); }
+.legal__callout > :last-child { margin-bottom: 0; }
+.legal__num { display: inline-block; min-width: 1.8em; color: var(--accent-text); font-variant-numeric: tabular-nums; }
