@@ -414,6 +414,37 @@ body.light-body .page-hero > *:not(.page-hero__icon) { position: relative; z-ind
 /* Menu header: font piu grande (era 0.875rem/14px) per migliore leggibilita/presenza */
 body.light-body .nav__links { font-size: 1rem; }
 
+/* =====================================================
+   HAMBURGER (<=1024px) — icona distintiva, non tre linee anonime:
+   linea centrale piu corta e in accent rosso, right-aligned, con
+   micro-interazione hover (si allunga a tutta larghezza). Apertura:
+   morph in X (le linee piene ruotano, la rossa centrale svanisce).
+   Posizione: burger a SINISTRA, logo CENTRATO (sia chiuso sia aperto).
+   ===================================================== */
+body.light-body .nav__burger span {
+  transition: width .3s var(--ease), transform .3s var(--ease), opacity .3s var(--ease), background .3s var(--ease);
+}
+body.light-body .nav__burger span:nth-child(2) {
+  width: 15px;
+  align-self: flex-end;
+  background: var(--accent-text);
+}
+body.light-body .nav__burger:hover span:nth-child(2) { width: 26px; }
+
+@media (max-width: 1024px) {
+  /* CHIUSO: burger a sinistra, logo centrato, search a destra */
+  body.light-body .nav:not(.open) .nav__burger { order: -1; }
+  body.light-body .nav:not(.open) .nav__logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* APERTO: X di chiusura in alto a sinistra, logo in alto al centro */
+  body.light-body .nav.open .nav__burger { left: var(--gutter); right: auto; }
+  body.light-body .nav.open .nav__logo { left: 50%; right: auto; transform: translateX(-50%); }
+}
+
 /* Crumb/title/lede dentro hero restano sui token dark originali — gia' coerenti */
 
 /* =====================================================
