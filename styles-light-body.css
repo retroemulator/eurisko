@@ -395,15 +395,18 @@ body.light-body .page-hero::before {
 }
 
 /* Sottile glow rosso in hero per dare profondita' e legare visivamente
-   col CTA finale (stesso linguaggio cromatico) */
+   col CTA finale. Due aloni sui LATI (sinistra + destra), spostati in
+   basso: la parte superiore (verso l'header) resta navy pulita, senza
+   sfumatura rossa. Sulle pagine con media il drop-shadow dell'immagine
+   aggiunge il glow attorno ad essa. */
 body.light-body .page-hero::after {
   content: "";
   position: absolute;
-  width: 900px; height: 900px;
-  background: radial-gradient(circle, rgba(196, 30, 58, 0.18) 0%, transparent 60%);
-  top: -300px; right: -300px;
+  inset: 0;
+  background:
+    radial-gradient(42% 50% at 0% 72%, rgba(196, 30, 58, 0.14) 0%, transparent 70%),
+    radial-gradient(46% 55% at 100% 66%, rgba(196, 30, 58, 0.18) 0%, transparent 70%);
   pointer-events: none;
-  filter: blur(70px);
   z-index: 0;
 }
 body.light-body .page-hero > *:not(.page-hero__icon) { position: relative; z-index: 1; }
