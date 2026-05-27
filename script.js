@@ -900,11 +900,20 @@
   }
   injectCookieReopenLink();
 
-  // -------- 9. Hero video — slow down playback (~52% iniziale poi ridotto del 25%) --------
+  // -------- 9. Hero video — slow down playback + loop fluido --------
+  // Sorgente 1280x720 @30fps: a 0.32x si vedevano ~9.6 fps reali (scatti).
+  // File ora 60fps (frame interpolati): a 0.4x = ~24 fps reali = fluido e lento.
   document.querySelectorAll('.hero__bg-video').forEach((v) => {
-    const setRate = () => { v.playbackRate = 0.32; };
+    const setRate = () => { v.playbackRate = 0.4; };
     if (v.readyState >= 1) setRate();
     else v.addEventListener('loadedmetadata', setRate);
+    // Rewind manuale prima del loop nativo: evita lo scatto pause-seek-play
+    // del loop con playbackRate != 1 (stesso fix dei page-hero video).
+    v.addEventListener('timeupdate', () => {
+      if (v.duration && v.currentTime >= v.duration - 0.1) {
+        v.currentTime = 0;
+      }
+    });
   });
 
   // -------- 11. Page-hero media — cinematic reveal + 3D tilt parallax al mouse --------
