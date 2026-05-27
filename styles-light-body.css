@@ -411,6 +411,9 @@ body.light-body .page-hero::after {
 }
 body.light-body .page-hero > *:not(.page-hero__icon) { position: relative; z-index: 1; }
 
+/* Menu header: font piu grande (era 0.875rem/14px) per migliore leggibilita/presenza */
+body.light-body .nav__links { font-size: 1rem; }
+
 /* Crumb/title/lede dentro hero restano sui token dark originali — gia' coerenti */
 
 /* =====================================================
