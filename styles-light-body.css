@@ -1214,3 +1214,15 @@ body.light-body .nav {
     box-shadow: 0 8px 24px -10px rgba(10, 22, 40, 0.35);
   }
 }
+
+/* =====================================================
+   RICERCA — l'input erediterebbe il focus-ring globale rosso
+   (input:focus-visible { outline: 2px solid var(--accent-bright) }),
+   che disegna un rettangolo attorno al testo. Lo annulliamo SOLO per
+   il campo di ricerca: resta la sottolineatura rossa
+   (.site-search__input:focus-visible border-bottom-color: accent)
+   come indicatore di focus visibile. Focus-ring invariato altrove.
+   ===================================================== */
+body.light-body .site-search__input:focus-visible {
+  outline: none;
+}
