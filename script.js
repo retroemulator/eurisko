@@ -1022,11 +1022,12 @@
 })();
 
 /* ===== Portfolio: ticker scorrevole solo CLIENTI, SOLO desktop (light-body).
-   Sotto i 1024px (o reduced-motion) il marquee viene smontato e torna la
-   griglia originale. Celle di dimensione uniforme (come partnership/settori):
-   larghezza/altezza calcolate sul contenitore e passate in --logo-cell-w/h. */
+   Clona SOLO le celle necessarie a coprire il viewport: cosi' il nastro resta
+   corto e non supera il limite di texture del browser (coi box grandi, clonando
+   tutto, il layer non veniva disegnato e i box sparivano). Sotto 1024px o
+   reduced-motion: griglia originale. ===== */
 (function () {
-  var GAP = 12, COLS = 5;
+  var GAP = 12, COLS = 5, SPEED = 120; // px/s
   if (!document.body || !document.body.classList.contains('light-body')) return;
   if (!/\/portfolio(\.html)?$/i.test(location.pathname)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -1037,12 +1038,33 @@
       function (g) { return !/partner/i.test(g.getAttribute('aria-label') || ''); }
     );
   }
-  function sizeCells(grid, wrap) {
+  function clearClones(grid) {
+    Array.prototype.slice.call(grid.querySelectorAll('[data-mq-clone]')).forEach(function (c) {
+      c.parentNode.removeChild(c);
+    });
+  }
+  function layout(grid, wrap) {
+    clearClones(grid);
     var w = wrap.clientWidth;
     if (!w) return;
     var cw = (w - (COLS - 1) * GAP) / COLS;
+    var step = cw + GAP;
+    var originals = Array.prototype.slice.call(grid.children);
+    var n = originals.length;
+    if (!n) return;
     grid.style.setProperty('--logo-cell-w', cw.toFixed(2) + 'px');
     grid.style.setProperty('--logo-cell-h', (cw * 2 / 3).toFixed(2) + 'px');
+    var dist = n * step;
+    grid.style.setProperty('--mq-dist', dist.toFixed(2) + 'px');
+    grid.style.animationDuration = Math.max(30, dist / SPEED).toFixed(1) + 's';
+    var need = Math.ceil(w / step) + 1;
+    for (var i = 0; i < need; i++) {
+      var clone = originals[i % n].cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.setAttribute('data-mq-clone', '');
+      clone.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
+      grid.appendChild(clone);
+    }
   }
   function build(grid) {
     if (grid.closest('.logos-marquee')) return;
@@ -1051,24 +1073,17 @@
     grid.parentNode.insertBefore(wrap, grid);
     wrap.appendChild(grid);
     grid.classList.add('logos-marquee__track');
-    Array.prototype.slice.call(grid.children).forEach(function (item) {
-      var clone = item.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      clone.setAttribute('data-mq-clone', '');
-      clone.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
-      grid.appendChild(clone);
-    });
-    sizeCells(grid, wrap);
+    layout(grid, wrap);
   }
   function teardown(grid) {
     var wrap = grid.closest('.logos-marquee');
     if (!wrap) return;
-    Array.prototype.slice.call(grid.querySelectorAll('[data-mq-clone]')).forEach(function (c) {
-      c.parentNode.removeChild(c);
-    });
+    clearClones(grid);
     grid.classList.remove('logos-marquee__track');
     grid.style.removeProperty('--logo-cell-w');
     grid.style.removeProperty('--logo-cell-h');
+    grid.style.removeProperty('--mq-dist');
+    grid.style.animationDuration = '';
     wrap.parentNode.insertBefore(grid, wrap);
     wrap.parentNode.removeChild(wrap);
   }
@@ -1082,7 +1097,7 @@
     if (!desktop.matches) return;
     clientGrids().forEach(function (grid) {
       var wrap = grid.closest('.logos-marquee');
-      if (wrap) sizeCells(grid, wrap);
+      if (wrap) layout(grid, wrap);
     });
   }
   function init() {

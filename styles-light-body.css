@@ -347,11 +347,10 @@ body.light-body [aria-label="Partner di consulenza Eurisko"] .logo-cell--inert:h
   color: var(--ink-soft);
   cursor: default;
 }
-/* Font piu' grande SOLO sui box partner, SOLO desktop (test: se va bene
-   poi lo estendiamo ai box clienti su portfolio e settori). */
+/* Font piu' grande su TUTTI i box loghi (partner + clienti, portfolio e
+   settori), SOLO desktop. Approvato sui partner, esteso ai clienti. */
 @media (min-width: 1024px) {
-  body.light-body [aria-label="Partner di consulenza Eurisko"] .logo-cell,
-  body.light-body [aria-label="Eurisko consulting partners"] .logo-cell {
+  body.light-body .logo-cell {
     font-size: clamp(24px, 2.2vw, 34px);
   }
 }
@@ -1371,10 +1370,11 @@ body.light-body .logos-marquee__track {
   gap: 12px;
   border: none !important;
   animation: logosTicker 60s linear infinite;
-  will-change: transform;
 }
 body.light-body .logos-marquee:hover .logos-marquee__track { animation-play-state: paused; }
-@keyframes logosTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* distanza di scorrimento = larghezza di un set di loghi, impostata via JS
+   (--mq-dist); cosi' si clona solo il necessario e il nastro resta corto. */
+@keyframes logosTicker { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--mq-dist, 0px))); } }
 /* Stessa dimensione di una cella della griglia repeat(5,1fr) full-bleed
    (come partnership e settori): larghezza e altezza sono impostate via JS in
    --logo-cell-w / --logo-cell-h (px reali misurati sul contenitore), con
