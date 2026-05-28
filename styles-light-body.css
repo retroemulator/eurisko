@@ -1367,10 +1367,13 @@ body.light-body .logos-marquee__track {
 }
 body.light-body .logos-marquee:hover .logos-marquee__track { animation-play-state: paused; }
 @keyframes logosTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-/* Solo larghezza uniforme: tutto il resto (box navy, testo crema, hover
-   rosso, aspect-ratio 3/2, font Oswald) resta quello originale di .logo-cell. */
+/* Stessa dimensione di una cella della griglia repeat(5,1fr) full-bleed
+   (come partnership e settori): la larghezza esatta e' misurata via JS e
+   passata in --logo-cell-w; il calc e' solo fallback. aspect-ratio 3/2 ->
+   stessa altezza. Tutto il resto (box navy, testo crema, hover rosso, font
+   Oswald) resta quello originale di .logo-cell. */
 body.light-body .logos-marquee .logo-cell {
-  flex: 0 0 220px;
+  flex: 0 0 var(--logo-cell-w, calc((100vw - 48px) / 5));
 }
 @media (prefers-reduced-motion: reduce) {
   body.light-body .logos-marquee__track { animation: none; }

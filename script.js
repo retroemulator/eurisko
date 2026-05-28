@@ -1042,6 +1042,13 @@
         clone.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
         grid.appendChild(clone);
       });
+      function sizeCells() {
+        var w = wrap.clientWidth;
+        if (w) grid.style.setProperty('--logo-cell-w', ((w - 4 * 12) / 5).toFixed(2) + 'px');
+      }
+      sizeCells();
+      var rt;
+      window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(sizeCells, 150); });
     });
   }
   if (document.readyState !== 'loading') initLogoWall();
