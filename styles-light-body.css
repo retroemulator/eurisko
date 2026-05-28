@@ -1343,55 +1343,35 @@ body.light-body .page-hero__media-wrap--reveal::after {
 }
 
 /* =====================================================
-   PORTFOLIO clienti — ticker scorrevole (desktop, light-body).
+   PORTFOLIO clienti — stesso box della griglia, ma scorrevole.
    Solo i CLIENTI diventano un nastro a scorrimento continuo; i PARTNER
-   restano nella griglia originale. Card di dimensione uniforme; in hover
-   il nastro si ferma e la card (bianca) si solleva con bordo e nome rossi
-   (niente tilt 3D, niente riempimento scuro). reduced-motion: griglia statica.
+   restano nella griglia originale. Le celle mantengono IDENTICA la grafica
+   di prima (box navy, testo crema, hover rosso, aspect-ratio 3/2): cambia
+   solo il layout da griglia a scorrimento orizzontale, con larghezza
+   uniforme. reduced-motion / mobile: griglia statica.
    ===================================================== */
 body.light-body .logos-marquee {
   position: relative;
   overflow: hidden;
-  -webkit-mask: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
-  mask: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+  mask: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
 }
 body.light-body .logos-marquee__track {
   display: flex !important;
   flex-wrap: nowrap;
   width: max-content;
-  gap: 16px;
+  gap: 12px;
   border: none !important;
-  padding: 14px 0;
   animation: logosTicker 60s linear infinite;
   will-change: transform;
 }
 body.light-body .logos-marquee:hover .logos-marquee__track { animation-play-state: paused; }
 @keyframes logosTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* Solo larghezza uniforme: tutto il resto (box navy, testo crema, hover
+   rosso, aspect-ratio 3/2, font Oswald) resta quello originale di .logo-cell. */
 body.light-body .logos-marquee .logo-cell {
-  flex: 0 0 210px;
-  width: 210px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 22px 16px;
-  font-size: 0.9375rem;
-  background: #FFFFFF !important;
-  color: var(--ink-dark) !important;
-  border: 1px solid var(--line-dark-soft) !important;
-  border-radius: 12px;
-  box-shadow: 0 1px 2px rgba(10, 22, 40, 0.05);
-  white-space: nowrap;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+  flex: 0 0 220px;
 }
-body.light-body .logos-marquee .logo-cell:hover {
-  border-color: var(--accent-on-light) !important;
-  color: var(--accent-on-light) !important;
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px -16px rgba(10, 22, 40, 0.22);
-}
-body.light-body .logos-marquee .logo-cell a { color: inherit; display: block; }
 @media (prefers-reduced-motion: reduce) {
   body.light-body .logos-marquee__track { animation: none; }
 }
