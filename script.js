@@ -1020,3 +1020,41 @@
   }
 
 })();
+
+
+/* ===== Portfolio logo wall: ticker + tilt 3D al mouse (solo light-body) ===== */
+(function () {
+  function initLogoWall() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(min-width: 1024px)').matches) return;
+    if (!document.body || !document.body.classList.contains('light-body')) return;
+    document.querySelectorAll('.logos-grid[aria-label]').forEach(function (grid) {
+      if (grid.closest('.logos-marquee')) return;
+      var wrap = document.createElement('div');
+      var isPartner = /partner/i.test(grid.getAttribute('aria-label') || '');
+      wrap.className = 'logos-marquee ' + (isPartner ? 'logos-marquee--right' : 'logos-marquee--left');
+      grid.parentNode.insertBefore(wrap, grid);
+      wrap.appendChild(grid);
+      grid.classList.add('logos-marquee__track');
+      Array.prototype.slice.call(grid.children).forEach(function (item) {
+        var clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
+        grid.appendChild(clone);
+      });
+      wrap.addEventListener('mousemove', function (e) {
+        var cell = e.target.closest('.logo-cell');
+        if (!cell || cell.classList.contains('logo-cell--inert')) return;
+        var r = cell.getBoundingClientRect();
+        cell.style.setProperty('--tx', (((e.clientX - r.left) / r.width - 0.5) * 18).toFixed(1) + 'deg');
+        cell.style.setProperty('--ty', ((0.5 - (e.clientY - r.top) / r.height) * 18).toFixed(1) + 'deg');
+      });
+      wrap.addEventListener('mouseout', function (e) {
+        var cell = e.target.closest('.logo-cell');
+        if (cell) { cell.style.removeProperty('--tx'); cell.style.removeProperty('--ty'); }
+      });
+    });
+  }
+  if (document.readyState !== 'loading') initLogoWall();
+  else document.addEventListener('DOMContentLoaded', initLogoWall);
+})();
