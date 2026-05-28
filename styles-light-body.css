@@ -1375,7 +1375,11 @@ body.light-body .logos-marquee__track {
   border: none !important;
   animation: logosTicker 60s linear infinite;
 }
-body.light-body .logos-marquee:hover .logos-marquee__track { animation-play-state: paused; }
+/* Pausa al passaggio del mouse SOLO su dispositivi con hover reale (desktop):
+   su touch il :hover resta "incollato" dopo il tap e bloccherebbe le righe. */
+@media (hover: hover) and (pointer: fine) {
+  body.light-body .logos-marquee:hover .logos-marquee__track { animation-play-state: paused; }
+}
 /* distanza di scorrimento = larghezza di un set di loghi, impostata via JS
    (--mq-dist); cosi' si clona solo il necessario e il nastro resta corto. */
 @keyframes logosTicker { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--mq-dist, 0px))); } }
