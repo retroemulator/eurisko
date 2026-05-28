@@ -1021,16 +1021,19 @@
 
 })();
 
-/* ===== Portfolio: ticker scorrevole solo CLIENTI, SOLO desktop (light-body).
-   Clona SOLO le celle necessarie a coprire il viewport: cosi' il nastro resta
-   corto e non supera il limite di texture del browser (coi box grandi, clonando
-   tutto, il layer non veniva disegnato e i box sparivano). Sotto 1024px o
-   reduced-motion: griglia originale. ===== */
+/* ===== Portfolio: ticker scorrevole solo CLIENTI (light-body, solo /portfolio).
+   Desktop: UNA riga, box grandi (come griglia partnership/settori).
+   Mobile: DUE righe a scorrimento opposto, clienti divisi a meta' (nessun
+   cliente ripetuto tra le due righe), box piccoli.
+   Si clona solo il necessario a coprire il viewport (nastro corto, sotto il
+   limite di texture). reduced-motion: griglia originale. ===== */
 (function () {
-  var GAP = 12, COLS = 5, SPEED = 120; // px/s
+  var GAP = 12, COLS_D = 5, COLS_M = 2.5, SPEED = 120; // px/s
   if (!document.body || !document.body.classList.contains('light-body')) return;
   if (!/\/portfolio(\.html)?$/i.test(location.pathname)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var desktop = window.matchMedia('(min-width: 1024px)');
 
   function clientGrids() {
     return Array.prototype.filter.call(
@@ -1038,66 +1041,81 @@
       function (g) { return !/partner/i.test(g.getAttribute('aria-label') || ''); }
     );
   }
-  function clearClones(grid) {
-    Array.prototype.slice.call(grid.querySelectorAll('[data-mq-clone]')).forEach(function (c) {
+  function removeClones(track) {
+    Array.prototype.slice.call(track.querySelectorAll('[data-mq-clone]')).forEach(function (c) {
       c.parentNode.removeChild(c);
     });
   }
-  function layout(grid, wrap) {
-    clearClones(grid);
+  function fillTrack(track, wrap, cols) {
+    removeClones(track);
     var w = wrap.clientWidth;
     if (!w) return;
-    var cw = (w - (COLS - 1) * GAP) / COLS;
+    var cw = (w - (cols - 1) * GAP) / cols;
     var step = cw + GAP;
-    var originals = Array.prototype.slice.call(grid.children);
+    var originals = Array.prototype.slice.call(track.children);
     var n = originals.length;
     if (!n) return;
-    grid.style.setProperty('--logo-cell-w', cw.toFixed(2) + 'px');
-    grid.style.setProperty('--logo-cell-h', (cw * 2 / 3).toFixed(2) + 'px');
+    track.style.setProperty('--logo-cell-w', cw.toFixed(2) + 'px');
+    track.style.setProperty('--logo-cell-h', (cw * 2 / 3).toFixed(2) + 'px');
     var dist = n * step;
-    grid.style.setProperty('--mq-dist', dist.toFixed(2) + 'px');
-    grid.style.animationDuration = Math.max(30, dist / SPEED).toFixed(1) + 's';
+    track.style.setProperty('--mq-dist', dist.toFixed(2) + 'px');
+    track.style.animationDuration = Math.max(20, dist / SPEED).toFixed(1) + 's';
     var need = Math.ceil(w / step) + 1;
     for (var i = 0; i < need; i++) {
       var clone = originals[i % n].cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       clone.setAttribute('data-mq-clone', '');
       clone.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
-      grid.appendChild(clone);
+      track.appendChild(clone);
     }
+  }
+  function buildSingle(grid, wrap) {
+    grid.classList.add('logos-marquee__track');
+    wrap.appendChild(grid);
+    fillTrack(grid, wrap, COLS_D);
+  }
+  function buildRows(grid, wrap) {
+    wrap.classList.add('logos-marquee--rows');
+    var originals = Array.prototype.slice.call(grid.children);
+    var half = Math.ceil(originals.length / 2);
+    var track2 = document.createElement('ul');
+    track2.className = 'logos-grid logos-marquee__track logos-marquee__track--rev';
+    track2.setAttribute('data-mq-row2', '');
+    originals.slice(half).forEach(function (li) { track2.appendChild(li); });
+    grid.classList.add('logos-marquee__track');
+    wrap.appendChild(grid);
+    wrap.appendChild(track2);
+    fillTrack(grid, wrap, COLS_M);
+    fillTrack(track2, wrap, COLS_M);
   }
   function build(grid) {
     if (grid.closest('.logos-marquee')) return;
     var wrap = document.createElement('div');
     wrap.className = 'logos-marquee';
     grid.parentNode.insertBefore(wrap, grid);
-    wrap.appendChild(grid);
-    grid.classList.add('logos-marquee__track');
-    layout(grid, wrap);
+    if (desktop.matches) buildSingle(grid, wrap);
+    else buildRows(grid, wrap);
   }
   function teardown(grid) {
     var wrap = grid.closest('.logos-marquee');
     if (!wrap) return;
-    clearClones(grid);
+    removeClones(grid);
+    var t2 = wrap.querySelector('[data-mq-row2]');
+    if (t2) {
+      removeClones(t2);
+      Array.prototype.slice.call(t2.children).forEach(function (li) { grid.appendChild(li); });
+      t2.parentNode.removeChild(t2);
+    }
     grid.classList.remove('logos-marquee__track');
-    grid.style.removeProperty('--logo-cell-w');
-    grid.style.removeProperty('--logo-cell-h');
-    grid.style.removeProperty('--mq-dist');
+    ['--logo-cell-w', '--logo-cell-h', '--mq-dist'].forEach(function (p) { grid.style.removeProperty(p); });
     grid.style.animationDuration = '';
     wrap.parentNode.insertBefore(grid, wrap);
     wrap.parentNode.removeChild(wrap);
   }
-  var desktop = window.matchMedia('(min-width: 1024px)');
   function apply() {
     clientGrids().forEach(function (grid) {
-      if (desktop.matches) build(grid); else teardown(grid);
-    });
-  }
-  function onResize() {
-    if (!desktop.matches) return;
-    clientGrids().forEach(function (grid) {
-      var wrap = grid.closest('.logos-marquee');
-      if (wrap) layout(grid, wrap);
+      teardown(grid);
+      build(grid);
     });
   }
   function init() {
@@ -1105,7 +1123,7 @@
     if (desktop.addEventListener) desktop.addEventListener('change', apply);
     else if (desktop.addListener) desktop.addListener(apply);
     var rt;
-    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(onResize, 150); });
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(apply, 200); });
   }
   if (document.readyState !== 'loading') init();
   else document.addEventListener('DOMContentLoaded', init);

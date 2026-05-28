@@ -1379,6 +1379,14 @@ body.light-body .logos-marquee:hover .logos-marquee__track { animation-play-stat
 /* distanza di scorrimento = larghezza di un set di loghi, impostata via JS
    (--mq-dist); cosi' si clona solo il necessario e il nastro resta corto. */
 @keyframes logosTicker { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--mq-dist, 0px))); } }
+/* Mobile: due righe a scorrimento opposto (compatto, al posto della griglia
+   lunga). La seconda riga va in direzione inversa. */
+body.light-body .logos-marquee--rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+body.light-body .logos-marquee__track--rev { animation-direction: reverse; }
 /* Stessa dimensione di una cella della griglia repeat(5,1fr) full-bleed
    (come partnership e settori): larghezza e altezza sono impostate via JS in
    --logo-cell-w / --logo-cell-h (px reali misurati sul contenitore), con
