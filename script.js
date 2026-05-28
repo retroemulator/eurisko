@@ -1024,11 +1024,13 @@
 /* ===== Portfolio: ticker scorrevole solo CLIENTI (light-body, solo /portfolio).
    Desktop: UNA riga, box grandi (come griglia partnership/settori).
    Mobile: DUE righe a scorrimento opposto, clienti divisi a meta' (nessun
-   cliente ripetuto tra le due righe), box piccoli.
+   cliente ripetuto tra le due righe), box piccoli, velocita' dimezzata.
    Si clona solo il necessario a coprire il viewport (nastro corto, sotto il
    limite di texture). reduced-motion: griglia originale. ===== */
 (function () {
-  var GAP = 12, COLS_D = 5, COLS_M = 2.5, SPEED = 120; // px/s
+  var GAP = 12, COLS_D = 5, COLS_M = 2.5;
+  var SPEED_D = 120, MIN_D = 20;   // desktop: px/s, durata minima
+  var SPEED_M = 60,  MIN_M = 40;   // mobile: meta' velocita' del desktop
   if (!document.body || !document.body.classList.contains('light-body')) return;
   if (!/\/portfolio(\.html)?$/i.test(location.pathname)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -1046,7 +1048,7 @@
       c.parentNode.removeChild(c);
     });
   }
-  function fillTrack(track, wrap, cols) {
+  function fillTrack(track, wrap, cols, speed, minDur) {
     removeClones(track);
     var w = wrap.clientWidth;
     if (!w) return;
@@ -1059,7 +1061,7 @@
     track.style.setProperty('--logo-cell-h', (cw * 2 / 3).toFixed(2) + 'px');
     var dist = n * step;
     track.style.setProperty('--mq-dist', dist.toFixed(2) + 'px');
-    track.style.animationDuration = Math.max(20, dist / SPEED).toFixed(1) + 's';
+    track.style.animationDuration = Math.max(minDur, dist / speed).toFixed(1) + 's';
     var need = Math.ceil(w / step) + 1;
     for (var i = 0; i < need; i++) {
       var clone = originals[i % n].cloneNode(true);
@@ -1072,7 +1074,7 @@
   function buildSingle(grid, wrap) {
     grid.classList.add('logos-marquee__track');
     wrap.appendChild(grid);
-    fillTrack(grid, wrap, COLS_D);
+    fillTrack(grid, wrap, COLS_D, SPEED_D, MIN_D);
   }
   function buildRows(grid, wrap) {
     wrap.classList.add('logos-marquee--rows');
@@ -1085,8 +1087,8 @@
     grid.classList.add('logos-marquee__track');
     wrap.appendChild(grid);
     wrap.appendChild(track2);
-    fillTrack(grid, wrap, COLS_M);
-    fillTrack(track2, wrap, COLS_M);
+    fillTrack(grid, wrap, COLS_M, SPEED_M, MIN_M);
+    fillTrack(track2, wrap, COLS_M, SPEED_M, MIN_M);
   }
   function build(grid) {
     if (grid.closest('.logos-marquee')) return;
