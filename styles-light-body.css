@@ -347,6 +347,14 @@ body.light-body [aria-label="Partner di consulenza Eurisko"] .logo-cell--inert:h
   color: var(--ink-soft);
   cursor: default;
 }
+/* Font piu' grande SOLO sui box partner, SOLO desktop (test: se va bene
+   poi lo estendiamo ai box clienti su portfolio e settori). */
+@media (min-width: 1024px) {
+  body.light-body [aria-label="Partner di consulenza Eurisko"] .logo-cell,
+  body.light-body [aria-label="Eurisko consulting partners"] .logo-cell {
+    font-size: clamp(24px, 2.2vw, 34px);
+  }
+}
 
 /* =====================================================
    STATS (lavora-con-noi + portfolio + altri) — .stat__label
