@@ -1368,12 +1368,15 @@ body.light-body .logos-marquee__track {
 body.light-body .logos-marquee:hover .logos-marquee__track { animation-play-state: paused; }
 @keyframes logosTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 /* Stessa dimensione di una cella della griglia repeat(5,1fr) full-bleed
-   (come partnership e settori): la larghezza esatta e' misurata via JS e
-   passata in --logo-cell-w; il calc e' solo fallback. aspect-ratio 3/2 ->
-   stessa altezza. Tutto il resto (box navy, testo crema, hover rosso, font
-   Oswald) resta quello originale di .logo-cell. */
+   (come partnership e settori): larghezza e altezza sono impostate via JS in
+   --logo-cell-w / --logo-cell-h (px reali misurati sul contenitore), con
+   fallback. Uso width/height espliciti (NON var() dentro il shorthand flex,
+   che non veniva applicato). Solo desktop: sotto i 1024px il JS smonta il
+   marquee e torna la griglia. Box navy, testo crema, hover rosso da .logo-cell. */
 body.light-body .logos-marquee .logo-cell {
-  flex: 0 0 var(--logo-cell-w, calc((100vw - 48px) / 5));
+  flex: 0 0 auto;
+  width: var(--logo-cell-w, 220px);
+  height: var(--logo-cell-h, 147px);
 }
 @media (prefers-reduced-motion: reduce) {
   body.light-body .logos-marquee__track { animation: none; }

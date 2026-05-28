@@ -1021,36 +1021,77 @@
 
 })();
 
-/* ===== Portfolio: ticker scorrevole solo CLIENTI (desktop, light-body) ===== */
+/* ===== Portfolio: ticker scorrevole solo CLIENTI, SOLO desktop (light-body).
+   Sotto i 1024px (o reduced-motion) il marquee viene smontato e torna la
+   griglia originale. Celle di dimensione uniforme (come partnership/settori):
+   larghezza/altezza calcolate sul contenitore e passate in --logo-cell-w/h. */
 (function () {
-  function initLogoWall() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (!window.matchMedia('(min-width: 1024px)').matches) return;
-    if (!document.body || !document.body.classList.contains('light-body')) return;
-    if (!/\/portfolio(\.html)?$/i.test(location.pathname)) return;
-    document.querySelectorAll('.logos-grid[aria-label]').forEach(function (grid) {
-      if (/partner/i.test(grid.getAttribute('aria-label') || '')) return;
-      if (grid.closest('.logos-marquee')) return;
-      var wrap = document.createElement('div');
-      wrap.className = 'logos-marquee';
-      grid.parentNode.insertBefore(wrap, grid);
-      wrap.appendChild(grid);
-      grid.classList.add('logos-marquee__track');
-      Array.prototype.slice.call(grid.children).forEach(function (item) {
-        var clone = item.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        clone.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
-        grid.appendChild(clone);
-      });
-      function sizeCells() {
-        var w = wrap.clientWidth;
-        if (w) grid.style.setProperty('--logo-cell-w', ((w - 4 * 12) / 5).toFixed(2) + 'px');
-      }
-      sizeCells();
-      var rt;
-      window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(sizeCells, 150); });
+  var GAP = 12, COLS = 5;
+  if (!document.body || !document.body.classList.contains('light-body')) return;
+  if (!/\/portfolio(\.html)?$/i.test(location.pathname)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function clientGrids() {
+    return Array.prototype.filter.call(
+      document.querySelectorAll('.logos-grid[aria-label]'),
+      function (g) { return !/partner/i.test(g.getAttribute('aria-label') || ''); }
+    );
+  }
+  function sizeCells(grid, wrap) {
+    var w = wrap.clientWidth;
+    if (!w) return;
+    var cw = (w - (COLS - 1) * GAP) / COLS;
+    grid.style.setProperty('--logo-cell-w', cw.toFixed(2) + 'px');
+    grid.style.setProperty('--logo-cell-h', (cw * 2 / 3).toFixed(2) + 'px');
+  }
+  function build(grid) {
+    if (grid.closest('.logos-marquee')) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'logos-marquee';
+    grid.parentNode.insertBefore(wrap, grid);
+    wrap.appendChild(grid);
+    grid.classList.add('logos-marquee__track');
+    Array.prototype.slice.call(grid.children).forEach(function (item) {
+      var clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.setAttribute('data-mq-clone', '');
+      clone.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
+      grid.appendChild(clone);
+    });
+    sizeCells(grid, wrap);
+  }
+  function teardown(grid) {
+    var wrap = grid.closest('.logos-marquee');
+    if (!wrap) return;
+    Array.prototype.slice.call(grid.querySelectorAll('[data-mq-clone]')).forEach(function (c) {
+      c.parentNode.removeChild(c);
+    });
+    grid.classList.remove('logos-marquee__track');
+    grid.style.removeProperty('--logo-cell-w');
+    grid.style.removeProperty('--logo-cell-h');
+    wrap.parentNode.insertBefore(grid, wrap);
+    wrap.parentNode.removeChild(wrap);
+  }
+  var desktop = window.matchMedia('(min-width: 1024px)');
+  function apply() {
+    clientGrids().forEach(function (grid) {
+      if (desktop.matches) build(grid); else teardown(grid);
     });
   }
-  if (document.readyState !== 'loading') initLogoWall();
-  else document.addEventListener('DOMContentLoaded', initLogoWall);
+  function onResize() {
+    if (!desktop.matches) return;
+    clientGrids().forEach(function (grid) {
+      var wrap = grid.closest('.logos-marquee');
+      if (wrap) sizeCells(grid, wrap);
+    });
+  }
+  function init() {
+    apply();
+    if (desktop.addEventListener) desktop.addEventListener('change', apply);
+    else if (desktop.addListener) desktop.addListener(apply);
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(onResize, 150); });
+  }
+  if (document.readyState !== 'loading') init();
+  else document.addEventListener('DOMContentLoaded', init);
 })();
