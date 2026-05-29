@@ -1,0 +1,13 @@
+{
+  "name": "Eurisko S.r.l.",
+  "short_name": "Eurisko",
+  "description": "Societa di consulenza SAP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0A1628",
+  "icons": [
+    { "src": "/favicon-64.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

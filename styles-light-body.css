@@ -371,14 +371,12 @@ body.light-body [aria-label="Eurisko consulting partners"] .logo-cell--inert:hov
     font-size: clamp(16px, 4.6vw, 22px);
   }
 }
-/* Home mobile — box "Otto aree" (.caps): riserva al titolo l'altezza di 2 righe
-   cosi' le descrizioni (.cap__desc) partono alla stessa quota anche quando il
-   titolo e' di una sola riga (es. Analytics) e si allineano col box a fianco. */
+/* Home mobile — box "Otto aree" (.caps): titolo ancorato in alto, descrizione
+   ancorata in basso. Le celle della stessa riga hanno altezza uguale (grid),
+   quindi i .cap__desc si allineano sul fondo a prescindere dalla lunghezza di
+   titolo e testo. */
 @media (max-width: 820px) {
-  body.light-body .cap__name {
-    line-height: 1.2;
-    min-height: 2.4em;
-  }
+  body.light-body .cap__desc { margin-top: auto; }
 }
 
 /* =====================================================
