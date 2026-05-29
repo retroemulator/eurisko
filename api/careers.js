@@ -4,6 +4,15 @@ const Busboy = require('busboy');
 const lib = require('./_lib.js');
 
 const MAX_CV = 4 * 1024 * 1024; // 4 MB
+const ALLOWED_CV_EXT = ['pdf', 'doc', 'docx'];
+
+function extOf(name) {
+  const m = /\.([a-z0-9]+)$/i.exec(String(name || ''));
+  return m ? m[1].toLowerCase() : '';
+}
+function safeName(name) {
+  return String(name || '').replace(/[\r\n]+/g, '').replace(/[\\/]/g, '_').trim().slice(0, 150);
+}
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') { lib.htmlResponse(res, 405, 'Method Not Allowed'); return; }
@@ -13,8 +22,9 @@ module.exports = async (req, res) => {
     parsed = await parseMultipart(req);
   } catch (e) {
     const tooBig = !!(e && e.tooBig);
-    if (!tooBig) console.error('careers parse error:', e && e.message);
-    lib.htmlResponse(res, tooBig ? 413 : 400, errorPage(tooBig));
+    const badType = !!(e && e.badType);
+    if (!tooBig && !badType) console.error('careers parse error:', e && e.message);
+    lib.htmlResponse(res, tooBig ? 413 : 400, errorPage(tooBig, badType));
     return;
   }
 
@@ -40,7 +50,8 @@ module.exports = async (req, res) => {
   const token = lib.pick(f, 'g-recaptcha-response');
 
   if (!nome || !cognome || !citta || !email || !telefono || !esperienza
-      || !permesso || !categorie || !presentazione || !privacy || !parsed.file) {
+      || !permesso || !categorie || !presentazione || !privacy || !parsed.file
+      || !lib.isEmail(email)) {
     lib.htmlResponse(res, 400, errorPage(false)); return;
   }
   if (!(await lib.verifyRecaptcha(token, lib.clientIp(req)))) {
@@ -79,7 +90,7 @@ module.exports = async (req, res) => {
       subject: subject,
       html: html,
       attachments: [{
-        filename: parsed.file.filename || 'cv',
+        filename: safeName(parsed.file.filename) || 'cv',
         content: parsed.file.buffer.toString('base64'),
       }],
     });
@@ -130,16 +141,19 @@ function parseMultipart(req) {
     const chunks = [];
     let fileInfo = null;
     let tooBig = false;
+    let badType = false;
 
     bb.on('field', (name, val) => { fields[name] = val; });
     bb.on('file', (name, stream, info) => {
       if (name !== 'cv') { stream.resume(); return; }
+      if (!ALLOWED_CV_EXT.includes(extOf(info && info.filename))) { badType = true; stream.resume(); return; }
       fileInfo = info;
       stream.on('data', (d) => { chunks.push(d); });
       stream.on('limit', () => { tooBig = true; });
     });
     bb.on('error', reject);
     bb.on('close', () => {
+      if (badType) { const e = new Error('BAD_TYPE'); e.badType = true; reject(e); return; }
       if (tooBig) { const e = new Error('TOO_BIG'); e.tooBig = true; reject(e); return; }
       const file = chunks.length
         ? { filename: fileInfo && fileInfo.filename, buffer: Buffer.concat(chunks) }
@@ -151,8 +165,10 @@ function parseMultipart(req) {
   });
 }
 
-function errorPage(tooBig) {
-  const msg = tooBig
+function errorPage(tooBig, badType) {
+  const msg = badType
+    ? 'Formato file non valido: allega un CV in PDF, DOC o DOCX.'
+    : tooBig
     ? 'Il file CV supera il limite di 4 MB. Comprimilo e riprova, oppure invialo via email.'
     : 'Si &egrave; verificato un problema nell\'invio della candidatura. Riprova tra poco.';
   return '<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Invio non riuscito</title></head>'

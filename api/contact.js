@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
   const privacy = lib.pick(b, 'privacy_consent');
   const token = lib.pick(b, 'g-recaptcha-response');
 
-  if (!nome || !email || !azienda || !messaggio || !privacy) {
+  if (!nome || !email || !azienda || !messaggio || !privacy || !lib.isEmail(email)) {
     lib.htmlResponse(res, 400, errorPage()); return;
   }
   if (!(await lib.verifyRecaptcha(token, lib.clientIp(req)))) {

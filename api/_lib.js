@@ -23,6 +23,11 @@ function pick(obj, ...keys) {
   return '';
 }
 
+// Validazione minimale del formato email (evita reply_to/destinatari invalidi).
+function isEmail(v) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v == null ? '' : v).trim());
+}
+
 function row(label, value) {
   if (value == null || String(value).trim() === '') return '';
   return '<tr>'
@@ -100,6 +105,6 @@ function clientIp(req) {
 }
 
 module.exports = {
-  esc, pick, row, emailShell, sendEmail, verifyRecaptcha,
+  esc, pick, isEmail, row, emailShell, sendEmail, verifyRecaptcha,
   redirect, htmlResponse, clientIp, MAIL_FROM, BCC,
 };
