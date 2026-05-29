@@ -34,11 +34,10 @@ module.exports = async (req, res) => {
   const token = lib.pick(b, 'g-recaptcha-response');
 
   if (!nome || !email || !azienda || !messaggio || !privacy) {
-    lib.htmlResponse(res, 400, errorPage('campi mancanti (chiavi ricevute: ' + Object.keys(b).join(', ') + ')'));
-    return;
+    lib.htmlResponse(res, 400, errorPage()); return;
   }
   if (!(await lib.verifyRecaptcha(token, lib.clientIp(req)))) {
-    lib.htmlResponse(res, 400, errorPage('verifica reCAPTCHA fallita')); return;
+    lib.htmlResponse(res, 400, errorPage()); return;
   }
 
   const html = lib.emailShell(
@@ -65,20 +64,18 @@ module.exports = async (req, res) => {
     });
   } catch (e) {
     console.error('contact sendEmail error:', e && e.message);
-    lib.htmlResponse(res, 502, errorPage('invio email: ' + (e && e.message))); return;
+    lib.htmlResponse(res, 502, errorPage()); return;
   }
 
   lib.redirect(res, thankYou);
 };
 
-// NB: la riga [debug] e' temporanea per diagnosticare; va rimossa dopo il fix.
-function errorPage(detail) {
+function errorPage() {
   return '<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Invio non riuscito</title></head>'
     + '<body style="font-family:Arial,sans-serif;max-width:560px;margin:60px auto;padding:0 20px;color:#0A1628;text-align:center;line-height:1.6;">'
     + '<h1>Invio non riuscito</h1>'
     + '<p>Si &egrave; verificato un problema nell\'invio del messaggio. Riprova tra poco, oppure scrivici a '
     + '<a href="mailto:info@euriskosrl.it">info@euriskosrl.it</a> o chiamaci al '
     + '<a href="tel:+393481565772">+39 348 156 5772</a>.</p>'
-    + (detail ? '<p style="color:#94a3b8;font-size:12px;">[debug] ' + lib.esc(detail) + '</p>' : '')
     + '<p><a href="/contatti">&larr; Torna ai contatti</a></p></body></html>';
 }

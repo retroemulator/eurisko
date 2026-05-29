@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
   } catch (e) {
     const tooBig = !!(e && e.tooBig);
     if (!tooBig) console.error('careers parse error:', e && e.message);
-    lib.htmlResponse(res, tooBig ? 413 : 400, errorPage(tooBig, tooBig ? '' : 'parsing: ' + (e && e.message)));
+    lib.htmlResponse(res, tooBig ? 413 : 400, errorPage(tooBig));
     return;
   }
 
@@ -30,7 +30,6 @@ module.exports = async (req, res) => {
   const email = lib.pick(f, 'email');
   const prefisso = lib.pick(f, 'prefisso', 'dial_code');
   const telefono = lib.pick(f, 'telefono', 'phone');
-  const posizione = lib.pick(f, 'posizione', 'position');
   const linkedin = lib.pick(f, 'linkedin');
   const esperienza = lib.pick(f, 'esperienza', 'experience');
   const modulo = lib.pick(f, 'modulo', 'module');
@@ -42,10 +41,10 @@ module.exports = async (req, res) => {
 
   if (!nome || !cognome || !citta || !email || !telefono || !esperienza
       || !permesso || !categorie || !presentazione || !privacy || !parsed.file) {
-    lib.htmlResponse(res, 400, errorPage(false, 'campi mancanti o CV assente (campi: ' + Object.keys(f).join(', ') + (parsed.file ? '; CV ok' : '; CV assente') + ')')); return;
+    lib.htmlResponse(res, 400, errorPage(false)); return;
   }
   if (!(await lib.verifyRecaptcha(token, lib.clientIp(req)))) {
-    lib.htmlResponse(res, 400, errorPage(false, 'verifica reCAPTCHA fallita')); return;
+    lib.htmlResponse(res, 400, errorPage(false)); return;
   }
 
   const fullName = (nome + ' ' + cognome).trim();
@@ -61,7 +60,6 @@ module.exports = async (req, res) => {
       + lib.row('Città', citta)
       + lib.row('Email', email)
       + lib.row('Telefono', tel)
-      + lib.row('Posizione', posizione)
       + lib.row('LinkedIn', linkedin)
       + lib.row('Anni esperienza SAP', esperienza)
       + lib.row('Modulo', modulo)
@@ -87,7 +85,7 @@ module.exports = async (req, res) => {
     });
   } catch (e) {
     console.error('careers sendEmail error:', e && e.message);
-    lib.htmlResponse(res, 502, errorPage(false, 'invio email: ' + (e && e.message))); return;
+    lib.htmlResponse(res, 502, errorPage(false)); return;
   }
 
   // Conferma automatica al candidato (best-effort: un errore qui non blocca la candidatura).
@@ -153,8 +151,7 @@ function parseMultipart(req) {
   });
 }
 
-// NB: la riga [debug] e' temporanea per diagnosticare; va rimossa dopo il fix.
-function errorPage(tooBig, detail) {
+function errorPage(tooBig) {
   const msg = tooBig
     ? 'Il file CV supera il limite di 4 MB. Comprimilo e riprova, oppure invialo via email.'
     : 'Si &egrave; verificato un problema nell\'invio della candidatura. Riprova tra poco.';
@@ -162,6 +159,5 @@ function errorPage(tooBig, detail) {
     + '<body style="font-family:Arial,sans-serif;max-width:560px;margin:60px auto;padding:0 20px;color:#0A1628;text-align:center;line-height:1.6;">'
     + '<h1>Invio non riuscito</h1>'
     + '<p>' + msg + ' Puoi scriverci a <a href="mailto:careers@euriskosrl.it">careers@euriskosrl.it</a>.</p>'
-    + (detail ? '<p style="color:#94a3b8;font-size:12px;">[debug] ' + lib.esc(detail) + '</p>' : '')
     + '<p><a href="/lavora-con-noi">&larr; Torna a Lavora con noi</a></p></body></html>';
 }
