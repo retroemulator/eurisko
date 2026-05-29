@@ -19,3 +19,6 @@ og-image.html
 # Build scripts (non pubblici) — nessuno script Python va servito in produzione
 *.py
 codice_pages_tmp.txt
+
+# Presentazioni interne (soci) — non pubblicare
+*.pptx

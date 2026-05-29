@@ -27,5 +27,8 @@ npm-debug.log*
 PROMPT-CLAUDE-CODE-EURISKO.md
 KEYWORD-STRATEGY-EURISKO.md
 
+# Presentazioni interne (binari, non versionare)
+*.pptx
+
 # Vercel
 .vercel
