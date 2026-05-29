@@ -363,7 +363,7 @@
     </div>
 
     <div class="reveal">
-      <form class="contact" action="https://formsubmit.co/careers@euriskosrl.it" method="POST" enctype="multipart/form-data" novalidate aria-describedby="careers-form-status">
+      <form class="contact" action="/api/careers" method="POST" enctype="multipart/form-data" novalidate aria-describedby="careers-form-status">
 
         <div class="field-row">
           <div class="field">
@@ -537,7 +537,7 @@
         </div>
 
         <div class="field">
-          <label for="c-cv">Curriculum Vitae (PDF, DOC, DOCX · max 5&nbsp;MB) <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
+          <label for="c-cv">Curriculum Vitae (PDF, DOC, DOCX · max 4&nbsp;MB) <span aria-hidden="true">*</span><span class="visually-hidden">obbligatorio</span></label>
           <input type="file" id="c-cv" name="cv" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-required="true">
           <p class="field-error" id="c-cv-error" hidden></p>
         </div>
@@ -554,9 +554,7 @@
         </div>
 
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="_next" value="https://euriskosrl.it/grazie">
-        <input type="hidden" name="_subject" value="Nuova candidatura — Lavora con noi">
-        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="lang" value="it">
 
         <p class="form-status" id="careers-form-status" role="status" aria-live="polite"></p>
 
