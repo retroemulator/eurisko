@@ -7,8 +7,12 @@ Allow: /
 # Pagine non da indicizzare (clean URL + estensione .html per sicurezza)
 Disallow: /grazie
 Disallow: /grazie.html
+Disallow: /grazie-candidatura
+Disallow: /grazie-candidatura.html
 Disallow: /en/thank-you
 Disallow: /en/thank-you.html
+Disallow: /en/thank-you-application
+Disallow: /en/thank-you-application.html
 
 # Sitemap
 Sitemap: https://euriskosrl.it/sitemap.xml
