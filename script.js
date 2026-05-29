@@ -1076,19 +1076,92 @@
     wrap.appendChild(grid);
     fillTrack(grid, wrap, COLS_D, SPEED_D, MIN_D);
   }
+  var PXF_M = 1; // px/frame (~60px/s a 60fps): meta' velocita', come prima
+  function fillScroll(track, wrap, cols) {
+    removeClones(track);
+    var w = wrap.clientWidth;
+    if (!w) return 0;
+    var cw = (w - (cols - 1) * GAP) / cols;
+    track.style.setProperty('--logo-cell-w', cw.toFixed(2) + 'px');
+    track.style.setProperty('--logo-cell-h', (cw * 2 / 3).toFixed(2) + 'px');
+    var originals = Array.prototype.slice.call(track.children);
+    var n = originals.length;
+    if (!n) return 0;
+    var setW = n * (cw + GAP);
+    var sets = Math.max(2, Math.ceil((w * 2) / setW) + 1);
+    for (var s = 1; s < sets; s++) {
+      originals.forEach(function (li) {
+        var clone = li.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.setAttribute('data-mq-clone', '');
+        clone.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
+        track.appendChild(clone);
+      });
+    }
+    return setW;
+  }
+  function startEngine(wrap, rows) {
+    var paused = false, rt = null, raf = null;
+    rows.forEach(function (r) { r.pos = (r.dir < 0) ? r.setW : 0; r.el.scrollLeft = r.pos; });
+    function step() {
+      if (!paused) {
+        rows.forEach(function (r) {
+          if (!r.setW) return;
+          r.pos += r.dir * PXF_M;
+          if (r.pos >= r.setW) r.pos -= r.setW;
+          else if (r.pos < 0) r.pos += r.setW;
+          r.el.scrollLeft = r.pos;
+        });
+      }
+      raf = window.requestAnimationFrame(step);
+    }
+    function pause() { paused = true; if (rt) { clearTimeout(rt); rt = null; } }
+    function resume() {
+      if (rt) clearTimeout(rt);
+      rt = setTimeout(function () {
+        rows.forEach(function (r) { r.pos = r.el.scrollLeft; });
+        paused = false;
+      }, 1400);
+    }
+    rows.forEach(function (r) {
+      r.el.addEventListener('touchstart', pause, { passive: true });
+      r.el.addEventListener('touchend', resume, { passive: true });
+      r.el.addEventListener('touchcancel', resume, { passive: true });
+    });
+    raf = window.requestAnimationFrame(step);
+    wrap._mqEngine = {
+      stop: function () {
+        if (raf) window.cancelAnimationFrame(raf);
+        if (rt) clearTimeout(rt);
+        rows.forEach(function (r) {
+          r.el.removeEventListener('touchstart', pause);
+          r.el.removeEventListener('touchend', resume);
+          r.el.removeEventListener('touchcancel', resume);
+        });
+      }
+    };
+  }
   function buildRows(grid, wrap) {
     wrap.classList.add('logos-marquee--rows');
     var originals = Array.prototype.slice.call(grid.children);
     var half = Math.ceil(originals.length / 2);
+    var row1 = document.createElement('div'); row1.className = 'logos-marquee__row';
+    var row2 = document.createElement('div'); row2.className = 'logos-marquee__row';
     var track2 = document.createElement('ul');
     track2.className = 'logos-grid logos-marquee__track logos-marquee__track--rev';
     track2.setAttribute('data-mq-row2', '');
     originals.slice(half).forEach(function (li) { track2.appendChild(li); });
     grid.classList.add('logos-marquee__track');
-    wrap.appendChild(grid);
-    wrap.appendChild(track2);
-    fillTrack(grid, wrap, COLS_M, SPEED_M, MIN_M);
-    fillTrack(track2, wrap, COLS_M, SPEED_M, MIN_M);
+    row1.appendChild(grid);
+    row2.appendChild(track2);
+    wrap.appendChild(row1);
+    wrap.appendChild(row2);
+    var sw1 = fillScroll(grid, wrap, COLS_M);
+    var sw2 = fillScroll(track2, wrap, COLS_M);
+    startEngine(wrap, [
+      { el: row1, dir: 1, setW: sw1, pos: 0 },
+      { el: row2, dir: -1, setW: sw2, pos: 0 }
+    ]);
   }
   function build(grid) {
     if (grid.closest('.logos-marquee')) return;
@@ -1101,16 +1174,17 @@
   function teardown(grid) {
     var wrap = grid.closest('.logos-marquee');
     if (!wrap) return;
+    if (wrap._mqEngine) { wrap._mqEngine.stop(); wrap._mqEngine = null; }
     removeClones(grid);
     var t2 = wrap.querySelector('[data-mq-row2]');
     if (t2) {
       removeClones(t2);
       Array.prototype.slice.call(t2.children).forEach(function (li) { grid.appendChild(li); });
-      t2.parentNode.removeChild(t2);
     }
     grid.classList.remove('logos-marquee__track');
     ['--logo-cell-w', '--logo-cell-h', '--mq-dist'].forEach(function (p) { grid.style.removeProperty(p); });
     grid.style.animationDuration = '';
+    grid.style.animation = '';
     wrap.parentNode.insertBefore(grid, wrap);
     wrap.parentNode.removeChild(wrap);
   }

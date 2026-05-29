@@ -358,6 +358,21 @@ body.light-body [aria-label="Eurisko consulting partners"] .logo-cell--inert:hov
     font-size: clamp(24px, 2.2vw, 34px);
   }
 }
+/* Mobile: font dei box loghi piu' grande, proporzionato ai box piu' piccoli. */
+@media (max-width: 1023px) {
+  body.light-body .logo-cell {
+    font-size: clamp(16px, 4.6vw, 22px);
+  }
+}
+/* Home mobile — box "Otto aree" (.caps): riserva al titolo l'altezza di 2 righe
+   cosi' le descrizioni (.cap__desc) partono alla stessa quota anche quando il
+   titolo e' di una sola riga (es. Analytics) e si allineano col box a fianco. */
+@media (max-width: 820px) {
+  body.light-body .cap__name {
+    line-height: 1.2;
+    min-height: 2.4em;
+  }
+}
 
 /* =====================================================
    STATS (lavora-con-noi + portfolio + altri) — .stat__label
@@ -1392,6 +1407,22 @@ body.light-body .logos-marquee--rows {
   gap: 12px;
 }
 body.light-body .logos-marquee__track--rev { animation-direction: reverse; }
+/* Mobile: ogni riga e' un contenitore a scorrimento nativo; l'auto-scroll e'
+   pilotato via JS (scrollLeft). Lo swipe muove le righe manualmente e mette in
+   pausa l'auto-scroll su entrambe; riprende dopo il rilascio. */
+body.light-body .logos-marquee__row {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: pan-x;
+}
+body.light-body .logos-marquee__row::-webkit-scrollbar { display: none; }
+body.light-body .logos-marquee__row .logos-marquee__track {
+  animation: none !important;
+  width: max-content;
+}
 /* Stessa dimensione di una cella della griglia repeat(5,1fr) full-bleed
    (come partnership e settori): larghezza e altezza sono impostate via JS in
    --logo-cell-w / --logo-cell-h (px reali misurati sul contenitore), con
