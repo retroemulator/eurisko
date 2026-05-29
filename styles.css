@@ -725,7 +725,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   outline: 2px solid var(--accent-text);
   outline-offset: 4px;
 }
-.footer h4 {
+.footer h3 {
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
