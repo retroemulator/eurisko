@@ -97,7 +97,7 @@ module.exports = async (req, res) => {
             + 'thank you for submitting your application to Eurisko: we have correctly received your details and your CV.<br><br>'
             + 'Your profile will be kept and evaluated in relation to our current and future recruitment needs. Should it match an open position, you will be contacted by our team.<br><br>'
             + 'Thank you for your interest in Eurisko.<br><br>&mdash; The Eurisko team',
-          note: 'Eurisko S.r.l. &middot; SAP Consulting Services — automated message. For enquiries: careers@euriskosrl.it',
+          note: 'Your data and CV are processed for recruitment purposes and kept for 12 months; you can request deletion by writing to careers@euriskosrl.it. Details in the <a href="https://euriskosrl.it/en/privacy" style="color:#64748b;">Privacy Policy</a>.<br>Eurisko S.r.l. &middot; SAP Consulting Services — automated message.',
         }
       : {
           subj: 'Abbiamo ricevuto la tua candidatura — Eurisko',
@@ -105,7 +105,7 @@ module.exports = async (req, res) => {
             + 'grazie per aver inviato la tua candidatura a Eurisko: abbiamo ricevuto correttamente i tuoi dati e il tuo CV.<br><br>'
             + 'Il tuo profilo verrà conservato e valutato in relazione alle nostre ricerche di personale, attuali e future. Qualora risultasse in linea con una posizione, sarai contattato/a dal nostro team.<br><br>'
             + 'Grazie per l\'interesse che hai dimostrato verso Eurisko.<br><br>&mdash; Il team Eurisko',
-          note: 'Eurisko S.r.l. &middot; Servizi di Consulenza SAP — messaggio automatico. Per comunicazioni: careers@euriskosrl.it',
+          note: 'I tuoi dati e il CV sono trattati per finalità di selezione del personale e conservati per 12 mesi; puoi chiederne la cancellazione scrivendo a careers@euriskosrl.it. Dettagli nella <a href="https://euriskosrl.it/privacy" style="color:#64748b;">Privacy Policy</a>.<br>Eurisko S.r.l. &middot; Servizi di Consulenza SAP — messaggio automatico.',
         };
     await lib.sendEmail({
       from: lib.MAIL_FROM,
