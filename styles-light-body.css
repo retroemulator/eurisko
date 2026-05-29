@@ -351,6 +351,13 @@ body.light-body [aria-label="Eurisko consulting partners"] .logo-cell--inert:hov
   color: var(--ink-soft);
   cursor: default;
 }
+/* Mobile: nascondi la cella inerte "Altri+"/"More+" nella griglia partner. */
+@media (max-width: 1023px) {
+  body.light-body [aria-label="Partner di consulenza Eurisko"] .logo-cell--inert,
+  body.light-body [aria-label="Eurisko consulting partners"] .logo-cell--inert {
+    display: none;
+  }
+}
 /* Font piu' grande su TUTTI i box loghi (partner + clienti, portfolio e
    settori), SOLO desktop. Approvato sui partner, esteso ai clienti. */
 @media (min-width: 1024px) {
