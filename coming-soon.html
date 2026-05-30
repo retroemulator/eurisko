@@ -219,6 +219,19 @@
 </div>
 
 <script>
+  // Loop video senza scatto: anticipo il rewind ~180ms prima della fine
+  // naturale per evitare l'effetto pause-seek-play del loop nativo.
+  (function () {
+    var v = document.querySelector('.video-wrap video');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    v.addEventListener('timeupdate', function () {
+      if (v.duration && v.currentTime >= v.duration - 0.18) {
+        try { v.currentTime = 0; } catch (e) {}
+      }
+    });
+  })();
+
   // Genera particelle + archi orbitali via JS (densità adattata al viewport)
   (function () {
     var field = document.getElementById('field');
