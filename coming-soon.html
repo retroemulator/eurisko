@@ -34,25 +34,6 @@
     align-items: center; justify-content: center;
     overflow: hidden;
   }
-  /* ===== GLOW DI FONDO (rosso radiale dietro il video) ===== */
-  .glow {
-    position: absolute;
-    width: clamp(560px, 90vw, 1200px);
-    aspect-ratio: 1 / 1;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(closest-side,
-      rgba(196, 30, 58, 0.34) 0%,
-      rgba(196, 30, 58, 0.10) 35%,
-      rgba(196, 30, 58, 0) 70%);
-    filter: blur(8px);
-    z-index: 1;
-    animation: pulse 6s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1); }
-    50%      { opacity: 1.00; transform: translate(-50%, -50%) scale(1.06); }
-  }
   /* ===== PARTICELLE + ARCHI (SVG) ===== */
   .field {
     position: absolute; inset: 0;
@@ -89,13 +70,12 @@
     width: 100%; height: 100%;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 0 30px rgba(196, 30, 58, 0.55)) drop-shadow(0 18px 60px rgba(196, 30, 58, 0.35));
     animation: globePulse 5.5s ease-in-out infinite;
     transform-origin: center;
   }
   @keyframes globePulse {
-    0%, 100% { transform: scale(1.00); filter: drop-shadow(0 0 24px rgba(196,30,58,0.45)) drop-shadow(0 18px 60px rgba(196,30,58,0.30)); }
-    50%      { transform: scale(1.04); filter: drop-shadow(0 0 42px rgba(196,30,58,0.75)) drop-shadow(0 22px 80px rgba(196,30,58,0.45)); }
+    0%, 100% { transform: scale(1.00); }
+    50%      { transform: scale(1.04); }
   }
   .bar {
     display: inline-block;
@@ -134,16 +114,25 @@
     0%, 100% { background-position: 0% 50%; }
     50%      { background-position: 100% 50%; }
   }
-  p.lede {
-    font-size: clamp(14px, 1.8vw, 18px);
-    line-height: 1.6;
-    color: #a9b0bd;
-    margin: 0 auto;
-    max-width: 560px;
+  p.launch-date {
+    margin: clamp(18px, 3vh, 30px) 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 1.8vw, 26px);
+    font-family: 'Oswald', 'Switzer', sans-serif;
+    font-weight: 700;
+    font-size: clamp(30px, 5.6vw, 64px);
+    letter-spacing: 0.1em;
+    color: #F5F1E8;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 4px 30px rgba(196, 30, 58, 0.20);
   }
-  p.lede strong { color: #F5F1E8; font-weight: 600; }
-  p.lede br + span,
-  p.lede .l2 { display: block; }
+  p.launch-date .d-mark {
+    color: #C41E3A;
+    font-weight: 300;
+    font-size: 0.9em;
+  }
   /* ===== CONTATTI ===== */
   .contacts {
     position: absolute; left: 0; right: 0; bottom: clamp(22px, 3.5vh, 42px);
@@ -178,7 +167,6 @@
   }
   /* ===== ACCESSIBILITÀ ===== */
   @media (prefers-reduced-motion: reduce) {
-    .glow { animation: none; }
     .field circle { animation: none !important; }
     .globe-wrap img { animation: none !important; }
     h1 .accent { animation: none !important; }
@@ -187,9 +175,6 @@
 </head>
 <body>
 <div class="stage">
-
-  <!-- glow rosso radiale -->
-  <div class="glow" aria-hidden="true"></div>
 
   <!-- particelle + archi orbitali (generati via JS) -->
   <svg class="field" id="field" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
@@ -206,9 +191,10 @@
     </div>
     <span class="bar" aria-hidden="true"></span>
     <h1>Il nuovo sito sta per<br><span class="accent">arrivare.</span></h1>
-    <p class="lede">
-      Stiamo finalizzando il nuovo sito <strong>euriskosrl.it</strong>.<br>
-      <span class="l2">Torneremo online a brevissimo.</span>
+    <p class="launch-date" aria-label="Data di lancio: 1 giugno 2026">
+      <span class="d-mark" aria-hidden="true">—</span>
+      <time datetime="2026-06-01">01.06.2026</time>
+      <span class="d-mark" aria-hidden="true">—</span>
     </p>
   </main>
 
