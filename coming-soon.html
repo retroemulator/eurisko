@@ -131,18 +131,19 @@
   p.launch-date::before {
     content: "";
     position: absolute;
-    inset: -28px -8%;
+    inset: -60px -16%;
     background: radial-gradient(ellipse at center,
-      rgba(196, 30, 58, 0.55) 0%,
-      rgba(196, 30, 58, 0.20) 38%,
-      rgba(196, 30, 58, 0) 70%);
-    filter: blur(26px);
+      rgba(196, 30, 58, 0.95) 0%,
+      rgba(196, 30, 58, 0.55) 28%,
+      rgba(196, 30, 58, 0.18) 55%,
+      rgba(196, 30, 58, 0) 75%);
+    filter: blur(36px);
     pointer-events: none;
     animation: dateGlow 4s ease-in-out infinite;
   }
   @keyframes dateGlow {
-    0%, 100% { opacity: 0.75; transform: scale(0.94); }
-    50%      { opacity: 1.00; transform: scale(1.08); }
+    0%, 100% { opacity: 0.90; transform: scale(0.94); }
+    50%      { opacity: 1.00; transform: scale(1.10); }
   }
   p.launch-date .d-mark {
     color: #F5F1E8;
