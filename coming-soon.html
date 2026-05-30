@@ -30,8 +30,6 @@
   .stage {
     position: relative;
     width: 100vw; height: 100vh; height: 100dvh;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
     overflow: hidden;
   }
   /* ===== PARTICELLE + ARCHI (SVG) ===== */
@@ -52,19 +50,26 @@
     height: auto;
     filter: drop-shadow(0 0 18px rgba(245, 241, 232, 0.45));
   }
-  /* ===== CENTRO: VIDEO + TESTI ===== */
-  .center {
-    position: relative; z-index: 4;
+  /* ===== GLOBO AL CENTRO DELLA GALASSIA ===== */
+  .globe-wrap {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(220px, 30vw, 380px);
+    aspect-ratio: 1 / 1;
+    z-index: 4;
+  }
+  /* ===== BLOCCO TESTO SOTTO IL GLOBO ===== */
+  .text-block {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translateX(-50%);
+    margin-top: clamp(150px, 23vh, 260px);
     text-align: center;
-    padding: 0 24px;
     width: 100%;
     max-width: 880px;
-  }
-  .globe-wrap {
-    position: relative;
-    width: clamp(220px, 34vw, 420px);
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
+    padding: 0 24px;
+    z-index: 4;
   }
   .globe-wrap img {
     width: 100%; height: 100%;
@@ -183,11 +188,13 @@
     <img src="logo-eurisko-WR.png" alt="Eurisko S.r.l." width="160" height="46">
   </div>
 
-  <!-- video centrale + testi -->
-  <main class="center">
-    <div class="globe-wrap">
-      <img src="logo-eurisko-mondo.png" alt="" aria-hidden="true" width="420" height="420">
-    </div>
+  <!-- globo al centro della galassia di stelle -->
+  <div class="globe-wrap">
+    <img src="logo-eurisko-mondo.png" alt="" aria-hidden="true" width="420" height="420">
+  </div>
+
+  <!-- testo + data sotto il globo -->
+  <main class="text-block">
     <span class="bar" aria-hidden="true"></span>
     <h1>Il nuovo sito sta per<br><span class="accent">arrivare.</span></h1>
     <p class="launch-date" aria-label="Data di lancio: 1 giugno 2026">
