@@ -79,19 +79,23 @@
     width: 100%;
     max-width: 880px;
   }
-  .video-wrap {
+  .globe-wrap {
     position: relative;
     width: clamp(220px, 34vw, 420px);
     aspect-ratio: 1 / 1;
     margin: 0 auto;
   }
-  .video-wrap video {
+  .globe-wrap img {
     width: 100%; height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
-    mix-blend-mode: screen;
-    transform: scale(1.08);
+    filter: drop-shadow(0 0 30px rgba(196, 30, 58, 0.55)) drop-shadow(0 18px 60px rgba(196, 30, 58, 0.35));
+    animation: globePulse 5.5s ease-in-out infinite;
     transform-origin: center;
+  }
+  @keyframes globePulse {
+    0%, 100% { transform: scale(1.00); filter: drop-shadow(0 0 24px rgba(196,30,58,0.45)) drop-shadow(0 18px 60px rgba(196,30,58,0.30)); }
+    50%      { transform: scale(1.04); filter: drop-shadow(0 0 42px rgba(196,30,58,0.75)) drop-shadow(0 22px 80px rgba(196,30,58,0.45)); }
   }
   .bar {
     display: inline-block;
@@ -106,7 +110,6 @@
     font-weight: 800;
     letter-spacing: -0.01em;
     line-height: 1.1;
-    text-transform: uppercase;
     margin: 0 0 clamp(14px, 2vh, 20px);
     color: #F5F1E8;
     overflow-wrap: anywhere;
@@ -172,8 +175,7 @@
   @media (prefers-reduced-motion: reduce) {
     .glow { animation: none; }
     .field circle { animation: none !important; }
-    video { display: none; }
-    .video-wrap { background: radial-gradient(closest-side, rgba(196,30,58,0.4), rgba(196,30,58,0)); }
+    .globe-wrap img { animation: none !important; }
   }
 </style>
 </head>
@@ -193,10 +195,8 @@
 
   <!-- video centrale + testi -->
   <main class="center">
-    <div class="video-wrap">
-      <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-        <source src="img/eurisko-azienda.mp4" type="video/mp4">
-      </video>
+    <div class="globe-wrap">
+      <img src="logo-eurisko-mondo.png" alt="" aria-hidden="true" width="420" height="420">
     </div>
     <span class="bar" aria-hidden="true"></span>
     <h1>Il nuovo sito sta per<br><span class="accent">arrivare.</span></h1>
@@ -219,19 +219,6 @@
 </div>
 
 <script>
-  // Loop video senza scatto: anticipo il rewind ~180ms prima della fine
-  // naturale per evitare l'effetto pause-seek-play del loop nativo.
-  (function () {
-    var v = document.querySelector('.video-wrap video');
-    if (!v) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    v.addEventListener('timeupdate', function () {
-      if (v.duration && v.currentTime >= v.duration - 0.18) {
-        try { v.currentTime = 0; } catch (e) {}
-      }
-    });
-  })();
-
   // Genera particelle + archi orbitali via JS (densità adattata al viewport)
   (function () {
     var field = document.getElementById('field');
