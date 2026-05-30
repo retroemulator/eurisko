@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/(?<rest>(?!coming-soon\\.html|api/|.*\\.(?:png|jpg|jpeg|webp|svg|woff|woff2|ico|mp4|css|js|xml|txt|webmanifest|json)$).*)",
+      "destination": "/coming-soon.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
