@@ -127,7 +127,12 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: emShimmer 9s ease-in-out infinite;
     margin-top: 0.04em;
+  }
+  @keyframes emShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
   }
   p.lede {
     font-size: clamp(14px, 1.8vw, 18px);
@@ -176,6 +181,7 @@
     .glow { animation: none; }
     .field circle { animation: none !important; }
     .globe-wrap img { animation: none !important; }
+    h1 .accent { animation: none !important; }
   }
 </style>
 </head>
