@@ -3,7 +3,10 @@
 (function () {
   var field = document.getElementById('field');
   if (!field) return;
-  var cx = 800, cy = 450;
+  // Centro della galassia (in coordinate viewBox 1600x900): cx=800 orizz.,
+  // cy spostato verso l'alto a 360 (~40% dell'altezza viewport) per
+  // allinearsi col globo che nel layout flex sta sopra il centro viewport.
+  var cx = 800, cy = 360;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isMobile = window.matchMedia('(max-width: 720px)').matches;
   var SVG_NS = 'http://www.w3.org/2000/svg';
