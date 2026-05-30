@@ -86,7 +86,7 @@
   }
   h1 {
     font-family: 'Switzer', system-ui, sans-serif;
-    font-size: clamp(39px, 6.75vw, 111px);
+    font-size: clamp(26px, 3.6vw, 56px);
     font-weight: 500;
     letter-spacing: -0.03em;
     line-height: 1.02;
@@ -115,7 +115,8 @@
     50%      { background-position: 100% 50%; }
   }
   p.launch-date {
-    margin: clamp(18px, 3vh, 30px) 0 0;
+    position: relative;
+    margin: clamp(2px, 0.6vh, 10px) 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,10 +128,30 @@
     color: #F5F1E8;
     font-variant-numeric: tabular-nums;
   }
+  p.launch-date::before {
+    content: "";
+    position: absolute;
+    inset: -28px -8%;
+    background: radial-gradient(ellipse at center,
+      rgba(196, 30, 58, 0.55) 0%,
+      rgba(196, 30, 58, 0.20) 38%,
+      rgba(196, 30, 58, 0) 70%);
+    filter: blur(26px);
+    pointer-events: none;
+    animation: dateGlow 4s ease-in-out infinite;
+  }
+  @keyframes dateGlow {
+    0%, 100% { opacity: 0.75; transform: scale(0.94); }
+    50%      { opacity: 1.00; transform: scale(1.08); }
+  }
   p.launch-date .d-mark {
     color: #F5F1E8;
     font-weight: 400;
     font-size: 0.9em;
+    position: relative;
+  }
+  p.launch-date time {
+    position: relative;
   }
   /* ===== CONTATTI ===== */
   .contacts {
@@ -169,6 +190,7 @@
     .field circle { animation: none !important; }
     .globe-wrap img { animation: none !important; }
     h1 .accent { animation: none !important; }
+    p.launch-date::before { animation: none !important; }
   }
 </style>
 </head>
