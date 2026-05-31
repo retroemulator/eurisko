@@ -1,9 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    { "source": "/", "destination": "/coming-soon", "statusCode": 307 }
-  ],
   "headers": [
     {
       "source": "/(.*)",
