@@ -28,6 +28,22 @@
 <link rel="stylesheet" href="styles-light-body.css?v=63">
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+<link rel="stylesheet" href="cookie-banner.css">
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'analytics_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'wait_for_update': 500,
+  'region': ['EU']
+});
+gtag('js', new Date());
+gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M936PDKB61"></script>
 </head>
 <body class="light-body light-body--compact light-body--solid-nav">
 
@@ -162,5 +178,13 @@
 </footer>
 
 <script src="script.min.js?v=42"></script>
+<div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p class="cookie-banner__text"></p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="cookie-banner__reject"></button>
+    <button type="button" class="cookie-banner__accept"></button>
+  </div>
+</div>
+<script defer src="cookie-banner.js"></script>
 </body>
 </html>

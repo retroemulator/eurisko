@@ -53,6 +53,22 @@
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+<link rel="stylesheet" href="../cookie-banner.css">
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'analytics_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'wait_for_update': 500,
+  'region': ['EU']
+});
+gtag('js', new Date());
+gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M936PDKB61"></script>
 </head>
 <body class="light-body light-body--compact">
 
@@ -148,8 +164,34 @@
     </tbody>
   </table>
 
-  <h3>Analytics cookies (optional, subject to consent)</h3>
-  <p>At present the site <strong>does not use third-party analytics cookies</strong>. Should an analytics service be activated in the future (e.g. Vercel Analytics, Plausible, Matomo or Google Analytics in anonymized mode), this policy will be updated accordingly and the activation will be subject to the user's consent expressed via the cookie banner.</p>
+  <h3>Analytics cookies — Google Analytics 4 (optional, subject to consent)</h3>
+  <p>The site uses Google Analytics 4 for anonymous traffic measurement. These cookies are installed <strong>only after the user grants explicit consent</strong> via the cookie banner.</p>
+  <table>
+    <thead>
+      <tr><th>Cookie name</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>_ga</code></td>
+        <td>Google LLC</td>
+        <td>Anonymous traffic measurement</td>
+        <td>2 years</td>
+        <td>Third-party</td>
+      </tr>
+      <tr>
+        <td><code>_ga_M936PDKB61</code></td>
+        <td>Google LLC</td>
+        <td>Anonymous traffic measurement</td>
+        <td>2 years</td>
+        <td>Third-party</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Data transfer:</strong> USA — under the EU-U.S. Data Privacy Framework.</p>
+  <p><strong>Note:</strong> the site implements <strong>Google Consent Mode v2</strong>: without consent no analytics cookies are installed and only anonymous pings without identifiers are sent to Google.</p>
+
+  <h3>Vercel Analytics + Speed Insights (always active)</h3>
+  <p>The site uses Vercel Analytics and Speed Insights for aggregate visit measurement and page performance monitoring. These are <strong>first-party</strong> services that <strong>do not set cookies</strong>, do not collect personal data (no PII) and are <strong>GDPR-compliant by design</strong>; they are therefore always active and do not require consent.</p>
 
   <h3>Marketing cookies (optional, subject to consent)</h3>
   <p>The site does not use profiling or marketing cookies.</p>
@@ -255,5 +297,13 @@
 </footer>
 
 <script src="../script.min.js?v=42"></script>
+<div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p class="cookie-banner__text"></p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="cookie-banner__reject"></button>
+    <button type="button" class="cookie-banner__accept"></button>
+  </div>
+</div>
+<script defer src="../cookie-banner.js"></script>
 </body>
 </html>

@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Cookie Banner - vanilla CSS, no dependencies
+   ========================================================================== */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 20px 24px;
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1px solid rgba(245, 241, 232, 0.08);
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  color: #F5F1E8;
+  font-family: "Switzer", system-ui, sans-serif;
+  font-size: clamp(13px, 1.4vw, 14px);
+  line-height: 1.5;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.cookie-banner.is-visible {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.cookie-banner__text {
+  flex: 1;
+  max-width: 70ch;
+  margin: 0;
+}
+
+.cookie-banner__link {
+  color: #F5F1E8;
+  text-decoration: underline solid 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.cookie-banner__link:hover {
+  color: #C41E3A;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cookie-banner__accept {
+  padding: 10px 22px;
+  background: #C41E3A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cookie-banner__accept:hover {
+  background: #FF4D66;
+  transform: translateY(-1px);
+}
+
+.cookie-banner__reject {
+  padding: 10px 22px;
+  background: transparent;
+  color: #F5F1E8;
+  border: 1px solid rgba(245, 241, 232, 0.4);
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cookie-banner__reject:hover {
+  border-color: #F5F1E8;
+  background: rgba(245, 241, 232, 0.06);
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 720px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 20px;
+    gap: 16px;
+  }
+
+  .cookie-banner__actions {
+    width: 100%;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .cookie-banner__accept,
+  .cookie-banner__reject {
+    flex: 1;
+    padding: 12px 18px;
+  }
+}
+
+/* ==========================================================================
+   A11Y
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner {
+    transition: none;
+  }
+}
+
+.cookie-banner__accept:focus-visible,
+.cookie-banner__reject:focus-visible {
+  outline: 2px solid #F5F1E8;
+  outline-offset: 2px;
+}

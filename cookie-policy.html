@@ -53,6 +53,22 @@
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+<link rel="stylesheet" href="cookie-banner.css">
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'analytics_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'wait_for_update': 500,
+  'region': ['EU']
+});
+gtag('js', new Date());
+gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M936PDKB61"></script>
 </head>
 <body class="light-body light-body--compact">
 
@@ -148,8 +164,32 @@
     </tbody>
   </table>
 
-  <h3>Cookie analitici (opzionali, previo consenso)</h3>
-  <p>Allo stato attuale il sito <strong>non utilizza cookie analitici di terze parti</strong>. Qualora in futuro venga attivato un servizio di analisi (es. Vercel Analytics, Plausible, Matomo o Google Analytics in modalità anonima), questa policy sarà aggiornata di conseguenza e l'attivazione sarà subordinata al consenso dell'utente espresso tramite il banner cookie.</p>
+  <h3>Cookie analitici — Google Analytics 4 (opzionali, previo consenso)</h3>
+  <p>Il sito utilizza <strong>Google Analytics 4</strong> per la misurazione anonima del traffico (visite, pagine viste, paese di provenienza, tipo di dispositivo). I cookie analitici vengono installati <strong>solo previo consenso esplicito</strong> dell'utente espresso tramite il banner cookie.</p>
+  <table>
+    <thead>
+      <tr><th>Nome cookie</th><th>Provider</th><th>Finalità</th><th>Durata</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>_ga</code></td>
+        <td>Google LLC</td>
+        <td>Distingue gli utenti in forma anonima</td>
+        <td>2 anni</td>
+      </tr>
+      <tr>
+        <td><code>_ga_M936PDKB61</code></td>
+        <td>Google LLC</td>
+        <td>Conserva lo stato della sessione GA4</td>
+        <td>2 anni</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Google Consent Mode v2.</strong> Il sito implementa Google Consent Mode v2: senza consenso non vengono installati cookie analitici e a Google vengono trasmesse solo ping anonimi senza identificativi.</p>
+  <p><strong>Trasferimento dati extra-UE.</strong> I dati raccolti tramite Google Analytics 4 sono trattati da Google LLC negli Stati Uniti. Il trasferimento avviene in conformità al <em>Data Privacy Framework</em> UE-USA, di cui Google LLC è soggetto certificato.</p>
+
+  <h3>Cookie statistici — Vercel Analytics + Speed Insights (sempre attivi)</h3>
+  <p>Il sito utilizza <strong>Vercel Analytics</strong> e <strong>Vercel Speed Insights</strong> per la misurazione aggregata del traffico e delle performance. Si tratta di servizi <strong>first-party</strong>, che <strong>non impostano alcun cookie</strong>, non raccolgono dati personali identificativi (PII) e sono <strong>GDPR-compliant by design</strong>. Per questo motivo sono sempre attivi e non richiedono il consenso preventivo dell'utente.</p>
 
   <h3>Cookie di marketing (opzionali, previo consenso)</h3>
   <p>Il sito non utilizza cookie di profilazione o marketing.</p>
@@ -157,7 +197,8 @@
   <h2>Servizi di terze parti</h2>
   <p>Il sito si appoggia ai seguenti servizi terzi che potrebbero impostare cookie tecnici o di funzionamento sul dispositivo dell'utente:</p>
   <ul>
-    <li><strong>Vercel Inc.</strong> — provider di hosting. Per dettagli: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy Vercel</a>.</li>
+    <li><strong>Vercel Inc.</strong> — provider di hosting e fornitore dei servizi <em>Vercel Analytics</em> e <em>Speed Insights</em> (first-party, senza cookie). Per dettagli: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy Vercel</a>.</li>
+    <li><strong>Google LLC</strong> — fornitore di <em>Google Analytics 4</em> per la misurazione anonima del traffico (cookie attivati solo previo consenso). Per dettagli: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy Google</a>.</li>
     <li><strong>Fontshare (ITC Group)</strong> — fornitore dei font web utilizzati. Per dettagli: <a href="https://www.fontshare.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy Fontshare</a>.</li>
     <li><strong>Resend (Resend, Inc.)</strong> — servizio per l'invio via email dei moduli di contatto e candidatura (il CV viene recapitato in allegato). Per dettagli: <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy Resend</a>.</li>
     <li><strong>Google reCAPTCHA (Google Ireland Ltd.)</strong> — sistema di protezione anti-spam attivo sui moduli di contatto e candidatura; può impostare cookie tecnici/funzionali. Per dettagli: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy Google</a>.</li>
@@ -255,5 +296,13 @@
 </footer>
 
 <script src="script.min.js?v=42"></script>
+<div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p class="cookie-banner__text"></p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="cookie-banner__reject"></button>
+    <button type="button" class="cookie-banner__accept"></button>
+  </div>
+</div>
+<script defer src="cookie-banner.js"></script>
 </body>
 </html>
