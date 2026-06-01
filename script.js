@@ -893,12 +893,12 @@
     linksContainer.appendChild(btn);
   }
 
-  // Initialize on load
-  if (!readConsent()) {
-    // Show banner on first visit (small delay so it's not the first thing painted)
-    setTimeout(showBanner, 400);
-  }
-  injectCookieReopenLink();
+  // HOT-FIX go-live 2026-06-01: vecchio cookie banner DISATTIVATO.
+  // Sostituito dal nuovo sistema cookie-banner.js + Consent Mode v2 (GA4).
+  // Tutto il codice sopra (readConsent/buildBanner/showBanner/etc.) e' dead code,
+  // verra' rimosso dal cleanup completo in un commit successivo.
+  // if (!readConsent()) { setTimeout(showBanner, 400); }
+  // injectCookieReopenLink();
 
   // -------- 9. Hero video — slow down playback + loop fluido --------
   // Sorgente 1280x720 @30fps: a 0.32x si vedevano ~9.6 fps reali (scatti).
