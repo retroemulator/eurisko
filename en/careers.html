@@ -470,10 +470,11 @@
 
         <div class="field-row">
           <div class="field">
-            <label for="c-role">Position</label>
-            <select id="c-role" name="position">
+            <label for="c-role">Position <span aria-hidden="true">*</span><span class="visually-hidden">required</span></label>
+            <select id="c-role" name="position" required aria-required="true">
               <option value="">Select...</option>
             </select>
+            <p class="field-error" id="c-role-error" hidden></p>
           </div>
           <div class="field">
             <label for="c-linkedin">LinkedIn profile</label>
