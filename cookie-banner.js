@@ -137,6 +137,18 @@
     window.location.reload();
   };
 
+  document.addEventListener("click", function (e) {
+    var target = e.target;
+    while (target && target.nodeType === 1) {
+      if (target.classList && target.classList.contains("js-cookie-reopen")) {
+        e.preventDefault();
+        window.resetCookieConsent();
+        return;
+      }
+      target = target.parentNode;
+    }
+  });
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
