@@ -2394,6 +2394,17 @@ form.contact { display: grid; gap: 20px; }
   background: var(--bg);
   filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 50px rgba(196, 30, 58, 0.18));
 }
+/* Forza aspect-ratio quadrato sui media portrait (cosa-facciamo, portfolio,
+   lavora-con-noi: 928x1232 = 3:4). Senza questa regola l'altezza dell'hero
+   andava a ~717px contro i ~540px del video azienda (1:1). object-fit:cover
+   centra il soggetto editoriale, il crop top/bottom e' minimo (composizioni
+   astratte gia' centrate). */
+img.page-hero__media--cutout {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
 video.page-hero__media {
   filter: url(#removeBlack) drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 50px rgba(196, 30, 58, 0.18));
   background: transparent;
