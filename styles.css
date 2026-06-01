@@ -1880,7 +1880,9 @@ a.cap:focus-visible::after { opacity: 1; transform: translateX(0); }
   width: 8px; height: 8px;
   border-radius: 50%;
   align-self: flex-end;
-  margin-bottom: auto;
+  /* margin-bottom: auto rimosso: spingeva il testo in fondo al box generando
+     allineamenti verticali incoerenti tra cap con nome 1 riga vs 2 righe.
+     Ora dot in alto-destra, nome subito sotto, sempre top-aligned. */
 }
 @media (max-width: 820px) { .caps { grid-template-columns: repeat(2, 1fr); } }
 
