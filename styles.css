@@ -2905,22 +2905,18 @@ summary:focus-visible {
   transition: transform 0.45s cubic-bezier(.19, 1, .22, 1);
 }
 .site-search.open .site-search__panel { transform: translateY(0) scale(1); }
-.site-search__close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 44px;
-  height: 44px;
-  background: transparent;
-  border: 1px solid var(--line-soft);
-  border-radius: 50%;
-  color: var(--ink);
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
+/* Pulsanti X nascosti: chiusura via click sul backdrop / ESC / Ctrl+K.
+   Il bottone .site-search__close resta nel DOM (a11y/focus management),
+   ma e' visivamente nascosto. La X nativa del browser dentro
+   input[type="search"] (WebKit ::-webkit-search-cancel-button) e'
+   ugualmente disattivata. */
+.site-search__close { display: none; }
+.site-search__input::-webkit-search-cancel-button,
+.site-search__input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
 }
-.site-search__close:hover { background: var(--ink); color: var(--bg); transform: rotate(90deg); }
 .site-search__input-wrap {
   position: relative;
   display: flex;
