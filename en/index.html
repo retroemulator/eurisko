@@ -46,10 +46,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="../logo-eurisko-WR.png">
 
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@200,300,400,500,600,700,800,900,401&f[]=space-grotesk@800&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=switzer@200,300,400,500,600,700,800,900,401&f%5B%5D=space-grotesk@800&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap">
-<link rel="stylesheet" href="../styles.min.css?v=52">
-<link rel="stylesheet" href="../styles-light-body.css?v=63">
+<link rel="stylesheet" href="../styles.min.css?v=53">
+<link rel="stylesheet" href="../styles-light-body.min.css?v=64">
 
 <script type="application/ld+json">
 {
@@ -78,27 +78,14 @@
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 <link rel="stylesheet" href="../cookie-banner.css">
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
-  'ad_storage': 'denied',
-  'analytics_storage': 'denied',
-  'ad_user_data': 'denied',
-  'ad_personalization': 'denied',
-  'wait_for_update': 500,
-  'region': ['EU']
-});
-gtag('js', new Date());
-gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
-</script>
+<script src="/gtag-consent.js?v=1"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M936PDKB61"></script>
 </head>
 <body class="light-body">
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<header class="nav" role="banner">
+<header class="nav">
   <a href="index.html" class="nav__logo" aria-label="Eurisko — go to homepage">
     <img src="../logo-eurisko-WR.png" alt="Eurisko S.r.l." class="nav__logo-img" width="180" height="36">
   </a>
@@ -147,7 +134,7 @@ gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
     <a href="careers.html">Careers</a>
   </nav>
   <button class="nav__search" type="button" aria-label="Open search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
-  <div class="lang-switcher" aria-label="Language selector">
+  <div class="lang-switcher" role="navigation" aria-label="Language selector">
     <a href="../index.html" class="lang-switcher__alt" hreflang="it" lang="it">IT</a>
     <span class="lang-switcher__sep" aria-hidden="true">|</span>
     <span class="lang-switcher__current" lang="en" aria-current="true">EN</span>
@@ -195,6 +182,7 @@ gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
 </section>
 
 <section class="container" id="stats">
+  <h2 class="visually-hidden">Eurisko in numbers</h2>
   <div class="stats reveal">
     <div class="stat">
       <div class="stat__num">30+</div>
@@ -216,7 +204,8 @@ gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
 </section>
 
 <section class="section--tight" style="padding-block: 80px 40px;">
-  <div class="marquee reveal" aria-label="Our clients">
+  <h2 class="visually-hidden">Our clients</h2>
+  <div class="marquee reveal" role="group" aria-label="Our clients">
     <div class="marquee__track">
       <a href="portfolio.html" class="marquee__item">Stellantis</a>
       <a href="portfolio.html" class="marquee__item">Ferrero</a>
@@ -265,6 +254,7 @@ gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
 </section>
 
 <section class="container">
+  <h2 class="visually-hidden">Our work philosophy</h2>
   <div class="quote-layout">
     <div class="quote reveal">
       <p class="quote__text">
@@ -278,7 +268,7 @@ gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
         </div>
       </div>
     </div>
-    <div class="eurisko-wordmark" aria-label="Eurisko">
+    <div class="eurisko-wordmark" role="img" aria-label="Eurisko">
       <span data-char="E" data-alt="E">E</span><span data-char="U" data-alt="X">U</span><span data-char="R" data-alt="P">R</span><span data-char="I" data-alt="E">I</span><span data-char="S" data-alt="R">S</span><span data-char="K" data-alt="T">K</span><span data-char="O" data-alt="S">O</span>
     </div>
   </div>
@@ -414,7 +404,7 @@ gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
   </div>
 </footer>
 
-<script src="../script.min.js?v=44"></script>
+<script src="../script.min.js?v=45"></script>
 <div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
   <p class="cookie-banner__text"></p>
   <div class="cookie-banner__actions">
@@ -422,6 +412,6 @@ gtag('config', 'G-M936PDKB61', { 'anonymize_ip': true });
     <button type="button" class="cookie-banner__accept"></button>
   </div>
 </div>
-<script defer src="../cookie-banner.js?v=2"></script>
+<script defer src="../cookie-banner.js?v=3"></script>
 </body>
 </html>

@@ -730,7 +730,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: rgba(245, 241, 232, 0.45);
+  color: rgba(245, 241, 232, 0.65);
   margin-bottom: 20px;
 }
 .footer__col a {
@@ -772,7 +772,7 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
   justify-content: space-between;
   gap: 32px;
   font-size: 0.8125rem;
-  color: rgba(245, 241, 232, 0.45);
+  color: rgba(245, 241, 232, 0.65);
 }
 .footer__meta a:hover { color: var(--accent-text); }
 .footer__meta-reserved {

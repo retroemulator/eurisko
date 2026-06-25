@@ -52,6 +52,7 @@ def minify_js(src: str) -> str:
 
 def main():
     css_path = os.path.join(ROOT, 'styles.css')
+    light_css_path = os.path.join(ROOT, 'styles-light-body.css')
     js_path = os.path.join(ROOT, 'script.js')
 
     with open(css_path, 'r', encoding='utf-8') as f:
@@ -60,6 +61,13 @@ def main():
     with open(os.path.join(ROOT, 'styles.min.css'), 'w', encoding='utf-8') as f:
         f.write(css_min)
     print(f'styles.css {len(css_src):>7} -> styles.min.css {len(css_min):>7} bytes ({100 - 100*len(css_min)/len(css_src):.1f}% saved)')
+
+    with open(light_css_path, 'r', encoding='utf-8') as f:
+        light_css_src = f.read()
+    light_css_min = minify_css(light_css_src)
+    with open(os.path.join(ROOT, 'styles-light-body.min.css'), 'w', encoding='utf-8') as f:
+        f.write(light_css_min)
+    print(f'styles-light-body.css {len(light_css_src):>7} -> styles-light-body.min.css {len(light_css_min):>7} bytes ({100 - 100*len(light_css_min)/len(light_css_src):.1f}% saved)')
 
     with open(js_path, 'r', encoding='utf-8') as f:
         js_src = f.read()

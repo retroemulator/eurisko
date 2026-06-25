@@ -7,14 +7,14 @@
     it: {
       text: "Questo sito utilizza cookie tecnici e cookie di Google Analytics per analizzare il traffico in forma anonima. Maggiori dettagli nella nostra ",
       linkText: "Cookie Policy",
-      linkUrl: "/cookie-policy",
+      linkUrl: "/cookie-policy.html",
       accept: "Accetta",
       reject: "Rifiuta"
     },
     en: {
       text: "This site uses technical cookies and Google Analytics cookies to analyze traffic anonymously. More details in our ",
       linkText: "Cookie Policy",
-      linkUrl: "/en/cookie-policy",
+      linkUrl: "/en/cookie-policy.html",
       accept: "Accept",
       reject: "Reject"
     }
